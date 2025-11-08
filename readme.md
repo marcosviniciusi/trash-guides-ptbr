@@ -1,6 +1,7 @@
 # TRaSH Guides PT-BR - Custom Formats
 
-Custom Formats otimizados para conteúdo em Português Brasileiro.
+Custom Formats otimizados para conteúdo em Português Brasileiro (PT-BR).
+Com esses perfis, é possível priorizar e baixar releases nacionais, que trazem áudio original em português, além de versões legendadas.
 
 ## 📁 Estrutura do Repositório
 
