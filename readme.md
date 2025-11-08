@@ -136,7 +136,7 @@ sonarr:
 ## 🔧 Combinando com TRaSH Guides
 
 Você pode combinar estes Custom Formats com os oficiais do TRaSH:
-
+> **💡 Dica:** Na pasta `recyclarr/` deste repositório existe um arquivo `recyclarr.yaml` com um exemplo completo de configuração que pode ser editado de acordo com suas necessidades.
 ```yaml
 radarr:
   movies:
