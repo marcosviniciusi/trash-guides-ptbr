@@ -41,7 +41,7 @@ radarr:
     
     custom_formats:
       # Custom Format: DUAL (Prioridade máxima)
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosvinciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-dual
         quality_profiles:
@@ -49,7 +49,7 @@ radarr:
             score: 6000
 
       # Custom Format: Legendado (Prioridade alta)
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-not-dual
         quality_profiles:
@@ -57,7 +57,7 @@ radarr:
             score: 5500
 
       # Custom Format: Filtro de grupos
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-not-group-radarr
         quality_profiles:
@@ -78,7 +78,7 @@ sonarr:
     
     custom_formats:
       # Custom Format: DUAL (Prioridade máxima)
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-dual
         quality_profiles:
@@ -86,7 +86,7 @@ sonarr:
             score: 6000
 
       # Custom Format: Legendado (Prioridade alta)
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-not-dual
         quality_profiles:
@@ -94,7 +94,7 @@ sonarr:
             score: 5500
 
       # Custom Format: Filtro de grupos
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-not-group-sonarr
         quality_profiles:
@@ -159,21 +159,21 @@ radarr:
             score: 0
       
       # Custom Formats PT-BR (deste repositório)
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-dual
         quality_profiles:
           - name: HD
             score: 6000
       
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-not-dual
         quality_profiles:
           - name: HD
             score: 5500
       
-      - base_url: https://raw.githubusercontent.com/SEU-USUARIO/trash-guides-ptbr/main/custom-formats
+      - base_url: https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats
         trash_ids:
           - custom-web-tier-ptbr-not-group-radarr
         quality_profiles:
