@@ -181,6 +181,30 @@ radarr:
             score: 5200
 ```
 
+## 🔄 Uso Sem Recyclarr (Importação Manual)
+
+Você pode adicionar os Custom Formats diretamente nas suas instâncias Radarr/Sonarr sem usar o Recyclarr:
+
+### Importação Manual
+
+1. Acesse: **Configurações → Custom Formats**
+2. Clique em **+ Add Custom Format**
+3. Copie o conteúdo do arquivo JSON desejado
+4. Cole no campo de importação
+5. Salve e configure o score no Quality Profile
+
+### ⚠️ Importante
+
+A importação manual funciona perfeitamente, porém você perderá a **sincronização automática**. Isso significa que:
+
+- ❌ Atualizações futuras nos Custom Formats não serão aplicadas automaticamente
+- ❌ Novos release groups adicionados à lista não serão sincronizados
+- ❌ Correções e melhorias precisarão ser reimportadas manualmente
+
+### 💡 Recomendação
+
+**Use o Recyclarr** para manter seus Custom Formats sempre atualizados. Quando este repositório for atualizado com novos grupos ou correções, o Recyclarr aplica as mudanças automaticamente na próxima sincronização.
+
 ## ❓ Perguntas Frequentes
 
 ### Por que usar blocos separados para cada score?
