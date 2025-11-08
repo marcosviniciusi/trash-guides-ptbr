@@ -17,7 +17,7 @@ trash-guides-ptbr/
 ## 🎯 Custom Formats Disponíveis
 
 ### Para Radarr e Sonarr
-- **custom-web-tier-ptbr-dual** - Releases DUAL (PT-BR + Original) (Score 6000)
+- **custom-web-tier-ptbr-dual** - Releases DUAL ( Original/Portugues) (PT-BR + Original) (Score 6000)
 - **custom-web-tier-ptbr-not-dual** - Releases apenas PT-BR (legendados) (Score 5500)
 - **custom-web-tier-ptbr-not-group-radarr** - Releases não conhecidos com audio e/ou legenda em Portugues (Radarr) ( Legendado ) (Score 5000)
 - **custom-web-tier-ptbr-not-group-sonarr** - Releases não conhecidos com audio e/ou legenda em Portugues (Sonarr) ( Legendado ) (Score 5000)
