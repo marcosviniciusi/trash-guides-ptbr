@@ -1,0 +1,17 @@
+{
+  "trash_id": "custom-animes-not-brazilian-radarr",
+  "name": "Language: Not Brazilian",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Not Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": false,
+      "fields": {
+        "value": 30,
+        "exceptLanguage": false
+      }
+    }
+  ]
+}
