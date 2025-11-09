@@ -1,0 +1,17 @@
+{
+  "trash_id": "custom-animes-not-portuguese-sonarr",
+  "name": "Language: Not Portuguese",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Not Portuguese Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": false,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": false
+      }
+    }
+  ]
+}
