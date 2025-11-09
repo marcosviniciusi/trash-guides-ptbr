@@ -74,20 +74,30 @@ Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-gui
 ## 🔧 Instalação Manual
 
 ### Via Interface Web
+### Pré-requisito: Criar Quality Profile "HD"
 
+Antes de configurar os custom formats, você precisa ter um Quality Profile chamado **"HD"** (ou ajustar o nome no `config.yml`).
+
+### Crie os Profiles ###
+
+#### No Radarr/Sonarr:
+
+1. Acesse **Settings → Profiles**
+2. Clique em **+** para adicionar novo perfil
+3. Configure:
+   - **Name**: `HD`
+   - **Upgrades Allowed**: ✅ (habilitado)
+   - **Upgrade Until**: Selecione a qualidade máxima desejada (ex: Bluray-1080p)
+   - **Qualities**: Selecione as qualidades que deseja (recomendado: WEBDL-1080p, WEBRip-1080p, Bluray-1080p, Remux-1080p)
+   - **Minimum Custom Format Score**: `0` (ou deixe em branco)
+4. Clique em **Save**
+
+### Adicionando manualmente os Custom Formats
+#### No Radarr/Sonarr:
 1. Acesse **Settings → Custom Formats**
 2. Clique em **+** para adicionar novo formato
 3. Cole o conteúdo do JSON desejado
 4. Salve e configure o score no Quality Profile
-
-### Via API
-```bash
-# Exemplo para Radarr
-curl -X POST "http://localhost:7878/api/v3/customformat" \
-  -H "X-Api-Key: SUA_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d @custom-formats/custom-web-tier-ptbr-dual.json
-```
 
 ## 🚀 Instalação com Configarr
 
