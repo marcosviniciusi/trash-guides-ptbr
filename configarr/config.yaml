@@ -8,11 +8,8 @@
     # RADARR
     # ======================================================================
     radarr:
-###############################################################
-#         RADARR                                              #
-###############################################################
       movies:
-        base_url: https://RADARR_URL
+        base_url: https://URL_RADARR
         api_key: !secret RADARR_API_KEY
         
         custom_formats:
@@ -299,24 +296,21 @@
               - custom-web-tier-ptbr-dual
             assign_scores_to:
               - name: HD
-                score: 6000
+                score: 5000
           
           - trash_ids:
               - custom-web-tier-ptbr-not-dual
             assign_scores_to:
               - name: HD
-                score: 5500
+                score: 4000
           
           - trash_ids:
               - custom-web-tier-ptbr-not-group-radarr
             assign_scores_to:
               - name: HD
-                score: 5000
-###############################################################
-#         RADARR-ANIMES                                       #
-###############################################################
+                score: 3000
       animes-movies:
-        base_url: https://RADARR_ANIMES_URL
+        base_url: https://URL_RADARR_ANIMES
         api_key: !secret RADARR_ANIMES_API_KEY
         
         custom_formats:
@@ -564,102 +558,15 @@
             assign_scores_to:
               - name: HD
                 score: -10000       
-###############################################################
-#         SONARR                                              #
-###############################################################
+    # ======================================================================
+    # SONARR
+    # ======================================================================
     sonarr:
       series:
-        base_url: https://SONARR_URL
+        base_url: https://URL_SONARR
         api_key: !secret SONARR_API_KEY
         
         custom_formats:
-          # Audio - Tier 1: Lossless Premium
-          - trash_ids:
-              - 496f355514737f7d83bf7aa4d24f8169 # TrueHD Atmos
-            assign_scores_to:
-              - name: HD
-                score: 6000
-          
-          - trash_ids:
-              - 2f22d89048b01681dde8afe203bf2e95 # DTS X
-            assign_scores_to:
-              - name: HD
-                score: 5500
-          
-          - trash_ids:
-              - 417804f7f2c4308c1f4c5d380d4c4475 # ATMOS (undefined)
-            assign_scores_to:
-              - name: HD
-                score: 4600
-          
-          - trash_ids:
-              - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
-            assign_scores_to:
-              - name: HD
-                score: 4400
-          
-          - trash_ids:
-              - 3cafb66171b47f226146a0770576870f # TrueHD
-            assign_scores_to:
-              - name: HD
-                score: 4000
-          
-          - trash_ids:
-              - dcf3ec6938fa32445f590a4da84256cd # DTS-HD MA
-            assign_scores_to:
-              - name: HD
-                score: 3950
-          
-          - trash_ids:
-              - a570d4a0e56a2874b64e5bfa55202a1b # FLAC
-            assign_scores_to:
-              - name: HD
-                score: 3900
-          
-          - trash_ids:
-              - e7c2fcae07cbada050a0af3357491d7b # PCM
-            assign_scores_to:
-              - name: HD
-                score: 2250
-          
-          # Audio - Tier 2: High Quality Lossy
-          - trash_ids:
-              - 8e109e50e0a0b83a5098b056e13bf6db # DTS-HD HRA
-            assign_scores_to:
-              - name: HD
-                score: 2000
-          
-          - trash_ids:
-              - 185f1dd7264c4562b9022d963ac37424 # DD+
-            assign_scores_to:
-              - name: HD
-                score: 1750
-          
-          - trash_ids:
-              - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
-            assign_scores_to:
-              - name: HD
-                score: 1500
-          
-          # Audio - Tier 3: Standard Quality
-          - trash_ids:
-              - 1c1a4c5e823891c75bc50380a6866f73 # DTS
-            assign_scores_to:
-              - name: HD
-                score: 1250
-          
-          - trash_ids:
-              - c2998bd0d90ed5621d8df281e839436e # DD
-            assign_scores_to:
-              - name: HD
-                score: 3000
-          
-          - trash_ids:
-              - 240770601cc226190c367ef59aba7463 # AAC
-            assign_scores_to:
-              - name: HD
-                score: 1000
-
           # X265
           - trash_ids:
               - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
@@ -711,12 +618,6 @@
               - name: HD
                 score: 7
           
-          - trash_ids:
-              - 9b27ab6498ec0f31a3353992e19434ca # DV (WEBDL)
-            assign_scores_to:
-              - name: HD
-                score: 15
-          
           # Unwanted
           - trash_ids:
               - 85c61753df5da1fb2aab6f2a47426b09 # BR-DISK
@@ -727,10 +628,10 @@
               - e1a997ddb54e3ecbfe06341ad323c458 # Obfuscated
               - 06d66ab109d4d2eddb2794d21526d140 # Retags
               - 1b3994c551cbb92a2c781af061f4ab44 # Scene
-              - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
-              - b337d6812e06c200ec9a2d3cfa9d20a7 # DV Boost
-              - caa37d0df9c348912df1fb1d88f9273a # HDR10+ Boost
-              - 923b6abef9b17f937fab56cfcf89e1f1 # DV (WEBDL)   
+              - 505d871304820ba7106b693be6fe4a9e # HDR
+              - 7c3a61a9c6cb04f52f1544be6d44a026 # DV Boost
+              - 0c4b99df9206d2cfac3c05ab897dd62a # HDR10+ Boost
+              - 9b27ab6498ec0f31a3353992e19434ca #  DV (w/o HDR fallback) 
             assign_scores_to:
               - name: HD
                 score: -100000
@@ -782,101 +683,11 @@
             assign_scores_to:
               - name: HD
                 score: 5000
-###############################################################
-#         SONARR-ANIMES                                       #
-###############################################################
       animes-tv:
-        base_url: https://SONARR_ANIMES_URL
+        base_url: https://URL_SONARR_ANIMES
         api_key: !secret SONARR_ANIMES_API_KEY
         
         custom_formats:
-          # Audio - Tier 1: Lossless Premium
-          - trash_ids:
-              - 496f355514737f7d83bf7aa4d24f8169 # TrueHD Atmos
-            assign_scores_to:
-              - name: HD
-                score: 6000
-          
-          - trash_ids:
-              - 2f22d89048b01681dde8afe203bf2e95 # DTS X
-            assign_scores_to:
-              - name: HD
-                score: 5500
-          
-          - trash_ids:
-              - 417804f7f2c4308c1f4c5d380d4c4475 # ATMOS (undefined)
-            assign_scores_to:
-              - name: HD
-                score: 4600
-          
-          - trash_ids:
-              - 1af239278386be2919e1bcee0bde047e # DD+ ATMOS
-            assign_scores_to:
-              - name: HD
-                score: 4400
-          
-          - trash_ids:
-              - 3cafb66171b47f226146a0770576870f # TrueHD
-            assign_scores_to:
-              - name: HD
-                score: 4000
-          
-          - trash_ids:
-              - dcf3ec6938fa32445f590a4da84256cd # DTS-HD MA
-            assign_scores_to:
-              - name: HD
-                score: 3950
-          
-          - trash_ids:
-              - a570d4a0e56a2874b64e5bfa55202a1b # FLAC
-            assign_scores_to:
-              - name: HD
-                score: 3900
-          
-          - trash_ids:
-              - e7c2fcae07cbada050a0af3357491d7b # PCM
-            assign_scores_to:
-              - name: HD
-                score: 2250
-          
-          # Audio - Tier 2: High Quality Lossy
-          - trash_ids:
-              - 8e109e50e0a0b83a5098b056e13bf6db # DTS-HD HRA
-            assign_scores_to:
-              - name: HD
-                score: 2000
-          
-          - trash_ids:
-              - 185f1dd7264c4562b9022d963ac37424 # DD+
-            assign_scores_to:
-              - name: HD
-                score: 1750
-          
-          - trash_ids:
-              - f9f847ac70a0af62ea4a08280b859636 # DTS-ES
-            assign_scores_to:
-              - name: HD
-                score: 1500
-          
-          # Audio - Tier 3: Standard Quality
-          - trash_ids:
-              - 1c1a4c5e823891c75bc50380a6866f73 # DTS
-            assign_scores_to:
-              - name: HD
-                score: 1250
-          
-          - trash_ids:
-              - c2998bd0d90ed5621d8df281e839436e # DD
-            assign_scores_to:
-              - name: HD
-                score: 3000
-          
-          - trash_ids:
-              - 240770601cc226190c367ef59aba7463 # AAC
-            assign_scores_to:
-              - name: HD
-                score: 1000
-
           # X265
           - trash_ids:
               - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
@@ -932,6 +743,15 @@
             assign_scores_to:
               - name: HD
                 score: -100000
+          # Unwanted
+          - trash_ids:
+              - 505d871304820ba7106b693be6fe4a9e # HDR
+              - 7c3a61a9c6cb04f52f1544be6d44a026 # DV Boost
+              - 0c4b99df9206d2cfac3c05ab897dd62a # HDR10+ Boost
+              - 9b27ab6498ec0f31a3353992e19434ca #  DV (w/o HDR fallback) 
+            assign_scores_to:
+              - name: HD
+                score: -100000
           
          # Streaming Services
           - trash_ids:
@@ -959,11 +779,6 @@
             assign_scores_to:
               - name: HD
                 score: 3
-          - trash_ids:
-              - 1284d18e693de8efe0fe7d6b3e0b9170 # FUNi
-            assign_scores_to:
-              - name: HD
-                score: 2 
           - trash_ids:
               - a370d974bc7b80374de1d9ba7519760b # ABEMA
             assign_scores_to:
@@ -996,7 +811,7 @@
               - custom-web-tier-ptbr-dual
             assign_scores_to:
               - name: HD
-                score: 6000000
+                score: 60000000
           
           - trash_ids:
               - custom-web-tier-ptbr-not-dual
