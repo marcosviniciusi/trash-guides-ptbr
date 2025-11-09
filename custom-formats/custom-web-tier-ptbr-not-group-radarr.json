@@ -78,6 +78,87 @@
       }
     },
     {
+      "name": "Negar KALAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(KALAX)$"
+      }
+    },
+    {
+      "name": "Negar MemoriadaTV",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(MemoriadaTV)$"
+      }
+    },
+    {
+      "name": "Negar BlueAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BlueAM)$"
+      }
+    },
+    {
+      "name": "Negar OhKara",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(OhKara)$"
+      }
+    },
+    {
+      "name": "Negar Neophitus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(Neophitus)$"
+      }
+    },
+    {
+      "name": "Negar dinrolin",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(dinrolin)$"
+      }
+    },
+    {
+      "name": "Negar AJP69",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(AJP69)$"
+      }
+    },
+    {
+      "name": "Negar OWL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(OWL)$"
+      }
+    },
+    {
+      "name": "Negar C0RAL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(C0RAL)$"
+      }
+    },
+    {
       "name": "Negar MLH",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

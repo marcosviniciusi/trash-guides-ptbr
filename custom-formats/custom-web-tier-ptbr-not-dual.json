@@ -31,6 +31,33 @@
       }
     },
     {
+      "name": "KALAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KALAX)$"
+      }
+    },
+    {
+      "name": "MemoriadaTV",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MemoriadaTV)$"
+      }
+    },
+    {
+      "name": "C0RAL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(C0RAL)$"
+      }
+    },
+    {
       "name": "MLH",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -181,6 +208,51 @@
       "required": false,
       "fields": {
         "value": "^(MADRUGA)$"
+      }
+    },
+    {
+      "name": "BlueAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BlueAM)$"
+      }
+    },
+    {
+      "name": "OhKara",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OhKara)$"
+      }
+    },
+    {
+      "name": "Neophitus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Neophitus)$"
+      }
+    },
+    {
+      "name": "dinrolin",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(dinrolin)$"
+      }
+    },
+    {
+      "name": "AJP69",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AJP69)$"
       }
     },
     {

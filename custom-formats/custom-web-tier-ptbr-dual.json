@@ -247,6 +247,51 @@
       }
     },
     {
+      "name": "OhKara",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OhKara)$"
+      }
+    },
+    {
+      "name": "Neophitus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Neophitus)$"
+      }
+    },
+    {
+      "name": "dinrolin",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(dinrolin)$"
+      }
+    },
+    {
+      "name": "AJP69",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AJP69)$"
+      }
+    },
+    {
+      "name": "OWL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OWL)$"
+      }
+    },
+    {
       "name": "XerifeWoody",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -316,6 +361,15 @@
       "required": false,
       "fields": {
         "value": "^(GUEIRA)$"
+      }
+    },
+    {
+      "name": "KALAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KALAX)$"
       }
     },
     {
@@ -406,6 +460,24 @@
       "required": false,
       "fields": {
         "value": "^(alfaHD)$"
+      }
+    },
+    {
+      "name": "C0RAL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(C0RAL)$"
+      }
+    },
+    {
+      "name": "BlueAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BlueAM)$"
       }
     },
     {
@@ -1630,6 +1702,15 @@
       "required": false,
       "fields": {
         "value": "^(ZNM)$"
+      }
+    },
+    {
+      "name": "MemoriadaTV",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MemoriadaTV)$"
       }
     },
     {
