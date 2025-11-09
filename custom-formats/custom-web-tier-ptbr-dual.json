@@ -1974,6 +1974,15 @@
         "value": "^(oarton27)$"
       }
     },
+      {
+      "name": "XaR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(XaR)$"
+      }
+    },
     {
       "name": "AFLA",
       "implementation": "ReleaseGroupSpecification",

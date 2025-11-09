@@ -68,6 +68,15 @@
         "value": "^(oarton27)$"
       }
     },
+      {
+      "name": "Negar XaR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(XaR)$"
+      }
+    },
     {
       "name": "Negar MLH",
       "implementation": "ReleaseGroupSpecification",

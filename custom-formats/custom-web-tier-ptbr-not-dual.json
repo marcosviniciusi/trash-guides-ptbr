@@ -21,6 +21,15 @@
         "value": "^(encorebr)$"
       }
     },
+      {
+      "name": "XaR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(XaR)$"
+      }
+    },
     {
       "name": "MLH",
       "implementation": "ReleaseGroupSpecification",
