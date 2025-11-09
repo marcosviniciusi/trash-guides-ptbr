@@ -1985,6 +1985,15 @@
         "value": "^(ADWeb)$"
       }
     },
+      {
+      "name": "Negar BENTHEMEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BENTHEMEN)$"
+      }
+    },
     {
       "name": "Negar AFLA",
       "implementation": "ReleaseGroupSpecification",

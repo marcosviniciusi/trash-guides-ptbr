@@ -21,6 +21,15 @@
         "value": "\\b(Dublado|dub)\\b"
       }
     },
+      {
+      "name": "Negar BENTHEMEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BENTHEMEN)$"
+      }
+    },
     {
       "name": "Language : Brazilian",
       "implementation": "LanguageSpecification",

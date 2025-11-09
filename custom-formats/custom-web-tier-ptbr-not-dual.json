@@ -1957,6 +1957,15 @@
         "value": "^(AFLA)$"
       }
     },
+      {
+      "name": "BENTHEMEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BENTHEMEN)$"
+      }
+    },
     {
       "name": "Tossato",
       "implementation": "ReleaseGroupSpecification",
