@@ -1,4 +1,3 @@
-
 localCustomFormatsPath: /config/custom_formats
 telemetry: true
 whisparrEnabled: false
@@ -10,7 +9,7 @@ lidarrEnabled: false
 radarr:
   ##########################################    Movies   ##########################################
   movies:
-    base_url: RADAR_URL
+    base_url: !secret RADARR_URL
     api_key: !secret RADARR_API_KEY
     
     custom_formats:
@@ -130,7 +129,7 @@ radarr:
           - e77382bcfeba57cb83744c9c5449b401 # 7.1
         assign_scores_to:
           - name: HD
-            score: 35    
+            score: 35     
       ############################ HDR ############################
       - trash_ids:
           - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
@@ -171,7 +170,7 @@ radarr:
           - 25c12f78430a3a23413652cbd1d48d77 # SDR (no WEBDL)
         assign_scores_to:
           - name: HD
-            score: 1
+            score: 10
       ############################ Movies Version ############################
       - trash_ids:
           - 0f12c086e289cf966fa5948eac571f44 # Hybrid
@@ -299,7 +298,7 @@ radarr:
           - 73613461ac2cea99d52c4cd6e177ab82 # HFR
         assign_scores_to:
           - name: HD
-            score: 
+            score: 5
       ############################ BAD GROUPS PT-BR ############################
       - trash_ids:
           - 90a6f9a284dff5103f6346090e6280c8 # LQ
@@ -345,7 +344,7 @@ radarr:
           - f537cf427b64c38c8e36298f657e4828 # Scene
         assign_scores_to:
           - name: HD
-            score: -10000  
+            score: -10000   
       ############################ Tier Premiere ############################                
       - trash_ids:
           - custom-web-tier-ptbr-dual
@@ -439,7 +438,7 @@ radarr:
           - 5caaaa1c08c1742aa4342d8c4cc463f2 # Repack3
         assign_scores_to:
           - name: HD
-            score: 
+            score: 7
       ############################ Streaming Services ############################
       - trash_ids:
           - b3b3a6ac74ecbd56bcdbefa4799fb9df # AMZN
@@ -553,7 +552,7 @@ radarr:
             score: 0
   ##########################################    ANIMES-MOVIES   ##########################################
   animes-movies:
-    base_url: RADARR_URL_ANIMES
+    base_url: !secret RADARR_ANIMES_URL
     api_key: !secret RADARR_ANIMES_API_KEY
     
     custom_formats:
@@ -673,7 +672,7 @@ radarr:
           - e77382bcfeba57cb83744c9c5449b401 # 7.1
         assign_scores_to:
           - name: HD
-            score: 35    
+            score: 35     
       ############################ HDR ############################
       - trash_ids:
           - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
@@ -1076,7 +1075,7 @@ radarr:
 sonarr:
   ##########################################    SERIES   ##########################################
   series:
-    base_url: SONARR_URL
+    base_url: !secret SONARR_URL
     api_key: !secret SONARR_API_KEY
     
     custom_formats:
@@ -1239,7 +1238,7 @@ sonarr:
           - 83304f261cf516bb208c18c54c0adf97 # SDR (no WEBDL)
         assign_scores_to:
           - name: HD
-            score: 1
+            score: 10
       ############################ Series Version ############################
       - trash_ids:
           - 3a4127d8aa781b44120d907f2cd62627 # Hybrid
@@ -1284,7 +1283,7 @@ sonarr:
           - 44e7c4de10ae50265753082e5dc76047 # Repack3
         assign_scores_to:
           - name: HD
-            score: 
+            score: 7
       ############################ CoDECS ############################
       - trash_ids:
           - 15a05bc7c1a36e2b57fd628f8977e2fc # AV1
@@ -1371,7 +1370,7 @@ sonarr:
           - 06d66ab109d4d2eddb2794d21526d140 # Retags
         assign_scores_to:
           - name: HD
-            score: -100000 
+            score: -100000  
       ############################ Tier Premiere ############################
       - trash_ids:
           - custom-web-tier-ptbr-dual # WEB Tier DUAL AUDIO PT-BR
@@ -1432,7 +1431,7 @@ sonarr:
           - 1b3994c551cbb92a2c781af061f4ab44 # SCENE
         assign_scores_to:
           - name: HD
-            score: 
+            score: 0
        ############################ Episores ############################
       - trash_ids:                
           - 4a20cfb76b5f92a8ca22b894b32e71be # Multi-Episode
@@ -1479,7 +1478,7 @@ sonarr:
             score: 75
   ##########################################    ANIMES-TV   ##########################################
   animes-tv:
-    base_url: SONARR_URL_ANIMES
+    base_url: !secret SONARR_ANIMES_URL
     api_key: !secret SONARR_ANIMES_API_KEY
     
     custom_formats:
@@ -1642,7 +1641,7 @@ sonarr:
           - 83304f261cf516bb208c18c54c0adf97 # SDR (no WEBDL)
         assign_scores_to:
           - name: HD
-            score: 1
+            score: 10
       ############################ Tier Premiere ############################
       - trash_ids:
           - custom-web-tier-ptbr-dual # WebTier PT-BR DUAL
@@ -1825,7 +1824,7 @@ sonarr:
           - 026d5aadd1a6b4e550b134cb6c72b3ca # Uncensored
         assign_scores_to:
           - name: HD
-            score: 
+            score: 0
      ############################ Versions ############################
       - trash_ids: 
           - d2d7b8a9d39413da5f44054080e028a3 # V0
