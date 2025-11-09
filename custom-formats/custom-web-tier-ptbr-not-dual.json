@@ -1,11 +1,12 @@
 {
-  "name": "Web Tier PT-BR DUAL",
+  "trash_id": "custom-web-tier-ptbr-not-dual",
+  "name": "Web Tier PT-BR NOT DUAL",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
       "name": "DUAL",
       "implementation": "ReleaseTitleSpecification",
-      "negate": false,
+      "negate": true,
       "required": true,
       "fields": {
         "value": "\\b(DUAL)\\b"
@@ -1506,6 +1507,16 @@
       }
     },
     {
+      "name": "Language: Original",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": -2,
+        "exceptLanguage": false
+      }
+    },
+    {
       "name": "DrABR",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -1731,24 +1742,6 @@
       }
     },
     {
-      "name": "Tossato",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Tossato)$"
-      }
-    },
-    {
-      "name": "iFPD",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(iFPD)$"
-      }
-    },
-    {
       "name": "FreddieGellar",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -1962,6 +1955,15 @@
       "required": false,
       "fields": {
         "value": "^(AFLA)$"
+      }
+    },
+    {
+      "name": "Tossato",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Tossato)$"
       }
     }
   ]

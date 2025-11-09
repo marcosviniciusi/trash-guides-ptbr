@@ -1,0 +1,52 @@
+    quality_profiles:
+      - name: HD
+        reset_unmatched_scores:
+          enabled: true
+        upgrade:
+          allowed: true
+          until_quality: Bluray-1080p
+          until_score: 11000
+        min_format_score: 0
+        quality_sort: top
+        qualities:
+          # 1080p-2160p group
+          - name: 1080p-2160p
+            qualities:
+              - name: Bluray-2160p
+              - name: WEBDL-2160p
+              - name: Bluray-1080p
+              - name: WEBRip-2160p
+              - name: WEBDL-1080p
+              - name: WEBRip-1080p
+          
+          # 720p group
+          - name: 720p
+            qualities:
+              - name: Bluray-720p
+              - name: WEBRip-720p
+              - name: WEBDL-720p
+          
+          # HDTV-all group
+          - name: HDTV-all
+            qualities:
+              - name: HDTV-2160p
+              - name: HDTV-1080p
+              - name: HDTV-720p
+          
+          # Bluray-576p
+          - name: Bluray-576p
+          
+          # Bluray-480p
+          - name: Bluray-480p
+          
+          # WEB 480p group
+          - name: WEB 480p
+            qualities:
+              - name: WEBRip-480p
+              - name: WEBDL-480p
+          
+          # DVD
+          - name: DVD
+          
+          # SDTV
+          - name: SDTV
