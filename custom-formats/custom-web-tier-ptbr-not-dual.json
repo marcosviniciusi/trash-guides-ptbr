@@ -256,6 +256,24 @@
       }
     },
     {
+      "name": "OWL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OWL)$"
+      }
+    },
+    {
+      "name": "DODEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DODEN)$"
+      }
+    },
+    {
       "name": "DM",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

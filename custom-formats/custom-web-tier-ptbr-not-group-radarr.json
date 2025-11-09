@@ -150,6 +150,15 @@
       }
     },
     {
+      "name": "Negar DODEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(DODEN)$"
+      }
+    },
+    {
       "name": "Negar C0RAL",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

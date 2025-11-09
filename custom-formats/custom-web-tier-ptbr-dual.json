@@ -382,6 +382,15 @@
       }
     },
     {
+      "name": "DODEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DODEN)$"
+      }
+    },
+    {
       "name": "santhiago",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
