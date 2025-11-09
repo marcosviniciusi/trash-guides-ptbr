@@ -1995,6 +1995,15 @@
       }
     },
     {
+      "name": "Negar oarton27",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(oarton27)$"
+      }
+    },
+    {
       "name": "Negar AFLA",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

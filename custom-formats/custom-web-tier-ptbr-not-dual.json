@@ -1966,6 +1966,15 @@
         "value": "^(BENTHEMEN)$"
       }
     },
+      {
+      "name": "oarton27",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(oarton27)$"
+      }
+    },
     {
       "name": "Tossato",
       "implementation": "ReleaseGroupSpecification",
