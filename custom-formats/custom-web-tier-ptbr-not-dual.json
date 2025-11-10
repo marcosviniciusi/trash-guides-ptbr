@@ -463,15 +463,6 @@
       }
     },
     {
-      "name": "S74Ll10n",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(S74Ll10n)$"
-      }
-    },
-    {
       "name": "sh4down",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

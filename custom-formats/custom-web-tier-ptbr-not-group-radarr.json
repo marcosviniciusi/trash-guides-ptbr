@@ -519,15 +519,6 @@
       }
     },
     {
-      "name": "Negar S74Ll10n",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(S74Ll10n)$"
-      }
-    },
-    {
       "name": "Negar sh4down",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
