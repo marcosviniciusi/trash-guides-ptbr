@@ -23,7 +23,6 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
   - [Principais Benefícios](#-principais-benefícios)
   - [Como Configurar?](#como-configura-lo)
     - [Pré-Requisitos](#pré-requisitos)
-    - [Docker Compose - Criando Arquivo Secrets.yaml](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-criando-iac-e-arquivo-secretsyaml)
     - [Docker Compose - Execução Manual](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#docker-compose---execu%C3%A7%C3%A3o-manual)
     - [Docker Compose - Execução Automatica](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#docker-compose---execu%C3%A7%C3%A3o-agendada-com-ofelia)
     - [Kubernetes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#%EF%B8%8F-kubernetes)
