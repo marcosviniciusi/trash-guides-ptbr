@@ -273,6 +273,15 @@ mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 ```
+Obs: Ja efetua o download do docker compose. e também ja tem criado o script para baixar os custom formats, caso queira baixa-lo, use este script abaixo:
+
+```bash
+mkdir -p configarr/{config,secrets,custom_formats}
+cd configarr
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
+chmod +x download-custom-formats.sh
+```
 
 ### 2. Criar secrets.yml
 
@@ -426,7 +435,7 @@ mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
 ```
-
+Obs: Ja efetua o download do docker compose. 
 ### 2. Criar secrets.yml
 
 ```bash
