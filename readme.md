@@ -7,14 +7,14 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
 
 ## 📋 Índice
 
-- [Sobre](## 🎯 Sobre)
-- [Custom Formats Disponíveis](## 📦 Custom Formats Disponíveis)
-- [Instalação Manual](## 🔧 Instalação Manual)
-- [🤖 O que é o Configarr?](## 🤖 O que é o Configarr?)
-  - [Docker Compose](## 🐳 Docker Compose)
-  - [Kubernetes](##kubernetes)
-- [Estrutura de Scores](##estrutura-de-scores)
-- [Contribuindo](##contribuindo)
+- [Sobre](# 🎯 Sobre)
+- [Custom Formats Disponíveis](# 📦 Custom Formats Disponíveis)
+- [Instalação Manual](# 🔧 Instalação Manual)
+- [🤖 O que é o Configarr?](# 🤖 O que é o Configarr?)
+  - [Docker Compose](# 🐳 Docker Compose)
+  - [Kubernetes](#kubernetes)
+- [Estrutura de Scores](#estrutura-de-scores)
+- [Contribuindo](#contribuindo)
 
 ## 🎯 Sobre
 
