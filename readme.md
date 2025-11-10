@@ -68,7 +68,8 @@ trash-guides-ptbr/
 │   ├── custom-animes-toonshub-pt-radarr.json          # Legendado ToonsHub PT-PT (Radarr)
 │   ├── custom-animes-toonshub-pt-sonarr.json          # Legendado ToonsHub PT-PT (Sonarr)
 │   ├── custom-animes-toonshub-ptbr-radarr.json        # Legendado Legendado ToonsHub PT-BR (Radarr)
-│   └── custom-animes-toonshub-ptbr-sonarr.json        # Legendado ToonsHub PT-BR (Sonarr)
+│   ├── custom-animes-toonshub-ptbr-sonarr.json        # Legendado ToonsHub PT-BR (Sonarr)
+│   └── custom-bad-pt-br-groups.json                   # Grupos PT-Br Banidos
 └── iac/                                               # Infraestrutura como Código
     ├── docker-compose/ 
     │   ├── automatico/                                
@@ -400,6 +401,8 @@ download_format "custom-animes-not-original-sonarr.json"
 download_format "custom-animes-not-portuguese-sonarr.json"
 download_format "custom-animes-toonshub-pt-sonarr.json"
 download_format "custom-animes-toonshub-ptbr-sonarr.json"
+# Bad pt-Br Groups
+download_format "custom-bad-pt-br-groups.json"
 
 echo "✅ Custom formats baixados com sucesso!"
 EOF
@@ -542,6 +545,7 @@ services:
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json -o /config/custom_formats/custom-animes-not-portuguese-radarr.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-bad-pt-br-groups.json -o /config/custom_formats/custom-bad-pt-br-groups.json
       echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
@@ -707,6 +711,8 @@ spec:
                   download_file "custom-animes-not-portuguese-radarr.json"
                   download_file "custom-animes-toonshub-pt-radarr.json"
                   download_file "custom-animes-toonshub-ptbr-radarr.json"
+                  # Bad pt-Br Groups
+                  download_file "custom-bad-pt-br-groups.json"
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/

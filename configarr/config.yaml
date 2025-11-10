@@ -301,6 +301,11 @@ radarr:
             score: 5
       ############################ BAD GROUPS PT-BR ############################
       - trash_ids:
+          - custom-bad-pt-br-groups # Bad Pt-BR Groups
+        assign_scores_to:
+          - name: HD
+            score: -10000
+      - trash_ids:
           - 90a6f9a284dff5103f6346090e6280c8 # LQ
         assign_scores_to:
           - name: HD
@@ -795,7 +800,13 @@ radarr:
           - custom-animes-toonshub-pt-radarr
         assign_scores_to:
           - name: HD
-            score: 700000         
+            score: 700000
+      ############################ UNWANTED ############################
+      - trash_ids:
+          - custom-bad-pt-br-groups # Bad Pt-BR Groups
+        assign_scores_to:
+          - name: HD
+            score: -10000  
       - trash_ids:
           - fb3ccc5d5cc8f77c9055d4cb4561dded # Anime BD Tier 01 (Top SeaDex Muxers)
         assign_scores_to:
@@ -1346,6 +1357,11 @@ sonarr:
           - name: HD
             score: 5
       ############################ BAD GROUPS PT-BR ############################
+      - trash_ids:
+          - custom-bad-pt-br-groups # Bad Pt-BR Groups
+        assign_scores_to:
+          - name: HD
+            score: -100000
       - trash_ids:                
           - 9c11cd3f07101cdba90a2d81cf0e56b4 # LQ
         assign_scores_to:
@@ -1740,6 +1756,11 @@ sonarr:
           - name: HD
             score: -100000                                
       ############################ UNWANTED ############################
+      - trash_ids:
+          - custom-bad-pt-br-groups # Bad Pt-BR Groups
+        assign_scores_to:
+          - name: HD
+            score: -10000
       - trash_ids:
           - 949c16fe0a8147f50ba82cc2df9411c9 # Anime BD Tier 1
         assign_scores_to:

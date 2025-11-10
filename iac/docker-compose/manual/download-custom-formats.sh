@@ -33,4 +33,7 @@ download_format "custom-animes-not-portuguese-sonarr.json"
 download_format "custom-animes-toonshub-pt-sonarr.json"
 download_format "custom-animes-toonshub-ptbr-sonarr.json"
 
+# Bad pt-Br Groups
+download_format "custom-bad-pt-br-groups.json"
+
 echo "✅ Custom formats baixados com sucesso!"
