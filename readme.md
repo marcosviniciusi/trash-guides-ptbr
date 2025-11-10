@@ -192,7 +192,7 @@ EOF
 ### 3. Criar config.yml
 ```bash
 # Baixe o exemplo completo do repositório
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/config.yml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/config.yml \
   -o config/config.yml
 ```
 
@@ -227,49 +227,49 @@ echo "Downloading custom formats..."
 mkdir -p custom_formats
 
 # Radarr Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-dual.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json \
   -o custom_formats/custom-web-tier-ptbr-dual.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
   -o custom_formats/custom-web-tier-ptbr-not-dual.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json \
   -o custom_formats/custom-web-tier-ptbr-not-group-radarr.json
 
 # Sonarr Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json \
   -o custom_formats/custom-web-tier-ptbr-not-group-sonarr.json
 
 # Animes Sonarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-brazilian-sonarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-sonarr.json \
   -o custom_formats/custom-animes-not-brazilian-sonarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-original-sonarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-sonarr.json \
   -o custom_formats/custom-animes-not-original-sonarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-portuguese-sonarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-sonarr.json \
   -o custom_formats/custom-animes-not-portuguese-sonarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-pt-sonarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-sonarr.json \
   -o custom_formats/custom-animes-toonshub-pt-sonarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json \
   -o custom_formats/custom-animes-toonshub-ptbr-sonarr.json
 
 # Animes Radarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-brazilian-radarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-radarr.json \
   -o custom_formats/custom-animes-not-brazilian-radarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-original-radarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-radarr.json \
   -o custom_formats/custom-animes-not-original-radarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-portuguese-radarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json \
   -o custom_formats/custom-animes-not-portuguese-radarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-pt-radarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json \
   -o custom_formats/custom-animes-toonshub-pt-radarr.json
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json \
   -o custom_formats/custom-animes-toonshub-ptbr-radarr.json
 
 echo "Custom formats downloaded successfully!"
@@ -314,20 +314,20 @@ services:
     command: >
       sh -c "
       mkdir -p /config/custom_formats &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-dual.json -o /config/custom_formats/custom-web-tier-ptbr-dual.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-dual.json -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-brazilian-sonarr.json -o /config/custom_formats/custom-animes-not-brazilian-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-original-sonarr.json -o /config/custom_formats/custom-animes-not-original-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-portuguese-sonarr.json -o /config/custom_formats/custom-animes-not-portuguese-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-pt-sonarr.json -o /config/custom_formats/custom-animes-toonshub-pt-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-brazilian-radarr.json -o /config/custom_formats/custom-animes-not-brazilian-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-original-radarr.json -o /config/custom_formats/custom-animes-not-original-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-not-portuguese-radarr.json -o /config/custom_formats/custom-animes-not-portuguese-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-pt-radarr.json -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json -o /config/custom_formats/custom-web-tier-ptbr-dual.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-sonarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-sonarr.json -o /config/custom_formats/custom-animes-not-brazilian-sonarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-sonarr.json -o /config/custom_formats/custom-animes-not-original-sonarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-sonarr.json -o /config/custom_formats/custom-animes-not-portuguese-sonarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-sonarr.json -o /config/custom_formats/custom-animes-toonshub-pt-sonarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-sonarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-radarr.json -o /config/custom_formats/custom-animes-not-brazilian-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-radarr.json -o /config/custom_formats/custom-animes-not-original-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json -o /config/custom_formats/custom-animes-not-portuguese-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json &&
+      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json &&
       echo 'Custom formats downloaded successfully!'
       "
     volumes:
@@ -450,10 +450,10 @@ spec:
                   echo "Downloading custom formats..."
                   mkdir -p /config/custom_formats
                   
-                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-dual.json \
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json \
                     -o /config/custom_formats/custom-web-tier-ptbr-dual.json
                   
-                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
                     -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json
                   
                   # [Adicione todos os outros curls aqui]
