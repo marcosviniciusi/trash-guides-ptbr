@@ -1,6 +1,6 @@
 # TRaSH Guides PT-BR - Custom Formats
 
-Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional e dublagens/legendas PT-BR.
+Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional e dublagens(DUAL-AUDIO)/legendas PT-BR.
 
 [![Configarr Compatible](https://img.shields.io/badge/Configarr-Compatible-green)](https://github.com/raydak-labs/configarr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
