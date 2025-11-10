@@ -256,7 +256,6 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ### Pré-requisitos
 
 - [Criar o Profile com o nome "HD"](#criando-o-profile-com-nome-hd)
-- [Crie o IAC e Arquivo Secrets.yaml](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-criando-iac-e-arquivo-secretsyaml)
 - API Keys do Radarr/Sonarr (encontradas em Settings → General → Security)
 - Docker ou Kubernetes instalado
 
