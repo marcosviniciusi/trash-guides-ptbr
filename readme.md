@@ -920,6 +920,11 @@ R: Ofelia é um scheduler de jobs para Docker similar ao cron. Ele monitora cont
 **P: Por que os scores de anime são tão altos?**  
 R: Para garantir que releases com PT-BR sempre tenham prioridade absoluta sobre qualquer outra consideração de qualidade. Animes DUAL AUDIO/legendados em PT-BR são raros, então priorizamos sua captura.
 
+**P: Porque há grupos de Releases pt-BR banidos?**  
+R: Alguns grupos de lançamento são amplamente conhecidos por apresentarem materiais de baixa qualidade ou práticas desonestas, como a retag, onde renomeiam os arquivos de forma enganosa para parecerem de uma qualidade superior à real. Esses grupos não têm permissão para realizar envios em alguns tracker pt-br privados, e há razões claras para isso. decisão é manter o projeto com mesmas praticas destes trackers.
+Entre as práticas comuns desses grupos estão a inserção de propagandas indesejadas no arquivo de media info, envio de BD Autorado, envio de versões com nomenclatura falsa, como rotular um arquivo como REMUX quando, na verdade, é apenas um encode de qualidade inferior. Outros exemplos incluem classificar arquivos WEBRip como WEB-DL para dar a impressão de uma fonte mais refinada, além de outros envios que fogem completamente dos padrões estabelecidos, como arquivos com marca d'água, legendas com propagandas, upscaling artificial que deteriora a qualidade, e spam de links ou materiais.
+Caso queira baixa-los, basta remover do Config.yaml e também do scripts para baixa-lo. fica a critério, em animes, muitas vezes devido a dificuldade de encontrar fontes com conteúdo pt-Br, deixei uma penalização mais branda, mas se quiser aumentar a penalização, basta incrementa-las para -100000.
+
 **P: Posso usar em produção?**  
 R: Sim! O Configarr e estes custom formats são usados por muitos usuários em produção. Recomendamos testar primeiro em um ambiente de staging.
 
