@@ -4,4 +4,5 @@ namespace: arr
 resources:
   - configarr-config.yaml
   - configarr-cronjob.yaml
-  - configarr-pvc.yml
+  - configarr-pvc.yaml
+  - configarr-secrets.yaml
