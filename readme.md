@@ -285,8 +285,8 @@ EOF
 ```
 
 > **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
-
-### 3. Baixar config.yml
+## Docker Compose - Execução Manual
+### 1. Baixar config.yml
 
 ```bash
 # Opção 1: Baixar diretamente do repositório
@@ -342,7 +342,7 @@ sonarr:
 # [Veja config.yml completo no repositório]
 ```
 
-### 4. Script de Download dos Custom Formats
+### 2. Script de Download dos Custom Formats
 
 ```bash
 cat > download-custom-formats.sh << 'EOF'
@@ -390,7 +390,7 @@ chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
 ```
 
-### 5. Docker Compose - Execução Manual
+### 3. Docker Compose
 
 ```yaml
 version: '3.8'
@@ -415,8 +415,63 @@ volumes:
   app-data:
 ```
 
-### 6. Docker Compose - Execução Agendada (com Ofelia)
+## Docker Compose - Execução Agendada (com Ofelia)
+### 1. Baixar config.yml
 
+```bash
+# Opção 1: Baixar diretamente do repositório
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config.yaml \
+  -o config/config.yml
+
+# Opção 2: Para configuração COM HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-HDR-ON.yaml \
+  -o config/config.yml
+```
+
+**Ou crie manualmente (exemplo simplificado):**
+
+```yaml
+localCustomFormatsPath: /config/custom_formats
+telemetry: true
+
+radarr:
+  movies:
+    base_url: !secret RADARR_URL
+    api_key: !secret RADARR_API_KEY
+    
+    quality_definition:
+      type: movie
+    
+    custom_formats:
+      # TRaSH Guides oficiais (incluídos automaticamente)
+      - trash_ids:
+          - custom-web-tier-ptbr-dual
+          - custom-web-tier-ptbr-not-dual
+          - custom-web-tier-ptbr-not-group-radarr
+        assign_scores_to:
+          - name: HD
+            score: 6000
+
+sonarr:
+  series:
+    base_url: !secret SONARR_URL
+    api_key: !secret SONARR_API_KEY
+    
+    quality_definition:
+      type: series
+    
+    custom_formats:
+      - trash_ids:
+          - custom-web-tier-ptbr-dual
+          - custom-web-tier-ptbr-not-dual
+          - custom-web-tier-ptbr-not-group-sonarr
+        assign_scores_to:
+          - name: HD
+            score: 7000
+
+# [Veja config.yml completo no repositório]
+```
+### 2. Criar IAC
 Para sincronização automática dos custom formats e execução agendada:
 
 ```yaml
@@ -488,7 +543,7 @@ volumes:
   app-data:
 ```
 
-### 7. Executar
+### 3. Executar
 
 ```bash
 # Execução manual (uma vez)
