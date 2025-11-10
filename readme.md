@@ -182,6 +182,7 @@ radarr:
 - ✅ Fácil de fazer backup
 - ✅ Documentação integrada
 - ✅ Reproduzível em qualquer ambiente
+- ✅ **Configuração já com os trashguides completo no config.yaml encontrado no diretorio configarr**
 
 #### 2. **Sincronização Automática**
 
