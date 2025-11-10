@@ -52,19 +52,19 @@ trash-guides-ptbr/
 │   └── config-HDR-ON.yaml                             # Configuração completa COM HDR
 ├── custom-formats/                                    # Todos os custom formats
 │   ├── custom-web-tier-ptbr-dual.json                 # DUAL-AUDIO (Global)
-│   ├── custom-web-tier-ptbr-not-dual.json             # Legendado/Dublado PT-BR (Global)
-│   ├── custom-web-tier-ptbr-not-group-radarr.json     # Releases PT-BR não mapeados (Radarr)
-│   ├── custom-web-tier-ptbr-not-group-sonarr.json     # Releases PT-BR não mapeados (Sonarr)
+│   ├── custom-web-tier-ptbr-not-dual.json             # Legendado PT-BR (Global)
+│   ├── custom-web-tier-ptbr-not-group-radarr.json     # Legendado PT-BR não mapeados (Radarr)
+│   ├── custom-web-tier-ptbr-not-group-sonarr.json     # Legendado PT-BR não mapeados (Sonarr)
 │   ├── custom-animes-not-brazilian-radarr.json        # Penaliza animes sem PT-BR (Radarr)
 │   ├── custom-animes-not-brazilian-sonarr.json        # Penaliza animes sem PT-BR (Sonarr)
 │   ├── custom-animes-not-original-radarr.json         # Penaliza áudio não original (Radarr)
 │   ├── custom-animes-not-original-sonarr.json         # Penaliza áudio não original (Sonarr)
 │   ├── custom-animes-not-portuguese-radarr.json       # Penaliza sem português (Radarr)
 │   ├── custom-animes-not-portuguese-sonarr.json       # Penaliza sem português (Sonarr)
-│   ├── custom-animes-toonshub-pt-radarr.json          # ToonsHub PT-PT (Radarr)
-│   ├── custom-animes-toonshub-pt-sonarr.json          # ToonsHub PT-PT (Sonarr)
-│   ├── custom-animes-toonshub-ptbr-radarr.json        # ToonsHub PT-BR (Radarr)
-│   └── custom-animes-toonshub-ptbr-sonarr.json        # ToonsHub PT-BR (Sonarr)
+│   ├── custom-animes-toonshub-pt-radarr.json          # Legendado ToonsHub PT-PT (Radarr)
+│   ├── custom-animes-toonshub-pt-sonarr.json          # Legendado ToonsHub PT-PT (Sonarr)
+│   ├── custom-animes-toonshub-ptbr-radarr.json        # Legendado Legendado ToonsHub PT-BR (Radarr)
+│   └── custom-animes-toonshub-ptbr-sonarr.json        # Legendado ToonsHub PT-BR (Sonarr)
 └── iac/                                               # Infraestrutura como Código
     ├── docker-compose/                                
     │   └── docker-compose.yaml                        # Exemplo Docker Compose
@@ -86,20 +86,20 @@ trash-guides-ptbr/
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +5500 |
-| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados | +5000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +5500 |
+| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados (legendado) | +5000 |
 
 #### Animes (Radarr)
 
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +55000000 |
-| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados | +50000000 |
-| **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR | +750000 |
-| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT-PT | +700000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +55000000 |
+| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados (legendado) | +50000000 |
+| **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR (legendado) | +750000 |
+| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT-PT (legendado) | +700000 |
 | **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
-| **custom-animes-not-original-radarr** | Penaliza áudio não original (duplas legendas, etc.) | -100000 |
+| **custom-animes-not-original-radarr** | Penaliza áudio não original | -100000 |
 | **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
 
 ### 📺 Sonarr (Séries)
@@ -109,18 +109,18 @@ trash-guides-ptbr/
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados | +6000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +6500 |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados (legendado) | +6000 |
 
 #### Animes (Sonarr)
 
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +60000000 |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +55000000 |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados | +50000000 |
-| **custom-animes-toonshub-ptbr-sonarr** | Prioriza ToonsHub PT-BR | +750000 |
-| **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT-PT | +700000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +55000000 |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados (legendado) | +50000000 |
+| **custom-animes-toonshub-ptbr-sonarr** | Prioriza ToonsHub PT-BR (legendado) | +750000 |
+| **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT-PT (legendado) | +700000 |
 | **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -10000 |
 | **custom-animes-not-original-sonarr** | Penaliza áudio não original | -10000 |
 | **custom-animes-not-portuguese-sonarr** | Penaliza sem português | -10000 |
