@@ -508,7 +508,6 @@ services:
     command: >
       sh -c "
       echo '📥 Baixando custom formats...' &&
-      mkdir -p /config/custom_formats &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json -o /config/custom_formats/custom-web-tier-ptbr-dual.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-radarr.json &&
@@ -526,7 +525,7 @@ services:
       echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
-      - custom-formats:/config
+      - custom-formats:/config/custom-formats
     restart: "no"
   
   # Configarr
@@ -539,7 +538,7 @@ services:
     volumes:
       - ./config/config.yml:/app/config/config.yml:ro
       - ./secrets/secrets.yml:/app/config/secrets.yml:ro
-      - custom-formats:/config:ro
+      - custom-formats:/config/custom-formats:ro
       - app-data:/app/repos
     environment:
       - LOG_STACKTRACE=true
