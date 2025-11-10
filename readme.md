@@ -283,7 +283,7 @@ curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/r
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
 ```
-Obs 2: Se seguir o este segundo script, Após executar o passo 2 e passo 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#4-executar).
+Obs 2: Se seguir o este segundo script, Siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
 
 ### 2. Criar secrets.yml
 
@@ -437,7 +437,7 @@ mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
 ```
-Obs: Ja efetua o download do docker compose. 
+Obs: Ja efetua o download do arquivo docker-compose.yaml, siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
 ### 2. Criar secrets.yml
 
 ```bash
@@ -455,7 +455,7 @@ EOF
 ```
 
 > **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
-### 2. Baixar config.yml com todos Custom Formats do trashguide e Scores
+### 3. Baixar config.yml com todos Custom Formats do trashguide e Scores
 
 ```bash
 # Opção 1: Baixar diretamente do repositório
@@ -510,7 +510,7 @@ sonarr:
 
 # [Veja config.yml completo no repositório]
 ```
-### 3. Criar IAC com automatização
+### 4. Criar IAC com automatização
 Para sincronização automática dos custom formats e execução agendada:
 
 ```yaml
@@ -581,7 +581,7 @@ volumes:
   app-data:
 ```
 
-### 4. Executar
+### 5. Executar
 
 ```bash
 # Execução manual (uma vez)
