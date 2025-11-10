@@ -144,7 +144,7 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
    - **Qualities**: Selecione as qualidades desejadas (recomendado: WEBDL-1080p, WEBRip-1080p, Bluray-1080p, Remux-1080p)
    - **Minimum Custom Format Score**: `0` (ou deixe em branco)
 4. Clique em **Save**
-5. **Opcional Altamente Recomendavel** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) 
+5. **Opcional Altamente Recomendavel:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) 
   - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
 ```
 {Series TitleYear} - S{season:00}E{episode:00} - {Episode CleanTitle:90} {[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
