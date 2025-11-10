@@ -1,6 +1,6 @@
 # TRaSH Guides PT-BR - Custom Formats
 
-Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional e dublagens (DUAL-AUDIO)/legendas PT-BR.
+Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional com (DUAL-AUDIO)/legendas PT-BR.
 
 [![Configarr Compatible](https://img.shields.io/badge/Configarr-Compatible-green)](https://github.com/raydak-labs/configarr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -34,7 +34,7 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
 
 Este repositório contém **Custom Formats personalizados** desenvolvidos especificamente para a comunidade brasileira, priorizando:
 
-- ✅ **Conteúdo em PT-BR**: Dublagens e legendas em português brasileiro
+- ✅ **Conteúdo em PT-BR**: Releases DUAL Audio/legendados em português brasileiro
 - ✅ **Grupos confiáveis**: Releases de grupos brasileiros e portugueses reconhecidos
 - ✅ **Qualidade otimizada**: Filtros específicos para garantir qualidade adequada
 - ✅ **Foco em animes**: Formatos especializados para conteúdo japonês com PT-BR
@@ -799,7 +799,7 @@ R: Não, são apenas recomendações baseadas em testes. Ajuste conforme suas pr
 R: Ofelia é um scheduler de jobs para Docker similar ao cron. Ele monitora containers com labels específicas e executa comandos baseado em agendamentos cron, sem necessidade de crontab do host.
 
 **P: Por que os scores de anime são tão altos?**  
-R: Para garantir que releases com PT-BR sempre tenham prioridade absoluta sobre qualquer outra consideração de qualidade. Animes dublados/legendados em PT-BR são raros, então priorizamos sua captura.
+R: Para garantir que releases com PT-BR sempre tenham prioridade absoluta sobre qualquer outra consideração de qualidade. Animes DUAL AUDIO/legendados em PT-BR são raros, então priorizamos sua captura.
 
 **P: Posso usar em produção?**  
 R: Sim! O Configarr e estes custom formats são usados por muitos usuários em produção. Recomendamos testar primeiro em um ambiente de staging.
