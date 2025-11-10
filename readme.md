@@ -64,7 +64,7 @@ Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-gui
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +60000000 (Animes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 (Séries) / +55000000 (Animes) |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +55000000 (Animes) |
 | **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +50000000 (Animes) |
 | **custom-animes-toonshub-ptbr-sonarr** | Prioriza ToonsHub PT-BR | +750000 |
 | **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT | +700000 |
@@ -80,7 +80,7 @@ Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-gui
 
 Antes de configurar os custom formats, você precisa ter um Quality Profile chamado **"HD"** (ou ajustar o nome no `config.yml`).
 
-### Criado O Profile com Nome "HD" ###
+# Crie O Profile com Nome "HD" ###
 
 #### No Radarr/Sonarr:
 
@@ -104,6 +104,11 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 ## 🤖 O que é o Configarr?
 
 [Configarr](https://github.com/raydak-labs/configarr) é uma ferramenta de automação e sincronização para Radarr e Sonarr que permite gerenciar **Custom Formats**, **Quality Definitions** e **Quality Profiles** através de arquivos de configuração (YAML).
+
+## Vantagens?
+
+O Arquivo de configuração já incluido no reposótorio, cria os outros custom formats que se tornam uteis na filtragem da qualidade do relese ( Audio, HDR e etc...), e ja faz de forma automática, deixando a experiencia melhor na automação de suas apps.
+
 
 ### Como funciona?
 
