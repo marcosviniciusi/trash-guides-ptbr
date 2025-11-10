@@ -74,7 +74,8 @@ trash-guides-ptbr/
     │   ├── automatico/                                
     │   │   └── docker-compose.yaml                    # Docker Compose Automatico
     │   └── manual/
-    │       └── docker-compose.yaml                    # Docker Compose Manual
+    │       ├── docker-compose.yaml                    # Docker Compose Manual
+    │       └── download-custom-formats.sh             # Bash Downloads Custom Profiles
     └── k8s/    
         └── configarr/                                 # Manifestos Kubernetes
             ├── configarr-config.yaml
