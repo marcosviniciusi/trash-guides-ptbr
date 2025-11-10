@@ -27,6 +27,40 @@ Este repositório contém Custom Formats personalizados para priorizar:
 
 Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-guides.info/), não substitutos.
 
+## 📁 Estrutura do Repositório
+```
+trash-guides-ptbr/
+├── README.md
+├── configarr/
+│   ├── config.yaml                                    # Exemplo de Pronto configuração Configarr SEM HDR
+│   └── config-HDR-ON.yaml                             # Exemplo de Pronto configuração Configarr COM HDR
+├── custom-formats/                                    # Todos os custom formats
+│   ├── custom-web-tier-ptbr-dual.json                 # DUAL-AUDIO GLOBAL
+│   ├── custom-web-tier-ptbr-not-dual.json             # Legendado GLOBAL
+│   ├── custom-web-tier-ptbr-not-group-radarr.json     # Legendado Sem Releases Radarr
+│   ├── custom-web-tier-ptbr-not-group-sonarr.json     # Legendado Sem Releases Sonarr
+│   ├── custom-animes-not-brazilian-radarr.json        # Negar Animes sem Audio/Legenda PT-BR Radarr
+│   ├── custom-animes-not-brazilian-sonarr.json        # Negar Animes sem Audio/Legenda PT-BR Sonarr
+│   ├── custom-animes-not-original-radarr.json         # Negar Animes sem Audio Original Radarr
+│   ├── custom-animes-not-original-sonarr.json         # Negar Animes sem Audio Original Sonarr
+│   ├── custom-animes-not-portuguese-radarr.json       # Negar Animes sem Audio/Legenda PT-PT Radarr
+│   ├── custom-animes-not-portuguese-sonarr.json       # Negar Animes sem Audio/Legenda PT-PT Sonarr
+│   ├── custom-animes-toonshub-pt-radarr.json          # Permitir Releases do Toonshub com audio/legenda PT-PT Radarr
+│   ├── custom-animes-toonshub-pt-sonarr.json          # Permitir Releases do Toonshub com audio/legenda PT-PT Sonarr
+│   ├── custom-animes-toonshub-ptbr-radarr.json        # Permitir Releases do Toonshub com audio/legenda PT-BR radarr
+│   └── custom-animes-toonshub-ptbr-sonarr.json        # Permitir Releases do Toonshub com audio/legenda PT-BR Sonarr
+└── iac/                                               # Path IAC
+    ├── docker-compose/                                # IAC Docker-Compose
+    │    └── docker-compose.yaml                        
+    └──  k8s/    
+         └── configarr/                                # Manifestos K8S
+            ├── configarr-config.yaml
+            ├── configarr-cronjob.yaml
+            ├── configarr-pvc.yaml
+            ├── configarr-secrets.yaml
+            └── kustomization.yaml
+```
+
 ## 📦 Custom Formats Disponíveis
 
 ### 🎬 Radarr (Filmes)
@@ -553,32 +587,6 @@ ofelia.job-exec.configarr-sync.schedule: "0 14 * * 0"
 schedule: "0 2 * * *"      # Diariamente às 2h
 schedule: "0 */6 * * *"    # A cada 6 horas
 schedule: "0 14 * * 0"     # Toda semana no domingo às 14h
-```
-
-## 📁 Estrutura do Repositório
-```
-trash-guides-ptbr/
-├── README.md                                      # Este arquivo
-├── config.yml                                     # Exemplo de configuração Configarr
-├── docker-compose.yml                             # Docker Compose exemplo
-├── custom-formats/                                # Todos os custom formats
-│   ├── custom-web-tier-ptbr-dual.json
-│   ├── custom-web-tier-ptbr-not-dual.json
-│   ├── custom-web-tier-ptbr-not-group-radarr.json
-│   ├── custom-web-tier-ptbr-not-group-sonarr.json
-│   ├── custom-animes-not-brazilian-radarr.json
-│   ├── custom-animes-not-brazilian-sonarr.json
-│   ├── custom-animes-not-original-radarr.json
-│   ├── custom-animes-not-original-sonarr.json
-│   ├── custom-animes-not-portuguese-radarr.json
-│   ├── custom-animes-not-portuguese-sonarr.json
-│   ├── custom-animes-toonshub-pt-radarr.json
-│   ├── custom-animes-toonshub-pt-sonarr.json
-│   ├── custom-animes-toonshub-ptbr-radarr.json
-│   └── custom-animes-toonshub-ptbr-sonarr.json
-└── kubernetes/
-    ├── configarr-cronjob.yaml
-    └── infisical-secret.yaml
 ```
 
 ## 🤝 Contribuindo
