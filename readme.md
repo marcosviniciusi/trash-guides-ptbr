@@ -398,10 +398,10 @@ docker-compose restart configarr
 
 Crie um arquivo `secrets.yml`:
 ```yaml
-SONARR_URL: "http://sonarr.default.svc.cluster.local:8989"
-RADARR_URL: "http://radarr.default.svc.cluster.local:7878"
-SONARR_ANIMES_URL: "http://sonarr-animes.default.svc.cluster.local:8990"
-RADARR_ANIMES_URL: "http://radarr-animes.default.svc.cluster.local:7879"
+SONARR_URL: "http://sonarr.NAMESPACE.svc.cluster.local:8989"
+RADARR_URL: "http://radarr.NAMESPACE.svc.cluster.local:7878"
+SONARR_ANIMES_URL: "http://sonarr-animes.NAMESPACE.svc.cluster.local:8990"
+RADARR_ANIMES_URL: "http://radarr-animes.NAMESPACE.svc.cluster.local:7879"
 
 SONARR_API_KEY: "sua-api-key-aqui"
 RADARR_API_KEY: "sua-api-key-aqui"
@@ -414,12 +414,12 @@ RADARR_ANIMES_API_KEY: "sua-api-key-animes-aqui"
 # Criar ConfigMap
 kubectl create configmap configarr-config \
   --from-file=config.yml \
-  -n arr
+  -n NAMESPACE
 
 # Criar Secret
 kubectl create secret generic configarr \
   --from-literal=secrets_yml="$(cat secrets.yml)" \
-  -n arr
+  -n NAMESPACE
 
 # Ou via Infisical (recomendado)
 kubectl apply -f infisical-secret.yaml
@@ -431,7 +431,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: configarr-sync
-  namespace: arr
+  namespace: NAMESPACE
 spec:
   schedule: "0 2 * * *"  # Todo dia às 2h da manhã
   successfulJobsHistoryLimit: 1
@@ -502,13 +502,13 @@ spec:
 kubectl apply -f configarr-cronjob.yaml
 
 # Testar manualmente
-kubectl create job --from=cronjob/configarr-sync configarr-test -n arr
+kubectl create job --from=cronjob/configarr-sync configarr-test -n NAMESPACE
 
 # Ver logs
-kubectl logs -f job/configarr-test -n arr
+kubectl logs -f job/configarr-test -n NAMESPACE
 
 # Ver status
-kubectl get cronjob configarr-sync -n arr
+kubectl get cronjob configarr-sync -n NAMESPACE
 ```
 
 ---
