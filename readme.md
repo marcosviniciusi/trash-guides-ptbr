@@ -127,7 +127,7 @@ trash-guides-ptbr/
 | **custom-animes-not-original-sonarr** | Penaliza áudio não original | -10000 |
 | **custom-animes-not-portuguese-sonarr** | Penaliza sem português | -10000 |
 
-## 🔧 Instalação Manual
+## 🔧 Configurando os Quality Profiles
 
 ### Pré-requisito: Criar Quality Profile "HD"
 
