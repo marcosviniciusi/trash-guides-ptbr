@@ -289,7 +289,7 @@ EOF
 
 > **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
 ## Docker Compose - Execução Manual
-### 1. Baixar config.yml
+### 1. Baixar config.yml com todos Custom Formats do trashguide e Scores
 
 ```bash
 # Opção 1: Baixar diretamente do repositório
@@ -419,7 +419,7 @@ volumes:
 ```
 
 ## Docker Compose - Execução Agendada (com Ofelia)
-### 1. Baixar config.yml
+### 1. Baixar config.yml com todos Custom Formats do trashguide e Scores
 
 ```bash
 # Opção 1: Baixar diretamente do repositório
