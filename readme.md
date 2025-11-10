@@ -156,7 +156,6 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
   - [Sonarr Animes](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#anime)
 ```
 {Series TitleYear} - S{season:00}E{episode:00} - {absolute:000} - {Episode CleanTitle:90} {[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{MediaInfo AudioLanguages}{[MediaInfo VideoDynamicRangeType]}[{Mediainfo VideoCodec }{MediaInfo VideoBitDepth}bit]{-Release Group}
-### Adicionando Manualmente os Custom Formats
 ```
   - [Radarr Animes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
 ```
