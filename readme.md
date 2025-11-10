@@ -168,7 +168,7 @@ docker run ghcr.io/raydak-labs/configarr:latest
 - [Configarr](https://github.com/raydak-labs/configarr) instalado
 - API Keys do Radarr/Sonarr
 - Docker ou Kubernetes
-
+- iac já disponivel no diretório "iac".
 ---
 
 ## 🐳 Docker Compose
