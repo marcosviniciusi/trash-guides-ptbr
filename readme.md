@@ -42,8 +42,8 @@ Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-gui
 trash-guides-ptbr/
 ├── README.md
 ├── configarr/
-│   ├── config.yaml                                    # Exemplo de Pronto configuração Configarr SEM HDR
-│   └── config-HDR-ON.yaml                             # Exemplo de Pronto configuração Configarr COM HDR
+│   ├── config.yaml                                    # Configuração Completa Configarr SEM HDR
+│   └── config-HDR-ON.yaml                             # Configuração Completa Configarr COM HDR
 ├── custom-formats/                                    # Todos os custom formats
 │   ├── custom-web-tier-ptbr-dual.json                 # DUAL-AUDIO GLOBAL
 │   ├── custom-web-tier-ptbr-not-dual.json             # Legendado GLOBAL
