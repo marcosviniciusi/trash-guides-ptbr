@@ -545,9 +545,6 @@ kubectl create configmap configarr-config \
 kubectl create secret generic configarr-secrets \
   --from-literal=secrets_yml="$(cat secrets.yml)" \
   -n media
-
-# Ou via Infisical/External Secrets (recomendado para produção)
-kubectl apply -f infisical-secret.yaml -n media
 ```
 
 ### 3. CronJob Kubernetes
