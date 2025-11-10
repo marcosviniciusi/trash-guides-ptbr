@@ -163,6 +163,7 @@ Em vez de configurar manualmente cada Custom Format pela interface web (copiando
 3. 🔄 **Sincroniza** automaticamente com suas instâncias do Radarr/Sonarr
 4. 🎯 **Aplica** os scores definidos nos Quality Profiles
 5. ✅ **Atualiza** tudo de forma idempotente (pode rodar quantas vezes quiser)
+6. ✅ **Configuração já com os trashguides completo no config.yaml encontrado no diretorio configarr**
 
 ### 🎯 Principais Vantagens
 
@@ -182,7 +183,7 @@ radarr:
 - ✅ Fácil de fazer backup
 - ✅ Documentação integrada
 - ✅ Reproduzível em qualquer ambiente
-- ✅ **Configuração já com os trashguides completo no config.yaml encontrado no diretorio configarr**
+
 
 #### 2. **Sincronização Automática**
 
