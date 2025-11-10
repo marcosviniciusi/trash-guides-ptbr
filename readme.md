@@ -271,6 +271,7 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 ```
 
 ### 2. Criar secrets.yml
@@ -423,6 +424,7 @@ volumes:
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
 ```
 
 ### 2. Criar secrets.yml
