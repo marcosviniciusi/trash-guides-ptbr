@@ -3,6 +3,9 @@
 Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional com (DUAL-AUDIO)/legendas PT-BR.
 
 [![Configarr Compatible](https://img.shields.io/badge/Configarr-Compatible-green)](https://github.com/raydak-labs/configarr)
+[![Radarr Compatible](https://img.shields.io/badge/Radarr-Compatible-green)](https://github.com/Radarr/Radarr)
+[![Sonarr Compatible](https://img.shields.io/badge/Sonarr-Compatible-green)](https://github.com/Sonarr/Sonarr)
+[![TRaSH-Guides Compatible](https://img.shields.io/badge/TRaSH-Guides-Compatible-green)](https://github.com/TRaSH-Guides/Guides)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📋 Índice
