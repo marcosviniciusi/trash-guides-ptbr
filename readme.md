@@ -151,7 +151,7 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 
 ## Vantagens?
 
-O Arquivo de configuração já incluido no reposótorio, cria os outros custom formats que se tornam uteis na filtragem da qualidade do relese ( Audio, HDR e etc...), e ja faz de forma automática, deixando a experiencia melhor na automação de suas apps.
+**O arquivo de configuração já está pronto no repositório: ele cria automaticamente custom formats para filtrar qualidade de releases (áudio, HDR, etc.), automatizando e aprimorando a experiência em suas aplicações.**
 
 
 ### Como funciona?
