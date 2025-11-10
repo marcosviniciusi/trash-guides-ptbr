@@ -34,42 +34,44 @@ Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-gui
 #### Web Tier PT-BR
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 (Filmes) / +60000000 (Animes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +5500 (Filmes) / +55000000 (Animes) |
-| **custom-web-tier-ptbr-not-group-radarr** |  Prioriza Releases PT-BR Não Mapeados| +5000 (Filmes) / +50000000 (Animes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 (Filmes) |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +5500 (Filmes) |
+| **custom-web-tier-ptbr-not-group-radarr** |  Prioriza Releases PT-BR Não Mapeados| +5000 (Filmes) |
 
 #### Animes (Radarr)
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 (Filmes) / +60000000 (Animes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +5500 (Filmes) / +55000000 (Animes) |
-| **custom-web-tier-ptbr-not-group-radarr** |  Prioriza Releases PT-BR Não Mapeados | +5000 (Filmes) / +50000000 (Animes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 (Animes) |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +55000000 (Animes) |
+| **custom-web-tier-ptbr-not-group-radarr** |  Prioriza Releases PT-BR Não Mapeados | +50000000 (Animes) |
+| **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR | +750000 |
+| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT | +700000 |
 | **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
 | **custom-animes-not-original-radarr** | Penaliza áudio não original (duplas legendas, etc) | -100000 |
 | **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT | +700000 |
-| **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR | +750000 |
+
 
 ### 📺 Sonarr (Séries)
 
 #### Web Tier PT-BR
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 (Séries) / +60000000 (Animes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 (Séries) / +55000000 (Animes) |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +6000 (Séries) / +50000000 (Animes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 (Séries) |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 (Séries) |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +6000 (Séries) |
 
 #### Animes (Sonarr)
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 (Séries) / +60000000 (Animes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +60000000 (Animes) |
 | **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 (Séries) / +55000000 (Animes) |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +6000 (Séries) / +50000000 (Animes) |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +50000000 (Animes) |
+| **custom-animes-toonshub-ptbr-sonarr** | Prioriza ToonsHub PT-BR | +750000 |
+| **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT | +700000 |
 | **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -10000 |
 | **custom-animes-not-original-sonarr** | Penaliza áudio não original | -10000 |
 | **custom-animes-not-portuguese-sonarr** | Penaliza sem português | -10000 |
-| **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT | +700000 |
-| **custom-animes-toonshub-ptbr-sonarr** | Prioriza ToonsHub PT-BR | +750000 |
+
 
 ## 🔧 Instalação Manual
 
@@ -78,7 +80,7 @@ Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-gui
 
 Antes de configurar os custom formats, você precisa ter um Quality Profile chamado **"HD"** (ou ajustar o nome no `config.yml`).
 
-### Crie os Profiles ###
+### Criado O Profile com Nome "HD" ###
 
 #### No Radarr/Sonarr:
 
@@ -99,7 +101,62 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 3. Cole o conteúdo do JSON desejado
 4. Salve e configure o score no Quality Profile
 
-## 🚀 Instalação com Configarr
+## 🤖 O que é o Configarr?
+
+[Configarr](https://github.com/raydak-labs/configarr) é uma ferramenta de automação e sincronização para Radarr e Sonarr que permite gerenciar **Custom Formats**, **Quality Definitions** e **Quality Profiles** através de arquivos de configuração (YAML).
+
+### Como funciona?
+
+Em vez de configurar manualmente cada Custom Format pela interface web (copiando e colando JSONs um por um), o Configarr:
+
+1. 📥 **Lê** um arquivo de configuração centralizado (`config.yml`)
+2. 🔍 **Busca** os Custom Formats especificados (localmente ou de repositórios)
+3. 🔄 **Sincroniza** automaticamente com suas instâncias do Radarr/Sonarr
+4. 🎯 **Aplica** os scores definidos nos Quality Profiles
+5. ✅ **Atualiza** tudo de forma idempotente (pode rodar quantas vezes quiser)
+
+### 🎯 Principais Vantagens
+
+#### 1. **Configuração como Código (IaC)**
+```yaml
+# Tudo em um arquivo config.yml versionável
+radarr:
+  movies:
+    custom_formats:
+      - trash_ids:
+          - custom-web-tier-ptbr-dual
+        assign_scores_to:
+          - name: HD
+            score: 6000
+```
+- ✅ Versionamento com Git
+- ✅ Fácil de fazer backup
+- ✅ Documentação integrada
+- ✅ Reproduzível em qualquer ambiente
+
+#### 2. **Sincronização Automática**
+
+Sem Configarr:
+```
+1. Baixar JSON
+2. Abrir Radarr → Settings → Custom Formats
+3. Clicar em "+"
+4. Copiar e colar o JSON
+5. Salvar
+6. Abrir Settings → Profiles
+7. Rolar até o Custom Format
+8. Digitar o score manualmente
+9. Salvar
+10. Repetir para cada Custom Format (15x? 20x? 😫)
+```
+
+Com Configarr:
+```bash
+docker run ghcr.io/raydak-labs/configarr:latest
+# Pronto! ✨
+```
+
+## Como Configura-lo?
 
 ### Pré-requisitos
 
