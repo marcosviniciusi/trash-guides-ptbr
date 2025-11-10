@@ -23,7 +23,9 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
   - [Principais Benefícios](#-principais-benefícios)
   - [Como Configurar?](#como-configura-lo)
     - [Pré-Requisitos](#pré-requisitos)
-    - [Docker Compose](#-docker-compose)
+    - [Criando Arquivo Secrets.yaml](#-docker-compose)
+    - [Docker Compose - Execução Manual](#-docker-compose)
+    - [Docker Compose - Execução Automatica](#-docker-compose)
     - [Kubernetes](#%EF%B8%8F-kubernetes)
 - [Estrutura de Scores](#-estrutura-de-scores)
 - [Atualizações Automáticas](#-atualizações-automáticas)
@@ -259,7 +261,7 @@ docker run ghcr.io/raydak-labs/configarr:latest
 
 ---
 
-## 🐳 Docker Compose
+## 🐳 Criando IAC e Arquivo Secrets.yaml
 
 ### 1. Estrutura de Diretórios
 
