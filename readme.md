@@ -1,69 +1,75 @@
 # TRaSH Guides PT-BR - Custom Formats
 
-Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional e dublagens(DUAL-AUDIO)/legendas PT-BR.
+Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional e dublagens (DUAL-AUDIO)/legendas PT-BR.
 
 [![Configarr Compatible](https://img.shields.io/badge/Configarr-Compatible-green)](https://github.com/raydak-labs/configarr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📋 Índice
 
-- [Sobre](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-sobre)
-- [Estrutura Repositório](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-do-reposit%C3%B3rio)
-- [Custom Formats Disponíveis](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-custom-formats-dispon%C3%ADveis)
-  - [Radarr Filmes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-radarr-filmes)
-  - [Radarr Animes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#animes-radarr)
-  - [Sonarr Series](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-sonarr-s%C3%A9ries)
-  - [Sonarr Animes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#animes-sonarr)
-- [Instalação Manual](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-instala%C3%A7%C3%A3o-manual)
-  - [Criando O Profile com o nome "HD"](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#criando-o-profile-com-nome-hd)
-  - [Adicionando manualmente os Custom Formats](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#adicionando-manualmente-os-custom-formats)
-- [O que é o Configarr?](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-o-que-%C3%A9-o-configarr)
-  - [Como Configura-lo?](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#como-configura-lo)
-    - [Pré-Requisitos](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#pr%C3%A9-requisitos)
-    - [Docker Compose](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-docker-compose)
-    - [Kubernetes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#%EF%B8%8F-kubernetes)
-- [Estrutura de Scores](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores)
-- [Atualizações Automáticas](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores)
-- [Contribuindo](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-contribuindo)
+- [Sobre](#-sobre)
+- [Estrutura do Repositório](#-estrutura-do-repositório)
+- [Custom Formats Disponíveis](#-custom-formats-disponíveis)
+  - [Radarr (Filmes)](#-radarr-filmes)
+  - [Radarr (Animes)](#animes-radarr)
+  - [Sonarr (Séries)](#-sonarr-séries)
+  - [Sonarr (Animes)](#animes-sonarr)
+- [Instalação Manual](#-instalação-manual)
+  - [Criando o Profile "HD"](#criando-o-profile-com-nome-hd)
+  - [Adicionando Manualmente os Custom Formats](#adicionando-manualmente-os-custom-formats)
+- [O que é o Configarr?](#-o-que-é-o-configarr)
+  - [Vantagens](#vantagens)
+  - [Como Funciona?](#como-funciona)
+  - [Principais Benefícios](#-principais-benefícios)
+  - [Como Configurar?](#como-configura-lo)
+    - [Pré-Requisitos](#pré-requisitos)
+    - [Docker Compose](#-docker-compose)
+    - [Kubernetes](#%EF%B8%8F-kubernetes)
+- [Estrutura de Scores](#-estrutura-de-scores)
+- [Atualizações Automáticas](#-atualizações-automáticas)
+- [Contribuindo](#-contribuindo)
+- [FAQ](#-faq)
 
 ## 🎯 Sobre
 
-Este repositório contém Custom Formats personalizados para priorizar:
-- ✅ Conteúdo dublado/legendado em PT-BR
-- ✅ Releases de grupos brasileiros confiáveis
-- ✅ Qualidade adequada para conteúdo nacional
-- ✅ Filtros específicos para animes com foco em PT-BR
-- ✅ Compatível com Configarr para sincronização automática
+Este repositório contém **Custom Formats personalizados** desenvolvidos especificamente para a comunidade brasileira, priorizando:
 
-Estes formatos são complementares aos [TRaSH Guides oficiais](https://trash-guides.info/), não substitutos.
+- ✅ **Conteúdo em PT-BR**: Dublagens e legendas em português brasileiro
+- ✅ **Grupos confiáveis**: Releases de grupos brasileiros e portugueses reconhecidos
+- ✅ **Qualidade otimizada**: Filtros específicos para garantir qualidade adequada
+- ✅ **Foco em animes**: Formatos especializados para conteúdo japonês com PT-BR
+- ✅ **Automação completa**: Compatível com Configarr para sincronização automática
+
+> **Nota importante:** Estes formatos são **complementares** aos [TRaSH Guides oficiais](https://trash-guides.info/), não substitutos. Use ambos para obter os melhores resultados!
 
 ## 📁 Estrutura do Repositório
+
 ```
 trash-guides-ptbr/
 ├── README.md
 ├── configarr/
-│   ├── config.yaml                                    # Configuração Completa Configarr SEM HDR
-│   └── config-HDR-ON.yaml                             # Configuração Completa Configarr COM HDR
+│   ├── config.yaml                                    # Configuração completa SEM HDR
+│   └── config-HDR-ON.yaml                             # Configuração completa COM HDR
 ├── custom-formats/                                    # Todos os custom formats
-│   ├── custom-web-tier-ptbr-dual.json                 # DUAL-AUDIO GLOBAL
-│   ├── custom-web-tier-ptbr-not-dual.json             # Legendado GLOBAL
-│   ├── custom-web-tier-ptbr-not-group-radarr.json     # Legendado Sem Releases Radarr
-│   ├── custom-web-tier-ptbr-not-group-sonarr.json     # Legendado Sem Releases Sonarr
-│   ├── custom-animes-not-brazilian-radarr.json        # Negar Animes sem Audio/Legenda PT-BR Radarr
-│   ├── custom-animes-not-brazilian-sonarr.json        # Negar Animes sem Audio/Legenda PT-BR Sonarr
-│   ├── custom-animes-not-original-radarr.json         # Negar Animes sem Audio Original Radarr
-│   ├── custom-animes-not-original-sonarr.json         # Negar Animes sem Audio Original Sonarr
-│   ├── custom-animes-not-portuguese-radarr.json       # Negar Animes sem Audio/Legenda PT-PT Radarr
-│   ├── custom-animes-not-portuguese-sonarr.json       # Negar Animes sem Audio/Legenda PT-PT Sonarr
-│   ├── custom-animes-toonshub-pt-radarr.json          # Permitir Releases do Toonshub com audio/legenda PT-PT Radarr
-│   ├── custom-animes-toonshub-pt-sonarr.json          # Permitir Releases do Toonshub com audio/legenda PT-PT Sonarr
-│   ├── custom-animes-toonshub-ptbr-radarr.json        # Permitir Releases do Toonshub com audio/legenda PT-BR radarr
-│   └── custom-animes-toonshub-ptbr-sonarr.json        # Permitir Releases do Toonshub com audio/legenda PT-BR Sonarr
-└── iac/                                               # Path IAC
-    ├── docker-compose/                                # IAC Docker-Compose
-    │    └── docker-compose.yaml                        
-    └──  k8s/    
-         └── configarr/                                # Manifestos K8S
+│   ├── custom-web-tier-ptbr-dual.json                 # DUAL-AUDIO (Global)
+│   ├── custom-web-tier-ptbr-not-dual.json             # Legendado/Dublado PT-BR (Global)
+│   ├── custom-web-tier-ptbr-not-group-radarr.json     # Releases PT-BR não mapeados (Radarr)
+│   ├── custom-web-tier-ptbr-not-group-sonarr.json     # Releases PT-BR não mapeados (Sonarr)
+│   ├── custom-animes-not-brazilian-radarr.json        # Penaliza animes sem PT-BR (Radarr)
+│   ├── custom-animes-not-brazilian-sonarr.json        # Penaliza animes sem PT-BR (Sonarr)
+│   ├── custom-animes-not-original-radarr.json         # Penaliza áudio não original (Radarr)
+│   ├── custom-animes-not-original-sonarr.json         # Penaliza áudio não original (Sonarr)
+│   ├── custom-animes-not-portuguese-radarr.json       # Penaliza sem português (Radarr)
+│   ├── custom-animes-not-portuguese-sonarr.json       # Penaliza sem português (Sonarr)
+│   ├── custom-animes-toonshub-pt-radarr.json          # ToonsHub PT-PT (Radarr)
+│   ├── custom-animes-toonshub-pt-sonarr.json          # ToonsHub PT-PT (Sonarr)
+│   ├── custom-animes-toonshub-ptbr-radarr.json        # ToonsHub PT-BR (Radarr)
+│   └── custom-animes-toonshub-ptbr-sonarr.json        # ToonsHub PT-BR (Sonarr)
+└── iac/                                               # Infraestrutura como Código
+    ├── docker-compose/                                
+    │   └── docker-compose.yaml                        # Exemplo Docker Compose
+    └── k8s/    
+        └── configarr/                                 # Manifestos Kubernetes
             ├── configarr-config.yaml
             ├── configarr-cronjob.yaml
             ├── configarr-pvc.yaml
@@ -76,55 +82,56 @@ trash-guides-ptbr/
 ### 🎬 Radarr (Filmes)
 
 #### Web Tier PT-BR
+
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 (Filmes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +5500 (Filmes) |
-| **custom-web-tier-ptbr-not-group-radarr** |  Prioriza Releases PT-BR Não Mapeados| +5000 (Filmes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +5500 |
+| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados | +5000 |
 
 #### Animes (Radarr)
+
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 (Animes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +55000000 (Animes) |
-| **custom-web-tier-ptbr-not-group-radarr** |  Prioriza Releases PT-BR Não Mapeados | +50000000 (Animes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado ou dublado) | +55000000 |
+| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados | +50000000 |
 | **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR | +750000 |
-| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT | +700000 |
+| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT-PT | +700000 |
 | **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
-| **custom-animes-not-original-radarr** | Penaliza áudio não original (duplas legendas, etc) | -100000 |
+| **custom-animes-not-original-radarr** | Penaliza áudio não original (duplas legendas, etc.) | -100000 |
 | **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-
 
 ### 📺 Sonarr (Séries)
 
 #### Web Tier PT-BR
+
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 (Séries) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 (Séries) |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +6000 (Séries) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +6500 |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados | +6000 |
 
 #### Animes (Sonarr)
+
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +60000000 (Animes) |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +55000000 (Animes) |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza Releases PT-BR Não Mapeados | +50000000 (Animes) |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +60000000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR | +55000000 |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados | +50000000 |
 | **custom-animes-toonshub-ptbr-sonarr** | Prioriza ToonsHub PT-BR | +750000 |
-| **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT | +700000 |
+| **custom-animes-toonshub-pt-sonarr** | Prioriza ToonsHub PT-PT | +700000 |
 | **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -10000 |
 | **custom-animes-not-original-sonarr** | Penaliza áudio não original | -10000 |
 | **custom-animes-not-portuguese-sonarr** | Penaliza sem português | -10000 |
 
-
 ## 🔧 Instalação Manual
 
-### Via Interface Web
 ### Pré-requisito: Criar Quality Profile "HD"
 
 Antes de configurar os custom formats, você precisa ter um Quality Profile chamado **"HD"** (ou ajustar o nome no `config.yml`).
 
-## Criando O Profile com Nome "HD" ###
+### Criando o Profile com Nome "HD"
 
 #### No Radarr/Sonarr:
 
@@ -134,96 +141,120 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
    - **Name**: `HD`
    - **Upgrades Allowed**: ✅ (habilitado)
    - **Upgrade Until**: Selecione a qualidade máxima desejada (ex: Bluray-1080p)
-   - **Qualities**: Selecione as qualidades que deseja (recomendado: WEBDL-1080p, WEBRip-1080p, Bluray-1080p, Remux-1080p)
+   - **Qualities**: Selecione as qualidades desejadas (recomendado: WEBDL-1080p, WEBRip-1080p, Bluray-1080p, Remux-1080p)
    - **Minimum Custom Format Score**: `0` (ou deixe em branco)
 4. Clique em **Save**
 
-### Adicionando manualmente os Custom Formats
+### Adicionando Manualmente os Custom Formats
+
 #### No Radarr/Sonarr:
+
 1. Acesse **Settings → Custom Formats**
 2. Clique em **+** para adicionar novo formato
-3. Cole o conteúdo do JSON desejado
-4. Salve e configure o score no Quality Profile
+3. Cole o conteúdo do JSON desejado (disponível na pasta `custom-formats/`)
+4. Salve e configure o score no Quality Profile correspondente
+
+---
 
 ## 🤖 O que é o Configarr?
 
-[Configarr](https://github.com/raydak-labs/configarr) é uma ferramenta de automação e sincronização para Radarr e Sonarr que permite gerenciar **Custom Formats**, **Quality Definitions** e **Quality Profiles** através de arquivos de configuração (YAML).
+[Configarr](https://github.com/raydak-labs/configarr) é uma ferramenta de automação e sincronização para Radarr e Sonarr que permite gerenciar **Custom Formats**, **Quality Definitions** e **Quality Profiles** através de arquivos de configuração YAML.
 
-## Vantagens?
+### Vantagens?
 
-**O arquivo de configuração já está pronto no repositório: ele cria automaticamente custom formats para filtrar qualidade de releases (áudio, HDR, etc.), automatizando e aprimorando a experiência em suas aplicações.**
-
+**Configuração pronta para usar:** O `config.yaml` do repositório já inclui os **TRaSH Guides completos** integrados com nossos custom formats PT-BR. Ele configura automaticamente filtros de qualidade (áudio, HDR, codecs, etc.) e aplica os scores recomendados, eliminando toda a configuração manual e garantindo uma experiência otimizada desde o primeiro uso.
 
 ### Como funciona?
 
 Em vez de configurar manualmente cada Custom Format pela interface web (copiando e colando JSONs um por um), o Configarr:
 
 1. 📥 **Lê** um arquivo de configuração centralizado (`config.yml`)
-2. 🔍 **Busca** os Custom Formats especificados (localmente ou de repositórios)
+2. 🔍 **Busca** os Custom Formats especificados (localmente ou de repositórios remotos)
 3. 🔄 **Sincroniza** automaticamente com suas instâncias do Radarr/Sonarr
 4. 🎯 **Aplica** os scores definidos nos Quality Profiles
-5. ✅ **Atualiza** tudo de forma idempotente (pode rodar quantas vezes quiser)
-6. ✅ **Configuração já com os trashguides completo no config.yaml encontrado no diretorio configarr**
+5. ✅ **Atualiza** tudo de forma idempotente (pode executar quantas vezes quiser)
+6. 🚀 **Integração TRaSH Guides**: Configuração já inclui os guides oficiais completos
 
-### 🎯 Principais Vantagens
+### 🎯 Principais Benefícios
 
 #### 1. **Configuração como Código (IaC)**
+
 ```yaml
 # Tudo em um arquivo config.yml versionável
 radarr:
   movies:
+    base_url: !secret RADARR_URL
+    api_key: !secret RADARR_API_KEY
+    
     custom_formats:
       - trash_ids:
           - custom-web-tier-ptbr-dual
+          - custom-web-tier-ptbr-not-dual
         assign_scores_to:
           - name: HD
             score: 6000
 ```
+
+**Benefícios:**
 - ✅ Versionamento com Git
 - ✅ Fácil de fazer backup
 - ✅ Documentação integrada
 - ✅ Reproduzível em qualquer ambiente
-
+- ✅ Auditável e reversível
 
 #### 2. **Sincronização Automática**
 
-Sem Configarr:
+**Sem Configarr:**
 ```
-1. Baixar JSON
+1. Baixar JSON manualmente
 2. Abrir Radarr → Settings → Custom Formats
 3. Clicar em "+"
 4. Copiar e colar o JSON
 5. Salvar
 6. Abrir Settings → Profiles
-7. Rolar até o Custom Format
+7. Rolar até encontrar o Custom Format
 8. Digitar o score manualmente
 9. Salvar
-10. Repetir para cada Custom Format (15x? 20x? 😫)
+10. Repetir para cada Custom Format (15x? 20x? 30x? 😫)
 ```
 
-Com Configarr:
+**Com Configarr:**
 ```bash
 docker run ghcr.io/raydak-labs/configarr:latest
 # Pronto! ✨
 ```
 
+#### 3. **O que o `config.yaml` já inclui:**
+
+- ✅ **TRaSH Guides completos** integrados
+- ✅ **Custom Formats PT-BR** para priorizar conteúdo nacional
+- ✅ **Filtros automáticos** de qualidade (áudio multicanal, HDR, codecs, bitrate)
+- ✅ **Scores pré-configurados** para todos os profiles
+- ✅ **Zero configuração manual** - funciona imediatamente após deploy
+
+---
+
 ## Como Configura-lo?
 
 ### Pré-requisitos
-- [Crie o Profile com o nome "HD"](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#criando-o-profile-com-nome-hd)
-- API Keys do Radarr/Sonarr
-- Docker ou Kubernetes
+
+- [Criar o Profile com o nome "HD"](#criando-o-profile-com-nome-hd)
+- API Keys do Radarr/Sonarr (encontradas em Settings → General → Security)
+- Docker ou Kubernetes instalado
+
 ---
 
 ## 🐳 Docker Compose
 
 ### 1. Estrutura de Diretórios
+
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
 ```
 
 ### 2. Criar secrets.yml
+
 ```bash
 cat > secrets/secrets.yml << 'EOF'
 SONARR_URL: "http://sonarr:8989"
@@ -238,14 +269,22 @@ RADARR_ANIMES_API_KEY: "sua-api-key-animes-aqui"
 EOF
 ```
 
-### 3. Criar config.yml
+> **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
+
+### 3. Baixar config.yml
+
 ```bash
-# Baixe o exemplo completo do repositório
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/config.yml \
+# Opção 1: Baixar diretamente do repositório
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config.yaml \
+  -o config/config.yml
+
+# Opção 2: Para configuração COM HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-HDR-ON.yaml \
   -o config/config.yml
 ```
 
-Ou crie manualmente:
+**Ou crie manualmente (exemplo simplificado):**
+
 ```yaml
 localCustomFormatsPath: /config/custom_formats
 telemetry: true
@@ -255,7 +294,11 @@ radarr:
     base_url: !secret RADARR_URL
     api_key: !secret RADARR_API_KEY
     
+    quality_definition:
+      type: movie
+    
     custom_formats:
+      # TRaSH Guides oficiais (incluídos automaticamente)
       - trash_ids:
           - custom-web-tier-ptbr-dual
           - custom-web-tier-ptbr-not-dual
@@ -264,65 +307,68 @@ radarr:
           - name: HD
             score: 6000
 
+sonarr:
+  series:
+    base_url: !secret SONARR_URL
+    api_key: !secret SONARR_API_KEY
+    
+    quality_definition:
+      type: series
+    
+    custom_formats:
+      - trash_ids:
+          - custom-web-tier-ptbr-dual
+          - custom-web-tier-ptbr-not-dual
+          - custom-web-tier-ptbr-not-group-sonarr
+        assign_scores_to:
+          - name: HD
+            score: 7000
+
 # [Veja config.yml completo no repositório]
 ```
 
 ### 4. Script de Download dos Custom Formats
+
 ```bash
 cat > download-custom-formats.sh << 'EOF'
 #!/bin/bash
 
-echo "Downloading custom formats..."
+BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats"
+
+echo "📥 Baixando custom formats..."
 mkdir -p custom_formats
 
-# Global Custom Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json \
-  -o custom_formats/custom-web-tier-ptbr-dual.json
+# Função para baixar com tratamento de erro
+download_format() {
+    local file=$1
+    echo "  → $file"
+    curl -fsSL "$BASE_URL/$file" -o "custom_formats/$file" || {
+        echo "❌ Erro ao baixar $file"
+        return 1
+    }
+}
 
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
-  -o custom_formats/custom-web-tier-ptbr-not-dual.json
+# Custom Formats Globais
+download_format "custom-web-tier-ptbr-dual.json"
+download_format "custom-web-tier-ptbr-not-dual.json"
 
-# Radarr Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json \
-  -o custom_formats/custom-web-tier-ptbr-not-group-radarr.json
+# Radarr
+download_format "custom-web-tier-ptbr-not-group-radarr.json"
+download_format "custom-animes-not-brazilian-radarr.json"
+download_format "custom-animes-not-original-radarr.json"
+download_format "custom-animes-not-portuguese-radarr.json"
+download_format "custom-animes-toonshub-pt-radarr.json"
+download_format "custom-animes-toonshub-ptbr-radarr.json"
 
-# Sonarr Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json \
-  -o custom_formats/custom-web-tier-ptbr-not-group-sonarr.json
+# Sonarr
+download_format "custom-web-tier-ptbr-not-group-sonarr.json"
+download_format "custom-animes-not-brazilian-sonarr.json"
+download_format "custom-animes-not-original-sonarr.json"
+download_format "custom-animes-not-portuguese-sonarr.json"
+download_format "custom-animes-toonshub-pt-sonarr.json"
+download_format "custom-animes-toonshub-ptbr-sonarr.json"
 
-# Animes Sonarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-sonarr.json \
-  -o custom_formats/custom-animes-not-brazilian-sonarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-sonarr.json \
-  -o custom_formats/custom-animes-not-original-sonarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-sonarr.json \
-  -o custom_formats/custom-animes-not-portuguese-sonarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-sonarr.json \
-  -o custom_formats/custom-animes-toonshub-pt-sonarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json \
-  -o custom_formats/custom-animes-toonshub-ptbr-sonarr.json
-
-# Animes Radarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-radarr.json \
-  -o custom_formats/custom-animes-not-brazilian-radarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-radarr.json \
-  -o custom_formats/custom-animes-not-original-radarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json \
-  -o custom_formats/custom-animes-not-portuguese-radarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json \
-  -o custom_formats/custom-animes-toonshub-pt-radarr.json
-
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json \
-  -o custom_formats/custom-animes-toonshub-ptbr-radarr.json
-
-echo "Custom formats downloaded successfully!"
+echo "✅ Custom formats baixados com sucesso!"
 EOF
 
 chmod +x download-custom-formats.sh
@@ -330,6 +376,7 @@ chmod +x download-custom-formats.sh
 ```
 
 ### 5. Docker Compose - Execução Manual
+
 ```yaml
 version: '3.8'
 
@@ -348,21 +395,26 @@ services:
     network_mode: bridge
     # Remove restart para execução manual
     # Use: docker-compose up configarr
+
 volumes:
   app-data:
 ```
 
-### 6. Docker Compose - Execução Agendada e sincronização dos Releases do Repo (com Ofelia)
+### 6. Docker Compose - Execução Agendada (com Ofelia)
+
+Para sincronização automática dos custom formats e execução agendada:
+
 ```yaml
 version: '3.8'
 
 services:
-  # Download dos Custom Formats
+  # Download automático dos Custom Formats
   download-formats:
     image: curlimages/curl:latest
     container_name: configarr-download
     command: >
       sh -c "
+      echo '📥 Baixando custom formats...' &&
       mkdir -p /config/custom_formats &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json -o /config/custom_formats/custom-web-tier-ptbr-dual.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json &&
@@ -378,7 +430,7 @@ services:
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json -o /config/custom_formats/custom-animes-not-portuguese-radarr.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json &&
-      echo 'Custom formats downloaded successfully!'
+      echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
       - custom-formats:/config
@@ -402,10 +454,10 @@ services:
     network_mode: bridge
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"
+      ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"  # Todo dia às 2h
       ofelia.job-exec.configarr-sync.command: "/app/configarr"
   
-  # Scheduler
+  # Scheduler Ofelia
   ofelia:
     image: mcuadros/ofelia:latest
     container_name: ofelia-scheduler
@@ -422,20 +474,21 @@ volumes:
 ```
 
 ### 7. Executar
+
 ```bash
 # Execução manual (uma vez)
 docker-compose up configarr
 
-# Com scheduler (agendado)
+# Com scheduler (agendado - modo daemon)
 docker-compose up -d
 
-# Ver logs
+# Ver logs em tempo real
 docker-compose logs -f configarr
 
-# Forçar execução manual do job
+# Forçar execução manual do job agendado
 docker exec configarr /app/configarr
 
-# Atualizar custom formats
+# Atualizar custom formats e reiniciar
 ./download-custom-formats.sh
 docker-compose restart configarr
 ```
@@ -446,7 +499,8 @@ docker-compose restart configarr
 
 ### 1. Estrutura de Secrets
 
-Crie um arquivo `secrets.yml`:
+Crie um arquivo `secrets.yml` com suas credenciais:
+
 ```yaml
 SONARR_URL: "http://sonarr.NAMESPACE.svc.cluster.local:8989"
 RADARR_URL: "http://radarr.NAMESPACE.svc.cluster.local:7878"
@@ -459,37 +513,52 @@ SONARR_ANIMES_API_KEY: "sua-api-key-animes-aqui"
 RADARR_ANIMES_API_KEY: "sua-api-key-animes-aqui"
 ```
 
+> **Nota:** Substitua `NAMESPACE` pelo namespace real do seu cluster.
+
 ### 2. Aplicar Recursos
+
 ```bash
-# Criar ConfigMap
+# Criar namespace (se necessário)
+kubectl create namespace media
+
+# Criar ConfigMap com config.yml
 kubectl create configmap configarr-config \
   --from-file=config.yml \
-  -n NAMESPACE
+  -n media
 
-# Criar Secret
-kubectl create secret generic configarr \
+# Criar Secret a partir do arquivo
+kubectl create secret generic configarr-secrets \
   --from-literal=secrets_yml="$(cat secrets.yml)" \
-  -n NAMESPACE
+  -n media
 
-# Ou via Infisical (recomendado)
-kubectl apply -f infisical-secret.yaml
+# Ou via Infisical/External Secrets (recomendado para produção)
+kubectl apply -f infisical-secret.yaml -n media
 ```
 
 ### 3. CronJob Kubernetes
+
 ```yaml
 apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: configarr-sync
-  namespace: NAMESPACE
+  namespace: media
 spec:
   schedule: "0 2 * * *"  # Todo dia às 2h da manhã
-  successfulJobsHistoryLimit: 1
-  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
+      backoffLimit: 2
       template:
+        metadata:
+          labels:
+            app: configarr
         spec:
+          restartPolicy: Never
+          
+          # Init Container: Download dos Custom Formats
           initContainers:
             - name: download-custom-formats
               image: curlimages/curl:latest
@@ -497,23 +566,47 @@ spec:
                 - sh
                 - -c
                 - |
-                  echo "Downloading custom formats..."
+                  set -e
+                  echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json \
-                    -o /config/custom_formats/custom-web-tier-ptbr-dual.json
+                  BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats"
                   
-                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
-                    -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json
+                  # Função para download com retry
+                  download_file() {
+                    local file=$1
+                    echo "  → Baixando: $file"
+                    curl -fsSL --retry 3 --retry-delay 2 "$BASE_URL/$file" \
+                      -o "/config/custom_formats/$file" || {
+                      echo "❌ Erro ao baixar $file"
+                      return 1
+                    }
+                  }
                   
-                  # [Adicione todos os outros curls aqui]
+                  # Download de todos os formatos
+                  download_file "custom-web-tier-ptbr-dual.json"
+                  download_file "custom-web-tier-ptbr-not-dual.json"
+                  download_file "custom-web-tier-ptbr-not-group-radarr.json"
+                  download_file "custom-web-tier-ptbr-not-group-sonarr.json"
+                  download_file "custom-animes-not-brazilian-sonarr.json"
+                  download_file "custom-animes-not-original-sonarr.json"
+                  download_file "custom-animes-not-portuguese-sonarr.json"
+                  download_file "custom-animes-toonshub-pt-sonarr.json"
+                  download_file "custom-animes-toonshub-ptbr-sonarr.json"
+                  download_file "custom-animes-not-brazilian-radarr.json"
+                  download_file "custom-animes-not-original-radarr.json"
+                  download_file "custom-animes-not-portuguese-radarr.json"
+                  download_file "custom-animes-toonshub-pt-radarr.json"
+                  download_file "custom-animes-toonshub-ptbr-radarr.json"
                   
-                  echo "Custom formats downloaded successfully!"
+                  echo "✅ Todos os custom formats foram baixados!"
+                  ls -lah /config/custom_formats/
               
               volumeMounts:
                 - name: custom-formats-storage
                   mountPath: /config
           
+          # Container Principal: Configarr
           containers:
             - name: configarr
               image: ghcr.io/raydak-labs/configarr:latest
@@ -522,19 +615,30 @@ spec:
                 - name: LOG_STACKTRACE
                   value: "true"
                 - name: OTEL_LOG_LEVEL
-                  value: "debug"
+                  value: "info"
+              
               volumeMounts:
                 - name: configarr-config
                   mountPath: /app/config/config.yml
                   subPath: config.yml
+                  readOnly: true
                 - name: secrets
                   mountPath: /app/config/secrets.yml
                   subPath: secrets_yml
+                  readOnly: true
                 - name: custom-formats-storage
                   mountPath: /config
                   readOnly: true
-
-          restartPolicy: Never
+              
+              resources:
+                requests:
+                  memory: "128Mi"
+                  cpu: "100m"
+                limits:
+                  memory: "512Mi"
+                  cpu: "500m"
+          
+          # Volumes
           volumes:
             - name: custom-formats-storage
               emptyDir: {}
@@ -543,115 +647,205 @@ spec:
                 name: configarr-config
             - name: secrets
               secret:
-                secretName: configarr
+                secretName: configarr-secrets
 ```
 
 ### 4. Aplicar e Testar
+
 ```bash
 # Aplicar o CronJob
 kubectl apply -f configarr-cronjob.yaml
 
-# Testar manualmente
-kubectl create job --from=cronjob/configarr-sync configarr-test -n NAMESPACE
+# Testar execução manual
+kubectl create job --from=cronjob/configarr-sync configarr-test -n media
 
-# Ver logs
-kubectl logs -f job/configarr-test -n NAMESPACE
+# Acompanhar logs em tempo real
+kubectl logs -f job/configarr-test -n media
 
-# Ver status
-kubectl get cronjob configarr-sync -n NAMESPACE
+# Ver todos os logs do job
+kubectl logs job/configarr-test -n media --all-containers=true
+
+# Ver status do CronJob
+kubectl get cronjob configarr-sync -n media
+
+# Ver histórico de execuções
+kubectl get jobs -n media | grep configarr
+
+# Deletar job de teste
+kubectl delete job configarr-test -n media
 ```
 
 ---
 
 ## 📊 Estrutura de Scores
 
-### Filmes/Series (Radarr/Sonarr)
-- **Áudio de Alta Qualidade**: 1000-5000
-- **Custom Formats PT-BR**: 5000-6000
-- **Remux/Bluray Tiers**: 1700-1950
-- **Penalizações**: -10000 a -100000
+### Filmes/Séries (Radarr/Sonarr)
+
+| Categoria | Faixa de Score |
+|-----------|----------------|
+| **Custom Formats PT-BR** | +5000 a +7000 |
+| **Áudio de Alta Qualidade** | +1000 a +5000 |
+| **Remux/Bluray Tiers** | +1700 a +1950 |
+| **Penalizações** | -10000 a -100000 |
 
 ### Animes (Radarr/Sonarr)
-- **ToonsHub PT-BR**: +750000
-- **ToonsHub PT**: +700000
-- **Web Tier PT-BR Dual**: +60000000
-- **Web Tier PT-BR Not Dual**: +55000000
-- **Web Tier PT-BR not-group**: +50000000
-- **Sem PT-BR**: -100000
+
+| Categoria | Score |
+|-----------|-------|
+| **Web Tier PT-BR Dual** | +60000000 |
+| **Web Tier PT-BR Not Dual** | +55000000 |
+| **Web Tier PT-BR not-group** | +50000000 |
+| **ToonsHub PT-BR** | +750000 |
+| **ToonsHub PT-PT** | +700000 |
+| **Penalizações (Sem PT-BR)** | -100000 |
+
+> **Nota:** Os scores para animes são intencionalmente muito altos para garantir prioridade absoluta sobre outros formatos.
+
+---
 
 ## 🔄 Atualizações Automáticas
 
 ### Docker Compose (Ofelia)
+
+Configure a frequência de sincronização editando a label no `docker-compose.yml`:
+
 ```yaml
-# Diariamente às 2h
-ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"
-
-# A cada 6 horas
-ofelia.job-exec.configarr-sync.schedule: "0 */6 * * *"
-
-# Toda semana no domingo às 14h
-ofelia.job-exec.configarr-sync.schedule: "0 14 * * 0"
+labels:
+  ofelia.enabled: "true"
+  # Escolha uma das opções abaixo:
+  
+  # Todo dia às 2h da manhã
+  ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"
+  
+  # A cada 6 horas
+  # ofelia.job-exec.configarr-sync.schedule: "0 */6 * * *"
+  
+  # Toda semana no domingo às 14h
+  # ofelia.job-exec.configarr-sync.schedule: "0 14 * * 0"
+  
+  # A cada 12 horas
+  # ofelia.job-exec.configarr-sync.schedule: "0 */12 * * *"
 ```
 
 ### Kubernetes (CronJob)
+
+Edite o campo `schedule` no CronJob:
+
 ```yaml
-schedule: "0 2 * * *"      # Diariamente às 2h
-schedule: "0 */6 * * *"    # A cada 6 horas
-schedule: "0 14 * * 0"     # Toda semana no domingo às 14h
+spec:
+  # Escolha uma das opções:
+  
+  schedule: "0 2 * * *"      # Todo dia às 2h
+  # schedule: "0 */6 * * *"    # A cada 6 horas
+  # schedule: "0 14 * * 0"     # Toda semana no domingo às 14h
+  # schedule: "*/30 * * * *"   # A cada 30 minutos (não recomendado)
 ```
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Para adicionar novos custom formats ou melhorias.
-
-1. Fork este repositório
-2. Crie um branch (`git checkout -b feature/novo-formato`)
-3. Adicione o custom format na pasta `custom-formats/`
-4. Teste com Radarr/Sonarr
-5. Atualize este README
-6. Commit (`git commit -am 'Adiciona formato XYZ'`)
-7. Push (`git push origin feature/novo-formato`)
-8. Abra um Pull Request
-
-### Padrão de Nomenclatura
-
-- **custom-web-tier-ptbr-*.json** - Formatos para web releases PT-BR
-- **custom-animes-*.json** - Formatos específicos para animes
-- Prefixo `custom-` para diferenciar dos oficiais do TRaSH
-- Sufixo `-radarr` ou `-sonarr` para especificar a aplicação
-
-## ❓ FAQ
-
-**P: Esses formatos substituem os TRaSH Guides?**  
-R: Não, eles complementam. Use ambos para melhores resultados.
-
-**P: Preciso usar todos os custom formats?**  
-R: Não, escolha os que fazem sentido para seu caso de uso.
-
-**P: Como atualizo os custom formats?**  
-R: O Configarr sincroniza automaticamente quando executado. Configure um CronJob/Ofelia para atualizações periódicas.
-
-**P: Posso usar sem Docker/Kubernetes?**  
-R: Sim! Instale o Configarr localmente e execute manualmente.
-
-**P: Os scores são obrigatórios?**  
-R: Não, ajuste conforme suas preferências. Os scores sugeridos são apenas recomendações.
-
-**P: Como funciona o Ofelia?**  
-R: Ofelia é um scheduler de jobs para Docker. Ele executa comandos em containers baseado em agendamentos cron.
-
-## 📝 Licença
-
-MIT License - veja [LICENSE](LICENSE) para detalhes.
-
-## 🙏 Créditos
-
-- Baseado no trabalho incrível do [TRaSH Guides](https://trash-guides.info/)
-- Desenvolvido para a comunidade brasileira de *arr apps
-- Mantido por [Marcos Gabriel](https://github.com/marcosviniciusi)
+> **Dica:** Use [crontab.guru](https://crontab.guru/) para testar expressões cron.
 
 ---
 
-**Dúvidas ou sugestões?** Abra uma [issue](https://github.com/marcosviniciusi/trash-guides-ptbr/issues) ou contribua com um [pull request](https://github.com/marcosviniciusi/trash-guides-ptbr/pulls)!
+## 🤝 Contribuindo
 
-**⭐ Se este projeto te ajudou, considere dar uma estrela no repositório!**
+Contribuições são muito bem-vindas! Seja adicionando novos custom formats, melhorando a documentação ou reportando bugs.
+
+### Como Contribuir
+
+1. **Fork** este repositório
+2. Crie um **branch** para sua feature (`git checkout -b feature/novo-formato`)
+3. Adicione o custom format na pasta `custom-formats/`
+4. **Teste** com Radarr/Sonarr em ambiente real
+5. Atualize este **README.md** com as informações do novo formato
+6. **Commit** suas mudanças (`git commit -am 'Adiciona formato XYZ para releases 4K'`)
+7. **Push** para o branch (`git push origin feature/novo-formato`)
+8. Abra um **Pull Request** detalhando suas mudanças
+
+### Padrão de Nomenclatura
+
+Para manter a consistência do repositório:
+
+- **`custom-web-tier-ptbr-*.json`** - Formatos para web releases PT-BR
+- **`custom-animes-*.json`** - Formatos específicos para animes
+- **Prefixo `custom-`** - Para diferenciar dos formatos oficiais do TRaSH
+- **Sufixo `-radarr` ou `-sonarr`** - Para especificar a aplicação
+
+### Diretrizes de Custom Formats
+
+- Use regex precisos e testados
+- Documente o propósito e comportamento esperado
+- Inclua exemplos de nomes de release que devem/não devem corresponder
+- Teste com pelo menos 10 releases reais antes de submeter
+
+---
+
+## ❓ FAQ
+
+**P: Esses formatos substituem os TRaSH Guides oficiais?**  
+R: Não! Eles são **complementares**. Os TRaSH Guides cobrem qualidade geral (codecs, HDR, áudio), enquanto estes formatos focam em conteúdo PT-BR. Use ambos juntos para melhores resultados.
+
+**P: Preciso usar todos os custom formats disponíveis?**  
+R: Não. Escolha apenas os que fazem sentido para seu caso de uso. Por exemplo, se você não assiste animes, pode ignorar os formatos de anime.
+
+**P: Como atualizo os custom formats?**  
+R: Se estiver usando Configarr com agendamento (Ofelia ou CronJob), a atualização é automática. Para atualização manual, execute `./download-custom-formats.sh` e `docker-compose restart configarr`.
+
+**P: Posso usar sem Docker/Kubernetes?**  
+R: Sim! Você pode instalar o Configarr localmente seguindo a [documentação oficial](https://github.com/raydak-labs/configarr) ou adicionar os custom formats manualmente pela interface web.
+
+**P: Os scores sugeridos são obrigatórios?**  
+R: Não, são apenas recomendações baseadas em testes. Ajuste conforme suas preferências pessoais e prioridades.
+
+**P: Como funciona o Ofelia?**  
+R: Ofelia é um scheduler de jobs para Docker similar ao cron. Ele monitora containers com labels específicas e executa comandos baseado em agendamentos cron, sem necessidade de crontab do host.
+
+**P: Por que os scores de anime são tão altos?**  
+R: Para garantir que releases com PT-BR sempre tenham prioridade absoluta sobre qualquer outra consideração de qualidade. Animes dublados/legendados em PT-BR são raros, então priorizamos sua captura.
+
+**P: Posso usar em produção?**  
+R: Sim! O Configarr e estes custom formats são usados por muitos usuários em produção. Recomendamos testar primeiro em um ambiente de staging.
+
+**P: Como reporto problemas ou sugiro melhorias?**  
+R: Abra uma [issue no GitHub](https://github.com/marcosviniciusi/trash-guides-ptbr/issues) com detalhes do problema ou sugestão. Exemplos de releases que não funcionaram como esperado são muito úteis!
+
+---
+
+## 📝 Licença
+
+Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+
+## 🙏 Créditos
+
+- Baseado no trabalho excepcional do [TRaSH Guides](https://trash-guides.info/)
+- Desenvolvido com ❤️ para a comunidade brasileira de *arr apps
+- Mantido por [Marcos Gabriel](https://github.com/marcosviniciusi)
+- Agradecimento especial a todos os [contribuidores](https://github.com/marcosviniciusi/trash-guides-ptbr/graphs/contributors)
+
+---
+
+## 🌟 Apoie o Projeto
+
+Se este projeto foi útil para você, considere:
+
+- ⭐ Dar uma **estrela** no repositório
+- 🔄 **Compartilhar** com outros usuários brasileiros de Radarr/Sonarr
+- 🐛 **Reportar bugs** ou sugerir melhorias
+- 🤝 **Contribuir** com novos custom formats ou melhorias na documentação
+
+---
+
+**💬 Dúvidas ou sugestões?** 
+
+- [Abra uma issue](https://github.com/marcosviniciusi/trash-guides-ptbr/issues) para reportar problemas
+- [Contribua com um pull request](https://github.com/marcosviniciusi/trash-guides-ptbr/pulls) para melhorias
+
+---
+
+<div align="center">
+
+**Feito com ❤️ para a comunidade brasileira de homelabs**
+
+[⬆ Voltar ao topo](#trash-guides-pt-br---custom-formats)
+
+</div>
