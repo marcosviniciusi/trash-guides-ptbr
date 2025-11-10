@@ -16,6 +16,7 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
   - [Sonarr Animes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#animes-sonarr)
 - [Instalação Manual](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-instala%C3%A7%C3%A3o-manual)
   - [Criando O Profile com o nome "HD"](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#criando-o-profile-com-nome-hd)
+  - [Adicionando manualmente os Custom Formats](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#adicionando-manualmente-os-custom-formats)
 - [O que é o Configarr?](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-o-que-%C3%A9-o-configarr)
   - [Como Configura-lo?](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#como-configura-lo)
     - [Pré-Requisitos](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#pr%C3%A9-requisitos)
