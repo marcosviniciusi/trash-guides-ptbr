@@ -23,7 +23,7 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
   - [Principais Benefícios](#-principais-benefícios)
   - [Como Configurar?](#como-configura-lo)
     - [Pré-Requisitos](#pré-requisitos)
-    - [Criando Arquivo Secrets.yaml](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-criando-iac-e-arquivo-secretsyaml)
+    - [Docker Compose - Criando Arquivo Secrets.yaml](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-criando-iac-e-arquivo-secretsyaml)
     - [Docker Compose - Execução Manual](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#docker-compose---execu%C3%A7%C3%A3o-manual)
     - [Docker Compose - Execução Automatica](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#docker-compose---execu%C3%A7%C3%A3o-agendada-com-ofelia)
     - [Kubernetes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#%EF%B8%8F-kubernetes)
@@ -257,14 +257,14 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ### Pré-requisitos
 
 - [Criar o Profile com o nome "HD"](#criando-o-profile-com-nome-hd)
-- [Crie o Arquivo Secrets.yaml](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-criando-iac-e-arquivo-secretsyaml)
+- [Crie o IAC e Arquivo Secrets.yaml](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-criando-iac-e-arquivo-secretsyaml)
 - API Keys do Radarr/Sonarr (encontradas em Settings → General → Security)
 - Docker ou Kubernetes instalado
 
 ---
 
-## 🐳 Criando IAC e Arquivo Secrets.yaml
 
+## Docker Compose - Execução Manual
 ### 1. Estrutura de Diretórios
 
 ```bash
@@ -289,8 +289,7 @@ EOF
 ```
 
 > **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
-## Docker Compose - Execução Manual
-### 1. Baixar config.yml com todos Custom Formats do trashguide e Scores
+### 3. Baixar config.yml com todos Custom Formats do trashguide e Scores
 
 ```bash
 # Opção 1: Baixar diretamente do repositório
@@ -346,7 +345,7 @@ sonarr:
 # [Veja config.yml completo no repositório]
 ```
 
-### 2. Script de Download dos Custom Formats
+### 4. Script de Download dos Custom Formats
 
 ```bash
 cat > download-custom-formats.sh << 'EOF'
@@ -394,7 +393,7 @@ chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
 ```
 
-### 3. Docker Compose
+### 5. Docker Compose
 
 ```yaml
 version: '3.8'
@@ -420,7 +419,31 @@ volumes:
 ```
 
 ## Docker Compose - Execução Agendada (com Ofelia)
-### 1. Baixar config.yml com todos Custom Formats do trashguide e Scores
+### 1. Estrutura de Diretórios
+
+```bash
+mkdir -p configarr/{config,secrets,custom_formats}
+cd configarr
+```
+
+### 2. Criar secrets.yml
+
+```bash
+cat > secrets/secrets.yml << 'EOF'
+SONARR_URL: "http://sonarr:8989"
+RADARR_URL: "http://radarr:7878"
+SONARR_ANIMES_URL: "http://sonarr-animes:8990"
+RADARR_ANIMES_URL: "http://radarr-animes:7879"
+
+SONARR_API_KEY: "sua-api-key-aqui"
+RADARR_API_KEY: "sua-api-key-aqui"
+SONARR_ANIMES_API_KEY: "sua-api-key-animes-aqui"
+RADARR_ANIMES_API_KEY: "sua-api-key-animes-aqui"
+EOF
+```
+
+> **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
+### 2. Baixar config.yml com todos Custom Formats do trashguide e Scores
 
 ```bash
 # Opção 1: Baixar diretamente do repositório
@@ -475,7 +498,7 @@ sonarr:
 
 # [Veja config.yml completo no repositório]
 ```
-### 2. Criar IAC
+### 3. Criar IAC com automatização
 Para sincronização automática dos custom formats e execução agendada:
 
 ```yaml
@@ -547,7 +570,7 @@ volumes:
   app-data:
 ```
 
-### 3. Executar
+### 4. Executar
 
 ```bash
 # Execução manual (uma vez)
