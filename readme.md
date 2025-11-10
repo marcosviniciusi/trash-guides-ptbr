@@ -578,7 +578,7 @@ trash-guides-ptbr/
 
 ## 🤝 Contribuindo
 
-Contribuições são bem-vindas! Para adicionar novos custom formats:
+Contribuições são bem-vindas! Para adicionar novos custom formats ou melhorias.
 
 1. Fork este repositório
 2. Crie um branch (`git checkout -b feature/novo-formato`)
