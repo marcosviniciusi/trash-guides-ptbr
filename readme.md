@@ -448,7 +448,7 @@ mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
 ```
-Obs: Ja efetua o download do arquivo docker-compose.yaml, siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
+Obs: O script acima efetua o download do arquivo docker-compose.yaml, siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
 ### 2. Criar secrets.yml
 
 ```bash
@@ -618,6 +618,11 @@ docker-compose restart configarr
 ## ☸️ Kubernetes
 
 ### 1. Estrutura de Secrets
+
+Obs: já há um IAC pronto e podendo ser aplicado com kustomize no diretório iac/k8s/configarr, basta alterar os valores dos secrets no arquivo:
+- configarr-secrets.yaml
+Defina o namespace no arquivo:
+- kustomization.yaml
 
 Crie um arquivo `secrets.yml` com suas credenciais:
 
