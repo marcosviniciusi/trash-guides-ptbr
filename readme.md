@@ -97,7 +97,7 @@ trash-guides-ptbr/
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 |
 | **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +5500 |
 | **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados (legendado) | +5000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | +10000 |
+| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Radarr)
 
@@ -111,7 +111,7 @@ trash-guides-ptbr/
 | **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
 | **custom-animes-not-original-radarr** | Penaliza áudio não original | -100000 |
 | **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | +10000 |
+| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
 
 ### 📺 Sonarr (Séries)
 
@@ -122,7 +122,7 @@ trash-guides-ptbr/
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 |
 | **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +6500 |
 | **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados (legendado) | +6000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | +10000 |
+| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Sonarr)
 
