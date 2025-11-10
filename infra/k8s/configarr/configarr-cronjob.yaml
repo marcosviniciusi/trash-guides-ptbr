@@ -1,0 +1,105 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: configarr-sync
+  namespace: arr
+spec:
+  schedule: "00 14 * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          initContainers:
+            - name: download-custom-formats
+              image: curlimages/curl:latest
+              command:
+                - sh
+                - -c
+                - |
+                  echo "Downloading custom formats..."
+                  mkdir -p /config/custom_formats
+                  
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json \
+                    -o /config/custom_formats/custom-web-tier-ptbr-dual.json
+                  
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
+                    -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json
+                  
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json \
+                    -o /config/custom_formats/custom-web-tier-ptbr-not-group-radarr.json
+                  
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json \
+                    -o /config/custom_formats/custom-web-tier-ptbr-not-group-sonarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-sonarr.json \
+                    -o /config/custom_formats/custom-animes-not-brazilian-sonarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-sonarr.json \
+                    -o /config/custom_formats/custom-animes-not-original-sonarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-sonarr.json \
+                    -o /config/custom_formats/custom-animes-not-portuguese-sonarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-sonarr.json \
+                    -o /config/custom_formats/custom-animes-toonshub-pt-sonarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json\
+                    -o /config/custom_formats/custom-animes-toonshub-ptbr-sonarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-radarr.json \
+                    -o /config/custom_formats/custom-animes-not-brazilian-radarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-radarr.json \
+                    -o /config/custom_formats/custom-animes-not-original-radarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json \
+                    -o /config/custom_formats/custom-animes-not-portuguese-radarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json \
+                    -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json
+
+                  curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json\
+                    -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json
+                  
+              volumeMounts:
+                - name: custom-formats-storage
+                  mountPath: /config
+          
+          containers:
+            - name: configarr
+              image: ghcr.io/raydak-labs/configarr:latest
+              imagePullPolicy: Always
+              env:
+                - name: LOG_STACKTRACE
+                  value: "true"
+                - name: OTEL_LOG_LEVEL
+                  value: "debug"
+              volumeMounts:
+                - name: app-data
+                  mountPath: /app/repos
+                  subPath: configarr-repos
+                - name: configarr-config
+                  mountPath: /app/config/config.yml
+                  subPath: config.yml
+                - name: secret-volume
+                  mountPath: /app/config/secrets.yml
+                  subPath: secrets_yml
+                - name: custom-formats-storage
+                  mountPath: /config
+                  readOnly: true
+
+          restartPolicy: Never
+          volumes:
+            - name: custom-formats-storage
+              emptyDir: {}
+            - name: app-data
+              persistentVolumeClaim:
+                claimName: configarr
+            - name: configarr-config
+              configMap:
+                name: configarr-config
+            - name: secret-volume
+              secret:
+                secretName: configarr-secrets  # ← MUDOU AQUI: de configarr-secrets para configarr
