@@ -207,7 +207,7 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ## Como Configura-lo?
 
 ### Pré-requisitos
-- [Crie o Profile com o nome "HD"](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#crie-o-profile-com-nome-hd)
+- [Crie o Profile com o nome "HD"](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#crie-o-profile-com-nome-hd)
 - API Keys do Radarr/Sonarr
 - Docker ou Kubernetes
 ---
