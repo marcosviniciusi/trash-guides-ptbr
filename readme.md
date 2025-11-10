@@ -114,7 +114,7 @@ trash-guides-ptbr/
 
 Antes de configurar os custom formats, você precisa ter um Quality Profile chamado **"HD"** (ou ajustar o nome no `config.yml`).
 
-# Crie O Profile com Nome "HD" ###
+# Criando O Profile com Nome "HD" ###
 
 #### No Radarr/Sonarr:
 
