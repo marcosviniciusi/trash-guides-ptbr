@@ -67,8 +67,11 @@ trash-guides-ptbr/
 │   ├── custom-animes-toonshub-ptbr-radarr.json        # Legendado Legendado ToonsHub PT-BR (Radarr)
 │   └── custom-animes-toonshub-ptbr-sonarr.json        # Legendado ToonsHub PT-BR (Sonarr)
 └── iac/                                               # Infraestrutura como Código
-    ├── docker-compose/                                
-    │   └── docker-compose.yaml                        # Exemplo Docker Compose
+    ├── docker-compose/ 
+    │   ├── automatico/                                
+    │   │   └── docker-compose.yaml                    # Docker Compose Automatico
+    │   └── manual/
+    │       └── docker-compose.yaml                    # Docker Compose Manual
     └── k8s/    
         └── configarr/                                 # Manifestos Kubernetes
             ├── configarr-config.yaml

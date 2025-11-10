@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  # Download dos Custom Formats
+  # Download automático dos Custom Formats
   download-formats:
     image: curlimages/curl:latest
     container_name: configarr-download
     command: >
       sh -c "
-      mkdir -p /config/custom_formats &&
+      echo '📥 Baixando custom formats...' &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json -o /config/custom_formats/custom-web-tier-ptbr-dual.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-radarr.json &&
@@ -22,10 +22,10 @@ services:
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json -o /config/custom_formats/custom-animes-not-portuguese-radarr.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json &&
       curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json &&
-      echo 'Custom formats downloaded successfully!'
+      echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
-      - custom-formats:/config
+      - custom-formats:/config/custom-formats
     restart: "no"
   
   # Configarr
@@ -38,7 +38,7 @@ services:
     volumes:
       - ./config/config.yml:/app/config/config.yml:ro
       - ./secrets/secrets.yml:/app/config/secrets.yml:ro
-      - custom-formats:/config:ro
+      - custom-formats:/config/custom-formats:ro
       - app-data:/app/repos
     environment:
       - LOG_STACKTRACE=true
@@ -46,10 +46,10 @@ services:
     network_mode: bridge
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"
+      ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"  # Todo dia às 2h
       ofelia.job-exec.configarr-sync.command: "/app/configarr"
   
-  # Scheduler
+  # Scheduler Ofelia
   ofelia:
     image: mcuadros/ofelia:latest
     container_name: ofelia-scheduler

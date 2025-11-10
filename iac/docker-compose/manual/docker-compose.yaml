@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  configarr:
+    image: ghcr.io/raydak-labs/configarr:latest
+    container_name: configarr
+    volumes:
+      - ./config/config.yml:/app/config/config.yml:ro
+      - ./secrets/secrets.yml:/app/config/secrets.yml:ro
+      - ./custom_formats:/config/custom_formats:ro
+      - app-data:/app/repos
+    environment:
+      - LOG_STACKTRACE=true
+      - OTEL_LOG_LEVEL=debug
+    network_mode: bridge
+    # Remove restart para execução manual
+    # Use: docker-compose up configarr
+
+volumes:
+  app-data:
