@@ -7,14 +7,23 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
 
 ## 📋 Índice
 
-- [Sobre](#sobre)
-- [Custom Formats Disponíveis](#custom-formats-disponíveis)
-- [Instalação Manual](#instalação-manual)
-- [O que é o Configarr?](#O-que-e-o-Configarr?)
-  - [Docker Compose](#docker-compose)
-  - [Kubernetes](#kubernetes)
-- [Estrutura de Scores](#estrutura-de-scores)
-- [Contribuindo](#contribuindo)
+- [Sobre](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-sobre)
+- [Estrutura Repositório](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-do-reposit%C3%B3rio)
+- [Custom Formats Disponíveis](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-custom-formats-dispon%C3%ADveis)
+  - [Radarr Filmes](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-radarr-filmes)
+  - [Radarr_Animes](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#animes-radarr)
+  - [Sonarr Series](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-sonarr-s%C3%A9ries)
+  - [Sonarr_Animes](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#animes-sonarr)
+- [Instalação Manual](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-instala%C3%A7%C3%A3o-manual)
+  - [Criando O Profile com o nome "HD"](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#crie-o-profile-com-nome-hd)
+- [O que é o Configarr?](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-o-que-%C3%A9-o-configarr)
+  - [Como Configura-lo?](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#como-configura-lo)
+    - [Pré-Requisitos](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#pr%C3%A9-requisitos)
+    - [Docker Compose](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-docker-compose)
+    - [Kubernetes](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#%EF%B8%8F-kubernetes)
+- [Estrutura de Scores](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores)
+- [Atualizações Automáticas](#)https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores
+- [Contribuindo](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-contribuindo)
 
 ## 🎯 Sobre
 
@@ -198,11 +207,9 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ## Como Configura-lo?
 
 ### Pré-requisitos
-
-- [Configarr](https://github.com/raydak-labs/configarr) instalado
+- [Crie o Profile com o nome "HD"](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#crie-o-profile-com-nome-hd)
 - API Keys do Radarr/Sonarr
 - Docker ou Kubernetes
-- iac já disponivel no diretório "iac".
 ---
 
 ## 🐳 Docker Compose
