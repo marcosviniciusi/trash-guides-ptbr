@@ -164,7 +164,8 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 ```
 {Movie CleanTitle} {(Release Year)} - {{Edition Tags}} {[MediaInfo 3D]}{[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
 ```
-### Adicionando Manualmente os Custom Formats
+## Configurando Manualmente os custom Formats
+## obs: siga apenas este passo se não desejar usar o configarr.
 #### No Radarr/Sonarr:
 
 1. Acesse **Settings → Custom Formats**
