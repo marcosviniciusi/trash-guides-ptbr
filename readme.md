@@ -299,11 +299,10 @@ services:
     # Remove restart para execução manual
     # Use: docker-compose up configarr
 volumes:
-  custom-formats:
   app-data:
 ```
 
-### 6. Docker Compose - Execução Agendada (com Ofelia)
+### 6. Docker Compose - Execução Agendada e sincronização dos Releases do Repo (com Ofelia)
 ```yaml
 version: '3.8'
 
