@@ -22,7 +22,7 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
     - [Docker Compose](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-docker-compose)
     - [Kubernetes](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#%EF%B8%8F-kubernetes)
 - [Estrutura de Scores](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores)
-- [Atualizações Automáticas](#)https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores
+- [Atualizações Automáticas](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-estrutura-de-scores)
 - [Contribuindo](#https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-contribuindo)
 
 ## 🎯 Sobre
