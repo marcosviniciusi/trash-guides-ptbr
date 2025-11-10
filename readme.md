@@ -283,7 +283,7 @@ curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/r
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
 ```
-Obs 2: Se seguir o este segundo script, poderá ir direto a esta [Passo da instalação](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#4-executar).
+Obs 2: Se seguir o este segundo script, Após executar o passo 2 e passo 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#4-executar).
 
 ### 2. Criar secrets.yml
 
