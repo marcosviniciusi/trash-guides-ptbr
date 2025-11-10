@@ -2,7 +2,6 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: configarr-sync
-  namespace: arr
 spec:
   schedule: "00 14 * * *"
   successfulJobsHistoryLimit: 1
