@@ -715,15 +715,6 @@
       }
     },
     {
-      "name": "DragsterPS",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(DragsterPS)$"
-      }
-    },
-    {
       "name": "TupaC",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -757,15 +748,6 @@
       "required": false,
       "fields": {
         "value": "^(Cory)$"
-      }
-    },
-    {
-      "name": "ASM",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(ASM)$"
       }
     },
     {
@@ -820,15 +802,6 @@
       "required": false,
       "fields": {
         "value": "^(RK)$"
-      }
-    },
-    {
-      "name": "DRENAN",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(DRENAN)$"
       }
     },
     {
@@ -1640,15 +1613,6 @@
       "required": false,
       "fields": {
         "value": "^(SBLePT)$"
-      }
-    },
-    {
-      "name": "CaNNIBal",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(CaNNIBal)$"
       }
     },
     {

@@ -402,15 +402,6 @@
       }
     },
     {
-      "name": "Negar S74Ll10n",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(S74Ll10n)$"
-      }
-    },
-    {
       "name": "Negar sh4down",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -654,15 +645,6 @@
       }
     },
     {
-      "name": "Negar DragsterPS",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(DragsterPS)$"
-      }
-    },
-    {
       "name": "Negar TupaC",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -696,15 +678,6 @@
       "required": true,
       "fields": {
         "value": "^(Cory)$"
-      }
-    },
-    {
-      "name": "Negar ASM",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(ASM)$"
       }
     },
     {
@@ -759,15 +732,6 @@
       "required": true,
       "fields": {
         "value": "^(RK)$"
-      }
-    },
-    {
-      "name": "Negar DRENAN",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(DRENAN)$"
       }
     },
     {
@@ -1560,15 +1524,6 @@
       "required": true,
       "fields": {
         "value": "^(SBLePT)$"
-      }
-    },
-    {
-      "name": "Negar CaNNIBal",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(CaNNIBal)$"
       }
     },
     {
