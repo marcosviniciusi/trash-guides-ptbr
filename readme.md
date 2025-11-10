@@ -273,13 +273,14 @@ cat > download-custom-formats.sh << 'EOF'
 echo "Downloading custom formats..."
 mkdir -p custom_formats
 
-# Radarr Formats
+# Global Custom Formats
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json \
   -o custom_formats/custom-web-tier-ptbr-dual.json
 
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json \
   -o custom_formats/custom-web-tier-ptbr-not-dual.json
 
+# Radarr Formats
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json \
   -o custom_formats/custom-web-tier-ptbr-not-group-radarr.json
 
