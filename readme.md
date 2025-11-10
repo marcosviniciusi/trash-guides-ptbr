@@ -281,7 +281,9 @@ cd configarr
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
 chmod +x download-custom-formats.sh
+./download-custom-formats.sh
 ```
+Obs 2: Se seguir o custom, poderá ir direto a esta [Passo da instalação](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#4-executar).
 
 ### 2. Criar secrets.yml
 
