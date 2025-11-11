@@ -1309,15 +1309,6 @@
       }
     },
     {
-      "name": "Silence",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Silence)$"
-      }
-    },
-    {
       "name": "QuickIO",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

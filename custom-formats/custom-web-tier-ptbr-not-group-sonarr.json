@@ -87,15 +87,6 @@
       }
     },
     {
-      "name": "Negar Silence",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(Silence)$"
-      }
-    },
-    {
       "name": "Negar ElM4g0",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
