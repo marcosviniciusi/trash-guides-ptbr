@@ -1435,6 +1435,1464 @@
       }
     },
     {
+      "name": "FênixFansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(FênixFansub)$"
+      }
+    },
+    {
+      "name": "WF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(WF)$"
+      }
+    },
+    {
+      "name": "HanaEncode",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HanaEncode)$"
+      }
+    },
+    {
+      "name": "SubVision",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SubVision)$"
+      }
+    },
+    {
+      "name": "Infinite-Owari",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Infinite-Owari)$"
+      }
+    },
+    {
+      "name": "GHB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(GHB)$"
+      }
+    },
+    {
+      "name": "ACRE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ACRE)$"
+      }
+    },
+    {
+      "name": "AE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AE)$"
+      }
+    },
+    {
+      "name": "AMAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AMAX)$"
+      }
+    },
+    {
+      "name": "AMF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AMF)$"
+      }
+    },
+    {
+      "name": "ANPLT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ANPLT)$"
+      }
+    },
+    {
+      "name": "ANTR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ANTR)$"
+      }
+    },
+    {
+      "name": "AWH",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AWH)$"
+      }
+    },
+    {
+      "name": "About Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(About Fansub)$"
+      }
+    },
+    {
+      "name": "Absolute Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Absolute Fansub)$"
+      }
+    },
+    {
+      "name": "Agaman",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Agaman)$"
+      }
+    },
+    {
+      "name": "Akogare Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Akogare Fansub)$"
+      }
+    },
+    {
+      "name": "AniMercosul",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AniMercosul)$"
+      }
+    },
+    {
+      "name": "Anime Future",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Anime Future)$"
+      }
+    },
+    {
+      "name": "Anime Gods",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Anime Gods)$"
+      }
+    },
+    {
+      "name": "Anime Planet",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Anime Planet)$"
+      }
+    },
+    {
+      "name": "Anime no Reppuu",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Anime no Reppuu)$"
+      }
+    },
+    {
+      "name": "AnimeP2P",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AnimeP2P)$"
+      }
+    },
+    {
+      "name": "AnimeTHT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AnimeTHT)$"
+      }
+    },
+    {
+      "name": "AnimeTracker",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AnimeTracker)$"
+      }
+    },
+    {
+      "name": "AnimesPLUS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AnimesPLUS)$"
+      }
+    },
+    {
+      "name": "Avalon Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Avalon Fansub)$"
+      }
+    },
+    {
+      "name": "Avidown",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Avidown)$"
+      }
+    },
+    {
+      "name": "Avidown Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Avidown Fansub)$"
+      }
+    },
+    {
+      "name": "Aya Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Aya Fansub)$"
+      }
+    },
+    {
+      "name": "BD_SUBS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BD_SUBS)$"
+      }
+    },
+    {
+      "name": "BTR Subs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BTR Subs)$"
+      }
+    },
+    {
+      "name": "Bakarayo-Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Bakarayo-Fansub)$"
+      }
+    },
+    {
+      "name": "Bakuhatsu",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Bakuhatsu)$"
+      }
+    },
+    {
+      "name": "Barazoku",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Barazoku)$"
+      }
+    },
+    {
+      "name": "Bloody FanSub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Bloody FanSub)$"
+      }
+    },
+    {
+      "name": "Boteco Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Boteco Fansub)$"
+      }
+    },
+    {
+      "name": "Bruthais Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Bruthais Fansub)$"
+      }
+    },
+    {
+      "name": "CAN! !SUB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(CAN! !SUB)$"
+      }
+    },
+    {
+      "name": "Cachorro Loko",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Cachorro Loko)$"
+      }
+    },
+    {
+      "name": "CdaSubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(CdaSubs)$"
+      }
+    },
+    {
+      "name": "Câncer Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Câncer Fansub)$"
+      }
+    },
+    {
+      "name": "DBBR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DBBR)$"
+      }
+    },
+    {
+      "name": "DataBaseSub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DataBaseSub)$"
+      }
+    },
+    {
+      "name": "Dragon Seven",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Dragon Seven)$"
+      }
+    },
+    {
+      "name": "ECN Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ECN Fansub)$"
+      }
+    },
+    {
+      "name": "Eternal Animes",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Eternal Animes)$"
+      }
+    },
+    {
+      "name": "Eupho",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Eupho)$"
+      }
+    },
+    {
+      "name": "FAL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(FAL)$"
+      }
+    },
+    {
+      "name": "FUCKILL FANSUB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(FUCKILL FANSUB)$"
+      }
+    },
+    {
+      "name": "GAIA Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(GAIA Fansub)$"
+      }
+    },
+    {
+      "name": "GHS Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(GHS Fansub)$"
+      }
+    },
+    {
+      "name": "Grupo Kirinashi",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Grupo Kirinashi)$"
+      }
+    },
+    {
+      "name": "HF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HF)$"
+      }
+    },
+    {
+      "name": "HNK Fansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HNK Fansubs)$"
+      }
+    },
+    {
+      "name": "Hacchi Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Hacchi Fansub)$"
+      }
+    },
+    {
+      "name": "HarderFansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HarderFansub)$"
+      }
+    },
+    {
+      "name": "Hayai Subs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Hayai Subs)$"
+      }
+    },
+    {
+      "name": "Heaven Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Heaven Fansub)$"
+      }
+    },
+    {
+      "name": "Heijin-BR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Heijin-BR)$"
+      }
+    },
+    {
+      "name": "Hihan Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Hihan Fansub)$"
+      }
+    },
+    {
+      "name": "Hirameki Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Hirameki Fansub)$"
+      }
+    },
+    {
+      "name": "Hokkaido",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Hokkaido)$"
+      }
+    },
+    {
+      "name": "Hontou Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Hontou Fansub)$"
+      }
+    },
+    {
+      "name": "Ichiban Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Ichiban Fansub)$"
+      }
+    },
+    {
+      "name": "Infinite Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Infinite Fansub)$"
+      }
+    },
+    {
+      "name": "InuYasha Downs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(InuYasha Downs)$"
+      }
+    },
+    {
+      "name": "Isekai Subs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Isekai Subs)$"
+      }
+    },
+    {
+      "name": "Ivereste",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Ivereste)$"
+      }
+    },
+    {
+      "name": "Jai N Kai",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Jai N Kai)$"
+      }
+    },
+    {
+      "name": "KIIS Scansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KIIS Scansubs)$"
+      }
+    },
+    {
+      "name": "KNK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KNK)$"
+      }
+    },
+    {
+      "name": "KNK Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KNK Fansub)$"
+      }
+    },
+    {
+      "name": "KURE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KURE)$"
+      }
+    },
+    {
+      "name": "Kaminari",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kaminari)$"
+      }
+    },
+    {
+      "name": "Kanshin Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kanshin Fansub)$"
+      }
+    },
+    {
+      "name": "KatawareDoki",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KatawareDoki)$"
+      }
+    },
+    {
+      "name": "Kawaii Otome",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kawaii Otome)$"
+      }
+    },
+    {
+      "name": "Kazoku",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kazoku)$"
+      }
+    },
+    {
+      "name": "Kintoun",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kintoun)$"
+      }
+    },
+    {
+      "name": "Kiyoteru Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kiyoteru Fansub)$"
+      }
+    },
+    {
+      "name": "Koisuru Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Koisuru Fansub)$"
+      }
+    },
+    {
+      "name": "Konoha-Sannins",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Konoha-Sannins)$"
+      }
+    },
+    {
+      "name": "Kouyou Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kouyou Fansub)$"
+      }
+    },
+    {
+      "name": "Kurai-Ken",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kurai-Ken)$"
+      }
+    },
+    {
+      "name": "Kyun Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kyun Fansub)$"
+      }
+    },
+    {
+      "name": "L-A",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(L-A)$"
+      }
+    },
+    {
+      "name": "LEVA",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(LEVA)$"
+      }
+    },
+    {
+      "name": "LWS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(LWS)$"
+      }
+    },
+    {
+      "name": "Lake Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Lake Fansub)$"
+      }
+    },
+    {
+      "name": "Liga do Sul",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Liga do Sul)$"
+      }
+    },
+    {
+      "name": "Lost Woods Sub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Lost Woods Sub)$"
+      }
+    },
+    {
+      "name": "Lotk-fansuber",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Lotk-fansuber)$"
+      }
+    },
+    {
+      "name": "MAF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MAF)$"
+      }
+    },
+    {
+      "name": "MMS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MMS)$"
+      }
+    },
+    {
+      "name": "Moshi Moshi",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Moshi Moshi)$"
+      }
+    },
+    {
+      "name": "Mundo do Shoujo",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Mundo do Shoujo)$"
+      }
+    },
+    {
+      "name": "NAF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(NAF)$"
+      }
+    },
+    {
+      "name": "NewZect",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(NewZect)$"
+      }
+    },
+    {
+      "name": "NexelSUBS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(NexelSUBS)$"
+      }
+    },
+    {
+      "name": "OF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OF)$"
+      }
+    },
+    {
+      "name": "OMDA",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OMDA)$"
+      }
+    },
+    {
+      "name": "OWF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OWF)$"
+      }
+    },
+    {
+      "name": "One Piece EX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(One Piece EX)$"
+      }
+    },
+    {
+      "name": "Onmitsu Fansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Onmitsu Fansubs)$"
+      }
+    },
+    {
+      "name": "Otakus Fans",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Otakus Fans)$"
+      }
+    },
+    {
+      "name": "Owari Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Owari Fansub)$"
+      }
+    },
+    {
+      "name": "PA Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(PA Fansub)$"
+      }
+    },
+    {
+      "name": "PSF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(PSF)$"
+      }
+    },
+    {
+      "name": "Proxy Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Proxy Fansub)$"
+      }
+    },
+    {
+      "name": "Qubeley Fansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Qubeley Fansubs)$"
+      }
+    },
+    {
+      "name": "Riichi Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Riichi Fansub)$"
+      }
+    },
+    {
+      "name": "Ryoran Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Ryoran Fansub)$"
+      }
+    },
+    {
+      "name": "Ryuji Subs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Ryuji Subs)$"
+      }
+    },
+    {
+      "name": "Ryuusei Fansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Ryuusei Fansubs)$"
+      }
+    },
+    {
+      "name": "SCA Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SCA Fansub)$"
+      }
+    },
+    {
+      "name": "SEELE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SEELE)$"
+      }
+    },
+    {
+      "name": "START Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(START Fansub)$"
+      }
+    },
+    {
+      "name": "STF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(STF)$"
+      }
+    },
+    {
+      "name": "STNL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(STNL)$"
+      }
+    },
+    {
+      "name": "Saikou-BR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Saikou-BR)$"
+      }
+    },
+    {
+      "name": "Sakurai Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Sakurai Fansub)$"
+      }
+    },
+    {
+      "name": "Seicher",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Seicher)$"
+      }
+    },
+    {
+      "name": "Seisenshi Fansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Seisenshi Fansubs)$"
+      }
+    },
+    {
+      "name": "Shakai Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Shakai Fansub)$"
+      }
+    },
+    {
+      "name": "Shinka Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Shinka Fansub)$"
+      }
+    },
+    {
+      "name": "Shinkai Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Shinkai Fansub)$"
+      }
+    },
+    {
+      "name": "Shinonome",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Shinonome)$"
+      }
+    },
+    {
+      "name": "Silex Fansubs",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Silex Fansubs)$"
+      }
+    },
+    {
+      "name": "Sobre Animes",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Sobre Animes)$"
+      }
+    },
+    {
+      "name": "SocietyGuild",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SocietyGuild)$"
+      }
+    },
+    {
+      "name": "Spiido",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Spiido)$"
+      }
+    },
+    {
+      "name": "SubTNT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SubTNT)$"
+      }
+    },
+    {
+      "name": "Sukinime",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Sukinime)$"
+      }
+    },
+    {
+      "name": "TBF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TBF)$"
+      }
+    },
+    {
+      "name": "TEST-KUN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TEST-KUN)$"
+      }
+    },
+    {
+      "name": "TMP",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TMP)$"
+      }
+    },
+    {
+      "name": "TNNAC",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TNNAC)$"
+      }
+    },
+    {
+      "name": "TNT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TNT)$"
+      }
+    },
+    {
+      "name": "Tadaima Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Tadaima Fansub)$"
+      }
+    },
+    {
+      "name": "Taikutsu-kun",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Taikutsu-kun)$"
+      }
+    },
+    {
+      "name": "Tenrou Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Tenrou Fansub)$"
+      }
+    },
+    {
+      "name": "Trinisete",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Trinisete)$"
+      }
+    },
+    {
+      "name": "TsunTsun",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TsunTsun)$"
+      }
+    },
+    {
+      "name": "UniOtaku",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(UniOtaku)$"
+      }
+    },
+    {
+      "name": "Valar Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Valar Fansub)$"
+      }
+    },
+    {
+      "name": "Wakan Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Wakan Fansub)$"
+      }
+    },
+    {
+      "name": "Wasureta",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Wasureta)$"
+      }
+    },
+    {
+      "name": "World Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(World Fansub)$"
+      }
+    },
+    {
+      "name": "X-Sports Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(X-Sports Fansub)$"
+      }
+    },
+    {
+      "name": "YFLA",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(YFLA)$"
+      }
+    },
+    {
+      "name": "Yami Studio",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Yami Studio)$"
+      }
+    },
+    {
+      "name": "YusukeFLA",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(YusukeFLA)$"
+      }
+    },
+    {
+      "name": "Zamba",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Zamba)$"
+      }
+    },
+    {
+      "name": "Zettai-BR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Zettai-BR)$"
+      }
+    },
+    {
+      "name": "aaaaaaaArmandex",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(aaaaaaaArmandex)$"
+      }
+    },
+    {
+      "name": "e2",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(e2)$"
+      }
+    },
+    {
+      "name": "e2 Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(e2 Fansub)$"
+      }
+    },
+    {
+      "name": "morningspeed",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(morningspeed)$"
+      }
+    },
+    {
+      "name": "piracicaba97",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(piracicaba97)$"
+      }
+    },
+    {
+      "name": "ÓINC Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ÓINC Fansub)$"
+      }
+    },
+    {
+      "name": "MAD Fansub",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MAD Fansub)$"
+      }
+    },
+    {
       "name": "Sphynx",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
