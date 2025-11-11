@@ -94,9 +94,9 @@ trash-guides-ptbr/
 
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +6000 |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +5500 |
-| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados (legendado) | +5000 |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +15000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +12000 |
+| **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados (legendado) | +8000 |
 | **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Radarr)
@@ -119,9 +119,9 @@ trash-guides-ptbr/
 
 | Custom Format | Descrição | Score Recomendado |
 |---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +7000 |
-| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +6500 |
-| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados (legendado) | +6000 |
+| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +15000 |
+| **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +12000 |
+| **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados (legendado) | +8000 |
 | **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Sonarr)
@@ -221,7 +221,7 @@ radarr:
           - custom-web-tier-ptbr-not-dual
         assign_scores_to:
           - name: HD
-            score: 6000
+            score: 12000
 ```
 
 **Benefícios:**
@@ -345,7 +345,7 @@ radarr:
           - custom-web-tier-ptbr-not-group-radarr
         assign_scores_to:
           - name: HD
-            score: 6000
+            score: 12000
 
 sonarr:
   series:
@@ -362,7 +362,7 @@ sonarr:
           - custom-web-tier-ptbr-not-group-sonarr
         assign_scores_to:
           - name: HD
-            score: 7000
+            score: 12000
 
 # [Veja config.yml completo no repositório]
 ```
@@ -500,7 +500,7 @@ radarr:
           - custom-web-tier-ptbr-not-group-radarr
         assign_scores_to:
           - name: HD
-            score: 6000
+            score: 12000
 
 sonarr:
   series:
@@ -517,7 +517,7 @@ sonarr:
           - custom-web-tier-ptbr-not-group-sonarr
         assign_scores_to:
           - name: HD
-            score: 7000
+            score: 12000
 
 # [Veja config.yml completo no repositório]
 ```
@@ -807,7 +807,7 @@ kubectl delete job configarr-test -n media
 
 | Categoria | Faixa de Score |
 |-----------|----------------|
-| **Custom Formats PT-BR** | +5000 a +7000 |
+| **Custom Formats PT-BR** | +8000 a +15000 |
 | **Áudio de Alta Qualidade** | +1000 a +5000 |
 | **Remux/Bluray Tiers** | +1700 a +1950 |
 | **Penalizações** | -10000 a -100000 |
