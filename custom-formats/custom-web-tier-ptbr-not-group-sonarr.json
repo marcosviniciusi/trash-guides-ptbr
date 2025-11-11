@@ -1473,15 +1473,6 @@
       }
     },
     {
-      "name": "Negar YusukeFLA",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(YusukeFLA)$"
-      }
-    },
-    {
       "name": "Negar Zamba",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

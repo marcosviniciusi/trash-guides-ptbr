@@ -12,15 +12,6 @@
         "value": "\\b(Legendado|legendado|Brazilian|Brazil|LEGENDADO|Brazilian-Portuguese|pt-br|pt-brasil|PT-BR|pt-BR|ptbr|PTBR|PtBr|ptBR|Port-BR|port-BR|port-br|Port-br|port-Br|port-bR)\\b"
       }
     },
-      {
-      "name": "Negar BENTHEMEN",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(BENTHEMEN)$"
-      }
-    },
     {
       "name": "Language : Brazilian",
       "implementation": "LanguageSpecification",
@@ -39,6 +30,15 @@
       "fields": {
         "value": -2,
         "exceptLanguage": false
+      }
+    },
+      {
+      "name": "Negar BENTHEMEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BENTHEMEN)$"
       }
     },
     {
@@ -1839,15 +1839,6 @@
       "required": true,
       "fields": {
         "value": "^(TexWiller)$"
-      }
-    },
-    {
-      "name": "Negar YusukeFLA",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(YusukeFLA)$"
       }
     },
     {

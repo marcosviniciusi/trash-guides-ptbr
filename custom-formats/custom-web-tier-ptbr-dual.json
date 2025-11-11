@@ -292,15 +292,6 @@
       }
     },
     {
-      "name": "YusukeFLA",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(YusukeFLA)$"
-      }
-    },
-    {
       "name": "FOXX",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
