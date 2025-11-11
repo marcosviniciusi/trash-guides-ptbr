@@ -1,24 +1,33 @@
 {
-  "trash_id": "custom-web-tier-ptbr-not-group-sonarr",
+  "trash_id": "custom-web-tier-ptbr-dub-radarr",
   "name": "Web Tier PT-BR NOT GROUP",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "PT-BR / Legendado / Dual / Sub",
+      "name": "Legendado",
       "implementation": "ReleaseTitleSpecification",
-      "negate": false,
+      "negate": true,
       "required": true,
       "fields": {
-        "value": "\\b(pt-?br|brazil(ian)?|port[-_. ]?br|legendado|dual)\\b"
+        "value": "\\b(Legendado|legendado|Brazilian|Brazil|LEGENDADO|Brazilian-Portuguese|pt-br|pt-brasil|PT-BR|pt-BR|ptbr|PTBR|PtBr|ptBR|Port-BR|port-BR|port-br|Port-br|port-Br|port-bR)\\b"
       }
     },
     {
-      "name": "Negar Dublado puro",
+      "name": "Negar Dublado",
       "implementation": "ReleaseTitleSpecification",
-      "negate": true,
+      "negate": false,
       "required": false,
       "fields": {
-        "value": "\\b(dublado|dub)\\b(?!.*\\bdual\\b)"
+        "value": "\\b(Dublado|dub|dublado|DUBLADO)\\b"
+      }
+    },
+      {
+      "name": "Negar BENTHEMEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BENTHEMEN)$"
       }
     },
     {
@@ -27,7 +36,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": 33,
+        "value": 30,
         "exceptLanguage": false
       }
     },
@@ -48,6 +57,114 @@
       "required": true,
       "fields": {
         "value": "^(encorebr)$"
+      }
+    },
+    {
+      "name": "Negar oarton27",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(oarton27)$"
+      }
+    },
+      {
+      "name": "Negar XaR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(XaR)$"
+      }
+    },
+    {
+      "name": "Negar KALAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(KALAX)$"
+      }
+    },
+    {
+      "name": "Negar MemoriadaTV",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(MemoriadaTV)$"
+      }
+    },
+    {
+      "name": "Negar BlueAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BlueAM)$"
+      }
+    },
+    {
+      "name": "Negar OhKara",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(OhKara)$"
+      }
+    },
+    {
+      "name": "Negar Neophitus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(Neophitus)$"
+      }
+    },
+    {
+      "name": "Negar dinrolin",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(dinrolin)$"
+      }
+    },
+    {
+      "name": "Negar AJP69",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(AJP69)$"
+      }
+    },
+    {
+      "name": "Negar OWL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(OWL)$"
+      }
+    },
+    {
+      "name": "Negar DODEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(DODEN)$"
+      }
+    },
+    {
+      "name": "Negar C0RAL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(C0RAL)$"
       }
     },
     {
@@ -1716,6 +1833,87 @@
       }
     },
     {
+      "name": "Negar XaR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(XaR)$"
+      }
+    },
+    {
+      "name": "Negar EcK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(EcK)$"
+      }
+    },
+    {
+      "name": "Negar SF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(SF)$"
+      }
+    },
+    {
+      "name": "Negar AnimesTotais",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(AnimesTotais)$"
+      }
+    },
+    {
+      "name": "Negar C0RAL",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(C0RAL)$"
+      }
+    },
+    {
+      "name": "Negar SAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(SAM)$"
+      }
+    },
+    {
+      "name": "Negar KALAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(KALAX)$"
+      }
+    },
+    {
+      "name": "Negar OhKara",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(OhKara)$"
+      }
+    },
+    {
+      "name": "Negar Paulista-DF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(Paulista-DF)$"
+      }
+    },
+    {
       "name": "Negar Tossato\u0003",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -1938,123 +2136,6 @@
       "required": true,
       "fields": {
         "value": "^(ADWeb)$"
-      }
-    },
-      {
-      "name": "Negar BENTHEMEN",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(BENTHEMEN)$"
-      }
-    },
-    {
-      "name": "Negar oarton27",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(oarton27)$"
-      }
-    },
-      {
-      "name": "Negar XaR",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(XaR)$"
-      }
-    },
-    {
-      "name": "Negar KALAX",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(KALAX)$"
-      }
-    },
-    {
-      "name": "Negar MemoriadaTV",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(MemoriadaTV)$"
-      }
-    },
-    {
-      "name": "Negar BlueAM",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(BlueAM)$"
-      }
-    },
-    {
-      "name": "Negar OhKara",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(OhKara)$"
-      }
-    },
-    {
-      "name": "Negar Neophitus",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(Neophitus)$"
-      }
-    },
-    {
-      "name": "Negar dinrolin",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(dinrolin)$"
-      }
-    },
-    {
-      "name": "Negar AJP69",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(AJP69)$"
-      }
-    },
-    {
-      "name": "Negar OWL",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(OWL)$"
-      }
-    },
-    {
-      "name": "Negar DODEN",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(DODEN)$"
-      }
-    },
-    {
-      "name": "Negar C0RAL",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(C0RAL)$"
       }
     },
     {
