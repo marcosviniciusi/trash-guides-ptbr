@@ -4,7 +4,7 @@
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "Legendado",
+      "name": "PT-BR Regex",
       "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": true,
