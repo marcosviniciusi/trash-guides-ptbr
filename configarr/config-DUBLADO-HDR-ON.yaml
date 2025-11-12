@@ -551,7 +551,7 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 0
-  ##########################################    ANIMES-ANIMES   ##########################################
+  ##########################################    ANIMES-MOVIES  ##########################################
   animes-movies:
     base_url: !secret RADARR_ANIMES_URL
     api_key: !secret RADARR_ANIMES_API_KEY
@@ -860,11 +860,6 @@ radarr:
             score: -100000
       - trash_ids:
           - 06b6542a47037d1e33b15aa3677c2365 #Anime Raws
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids:
-          - b0fdc5897f68c9a68c70c25169f77447 #Anime LQ Groups
         assign_scores_to:
           - name: HD
             score: -100000
@@ -1794,11 +1789,6 @@ sonarr:
             score: -100000
       - trash_ids: 
           - b4a1b3d705159cdca36d71e57ca86871 # Anime Raws
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids: 
-          - e3515e519f3b1360cbfc17651944354c # Anime LQ Groups
         assign_scores_to:
           - name: HD
             score: -100000

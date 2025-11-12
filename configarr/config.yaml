@@ -883,11 +883,6 @@ radarr:
           - name: HD
             score: -100000
       - trash_ids:
-          - b0fdc5897f68c9a68c70c25169f77447 #Anime LQ Groups
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids:
           - 4a3b087eea2ce012fcc1ce319259a3be # DUAL AUDIO
         assign_scores_to:
           - name: HD
@@ -1833,11 +1828,6 @@ sonarr:
             score: -100000
       - trash_ids: 
           - b4a1b3d705159cdca36d71e57ca86871 # Anime Raws
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids: 
-          - e3515e519f3b1360cbfc17651944354c # Anime LQ Groups
         assign_scores_to:
           - name: HD
             score: -100000
