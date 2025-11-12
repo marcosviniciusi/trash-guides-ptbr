@@ -6,8 +6,6 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
 [![Radarr Compatible](https://img.shields.io/badge/Radarr-Compatible-green)](https://github.com/Radarr/Radarr)
 [![Sonarr Compatible](https://img.shields.io/badge/Sonarr-Compatible-green)](https://github.com/Sonarr/Sonarr)
 [![TRaSH-Guides Compatible](https://img.shields.io/badge/TRaSHGuides-Compatible-green)](https://github.com/TRaSH-Guides/Guides)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ## 📋 Índice
 
 - [Sobre](#-sobre)
@@ -101,7 +99,7 @@ trash-guides-ptbr/
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +20000 |
 | **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +15000 |
 | **custom-web-tier-ptbr-not-group-radarr** | Prioriza releases PT-BR não mapeados (legendado) | +10000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Radarr)
 
@@ -115,7 +113,7 @@ trash-guides-ptbr/
 | **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
 | **custom-animes-not-original-radarr** | Penaliza áudio não original | -100000 |
 | **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | -10000 |
 
 ### 📺 Sonarr (Séries) Legendado
 
@@ -126,7 +124,7 @@ trash-guides-ptbr/
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +20000 |
 | **custom-web-tier-ptbr-not-dual** | Prioriza apenas PT-BR (legendado) | +15000 |
 | **custom-web-tier-ptbr-not-group-sonarr** | Prioriza releases PT-BR não mapeados (legendado) | +10000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Sonarr)
 
@@ -140,7 +138,7 @@ trash-guides-ptbr/
 | **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -10000 |
 | **custom-animes-not-original-sonarr** | Penaliza áudio não original | -10000 |
 | **custom-animes-not-portuguese-sonarr** | Penaliza sem português | -10000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | +10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | +10000 |
 
 ## DUBLADOS
 ------------------------------------------------------------------
@@ -152,7 +150,7 @@ trash-guides-ptbr/
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +20000 |
 | **custom-web-tier-ptbr-dub** | Prioriza apenas PT-BR (DUBLADO) | +15000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Radarr)
 
@@ -163,7 +161,7 @@ trash-guides-ptbr/
 | **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
 | **custom-animes-not-original-radarr** | Penaliza áudio não original | -100000 |
 | **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | -10000 |
 
 ### 📺 Sonarr (Séries) DUBLADOS
 
@@ -173,7 +171,7 @@ trash-guides-ptbr/
 |---------------|-----------|-------------------|
 | **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) | +20000 |
 | **custom-web-tier-ptbr-dub** | Prioriza apenas PT-BR (DUBLADO) | +15000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | -10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | -10000 |
 
 #### Animes (Sonarr)
 
@@ -184,7 +182,7 @@ trash-guides-ptbr/
 | **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -10000 |
 | **custom-animes-not-original-sonarr** | Penaliza áudio não original | -10000 |
 | **custom-animes-not-portuguese-sonarr** | Penaliza sem português | -10000 |
-| **custom-bad-pt-br-groups.jsonl** | Grupos pt-BR Banidos | +10000 |
+| **custom-bad-pt-br-groups** | Grupos pt-BR Banidos | +10000 |
 
 ## 🔧 Configurando os Quality Profiles
 
