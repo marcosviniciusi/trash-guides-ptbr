@@ -16,6 +16,7 @@ download_format() {
 # Custom Formats Globais
 download_format "custom-web-tier-ptbr-dual.json"
 download_format "custom-web-tier-ptbr-not-dual.json"
+download_format "custom-web-tier-ptbr-dub.json"
 
 # Radarr
 download_format "custom-web-tier-ptbr-not-group-radarr.json"

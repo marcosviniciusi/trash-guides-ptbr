@@ -355,17 +355,17 @@ radarr:
           - custom-web-tier-ptbr-dual
         assign_scores_to:
           - name: HD
-            score: 15000
+            score: 20000
       - trash_ids:
           - custom-web-tier-ptbr-not-dual
         assign_scores_to:
           - name: HD
-            score: 12000
+            score: 15000
       - trash_ids:
           - custom-web-tier-ptbr-not-group-radarr
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
         assign_scores_to:
@@ -1392,17 +1392,17 @@ sonarr:
           - custom-web-tier-ptbr-dual # WEB Tier DUAL AUDIO PT-BR
         assign_scores_to:
           - name: HD
-            score: 15000
+            score: 20000
       - trash_ids:
           - custom-web-tier-ptbr-not-dual # WEB Tier Legendado PT-BR
         assign_scores_to:
           - name: HD
-            score: 12000
+            score: 15000
       - trash_ids:
           - custom-web-tier-ptbr-not-group-sonarr # WEB Tier Legendado PT-BR Desconhecidos
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
         assign_scores_to:
