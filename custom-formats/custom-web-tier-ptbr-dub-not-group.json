@@ -13,15 +13,6 @@
       }
     },
     {
-      "name": "PT-BR Legendado",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "(?i)\\blegendado\\b"
-      }
-    },
-    {
       "name": "Negar FênixFansub",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
