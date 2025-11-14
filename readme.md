@@ -42,6 +42,12 @@ Este repositório contém **Custom Formats personalizados** desenvolvidos especi
 
 > **Nota importante:** Estes formatos são **complementares** aos [TRaSH Guides oficiais](https://trash-guides.info/), não substitutos. Use ambos para obter os melhores resultados!
 
+### Aviso Importante: Comportamento Esperado
+As regras Not-Group e Bad Groups aplicadas aos perfis de LEGENDADO e DUBLADO empregam expressões regulares genéricas. Devido à ausência de padronização consistente na nomenclatura de releases em trackers públicos, falsos positivos são esperados (e.g., legendados sendo capturados como dublados ou vice-versa).
+Apesar dos refinamentos implementados, a natureza heterogênea dos padrões de nomenclatura impossibilita uma precisão de 100%. Este é um comportamento conhecido e documentado da configuração atual
+
+
+
 ## 📁 Estrutura do Repositório
 
 ```

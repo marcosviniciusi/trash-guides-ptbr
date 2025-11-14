@@ -3,24 +3,6 @@
   "name": "Bad Pt-Br Groups",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
-     {
-       "name": "PT-BR Legendado/DUAL Audio",
-       "implementation": "ReleaseTitleSpecification",
-       "negate": false,
-       "required": true,
-       "fields": {
-         "value": "(?i)\\b(dual|legendado|brazilian([-\\s]dual[-\\s]audio|-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br)\\b"
-       }
-     },
-    {
-      "name": "PT-BR Dublado",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "(?i)\\bdublado\\b"
-      }
-    },
     {
       "name": "DragsterPS\"",
       "implementation": "ReleaseGroupSpecification",

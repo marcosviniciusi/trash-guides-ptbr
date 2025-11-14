@@ -4,15 +4,6 @@
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "PT-BR Dublado/Dual Audio",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-      "value": "(?i)\\b(dual|dublado|brazilian([-\\s](dual[-\\s]audio|portuguese))?|brazil|pt[-\\s]?br(asil(eiro)?)?|port(ugues)?[-\\s]?br|pt-br[-\\s]dub(s)?|dub(s)?[-\\s]pt-br|audio[-\\s]pt[-\\s]?br)\\b"
-      }
-    },
-    {
       "name": "DragsterPS\"",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
