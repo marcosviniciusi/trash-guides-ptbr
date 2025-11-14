@@ -9,9 +9,18 @@
        "negate": false,
        "required": true,
        "fields": {
-         "value": "(?i)\\b(legendado|brazilian([-\\s]dual[-\\s]audio|-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|web-dl\\s*/\\s*subs)\\b"
+         "value": "(?i)\\b(legendado|brazilian([-\\s]dual[-\\s]audio|-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br)\\b"
        }
      },
+    {
+      "name": "PT-BR Dublado",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)\\bdublado\\b"
+      }
+    },
       {
       "name": "Negar BENTHEMEN",
       "implementation": "ReleaseGroupSpecification",
