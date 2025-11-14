@@ -7,27 +7,54 @@ services:
     container_name: configarr-download
     command: >
       sh -c "
-      echo '📥 Baixando custom formats...' &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dual.json -o /config/custom_formats/custom-web-tier-ptbr-dual.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-dual.json -o /config/custom_formats/custom-web-tier-ptbr-not-dual.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-radarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-not-group-sonarr.json -o /config/custom_formats/custom-web-tier-ptbr-not-group-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-sonarr.json -o /config/custom_formats/custom-animes-not-brazilian-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-sonarr.json -o /config/custom_formats/custom-animes-not-original-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-sonarr.json -o /config/custom_formats/custom-animes-not-portuguese-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-sonarr.json -o /config/custom_formats/custom-animes-toonshub-pt-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-sonarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-sonarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-brazilian-radarr.json -o /config/custom_formats/custom-animes-not-brazilian-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-original-radarr.json -o /config/custom_formats/custom-animes-not-original-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-not-portuguese-radarr.json -o /config/custom_formats/custom-animes-not-portuguese-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-pt-radarr.json -o /config/custom_formats/custom-animes-toonshub-pt-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-animes-toonshub-ptbr-radarr.json -o /config/custom_formats/custom-animes-toonshub-ptbr-radarr.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-bad-pt-br-groups.json -o /config/custom_formats/custom-bad-pt-br-groups.json &&
-      curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats/custom-web-tier-ptbr-dub.json -o /config/custom_formats/custom-web-tier-ptbr-dub.json &&
+      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats'
+      
+      # Criar diretório se não existir
+      mkdir -p /config/custom-formats
+      
+      echo '📥 Baixando custom formats...'
+      
+      # Função para baixar com tratamento de erro
+      download_format() {
+          local file=$$1
+          echo '  → '$$file
+          curl -fsSL "$$BASE_URL/$$file" -o "/config/custom-formats/$$file" || {
+              echo '❌ Erro ao baixar '$$file
+              return 1
+          }
+      }
+      
+      # Custom Formats Globais DUAL AUDIO
+      download_format 'custom-web-tier-ptbr-dual.json'
+
+      # Custom Formats Globais Legendados
+      download_format 'custom-web-tier-ptbr-leg.json'
+      download_format 'custom-web-tier-ptbr-leg-not-group.json'
+      download_format 'custom-web-tier-ptbr-leg-bad-group.json'
+      
+      # Custom Formats Globais Dublados
+      download_format 'custom-web-tier-ptbr-dub.json'
+      download_format 'custom-web-tier-ptbr-dub-not-group.json'
+      download_format 'custom-web-tier-ptbr-dub-bad-group.json'
+      
+      # Radarr
+      download_format 'custom-animes-not-brazilian-radarr.json'
+      download_format 'custom-animes-not-original-radarr.json'
+      download_format 'custom-animes-not-portuguese-radarr.json'
+      download_format 'custom-animes-toonshub-pt-radarr.json'
+      download_format 'custom-animes-toonshub-ptbr-radarr.json'
+      
+      # Sonarr
+      download_format 'custom-animes-not-brazilian-sonarr.json'
+      download_format 'custom-animes-not-original-sonarr.json'
+      download_format 'custom-animes-not-portuguese-sonarr.json'
+      download_format 'custom-animes-toonshub-pt-sonarr.json'
+      download_format 'custom-animes-toonshub-ptbr-sonarr.json'
+      
       echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
-      - custom-formats:/config/custom-formats
+      - custom-formats:/config
     restart: "no"
   
   # Configarr
@@ -40,7 +67,7 @@ services:
     volumes:
       - ./config/config.yml:/app/config/config.yml:ro
       - ./secrets/secrets.yml:/app/config/secrets.yml:ro
-      - custom-formats:/config/custom-formats:ro
+      - custom-formats:/config:ro
       - app-data:/app/repos
     environment:
       - LOG_STACKTRACE=true
@@ -48,7 +75,7 @@ services:
     network_mode: bridge
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"  # Todo dia às 2h
+      ofelia.job-exec.configarr-sync.schedule: "0 2 * * *"
       ofelia.job-exec.configarr-sync.command: "/app/configarr"
   
   # Scheduler Ofelia

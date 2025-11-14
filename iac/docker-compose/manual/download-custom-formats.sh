@@ -13,13 +13,19 @@ download_format() {
     }
 }
 
-# Custom Formats Globais
+# Custom Formats Globais Legendados
 download_format "custom-web-tier-ptbr-dual.json"
-download_format "custom-web-tier-ptbr-not-dual.json"
-download_format "custom-web-tier-ptbr-dub.json"
+download_format "custom-web-tier-ptbr-leg.json.json"
+download_format "custom-web-tier-ptbr-leg-not-group.json"
+download_format "custom-web-tier-ptbr-leg-bad-group.json"
+
+# Custom Formats Globais Legendados
+download_format "custom-web-tier-ptbr-dual.json"
+download_format "custom-web-tier-ptbr-dub.json.json"
+download_format "custom-web-tier-ptbr-dub-not-group.json"
+download_format "custom-web-tier-ptbr-dub-bad-group.json"
 
 # Radarr
-download_format "custom-web-tier-ptbr-not-group-radarr.json"
 download_format "custom-animes-not-brazilian-radarr.json"
 download_format "custom-animes-not-original-radarr.json"
 download_format "custom-animes-not-portuguese-radarr.json"
@@ -27,14 +33,11 @@ download_format "custom-animes-toonshub-pt-radarr.json"
 download_format "custom-animes-toonshub-ptbr-radarr.json"
 
 # Sonarr
-download_format "custom-web-tier-ptbr-not-group-sonarr.json"
 download_format "custom-animes-not-brazilian-sonarr.json"
 download_format "custom-animes-not-original-sonarr.json"
 download_format "custom-animes-not-portuguese-sonarr.json"
 download_format "custom-animes-toonshub-pt-sonarr.json"
 download_format "custom-animes-toonshub-ptbr-sonarr.json"
 
-# Bad pt-Br Groups
-download_format "custom-bad-pt-br-groups.json"
 
 echo "✅ Custom formats baixados com sucesso!"

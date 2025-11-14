@@ -9,7 +9,6 @@ data:
     whisparrEnabled: false
     readarrEnabled: false
     lidarrEnabled: false
-
     # ======================================================================
     # RADARR
     # ======================================================================
@@ -137,7 +136,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 35     
-
           ############################ HDR ############################
           - trash_ids:
               - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
@@ -179,7 +177,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 10
-
           ############################ Movies Version ############################
           - trash_ids:
               - 0f12c086e289cf966fa5948eac571f44 # Hybrid
@@ -308,13 +305,7 @@ data:
             assign_scores_to:
               - name: HD
                 score: 5
-
           ############################ BAD GROUPS PT-BR ############################
-          - trash_ids:
-              - custom-bad-pt-br-groups # Bad Pt-BR Groups
-            assign_scores_to:
-              - name: HD
-                score: -10000
           - trash_ids:
               - 90a6f9a284dff5103f6346090e6280c8 # LQ
             assign_scores_to:
@@ -360,23 +351,28 @@ data:
             assign_scores_to:
               - name: HD
                 score: -10000   
-
-          ############################ Tier Premiere ############################                
+          ############################ Tier Premiere Portuguese-Brazilian ############################             
           - trash_ids:
-              - custom-web-tier-ptbr-dual
+              - custom-web-tier-ptbr-dual #Brazilian DUAL
+            assign_scores_to:
+              - name: HD
+                score: 20000
+          - trash_ids:
+              - custom-web-tier-ptbr-leg # Brazilian Leg Group
             assign_scores_to:
               - name: HD
                 score: 15000
           - trash_ids:
-              - custom-web-tier-ptbr-not-dual
+              - custom-web-tier-ptbr-leg-not-group # Brazilian Not Group
             assign_scores_to:
               - name: HD
-                score: 12000
+                score: 10000
           - trash_ids:
-              - custom-web-tier-ptbr-not-group-radarr
+              - custom-web-tier-ptbr-leg-bad-group # Bad Brazilian Groups
             assign_scores_to:
               - name: HD
                 score: 8000
+          ############################ Tier Premiere English ############################ 
           - trash_ids:
               - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
             assign_scores_to:
@@ -455,7 +451,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 7
-
           ############################ Streaming Services ############################
           - trash_ids:
               - b3b3a6ac74ecbd56bcdbefa4799fb9df # AMZN
@@ -690,7 +685,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 35     
-
           ############################ HDR ############################
           - trash_ids:
               - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
@@ -788,38 +782,54 @@ data:
             assign_scores_to:
               - name: HD
                 score: 5
-          ############################ Tier Premiere ############################   
+          ############################ Tier Premiere Portuguese-Brazilian ############################   
           - trash_ids:
-              - custom-web-tier-ptbr-dual
+              - custom-web-tier-ptbr-dual  # Brazilian DUAL
             assign_scores_to:
               - name: HD
                 score: 60000000
           - trash_ids:
-              - custom-web-tier-ptbr-not-dual
+              - custom-web-tier-ptbr-leg # Brazilian Leg Group
             assign_scores_to:
               - name: HD
                 score: 55000000
           - trash_ids:
-              - custom-web-tier-ptbr-not-group-radarr
+              - custom-web-tier-ptbr-leg-not-group # Brazilian Leg Not Group
             assign_scores_to:
               - name: HD
                 score: 50000000
           - trash_ids:
-              - custom-animes-toonshub-ptbr-radarr
+              - custom-animes-toonshub-ptbr-radarr # toonshub Brazilian
             assign_scores_to:
               - name: HD
                 score: 750000
           - trash_ids:
-              - custom-animes-toonshub-pt-radarr
+              - custom-animes-toonshub-pt-radarr #toonshub Portuguese
             assign_scores_to:
               - name: HD
                 score: 700000
-          ################################### UNWANTED #################################
           - trash_ids:
-              - custom-bad-pt-br-groups # Bad Pt-BR Groups
+              - custom-web-tier-ptbr-leg-bad-group # Bad Pt-Brazilian Groups
             assign_scores_to:
               - name: HD
-                score: -10000         
+                score: 800000
+          ############################ Language ############################
+          - trash_ids:
+              - custom-animes-not-portuguese-radarr
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - custom-animes-not-original-radarr
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - custom-animes-not-brazilian-radarr
+            assign_scores_to:
+              - name: HD
+                score: -100000   
+          ############################ UNWANTED ############################
           - trash_ids:
               - fb3ccc5d5cc8f77c9055d4cb4561dded # Anime BD Tier 01 (Top SeaDex Muxers)
             assign_scores_to:
@@ -892,11 +902,6 @@ data:
                 score: -100000
           - trash_ids:
               - 06b6542a47037d1e33b15aa3677c2365 #Anime Raws
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - b0fdc5897f68c9a68c70c25169f77447 #Anime LQ Groups
             assign_scores_to:
               - name: HD
                 score: -100000
@@ -1075,24 +1080,7 @@ data:
               - 3dce1fce9ac06d1349dfbd9186289385 # NOW
             assign_scores_to:
               - name: HD
-                score: 0
-       
-          ############################ Language ############################
-          - trash_ids:
-              - custom-animes-not-portuguese-radarr
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - custom-animes-not-original-radarr
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - custom-animes-not-brazilian-radarr
-            assign_scores_to:
-              - name: HD
-                score: -100000       
+                score: 0      
     # =================================================================================================
     #                                               SONARR
     # =================================================================================================
@@ -1263,7 +1251,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 10
-
           ############################ Series Version ############################
           - trash_ids:
               - 3a4127d8aa781b44120d907f2cd62627 # Hybrid
@@ -1309,7 +1296,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 7
-
           ############################ CoDECS ############################
           - trash_ids:
               - 15a05bc7c1a36e2b57fd628f8977e2fc # AV1
@@ -1372,11 +1358,6 @@ data:
               - name: HD
                 score: 5
           ############################ BAD GROUPS PT-BR ############################
-          - trash_ids:
-              - custom-bad-pt-br-groups # Bad Pt-BR Groups
-            assign_scores_to:
-              - name: HD
-                score: -10000
           - trash_ids:                
               - 9c11cd3f07101cdba90a2d81cf0e56b4 # LQ
             assign_scores_to:
@@ -1402,23 +1383,28 @@ data:
             assign_scores_to:
               - name: HD
                 score: -100000  
-
-          ############################ Tier Premiere ############################
+          ############################ Tier Premiere Portuguese-Brazilian ############################                
           - trash_ids:
-              - custom-web-tier-ptbr-dual # WEB Tier DUAL AUDIO PT-BR
+              - custom-web-tier-ptbr-dual # Brazilian  DUAL
+            assign_scores_to:
+              - name: HD
+                score: 20000
+          - trash_ids:
+              - custom-web-tier-ptbr-leg # Brazilian Leg Group
             assign_scores_to:
               - name: HD
                 score: 15000
           - trash_ids:
-              - custom-web-tier-ptbr-not-dual # WEB Tier Legendado PT-BR
+              - custom-web-tier-ptbr-leg-not-group # Brazilian Leg Not Group
             assign_scores_to:
               - name: HD
-                score: 12000
+                score: 10000
           - trash_ids:
-              - custom-web-tier-ptbr-not-group-sonarr # WEB Tier Legendado PT-BR Desconhecidos
+              - custom-web-tier-ptbr-leg-bad-group # Bad Brazilian Groups
             assign_scores_to:
               - name: HD
                 score: 8000
+          ############################ Tier Premiere English ############################ 
           - trash_ids:
               - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
             assign_scores_to:
@@ -1464,7 +1450,6 @@ data:
             assign_scores_to:
               - name: HD
                 score: 0
-
            ############################ Episores ############################
           - trash_ids:                
               - 4a20cfb76b5f92a8ca22b894b32e71be # Multi-Episode
@@ -1675,33 +1660,36 @@ data:
             assign_scores_to:
               - name: HD
                 score: 10
-
-          ############################ Tier Premiere ############################
+          ############################ Tier Premiere Portuguese-Brazilian ############################  
           - trash_ids:
-              - custom-web-tier-ptbr-dual # WebTier PT-BR DUAL
+              - custom-web-tier-ptbr-dual  #Brazilian DUAL
             assign_scores_to:
               - name: HD
                 score: 60000000
           - trash_ids:
-              - custom-web-tier-ptbr-not-dual # WebTier PT-BR Legendado
-            assign_scores_to:
+              - custom-web-tier-ptbr-leg  # Brazilian Leg Group
               - name: HD
                 score: 55000000
           - trash_ids:
-              - custom-web-tier-ptbr-not-group-sonarr # WebTier PT-BR Legendado Sem Grupos
+              - custom-web-tier-ptbr-leg-not-group # Brazilian Leg Not Group
             assign_scores_to:
               - name: HD
                 score: 50000000
           - trash_ids:
-              - custom-animes-toonshub-ptbr-sonarr # WebTier ToonsHub PT-BR
+              - custom-animes-toonshub-ptbr-sonarr #Toons Hub Brazilian
             assign_scores_to:
               - name: HD
                 score: 750000
           - trash_ids:
-              - custom-animes-toonshub-pt-sonarr # WebTier ToonsHub PT
+              - custom-animes-toonshub-pt-sonarr #Toons Hub Portuguese
             assign_scores_to:
               - name: HD
                 score: 700000
+          - trash_ids:
+              - custom-web-tier-ptbr-leg-bad-group # Bad Brazilian Groups
+            assign_scores_to:
+              - name: HD
+                score: 800000  
         ############################ Language ############################
           - trash_ids:
               - custom-animes-not-portuguese-sonarr
@@ -1718,67 +1706,8 @@ data:
             assign_scores_to:
               - name: HD
                 score: -10000
-          - trash_ids:
-              - 418f50b10f1907201b6cfdf881f467b7 # Anime Dual Audio English
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - 9c14d194486c4014d422adc64092d794 #  Dubs English Audio
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - 2c29a39a4fdfd6d258799bc4c09731b9 #  French Audio Version VFF
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - 7ae924ee9b2f39df3283c6c0beb8a2aa #  French Audio Version VOF
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - b6816a0e1d4b64bf3550ad3b74b009b6 #  French Audio Version VFI
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - 34789ec3caa819f087e23bbf9999daf7 #  French Audio Version VF2
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - 802dd70b856c423a9b0cb7f34ac42be1 #  French Audio Version VOQ
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids:
-              - 82085412d9a53ba8d8e46fc624eb701d #  French Audio Version VQ
-            assign_scores_to:
-              - name: HD
-                score: -100000    
-          - trash_ids:
-              - 0ce1e39a4676c6692ce47935278dac76 #  French Audio Version VFB
-            assign_scores_to:
-              - name: HD
-                score: -100000 
-          - trash_ids:
-              - 07a32f77690263bb9fda1842db7e273f #  French Audio Version VOSTFR
-            assign_scores_to:
-              - name: HD
-                score: -100000   
-          - trash_ids:
-              - ea0bb4b6ba388992fad1092703b5ff7b #  FASTSUB
-            assign_scores_to:
-              - name: HD
-                score: -100000                                
+    
           ############################ UNWANTED ############################
-          - trash_ids:
-              - custom-bad-pt-br-groups # Bad Pt-BR Groups
-            assign_scores_to:
-              - name: HD
-                score: -10000
           - trash_ids:
               - 949c16fe0a8147f50ba82cc2df9411c9 # Anime BD Tier 1
             assign_scores_to:
@@ -1855,16 +1784,65 @@ data:
               - name: HD
                 score: -100000
           - trash_ids: 
-              - e3515e519f3b1360cbfc17651944354c # Anime LQ Groups
-            assign_scores_to:
-              - name: HD
-                score: -100000
-          - trash_ids: 
               - 026d5aadd1a6b4e550b134cb6c72b3ca # Uncensored
             assign_scores_to:
               - name: HD
                 score: 0
-
+          - trash_ids:
+              - 418f50b10f1907201b6cfdf881f467b7 # Anime Dual Audio English
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - 9c14d194486c4014d422adc64092d794 #  Dubs English Audio
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - 2c29a39a4fdfd6d258799bc4c09731b9 #  French Audio Version VFF
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - 7ae924ee9b2f39df3283c6c0beb8a2aa #  French Audio Version VOF
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - b6816a0e1d4b64bf3550ad3b74b009b6 #  French Audio Version VFI
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - 34789ec3caa819f087e23bbf9999daf7 #  French Audio Version VF2
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - 802dd70b856c423a9b0cb7f34ac42be1 #  French Audio Version VOQ
+            assign_scores_to:
+              - name: HD
+                score: -100000
+          - trash_ids:
+              - 82085412d9a53ba8d8e46fc624eb701d #  French Audio Version VQ
+            assign_scores_to:
+              - name: HD
+                score: -100000    
+          - trash_ids:
+              - 0ce1e39a4676c6692ce47935278dac76 #  French Audio Version VFB
+            assign_scores_to:
+              - name: HD
+                score: -100000 
+          - trash_ids:
+              - 07a32f77690263bb9fda1842db7e273f #  French Audio Version VOSTFR
+            assign_scores_to:
+              - name: HD
+                score: -100000   
+          - trash_ids:
+              - ea0bb4b6ba388992fad1092703b5ff7b #  FASTSUB
+            assign_scores_to:
+              - name: HD
+                score: -100000
          ############################ Versions ############################
           - trash_ids: 
               - d2d7b8a9d39413da5f44054080e028a3 # V0

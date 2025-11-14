@@ -1,0 +1,61 @@
+{
+  "trash_id": "custom-web-tier-ptbr-dub-bad-group",
+  "name": "Bad Pt-Br Groups",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "PT-BR Dublado/Dual Audio",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "(?i)\\b(dublado|brazilian dual audio|brazilian dual-audio|pt-br dub(s)?|dub pt-br)\\b"
+      }
+    },
+    {
+      "name": "DragsterPS\"",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DragsterPS)$"
+      }
+    },
+    {
+      "name": "ASM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ASM)$"
+      }
+    },
+    {
+      "name": "DRENAN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DRENAN)$"
+      }
+    },
+    {
+      "name": "CaNNIBal",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(CaNNIBal)$"
+      }
+    },
+    {
+      "name": "S74Ll10n",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(S74Ll10n)$"
+      }
+    }
+  ]
+}
