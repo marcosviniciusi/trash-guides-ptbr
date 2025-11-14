@@ -6,7 +6,7 @@
     {
       "name": "DUAL",
       "implementation": "ReleaseTitleSpecification",
-      "negate": false,
+      "negate": true,
       "required": true,
       "fields": {
         "value": "\\b(DUAL)\\b"
