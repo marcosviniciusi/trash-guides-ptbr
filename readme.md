@@ -66,11 +66,11 @@ trash-guides-ptbr/
 ├── README.md
 ├── configarr/
 │   ├── config-LEGENDADO.yaml                          # Configuração completa LEGENDADO SEM HDR
-│   ├── config-LEGENDADO-HDR-ON.yaml                             # Configuração completa LEGENDADO COM HDR
+│   ├── config-LEGENDADO-HDR-ON.yaml                   # Configuração completa LEGENDADO COM HDR
 │   ├── config-DUBLADO.yaml                            # Configuração completa  DUBLADO SEM HDR
 │   └── config-DUBLADO-HDR-ON.yaml                     # Configuração completa  DUBLADO COM HDR
 │   ├── config-LEGENDADO-SEM-ANIMES.yaml               # Configuração SEM ANIMES LEGENDADO SEM HDR
-│   ├── config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml                  # Configuração SEM ANIMES LEGENDADO COM HDR
+│   ├── config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml        # Configuração SEM ANIMES LEGENDADO COM HDR
 │   ├── config-DUBLADO-SEM-ANIMES.yaml                 # Configuração SEM ANIMES  DUBLADO SEM HDR
 │   └── config-DUBLADO-HDR-ON-SEM-ANIMES.yaml          # Configuração SEM ANIMES  DUBLADO COM HDR
 ├── custom-formats/    					                # Todos os custom formats
@@ -79,11 +79,11 @@ trash-guides-ptbr/
 │   │   #LEGENDADOS
 │   ├── custom-web-tier-ptbr-leg.json                  # Grupos Legendados
 │   ├── custom-web-tier-ptbr-leg-not-group.json        # Sem Grupos Legendados
-│   ├── custom-web-tier-ptbr-leg-bad-group.json       # Grupos PT-Br Não Confiaveis
+│   ├── custom-web-tier-ptbr-leg-bad-group.json        # Grupos PT-Br Não Confiaveis
 │   │   #DUBLADOS
 │   ├── custom-web-tier-ptbr-dub.json                  # Grupos Dublados
 │   ├── custom-web-tier-ptbr-dub-not-group.json        # Sem Grupos Dublados
-│   ├── custom-web-tier-ptbr-dub-bad-group.json       # Grupos Não Confiaveis Dublados
+│   ├── custom-web-tier-ptbr-dub-bad-group.json        # Grupos Não Confiaveis Dublados
 │   │   #ANIMES ( Incluidos apenas Intâncias Animes )
 │   ├── custom-animes-not-original-radarr.json         # Penaliza áudio não original (Radarr)
 │   ├── custom-animes-not-original-sonarr.json         # Penaliza áudio não original (Sonarr)
