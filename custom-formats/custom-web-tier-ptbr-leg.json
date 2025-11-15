@@ -30,6 +30,15 @@
         "value": "^(XaR)$"
       }
     },
+      {
+      "name": "EcK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(EcK)$"
+      }
+    },
     {
       "name": "KALAX",
       "implementation": "ReleaseGroupSpecification",

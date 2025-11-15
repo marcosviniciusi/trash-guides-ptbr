@@ -9,7 +9,7 @@
        "negate": false,
        "required": true,
        "fields": {
-       "value": "(?i)\\b(legendado|brazilian([-\\s]dual[-\\s]audio|-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|web-dl\\s*/\\s*subs|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"       }
+       "value": "(?i)\\b(legendado|Nacional|brazilian([-\\s]dual[-\\s]audio|-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|web-dl\\s*/\\s*subs|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"       }
      },
       {
       "name": "Negar BENTHEMEN",
@@ -63,6 +63,15 @@
       "required": true,
       "fields": {
         "value": "^(MAD Fansub)$"
+      }
+    },
+      {
+      "name": "Negar EcK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(EcK)$"
       }
     },
     {
