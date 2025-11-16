@@ -1366,7 +1366,7 @@ sonarr:
           - 82d40da2bc6923f41e14394075dd4b03 # No-RlsGroup
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -1000
       - trash_ids:                
           - e1a997ddb54e3ecbfe06341ad323c458 # Obfuscated
         assign_scores_to:
