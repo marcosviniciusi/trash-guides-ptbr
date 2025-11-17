@@ -1885,6 +1885,15 @@
       }
     },
     {
+      "name": "HANDJOB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HANDJOB)$"
+      }
+    },
+    {
       "name": "GandaX",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

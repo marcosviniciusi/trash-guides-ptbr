@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "HANDJOB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HANDJOB)$"
+      }
+    },
+    {
       "name": "BEN THE MEN",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

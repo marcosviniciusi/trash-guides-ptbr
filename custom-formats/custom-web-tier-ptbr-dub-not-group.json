@@ -40,6 +40,15 @@
       }
     },
     {
+      "name": "Negar HANDJOB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(HANDJOB)$"
+      }
+    },
+    {
       "name": "Negar encorebr",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
