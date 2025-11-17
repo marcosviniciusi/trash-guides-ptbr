@@ -53,11 +53,40 @@ Este repositório contém **Custom Formats personalizados** desenvolvidos especi
 
 > **Nota importante:** Estes formatos são **complementares** aos [TRaSH Guides oficiais](https://trash-guides.info/), não substitutos. Use ambos para obter os melhores resultados!
 
-### Aviso Importante: Comportamento Esperado
-As regras Not-Group e Bad Groups aplicadas aos perfis de LEGENDADO e DUBLADO empregam expressões regulares genéricas. Devido à ausência de padronização consistente na nomenclatura de releases em trackers públicos, falsos positivos são esperados (e.g., legendados sendo capturados como dublados ou vice-versa).
-Apesar dos refinamentos implementados, a natureza heterogênea dos padrões de nomenclatura impossibilita uma precisão de 100%. Este é um comportamento conhecido e documentado da configuração atual
+## Aviso Importante: 📋 Sobre a Precisão das Regras de Detecção
 
+As regras **Not-Group** aplicadas aos perfis de **LEGENDADO** e **DUBLADO** utilizam expressões regulares genéricas para cobrir o máximo de variações possíveis.
 
+### 🎯 Contexto Importante
+
+Os trackers brasileiros prestam um **serviço valioso e essencial** à comunidade, disponibilizando conteúdo de qualidade em português. Reconhecemos e valorizamos profundamente este trabalho.
+
+No entanto, devido à **ausência de padronização consistente** na nomenclatura de releases entre diferentes trackers públicos/privados, alguns desafios técnicos são inevitáveis:
+
+- Alguns trackers utilizam terminologias específicas (e.g., "Dual Ã udio" com caracteres especiais)
+- Outros não incluem o nome do release group nos títulos
+- Há variações significativas nos formatos de nomenclatura entre diferentes fontes
+- Alguns padrões são únicos de trackers específicos
+
+### ⚠️ Comportamento Esperado
+
+Devido a essa heterogeneidade natural nos padrões de nomenclatura, **falsos positivos podem ocorrer ocasionalmente** (e.g., releases legendados sendo classificados como dublados ou vice-versa).
+
+As expressões regulares foram desenvolvidas com base em **centenas de variações observadas** e refinadas continuamente. Contudo, a natureza diversificada dos padrões impossibilita uma precisão de 100% em todos os cenários.
+
+### 🤝 Contribuições da Comunidade
+
+**Sua ajuda é bem-vinda!** Se você identificar novos padrões de nomenclatura, formatos específicos de trackers ou releases que não estão sendo capturados corretamente, por favor compartilhe conosco através de:
+
+- Issues no repositório com exemplos de títulos de releases
+- Pull requests com sugestões de melhorias nas regex
+- Informações sobre novos release groups brasileiros
+
+Quanto mais informações a comunidade compartilhar, melhor será a cobertura dos custom formats para capturar o máximo de releases possíveis! 🚀
+
+---
+
+*Agradecemos aos trackers brasileiros pelo trabalho contínuo em disponibilizar conteúdo de qualidade à comunidade!* 🇧🇷
 
 ## 📁 Estrutura do Repositório
 
