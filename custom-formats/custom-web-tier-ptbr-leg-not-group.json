@@ -58,6 +58,15 @@
       }
     },
     {
+      "name": "Negar C3PO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(C3PO)$"
+      }
+    },
+    {
       "name": "Negar Yatogam1",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

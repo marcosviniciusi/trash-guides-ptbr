@@ -49,6 +49,15 @@
       }
     },
     {
+      "name": "C3PO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(C3PO)$"
+      }
+    },
+    {
       "name": "BEN THE MEN",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

@@ -2002,6 +2002,15 @@
       }
     },
     {
+      "name": "C3PO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(C3PO)$"
+      }
+    },
+    {
       "name": "XerifeWoodyPride",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
