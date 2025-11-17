@@ -2002,6 +2002,15 @@
       }
     },
     {
+      "name": "GHK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(GHK)$"
+      }
+    },
+    {
       "name": "C3PO",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

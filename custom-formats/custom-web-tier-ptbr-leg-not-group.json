@@ -67,6 +67,15 @@
       }
     },
     {
+      "name": "Negar GHK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(GHK)$"
+      }
+    },
+    {
       "name": "Negar Yatogam1",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

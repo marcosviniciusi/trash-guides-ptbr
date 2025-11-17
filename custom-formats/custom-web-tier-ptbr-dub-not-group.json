@@ -3370,6 +3370,15 @@
       }
     },
     {
+      "name": "Negar GHK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(GHK)$"
+      }
+    },
+    {
       "name": "Negar Leonhart",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

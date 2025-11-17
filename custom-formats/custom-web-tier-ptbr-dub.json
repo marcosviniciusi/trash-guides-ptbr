@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "GHK",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(GHK)$"
+      }
+    },
+    {
       "name": "HANDJOB",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
