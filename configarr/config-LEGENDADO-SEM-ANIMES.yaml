@@ -329,7 +329,7 @@ radarr:
           - ae9b7c9ebde1f3bd336a8cbd1ec4c5e5 # No-RlsGroup
         assign_scores_to:
           - name: HD
-            score: -1000 
+            score: 0
       - trash_ids:
           - 7357cf5161efbf8c4d5d0c30b4815ee2 # Obscurated
         assign_scores_to:
@@ -847,7 +847,7 @@ sonarr:
           - 82d40da2bc6923f41e14394075dd4b03 # No-RlsGroup
         assign_scores_to:
           - name: HD
-            score: -1000
+            score: 0
       - trash_ids:                
           - e1a997ddb54e3ecbfe06341ad323c458 # Obfuscated
         assign_scores_to:

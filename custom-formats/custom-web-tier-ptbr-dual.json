@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "Yatogam1",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Yatogam1)$"
+      }
+    },
+    {
       "name": "HanaEncode",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -199,15 +208,6 @@
       "required": false,
       "fields": {
         "value": "^(MDG)$"
-      }
-    },
-    {
-      "name": "Yatogam1",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Yatogam1)$"
       }
     },
     {

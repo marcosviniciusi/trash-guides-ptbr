@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "Negar Yatogam1",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(Yatogam1)$"
+      }
+    },
+    {
       "name": "Negar WF",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -1729,15 +1738,6 @@
       "required": true,
       "fields": {
         "value": "^(MDG)$"
-      }
-    },
-    {
-      "name": "Negar Yatogam1",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(Yatogam1)$"
       }
     },
     {
