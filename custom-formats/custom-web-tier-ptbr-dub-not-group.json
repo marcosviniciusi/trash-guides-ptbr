@@ -9,7 +9,7 @@
       "negate": false,
       "required": true,
       "fields": {
-       "value": "(?i)\\b(dublado|dub(s)?|Nacional|brazilian([-\\s](dual[-\\s]audio|portuguese))?|brazil|brasil[-\\s]dub|pt[-\\s]?br(asil(eiro)?)?|port(ugues)?[-\\s]?br|pt-br[-\\s]dub(s)?|dub(s)?[-\\s]pt-br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|dual\\s+[aáã][\u0080-\u009F]?udio\\b"
+      "value": "(?i)\\b(dublado|dub(s)?|Nacional|brazilian([-\\s](dual[-\\s]audio|portuguese))?|brazil|brasil[-\\s]dub|pt[-\\s]?br(asil(eiro)?)?|port(ugues)?[-\\s]?br|pt-br[-\\s]dub(s)?|dub(s)?[-\\s]pt-br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio))\\b"
       }
     },
     {
