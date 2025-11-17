@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "Negar BEN THE MEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(BEN THE MEN)$"
+      }
+    },
+    {
       "name": "Negar encorebr",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

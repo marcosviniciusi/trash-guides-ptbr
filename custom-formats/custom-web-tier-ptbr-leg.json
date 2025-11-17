@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "BEN THE MEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BEN THE MEN)$"
+      }
+    },
+    {
       "name": "Yatogam1",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

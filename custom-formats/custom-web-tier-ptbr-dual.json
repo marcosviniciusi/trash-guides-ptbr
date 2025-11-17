@@ -220,6 +220,15 @@
       }
     },
     {
+      "name": "BEN THE MEN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BEN THE MEN)$"
+      }
+    },
+    {
       "name": "Asy",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
