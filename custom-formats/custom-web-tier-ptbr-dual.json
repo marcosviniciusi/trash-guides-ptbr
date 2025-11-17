@@ -328,15 +328,6 @@
       }
     },
     {
-      "name": "AJP69",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(AJP69)$"
-      }
-    },
-    {
       "name": "OWL",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

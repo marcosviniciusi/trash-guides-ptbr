@@ -3433,15 +3433,6 @@
       }
     },
     {
-      "name": "Negar AJP69",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(AJP69)$"
-      }
-    },
-    {
       "name": "Negar OWL",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
