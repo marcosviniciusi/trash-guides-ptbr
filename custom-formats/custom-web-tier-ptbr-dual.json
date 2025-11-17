@@ -1894,6 +1894,15 @@
       }
     },
     {
+      "name": "RMB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(RMB)$"
+      }
+    },
+    {
       "name": "GandaX",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

@@ -40,6 +40,15 @@
       }
     },
     {
+      "name": "RMB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(RMB)$"
+      }
+    },
+    {
       "name": "BEN THE MEN",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

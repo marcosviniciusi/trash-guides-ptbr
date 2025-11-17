@@ -49,6 +49,15 @@
       }
     },
     {
+      "name": "Negar RMB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(RMB)$"
+      }
+    },
+    {
       "name": "Negar encorebr",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
