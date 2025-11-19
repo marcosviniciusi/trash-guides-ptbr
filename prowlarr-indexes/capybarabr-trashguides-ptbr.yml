@@ -69,7 +69,7 @@ settings:
 login:
   path: /api/torrents
   method: get
-  inputs: {} # TODO: remove in v10
+  inputs: {}
   error:
     - selector: a[href*="/login"]
       message:
@@ -78,8 +78,6 @@ login:
 
 search:
   paths:
-    # https://hdinnovations.github.io/UNIT3D/torrent_api.html
-    # https://github.com/HDInnovations/UNIT3D/blob/master/app/Http/Controllers/API/TorrentController.php#L657
     - path: api/torrents/filter
       response:
         type: json
@@ -88,7 +86,6 @@ search:
     Authorization: ["Bearer {{ .Config.apikey }}"]
 
   inputs:
-  # if we have an id based search, add Season and Episode as query in name for UNIT3D < v6.  Else pass S/E Params for UNIT3D >= v6
     $raw: "{{ range .Categories }}&categories[]={{.}}{{end}}"
     name: "{{ .Keywords }}"
     seasonNumber: "{{ .Query.Season }}"
@@ -119,29 +116,11 @@ search:
       optional: true
     files:
       selector: num_file
-    title_phase1:
-      text: "{{ if and (.Config.use_single_file_release_use_filename) (eq .Result.files \"1\") (.Result.title_filename) }}{{ .Result.title_filename }}{{ else }}{{ .Result.title_optional }}{{ end }}"
-    has_dual:
-      text: '{{ .Result.title_phase1 }}'
-      filters:
-        - name: re_replace
-          args: ['(?i).*\bDUAL\b.*', 'yes']
-        - name: re_replace
-          args: ['^(?!yes$).*', 'no']
-    title_base_without_group:
-      text: '{{ .Result.title_phase1 }}'
-      filters:
-        - name: re_replace
-          args: ['(?i)^(.*?)(?:-([A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*))$', '$1']
-    release_group:
-      text: '{{ .Result.title_phase1 }}'
-      filters:
-        - name: re_replace
-          args: ['(?i)^.*?-([A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*)$', '$1']
-        - name: re_replace
-          args: ['^{{ .Result.title_phase1 }}$', '']
     title:
-      text: "{{ if eq .Result.has_dual \"yes\" }}{{ .Result.title_base_without_group }}BRAZILIAN-DUAL-AUDIO{{ if .Result.release_group }}-{{ .Result.release_group }}{{ end }}{{ else }}{{ .Result.title_phase1 }}{{ end }}"
+      text: "{{ if and (.Config.use_single_file_release_use_filename) (eq .Result.files \"1\") (.Result.title_filename) }}{{ .Result.title_filename }}{{ else }}{{ .Result.title_optional }}{{ end }}"
+      filters:
+        - name: re_replace
+          args: ['(?i)\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO']
     details:
       selector: details_link
     download:
@@ -182,11 +161,10 @@ search:
     grabs:
       selector: times_completed
     date:
-      # "created_at": "2021-10-18T00:34:50.000000Z" is returned by Newtonsoft.Json.Linq as 18/10/2021 00:34:50
       selector: created_at
       filters:
         - name: append
-          args: " -03:00" # BRT
+          args: " -03:00"
         - name: dateparse
           args: "MM/dd/yyyy HH:mm:ss zzz"
     size:
@@ -197,29 +175,22 @@ search:
         False: "{{ .False }}"
         True: "{{ .True }}"
     downloadvolumefactor_freeleech:
-      # api returns 0%, 25%, 50%, 75%, 100%
       selector: freeleech
       case:
-        0%: 1 # not free
+        0%: 1
         25%: 0.75
         50%: 0.5
         75%: 0.25
-        100%: 0 # freeleech
-        "*": 0 # catch errors
+        100%: 0
+        "*": 0
     downloadvolumefactor:
       text: "{{ if .Result._featured }}0{{ else }}{{ .Result.downloadvolumefactor_freeleech }}{{ end }}"
     uploadvolumefactor_double_upload:
-      # api returns False, True
       selector: double_upload
       case:
-        False: 1 # normal
-        True: 2 # double
+        False: 1
+        True: 2
     uploadvolumefactor:
       text: "{{ if .Result._featured }}2{{ else }}{{ .Result.uploadvolumefactor_double_upload }}{{ end }}"
-# global MR is 1.0 but torrents must be seeded for 7 days regardless of ratio
-#    minimumratio:
-#      text: 1.0
     minimumseedtime:
-      # 7 days (as seconds = 7 x 24 x 60 x 60)
       text: 604800
-# json UNIT3D 8.3.3 (custom)
