@@ -23,7 +23,7 @@ caps:
     - {id: 11, cat: Audio/Audiobook, desc: "Audiobook"}
     - {id: 12, cat: Books/Comics, desc: "Histórias em Quadrinhos"}
     - {id: 13, cat: TV, desc: "Stand Up Comedy"}
-    - {id: 14, cat: TV, desc: "TV/Anime"} # Anime format is equal to TV Show (SXXEXX) except old ones like one piece
+    - {id: 14, cat: TV, desc: "TV/Anime"}
     - {id: 15, cat: XXX/ImageSet, desc: "Fotos Adultas"}
     - {id: 16, cat: TV/Other, desc: "Desenho Animado"}
     - {id: 17, cat: TV/Documentary, desc: "Documentários"}
@@ -59,7 +59,6 @@ login:
     selector: a[href^="/logout.php?auth="]
 
 search:
-  # https://bj-share.info/torrents.php?searchstr=aves+de+rapina&filter_cat%5B1%5D=1
   paths:
     - path: torrents.php
 
@@ -70,10 +69,9 @@ search:
 
   keywordsfilters:
     - name: re_replace
-      args: ["(S[0-9]+E[0-9]+|S[0-9]+)", ""] # remove SXXEXX or SXX from search
+      args: ["(S[0-9]+E[0-9]+|S[0-9]+)", ""]
 
   rows:
-    # If the category is a TV show/Anime, there's a necessity to filter the results by season/episode to not show all of them
     selector: "table.torrent_table > tbody > tr:not(tr.colhead).group,
               table.torrent_table tbody tr:not(tr.colhead):contains('{{ .Query.Episode }}')"
     filters:
@@ -90,7 +88,7 @@ search:
     _multipleTorrentInfo:
       selector: a[href^="torrents.php?id="]
 
-    _info: # example [MKV / x265 / WEB-DL / Legendado / 4K / Free]
+    _info:
       text: "{{ if .Result._singleTorrentInfo }}{{.Result._singleTorrentInfo}}{{ else }}{{.Result._multipleTorrentInfo}}{{ end }}"
       filters:
         - name: replace
@@ -107,17 +105,14 @@ search:
           args: ["/ Free", ""]
         - name: re_replace
           args: ["[\\[\\]]+", ""]
-        # Substitui "Dual Ãudio" por "BRAZILIAN-DUAL-AUDIO"
-        - name: re_replace
-          args: ['(?i)Dual\s*Ã\w+udio', 'BRAZILIAN-DUAL-AUDIO']
 
     _rawTitle:
       selector: div.group_info
       filters:
         - name: re_replace
-          args: ["(\n.*)", ""] # remove everything after newline
+          args: ["(\n.*)", ""]
         - name: re_replace
-          args: ["  |\t", ""] # remove double space and tabs
+          args: ["  |\t", ""]
 
     _year:
       text: "{{ .Result._rawTitle }}"
@@ -129,40 +124,40 @@ search:
       selector: a[href^="torrents.php?id="]:not(.tooltip)
       attribute: href
 
-    title_MovieTV: # Movie and TV Format
-      # Title defined as:
-        # PT-BR/Japanese title [en-US title] [year]
+    title_MovieTV:
       text: "{{ .Result._rawTitle }}"
       filters:
         - name: re_replace
-          args: ["\\[[0-9]*\\].*", ""] # Removes the year and everything after
+          args: ["\\[[0-9]*\\].*", ""]
         - name: re_replace
-          args: ["(.*)\\[(!?[^/]*?)\\]", "$2"]   # Parse only en-us title, when available
+          args: ["(.*)\\[(!?[^/]*?)\\]", "$2"]
         - name: append
           args: "{{ .Result._year }}"
         - name: append
           args: " {{ .Result._info }}"
+        # Substitui "Dual Ãudio" ou variações por "BRAZILIAN-DUAL-AUDIO"
+        - name: re_replace
+          args: ['Dual\s+Ã[\x80-\xFF]udio', 'BRAZILIAN-DUAL-AUDIO']
+        - name: re_replace
+          args: ['Dual\s+.udio', 'BRAZILIAN-DUAL-AUDIO']
         - name: append
           args: " PT-BR"
 
     title_Other:
-      # Only remove brackets
       text: "{{ .Result._rawTitle }}"
       filters:
         - name: re_replace
-          args: ["\\[|\\]", " "] # Remove Brackets
+          args: ["\\[|\\]", " "]
         - name: append
           args: " PT-BR"
 
     title_details:
-      # Title defined as:
-        # PT-BR/Japanese title [en-US title] [year]
       text: "{{ .Result._rawTitle }}"
       filters:
         - name: re_replace
-          args: ["\\[[0-9]*\\].*", ""] # Removes the year and everything after
+          args: ["\\[[0-9]*\\].*", ""]
         - name: re_replace
-          args: ["(.*)\\[(!?[^/]*?)\\]", "$2"]   # Parse only en-us title, when available
+          args: ["(.*)\\[(!?[^/]*?)\\]", "$2"]
 
     category_details:
       selector: td.cats_col > a
@@ -200,5 +195,4 @@ search:
     minimumratio:
       text: 1.0
     minimumseedtime:
-      # 7 days (as seconds = 7 x 24 x 60 x 60)
       text: 604800
