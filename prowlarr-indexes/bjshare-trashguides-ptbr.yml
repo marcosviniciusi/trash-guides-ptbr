@@ -135,13 +135,19 @@ search:
           args: "{{ .Result._year }}"
         - name: append
           args: " {{ .Result._info }}"
-        # Substitui "Dual Ãudio" ou variações por "BRAZILIAN-DUAL-AUDIO"
+        # Substitui "Dual Ãudio" por "BRAZILIAN-DUAL-AUDIO"
         - name: re_replace
           args: ['Dual\s+Ã[\x80-\xFF]udio', 'BRAZILIAN-DUAL-AUDIO']
         - name: re_replace
           args: ['Dual\s+.udio', 'BRAZILIAN-DUAL-AUDIO']
+        # Substitui "Legendado" por "LEGENDADO"
+        - name: re_replace
+          args: ['(?i)Legendado', 'LEGENDADO']
+        # Substitui "Nacional" por "NACIONAL"
+        - name: re_replace
+          args: ['(?i)Nacional', 'NACIONAL']
         - name: append
-          args: " PT-BR"
+          args: "-BJSHARE"
 
     title_Other:
       text: "{{ .Result._rawTitle }}"
@@ -149,7 +155,7 @@ search:
         - name: re_replace
           args: ["\\[|\\]", " "]
         - name: append
-          args: " PT-BR"
+          args: "-BJSHARE"
 
     title_details:
       text: "{{ .Result._rawTitle }}"
