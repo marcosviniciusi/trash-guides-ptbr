@@ -1,0 +1,16 @@
+{
+  "trash_id": "custom-pt-br-legendado",
+  "name": "PT-BR Legendado",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+     {
+       "name": "PT-BR Legendado",
+       "implementation": "ReleaseTitleSpecification",
+       "negate": false,
+       "required": true,
+       "fields": {
+       "value": "(?i)\\b(legendado|Nacional|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"
+         }
+     }
+  ]
+}

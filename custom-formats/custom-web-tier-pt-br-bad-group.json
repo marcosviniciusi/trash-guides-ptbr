@@ -1,0 +1,52 @@
+{
+  "trash_id": "custom-web-tier-ptbr-leg-bad-group",
+  "name": "Bad Pt-Br Groups",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "DragsterPS\"",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DragsterPS)$"
+      }
+    },
+    {
+      "name": "ASM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ASM)$"
+      }
+    },
+    {
+      "name": "DRENAN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DRENAN)$"
+      }
+    },
+    {
+      "name": "CaNNIBal",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(CaNNIBal)$"
+      }
+    },
+    {
+      "name": "S74Ll10n",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(S74Ll10n)$"
+      }
+    }
+  ]
+}

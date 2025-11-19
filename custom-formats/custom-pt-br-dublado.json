@@ -1,0 +1,16 @@
+{
+  "trash_id": "custom-pt-br-dublado",
+  "name": "PT-BR Dublado",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "PT-BR Dublado",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+      "value": "(?i)\\b(dublado|Nacional))?|brazilian|brasil[-\\s]dub|pt[-\\s]?br(asil(eiro)?)?|port(ugues)?[-\\s]?br|pt-br[-\\s]dub(s)?|dub(s)?[-\\s]pt-br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio))\\b"
+      }
+      }
+  ]
+}

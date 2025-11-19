@@ -1,17 +1,8 @@
 {
-  "trash_id": "custom-web-tier-ptbr-dual",
-  "name": "Web Tier PT-BR DUAL",
+  "trash_id": "custom-web-tier-ptbr",
+  "name": "Web Tier PT-BR",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
-    {
-      "name": "DUAL",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": "\\b(DUAL)\\b"
-      }
-    },
     {
       "name": "encorebr",
       "implementation": "ReleaseGroupSpecification",

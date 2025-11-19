@@ -1,0 +1,16 @@
+{
+  "trash_id": "custom-pt-br-dual-audio",
+  "name": "PT-BR Dual Audio",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Brazilian Dual Audio",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\b(BRAZILIAN-DUAL-AUDIO)\\b"
+      }
+    }
+  ]
+}
