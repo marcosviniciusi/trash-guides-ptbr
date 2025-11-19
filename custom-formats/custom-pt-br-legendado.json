@@ -3,14 +3,23 @@
   "name": "PT-BR Legendado",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
-     {
-       "name": "PT-BR Legendado",
-       "implementation": "ReleaseTitleSpecification",
-       "negate": false,
-       "required": true,
-       "fields": {
-       "value": "(?i)\\b(legendado|Nacional|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"
-         }
-     }
+    {
+      "name": "PT-BR Legendado",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "(?i)\\b(legendado|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"
+      }
+    },
+    {
+      "name": "NOT PT-BR Dublado",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)\\b(dublado|brasil[-\\s]dub|pt[-\\s]?br[-\\s]dub(s)?|dub(s)?[-\\s]pt[-\\s]?br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|BRAZILIAN[-\\s]DUAL[-\\s]AUDIO)\\b"
+      }
+    }
   ]
 }

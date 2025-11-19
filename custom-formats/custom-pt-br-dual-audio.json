@@ -9,7 +9,7 @@
       "negate": false,
       "required": true,
       "fields": {
-        "value": "\\b(BRAZILIAN-DUAL-AUDIO)\\b"
+        "value": "\\b(BRAZILIAN-DUAL-AUDIO|NACIONAL)\\b"
       }
     }
   ]

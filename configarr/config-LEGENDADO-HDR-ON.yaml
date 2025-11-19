@@ -347,25 +347,25 @@ radarr:
             score: -10000   
       ############################ Tier Premiere Portuguese-Brazilian ############################             
       - trash_ids:
-          - custom-web-tier-ptbr-dual #Brazilian DUAL
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg # Brazilian Leg Group
-        assign_scores_to:
-          - name: HD
-            score: 15000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg-not-group # Brazilian Not Group
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
             score: 10000
       - trash_ids:
-          - custom-web-tier-ptbr-leg-bad-group # Bad Brazilian Groups
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-legendado # Brazilian Legendado
+        assign_scores_to:
+          - name: HD
+            score: 7500
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 7000
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
@@ -778,20 +778,25 @@ radarr:
             score: 5
       ############################ Tier Premiere Portuguese-Brazilian ############################   
       - trash_ids:
-          - custom-web-tier-ptbr-dual  # Brazilian DUAL
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 60000000
+            score: 30000000
       - trash_ids:
-          - custom-web-tier-ptbr-leg # Brazilian Leg Group
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 55000000
+            score: 30000000
       - trash_ids:
-          - custom-web-tier-ptbr-leg-not-group # Brazilian Leg Not Group
+          - custom-pt-br-legendado # Brazilian Legendado
         assign_scores_to:
           - name: HD
-            score: 50000000
+            score: 25000000
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 800000   
       - trash_ids:
           - custom-animes-toonshub-ptbr-radarr # toonshub Brazilian
         assign_scores_to:
@@ -801,12 +806,7 @@ radarr:
           - custom-animes-toonshub-pt-radarr #toonshub Portuguese
         assign_scores_to:
           - name: HD
-            score: 700000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg-bad-group # Bad PtBrazilian Groups
-        assign_scores_to:
-          - name: HD
-            score: 800000
+            score: 700000 
       ############################ Language ############################
       - trash_ids:
           - custom-animes-not-portuguese-radarr
@@ -1379,25 +1379,25 @@ sonarr:
             score: -100000  
       ############################ Tier Premiere Portuguese-Brazilian ############################                
       - trash_ids:
-          - custom-web-tier-ptbr-dual # Brazilian  DUAL
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg # Brazilian Leg Group
-        assign_scores_to:
-          - name: HD
-            score: 15000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg-not-group # Brazilian Leg Not Group
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
             score: 10000
       - trash_ids:
-          - custom-web-tier-ptbr-leg-bad-group # Bad Brazilian Groups
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-legendado # Brazilian Legendado
+        assign_scores_to:
+          - name: HD
+            score: 7500
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 7000
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
@@ -1656,34 +1656,35 @@ sonarr:
             score: -100
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       - trash_ids:
-          - custom-web-tier-ptbr-dual  #Brazilian DUAL
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 60000000
+            score: 30000000
       - trash_ids:
-          - custom-web-tier-ptbr-leg  # Brazilian Leg Group
-          - name: HD
-            score: 55000000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg-not-group # Brazilian Leg Not Group
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 50000000
+            score: 30000000
       - trash_ids:
-          - custom-animes-toonshub-ptbr-sonarr #Toons Hub Brazilian
+          - custom-pt-br-legendado # Brazilian Legendado
+        assign_scores_to:
+          - name: HD
+            score: 25000000
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 800000   
+      - trash_ids:
+          - custom-animes-toonshub-ptbr-sonarr # toonshub Brazilian
         assign_scores_to:
           - name: HD
             score: 750000
       - trash_ids:
-          - custom-animes-toonshub-pt-sonarr #Toons Hub Portuguese
+          - custom-animes-toonshub-pt-sonarr #toonshub Portuguese
         assign_scores_to:
           - name: HD
-            score: 700000
-      - trash_ids:
-          - custom-web-tier-ptbr-leg-bad-group # Bad Brazilian Groups
-        assign_scores_to:
-          - name: HD
-            score: 800000  
+            score: 700000  
     ############################ Language ############################
       - trash_ids:
           - custom-animes-not-portuguese-sonarr
