@@ -7,7 +7,7 @@ services:
     container_name: configarr-download
     command: >
       sh -c "
-      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats'
+      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats'
       
       # Criar diretório se não existir
       mkdir -p /config/custom-formats
