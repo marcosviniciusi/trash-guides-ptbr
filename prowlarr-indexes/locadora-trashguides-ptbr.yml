@@ -1,6 +1,6 @@
 ---
-id: locadora-trashguides-ptbr
-name: Locadora-trashguides-ptbr
+id: locadora-trashguides-pt-br
+name: Locadora (API)-trashguides-pt-br
 description: "Locadora is a BRAZILIAN Private Torrent Tracker for MOVIES / TV / ANIME"
 language: pt-BR
 type: private
@@ -113,8 +113,24 @@ search:
     title:
       text: "{{ if and (.Config.single_file_release_use_filename) (eq .Result.files \"1\") (.Result.title_filename) }}{{ .Result.title_filename }}{{ else }}{{ .Result.title_optional }}{{ end }}"
       filters:
+        # 1. Substitui "DUAL-" por "BRAZILIAN-DUAL-AUDIO-"
         - name: re_replace
-          args: ['(?i)\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO']
+          args: ['(?i)\bDUAL-', 'BRAZILIAN-DUAL-AUDIO-']
+        # 2. Se tem Portuguese + outro idioma, só remove o sufixo (já tem BRAZILIAN-DUAL-AUDIO)
+        - name: re_replace
+          args: ['(?i)\s*/\s*Portuguese\s*\([^)]*\)\s+\w+.*$', '']
+        # 3. Se tem GLBO + só Portuguese, adiciona NACIONAL antes do release group
+        #- name: re_replace
+        #  args: ['(?i)^(.+GLBO.+?)(\S+)\s*/\s*Portuguese\s*\([^)]*\)\s*$', '$1NACIONAL-$2']
+        # 4. Se tem só Portuguese (sem GLBO), adiciona DUBLADO antes do release group
+        - name: re_replace
+          args: ['(?i)(\S+)\s*/\s*Portuguese\s*\([^)]*\)\s*$', 'NACIONAL-$1']
+        # 5. Se tem qualquer outro idioma (sem Portuguese), adiciona LEGENDADO
+        - name: re_replace
+          args: ['(?i)(\S+)\s*/\s*(?!Portuguese)[A-Za-z].*$', 'LEGENDADO-$1']
+        # 6. Remove "-JPN" ou "-jpn" do título
+        - name: re_replace
+          args: ['(?i)-JPN', '']
     details:
       selector: details_link
     download:
