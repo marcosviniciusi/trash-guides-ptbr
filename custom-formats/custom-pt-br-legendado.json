@@ -18,7 +18,17 @@
       "negate": true,
       "required": true,
       "fields": {
-        "value": "(?i)\\b(dublado|brasil[-\\s]dub|pt[-\\s]?br[-\\s]dub(s)?|dub(s)?[-\\s]pt[-\\s]?br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|BRAZILIAN[-\\s]DUAL[-\\s]AUDIO)\\b"
+        "value": "(?i)\\b(BRAZILIAN-DUAL-AUDIO|NACIONAL|dublado|brasil[-\\s]dub|pt[-\\s]?br[-\\s]dub(s)?|dub(s)?[-\\s]pt[-\\s]?br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|BRAZILIAN[-\\s]DUAL[-\\s]AUDIO)\\b"
+      }
+    },
+    {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": false
       }
     }
   ]
