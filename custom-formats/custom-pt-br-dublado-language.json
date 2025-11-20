@@ -1,13 +1,13 @@
 {
-  "trash_id": "custom-animes-not-portuguese-sonarr",
-  "name": "Language: Not Portuguese",
+  "trash_id": "custom-pt-br-dublado-language",
+  "name": "Brazilian Dublado Languange",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "Not Portuguese Language",
+      "name": "Brazilian Language",
       "implementation": "LanguageSpecification",
-      "negate": true,
-      "required": false,
+      "negate": false,
+      "required": true,
       "fields": {
         "value": 18,
         "exceptLanguage": false
