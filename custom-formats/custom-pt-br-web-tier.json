@@ -31,6 +31,15 @@
       }
     },
     {
+      "name": "By Tontom",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(By Tontom)$"
+      }
+    },
+    {
       "name": "HanaEncode",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
