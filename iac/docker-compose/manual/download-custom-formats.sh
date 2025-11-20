@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats"
+BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
 
 echo "📥 Baixando custom formats..."
 # Função para baixar com tratamento de erro
@@ -13,31 +13,15 @@ download_format() {
     }
 }
 
-# Custom Formats Globais Legendados
-download_format "custom-web-tier-ptbr-dual.json"
-download_format "custom-web-tier-ptbr-leg.json"
-download_format "custom-web-tier-ptbr-leg-not-group.json"
-download_format "custom-web-tier-ptbr-leg-bad-group.json"
-
-# Custom Formats Globais Legendados
-download_format "custom-web-tier-ptbr-dual.json"
-download_format "custom-web-tier-ptbr-dub.json"
-download_format "custom-web-tier-ptbr-dub-not-group.json"
-download_format "custom-web-tier-ptbr-dub-bad-group.json"
-
-# Radarr
-download_format "custom-animes-not-brazilian-radarr.json"
-download_format "custom-animes-not-original-radarr.json"
-download_format "custom-animes-not-portuguese-radarr.json"
-download_format "custom-animes-toonshub-pt-radarr.json"
-download_format "custom-animes-toonshub-ptbr-radarr.json"
-
-# Sonarr
-download_format "custom-animes-not-brazilian-sonarr.json"
-download_format "custom-animes-not-original-sonarr.json"
-download_format "custom-animes-not-portuguese-sonarr.json"
-download_format "custom-animes-toonshub-pt-sonarr.json"
-download_format "custom-animes-toonshub-ptbr-sonarr.json"
+# Custom Formats Globais
+download_format 'custom-pt-br-dual-audio.json'
+download_format 'custom-pt-br-dual-language.json'
+download_format 'custom-pt-br-dublado-language.json'
+download_format 'custom-pt-br-dublado.json'
+download_format 'custom-pt-br-legendado.json'
+download_format 'custom-pt-br-original-language.json'
+download_format 'custom-pt-br-web-tier-bad-group.json'
+download_format 'custom-pt-br-web-tier.json'
 
 
 echo "✅ Custom formats baixados com sucesso!"

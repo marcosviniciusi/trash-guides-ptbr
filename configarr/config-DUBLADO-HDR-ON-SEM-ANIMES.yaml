@@ -135,22 +135,22 @@ radarr:
           - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
         assign_scores_to:
           - name: HD
-            score: 500
+            score: 1000
       - trash_ids:
           - b337d6812e06c200ec9a2d3cfa9d20a7 # DV Boost
         assign_scores_to:
           - name: HD
-            score: 1000
+            score: 1200
       - trash_ids:
           - caa37d0df9c348912df1fb1d88f9273a # HDR10 Plus Boost
         assign_scores_to:
           - name: HD
-            score: 100
+            score: 1500
       - trash_ids:
           - f700d29429c023a5734505e77daeaea7 # DV (Disk)
         assign_scores_to:
           - name: HD
-            score: 101
+            score: 1200
       - trash_ids:
           - 923b6abef9b17f937fab56cfcf89e1f1 # DV (w/o HDR fallback)
         assign_scores_to:
@@ -160,17 +160,17 @@ radarr:
           - e6886871085226c3da1830830146846c # Generated Dynamic HDR
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: 0
       - trash_ids:
           - 9c38ebb7384dada637be8899efa68e6f # SDR
         assign_scores_to:
           - name: HD
-            score: -100
+            score: 10
       - trash_ids:
           - 25c12f78430a3a23413652cbd1d48d77 # SDR (no WEBDL)
         assign_scores_to:
           - name: HD
-            score: -100
+            score: 10
       ############################ Movies Version ############################
       - trash_ids:
           - 0f12c086e289cf966fa5948eac571f44 # Hybrid
@@ -347,25 +347,35 @@ radarr:
             score: -10000   
       ############################ Tier Premiere Portuguese-Brazilian ############################             
       - trash_ids:
-          - custom-web-tier-ptbr-dual #Brazilian DUAL
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub # Brazilian dub Group
-        assign_scores_to:
-          - name: HD
-            score: 15000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub-not-group # Brazilian Not Group
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
             score: 10000
       - trash_ids:
-          - custom-web-tier-ptbr-dub-bad-group # Bad Brazilian Groups
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dublado # Brazilian dublado
+        assign_scores_to:
+          - name: HD
+            score: 7500
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 7000
+      - trash_ids:
+          - custom-pt-br-dublado-language # dublado
+        assign_scores_to:
+          - name: HD
+            score: 2000 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
@@ -556,6 +566,7 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 0
+
 # =================================================================================================
 #                                               SONARR
 # =================================================================================================
@@ -695,22 +706,22 @@ sonarr:
           - 505d871304820ba7106b693be6fe4a9e # HDR
         assign_scores_to:
           - name: HD
-            score: 500
+            score: 1000
       - trash_ids:
           - 7c3a61a9c6cb04f52f1544be6d44a026 # DV Boost
         assign_scores_to:
           - name: HD
-            score: 1000
+            score: 1200
       - trash_ids:
           - 0c4b99df9206d2cfac3c05ab897dd62a # HDR10 Plus Boost
         assign_scores_to:
           - name: HD
-            score: 100
+            score: 1500
       - trash_ids:
           - ef4963043b0987f8485bc9106f16db38 # DV (Disk)
         assign_scores_to:
           - name: HD
-            score: 101
+            score: 1200
       - trash_ids:
           - 9b27ab6498ec0f31a3353992e19434ca # DV (w/o HDR fallback)
         assign_scores_to:
@@ -720,12 +731,12 @@ sonarr:
           - 2016d1676f5ee13a5b7257ff86ac9a93 # SDR
         assign_scores_to:
           - name: HD
-            score: -100
+            score: 10
       - trash_ids:
           - 83304f261cf516bb208c18c54c0adf97 # SDR (no WEBDL)
         assign_scores_to:
           - name: HD
-            score: -100
+            score: 10
       ############################ Series Version ############################
       - trash_ids:
           - 3a4127d8aa781b44120d907f2cd62627 # Hybrid
@@ -860,25 +871,35 @@ sonarr:
             score: -100000  
       ############################ Tier Premiere Portuguese-Brazilian ############################                
       - trash_ids:
-          - custom-web-tier-ptbr-dual # Brazilian  DUAL
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub # Brazilian dub Group
-        assign_scores_to:
-          - name: HD
-            score: 15000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub-not-group # Brazilian dub Not Group
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
             score: 10000
       - trash_ids:
-          - custom-web-tier-ptbr-dub-bad-group # Bad Brazilian Groups
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dublado # Brazilian dublado
+        assign_scores_to:
+          - name: HD
+            score: 7500
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 7000
+      - trash_ids:
+          - custom-pt-br-dublado-language # dublado
+        assign_scores_to:
+          - name: HD
+            score: 2000 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01

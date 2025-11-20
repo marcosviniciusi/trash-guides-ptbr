@@ -329,7 +329,7 @@ radarr:
           - ae9b7c9ebde1f3bd336a8cbd1ec4c5e5 # No-RlsGroup
         assign_scores_to:
           - name: HD
-            score: 0
+            score: 0 
       - trash_ids:
           - 7357cf5161efbf8c4d5d0c30b4815ee2 # Obscurated
         assign_scores_to:
@@ -352,6 +352,11 @@ radarr:
           - name: HD
             score: 10000
       - trash_ids:
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
@@ -366,6 +371,11 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 7000
+      - trash_ids:
+          - custom-pt-br-original-language # Original Language
+        assign_scores_to:
+          - name: HD
+            score: 300 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
@@ -555,7 +565,7 @@ radarr:
           - 3dce1fce9ac06d1349dfbd9186289385 # NOW
         assign_scores_to:
           - name: HD
-            score: 0
+            score: 
 # =================================================================================================
 #                                               SONARR
 # =================================================================================================
@@ -865,6 +875,11 @@ sonarr:
           - name: HD
             score: 10000
       - trash_ids:
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
@@ -879,6 +894,11 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 7000
+      - trash_ids:
+          - custom-pt-br-original-language # Original Language
+        assign_scores_to:
+          - name: HD
+            score: 300 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
@@ -968,4 +988,4 @@ sonarr:
           - b66a699fba6f9df91becab798d7502e5 # NOW UK
         assign_scores_to:
           - name: HD
-            score: 75
+            score: 7

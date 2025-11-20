@@ -352,6 +352,11 @@ radarr:
           - name: HD
             score: 10000
       - trash_ids:
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
@@ -366,6 +371,11 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 7000
+      - trash_ids:
+          - custom-pt-br-original-language # Original Language
+        assign_scores_to:
+          - name: HD
+            score: 300 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
@@ -788,6 +798,11 @@ radarr:
           - name: HD
             score: 30000000
       - trash_ids:
+          - custom-pt-br-dual-language # Brazilian DUAL Laguage
+        assign_scores_to:
+          - name: HD
+            score: 30000000
+      - trash_ids:
           - custom-pt-br-legendado # Brazilian Legendado
         assign_scores_to:
           - name: HD
@@ -796,33 +811,12 @@ radarr:
           - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 800000   
+            score: 800000
       - trash_ids:
-          - custom-animes-toonshub-ptbr-radarr # toonshub Brazilian
+          - custom-pt-br-original-language # Original Language
         assign_scores_to:
           - name: HD
-            score: 750000
-      - trash_ids:
-          - custom-animes-toonshub-pt-radarr #toonshub Portuguese
-        assign_scores_to:
-          - name: HD
-            score: 700000
-      ############################ Language ############################
-      - trash_ids:
-          - custom-animes-not-portuguese-radarr
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids:
-          - custom-animes-not-original-radarr
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids:
-          - custom-animes-not-brazilian-radarr
-        assign_scores_to:
-          - name: HD
-            score: -100000   
+            score: 1000    
       ############################ UNWANTED ############################
       - trash_ids:
           - fb3ccc5d5cc8f77c9055d4cb4561dded # Anime BD Tier 01 (Top SeaDex Muxers)
@@ -896,11 +890,6 @@ radarr:
             score: -100000
       - trash_ids:
           - 06b6542a47037d1e33b15aa3677c2365 #Anime Raws
-        assign_scores_to:
-          - name: HD
-            score: -100000
-      - trash_ids:
-          - 4a3b087eea2ce012fcc1ce319259a3be # DUAL AUDIO
         assign_scores_to:
           - name: HD
             score: -100000
@@ -1384,6 +1373,11 @@ sonarr:
           - name: HD
             score: 10000
       - trash_ids:
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
@@ -1398,6 +1392,11 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 7000
+      - trash_ids:
+          - custom-pt-br-original-language # Original Language
+        assign_scores_to:
+          - name: HD
+            score: 300 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
@@ -1666,6 +1665,11 @@ sonarr:
           - name: HD
             score: 30000000
       - trash_ids:
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
+        assign_scores_to:
+          - name: HD
+            score: 30000000
+      - trash_ids:
           - custom-pt-br-legendado # Brazilian Legendado
         assign_scores_to:
           - name: HD
@@ -1674,34 +1678,12 @@ sonarr:
           - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 800000   
+            score: 800000
       - trash_ids:
-          - custom-animes-toonshub-ptbr-sonarr # toonshub Brazilian
+          - custom-pt-br-original-language # Original Language
         assign_scores_to:
           - name: HD
-            score: 750000
-      - trash_ids:
-          - custom-animes-toonshub-pt-sonarr #toonshub Portuguese
-        assign_scores_to:
-          - name: HD
-            score: 700000 
-    ############################ Language ############################
-      - trash_ids:
-          - custom-animes-not-portuguese-sonarr
-        assign_scores_to:
-          - name: HD
-            score: -10000
-      - trash_ids:
-          - custom-animes-not-original-sonarr
-        assign_scores_to:
-          - name: HD
-            score: -10000
-      - trash_ids:
-          - custom-animes-not-brazilian-sonarr
-        assign_scores_to:
-          - name: HD
-            score: -10000
-
+            score: 1000      
       ############################ UNWANTED ############################
       - trash_ids:
           - 949c16fe0a8147f50ba82cc2df9411c9 # Anime BD Tier 1
@@ -1783,11 +1765,6 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 0
-      - trash_ids:
-          - 418f50b10f1907201b6cfdf881f467b7 # Anime Dual Audio English
-        assign_scores_to:
-          - name: HD
-            score: -100000
       - trash_ids:
           - 9c14d194486c4014d422adc64092d794 #  Dubs English Audio
         assign_scores_to:
@@ -1909,4 +1886,4 @@ sonarr:
           - 570b03b3145a25011bf073274a407259 # HIDIVE
         assign_scores_to:
           - name: HD
-            score: 0                      
+            score: 0                          

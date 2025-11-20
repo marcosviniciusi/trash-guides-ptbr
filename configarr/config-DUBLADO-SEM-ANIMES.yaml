@@ -347,25 +347,35 @@ radarr:
             score: -10000   
       ############################ Tier Premiere Portuguese-Brazilian ############################             
       - trash_ids:
-          - custom-web-tier-ptbr-dual #Brazilian DUAL
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub # Brazilian dub Group
-        assign_scores_to:
-          - name: HD
-            score: 15000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub-not-group # Brazilian Dub Not Group
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
             score: 10000
       - trash_ids:
-          - custom-web-tier-ptbr-dub-bad-group # Bad Brazilian Groups
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dublado # Brazilian dublado
+        assign_scores_to:
+          - name: HD
+            score: 7500
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 7000
+      - trash_ids:
+          - custom-pt-br-dublado-language # dublado
+        assign_scores_to:
+          - name: HD
+            score: 2000 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
@@ -556,6 +566,7 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 0
+
 # =================================================================================================
 #                                               SONARR
 # =================================================================================================
@@ -832,7 +843,7 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 5
-                        ############################ BAD GROUPS PT-BR ############################
+      ############################ BAD GROUPS PT-BR ############################
       - trash_ids:                
           - 9c11cd3f07101cdba90a2d81cf0e56b4 # LQ
         assign_scores_to:
@@ -860,25 +871,35 @@ sonarr:
             score: -100000  
       ############################ Tier Premiere Portuguese-Brazilian ############################                
       - trash_ids:
-          - custom-web-tier-ptbr-dual # Brazilian  DUAL
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub # Brazilian dub Group
-        assign_scores_to:
-          - name: HD
-            score: 15000
-      - trash_ids:
-          - custom-web-tier-ptbr-dub-not-group # Brazilian dub Not Group
+          - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
             score: 10000
       - trash_ids:
-          - custom-web-tier-ptbr-dub-bad-group # Bad Brazilian Groups
+          - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
         assign_scores_to:
           - name: HD
-            score: 8000
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
+        assign_scores_to:
+          - name: HD
+            score: 10000
+      - trash_ids:
+          - custom-pt-br-dublado # Brazilian dublado
+        assign_scores_to:
+          - name: HD
+            score: 7500
+      - trash_ids:
+          - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
+        assign_scores_to:
+          - name: HD
+            score: 7000
+      - trash_ids:
+          - custom-pt-br-dublado-language # dublado
+        assign_scores_to:
+          - name: HD
+            score: 2000 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01

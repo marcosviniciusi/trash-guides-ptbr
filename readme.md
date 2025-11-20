@@ -102,42 +102,33 @@ trash-guides-ptbr/
 │   ├── config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml        # Configuração SEM ANIMES LEGENDADO COM HDR
 │   ├── config-DUBLADO-SEM-ANIMES.yaml                 # Configuração SEM ANIMES  DUBLADO SEM HDR
 │   └── config-DUBLADO-HDR-ON-SEM-ANIMES.yaml          # Configuração SEM ANIMES  DUBLADO COM HDR
-├── custom-formats/    					                # Todos os custom formats
+├── custom-formats/    					                       # Todos os custom formats
 │   │   #GLOBAIS                               
-│   ├── custom-web-tier-ptbr-dual.json                 # DUAL-AUDIO (Global)
-│   │   #LEGENDADOS
-│   ├── custom-web-tier-ptbr-leg.json                  # Grupos Legendados
-│   ├── custom-web-tier-ptbr-leg-not-group.json        # Sem Grupos Legendados
-│   ├── custom-web-tier-ptbr-leg-bad-group.json        # Grupos PT-Br Não Confiaveis
-│   │   #DUBLADOS
-│   ├── custom-web-tier-ptbr-dub.json                  # Grupos Dublados
-│   ├── custom-web-tier-ptbr-dub-not-group.json        # Sem Grupos Dublados
-│   ├── custom-web-tier-ptbr-dub-bad-group.json        # Grupos Não Confiaveis Dublados
-│   │   #ANIMES ( Incluidos apenas Intâncias Animes )
-│   ├── custom-animes-not-original-radarr.json         # Penaliza áudio não original (Radarr)
-│   ├── custom-animes-not-original-sonarr.json         # Penaliza áudio não original (Sonarr)
-│   ├── custom-animes-not-portuguese-radarr.json       # Penaliza sem português (Radarr)
-│   ├── custom-animes-not-portuguese-sonarr.json       # Penaliza sem português (Sonarr)
-│   ├── custom-animes-not-brazilian-radarr.json        # Penaliza sem português-brasileiro (Radarr)
-│   ├── custom-animes-not-brazilian-sonarr.json        # Penaliza sem português-brasileiro (Sonarr)
-│   ├── custom-animes-toonshub-pt-radarr.json          # Legendado ToonsHub PT-PT (Radarr)
-│   ├── custom-animes-toonshub-pt-sonarr.json          # Legendado ToonsHub PT-PT (Sonarr)
-│   ├── custom-animes-toonshub-ptbr-radarr.json        # Legendado Legendado ToonsHub PT-BR (Radarr)
-│   └── custom-animes-toonshub-ptbr-sonarr.json        # Legendado ToonsHub PT-BR (Sonarr)
-└── iac/                                               # Infraestrutura como Código
-    ├── docker-compose/ 
-    │   ├── automatico/                                
-    │   │   └── docker-compose.yaml                    # Docker Compose Automatico
-    │   └── manual/
-    │       ├── docker-compose.yaml                    # Docker Compose Manual
-    │       └── download-custom-formats.sh             # Bash Downloads Custom Profiles
-    └── k8s/    
-        └── configarr/                                 # Manifestos Kubernetes
-            ├── configarr-config.yaml
-            ├── configarr-cronjob.yaml
-            ├── configarr-pvc.yaml
-            ├── configarr-secrets.yaml
-            └── kustomization.yaml
+│   ├── custom-pt-br-dual-audio.json                   # Brasilian DUAL-AUDIO (Verifica se corresponde na busca dos index)
+│   ├── custom-pt-br-dual-language.json                # Brasilian DUAL-AUDIO ( Tag para Importação Verifiando o Audio)
+│   ├── custom-pt-br-dublado-language.json             # Lingua Portuguesa ( Tag para Importação Verifiando o Audio)
+│   ├── custom-pt-br-dublado.json                      # Regex paa Releases Dublados
+│   ├── custom-pt-br-legendado.json                    # Regex para Releases Legendados
+│   ├── custom-pt-br-original-language.json            # Lingua Original ( Tag para Importação Verifiando o Audio)
+│   ├── custom-pt-br-web-tier-bad-group.json           # Grupos Não Confiaveis
+│   └── custom-pt-br-web-tier.json                     # Releases Groups PT-BR
+├── iac/                                               # Infraestrutura como Código
+│   ├── docker-compose/ 
+│   │   ├── automatico/                                
+│   │   │   └── docker-compose.yaml                    # Docker Compose Automatico
+│   │   └── manual/
+│   │       ├── docker-compose.yaml                    # Docker Compose Manual
+│   │       └── download-custom-formats.sh             # Bash Downloads Custom Profiles
+│   └── k8s/    
+│       └── configarr/                                 # Manifestos Kubernetes
+│           ├── configarr-config.yaml
+│           ├── configarr-cronjob.yaml
+│           ├── configarr-pvc.yaml
+│           ├── configarr-secrets.yaml
+│           └── kustomization.yaml
+└── prowlarr-indexes/                                  # Indexes do Prowlarr Modificados 
+                                                       #( Adicionar dentro do container do Prowlarr no /config/Definition/Custom)
+
 ```
 
 # 📦 Custom Formats Disponíveis
@@ -145,98 +136,34 @@ trash-guides-ptbr/
 ## 🎬 Perfis
 ## LEGENDADOS
 ------------------------------------------------------------------
-### 📺 Radarr/Sonarr (Filmes/Series) DUAL-AUDIO/LEGENDADO
+### 📺 Radarr/Sonarr (GLOBAL)
 
 #### Web Tier PT-BR
 
-| Custom Format | Descrição | Score Recomendado |
-|---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +20000 |
-| **custom-web-tier-ptbr-leg** | Prioriza apenas PT-BR de grupos confiáveis (Legendado) | +15000 |
-| **custom-web-tier-ptbr-leg-not-group** | Prioriza releases PT-BR não mapeados (Legendado) | +10000 |
-| **custom-web-tier-ptbr-leg-bad-group** | Grupos pt-BR não Confiaveis (Legendado) | +8000 |
-
-### 📺 Radarr (Animes) DUAL-AUDIO/LEGENDADO
-
-#### Web Tier PT-BR
-
-| Custom Format | Descrição | Score Recomendado |
-|---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 |
-| **custom-web-tier-ptbr-leg** | Prioriza apenas PT-BR (Legendado) | +55000000 |
-| **custom-web-tier-ptbr-leg-not-group** | Prioriza releases PT-BR não mapeados (Legendado) | +50000000 |
-| **custom-web-tier-ptbr-leg-bad-group** | Grupos pt-BR não Confiaveis | +40000000 |
-| **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR (Legendado) | +750000 |
-| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT-PT (Legendado) | +700000 |
-| **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
-| **custom-animes-not-original-radarr** | Penaliza áudio não original | -100000 |
-| **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-
-
-### 📺 Sonarr (Animes) DUAL-AUDIO/LEGENDADO
-
-#### Web Tier PT-BR
-
-| Custom Format | Descrição | Score Recomendado |
-|---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 |
-| **custom-web-tier-ptbr-leg** | Prioriza apenas PT-BR (Legendado) | +55000000 |
-| **custom-web-tier-ptbr-leg-not-group** | Prioriza releases PT-BR não mapeados (Legendado) | +50000000 |
-| **custom-web-tier-ptbr-leg-bad-group** | Grupos pt-BR não Confiaveis | +40000000 |
-| **custom-animes-toonshub-ptbr-sonarr** | Prioriza releases ToonsHub PT-BR (Legendado) | +750000 |
-| **custom-animes-toonshub-pt-sonarr** | Prioriza releases ToonsHub PT-PT (Legendado) | +700000 |
-| **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -100000 |
-| **custom-animes-not-original-sonarr** | Penaliza áudio não original | -100000 |
-| **custom-animes-not-portuguese-sonarr** | Penaliza conteúdo sem português | -100000 |
-
-
-
+| Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
+|---------------|-----------|-------------------|----------------------------------------------|
+| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000000 |
+| **custom-pt-br-dual-languageg** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
+| **custom-pt-br-legendado** | Prioriza Releases COM REGEX LEGENDADOS e afins... | +7500 | +25000000 |
+| **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +8000 | +1000 |
+| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +800000 |
+| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000000 |
 
 ## DUBLADOS
 ------------------------------------------------------------------
-### 📺 Radarr/Sonarr (Filmes/Series) DUAL-AUDIO/DUBLADOS
+### 📺 Radarr/Sonarr (GLOBAL)
 
 #### Web Tier PT-BR
 
-| Custom Format | Descrição | Score Recomendado |
-|---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +20000 |
-| **custom-web-tier-ptbr-dub** | Prioriza apenas PT-BR de grupos confiáveis (Dublado) | +15000 |
-| **custom-web-tier-ptbr-dub-not-group** | Prioriza releases PT-BR não mapeados (Dublado) | +10000 |
-| **custom-web-tier-ptbr-dub-bad-group** | Grupos pt-BR não Confiaveis | +8000 |
+| Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
+|---------------|-----------|-------------------|----------------------------------------------|
+| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000000 |
+| **custom-pt-br-dual-languageg** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
+| **custom-pt-br-dublado** | Prioriza Releases COM REGEX Dublados e afins... | +7500 | +25000000 |
+| **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +8000 | +1000 |
+| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +800000 |
+| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000000 |
 
-### 📺 Radarr (Animes) DUAL-AUDIO/DUBLADOS
-
-#### Web Tier PT-BR
-
-| Custom Format | Descrição | Score Recomendado |
-|---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 |
-| **custom-web-tier-ptbr-dub** | Prioriza apenas PT-BR (Dublado) | +55000000 |
-| **custom-web-tier-ptbr-dub-not-group** | Prioriza releases PT-BR não mapeados (Dublado) | +50000000 |
-| **custom-web-tier-ptbr-dub-bad-group** | Grupos pt-BR não Confiaveis | +40000000 |
-| **custom-animes-toonshub-ptbr-radarr** | Prioriza releases ToonsHub PT-BR (Legendado/Dublado) | +750000 |
-| **custom-animes-toonshub-pt-radarr** | Prioriza releases ToonsHub PT-PT (Legendado/Dublado) | +700000 |
-| **custom-animes-not-brazilian-radarr** | Penaliza releases sem PT-BR | -100000 |
-| **custom-animes-not-original-radarr** | Penaliza áudio não original | -100000 |
-| **custom-animes-not-portuguese-radarr** | Penaliza conteúdo sem português | -100000 |
-
-
-### 📺 Sonarr (Animes) DUAL-AUDIO/DUBLADOS
-
-#### Web Tier PT-BR
-
-| Custom Format | Descrição | Score Recomendado |
-|---------------|-----------|-------------------|
-| **custom-web-tier-ptbr-dual** | Prioriza áudio dual (PT-BR + Original) de grupos confiáveis | +60000000 |
-| **custom-web-tier-ptbr-dub** | Prioriza apenas PT-BR (Dublado) | +55000000 |
-| **custom-web-tier-ptbr-dub-not-group** | Prioriza releases PT-BR não mapeados (Dublado) | +50000000 |
-| **custom-web-tier-ptbr-dub-bad-group** | Grupos pt-BR não Confiaveis | +40000000 |
-| **custom-animes-toonshub-ptbr-sonarr** | Prioriza releases ToonsHub PT-BR (Legendado/Dublado) | +750000 |
-| **custom-animes-toonshub-pt-sonarr** | Prioriza releases ToonsHub PT-PT (Legendado/Dublado) | +700000 |
-| **custom-animes-not-brazilian-sonarr** | Penaliza releases sem PT-BR | -100000 |
-| **custom-animes-not-original-sonarr** | Penaliza áudio não original | -100000 |
-| **custom-animes-not-portuguese-sonarr** | Penaliza conteúdo sem português | -100000 |
 
 ## 🔧 Configurando os Quality Profiles
 
@@ -257,15 +184,15 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
    - **Qualities**: Selecione as qualidades desejadas (Ex: WEBDL-1080p, WEBRip-1080p, Bluray-1080p, Remux-1080p)
    - **Minimum Custom Format Score** Recomendado:
       - **Filmes/Series Mix de Conteudos Gringos mas que prefira PT-BR: 250 ( caso tenha um Bazarr configurado)
-      - **Filmes/Series Apenas Dual Audio/Legendados: 9000
-      - **Filmes/Series Apenas Dual Audio/Dublado: 12000
-      - **Animes GLOBAL Apenas Dual Audio/Legendado/Dublados: 350000
+      - **Filmes/Series Apenas Dual Audio/Legendados: 7500 
+      - **Filmes/Series Apenas Dual Audio/Dublado: 7500
+      - **Animes GLOBAL Apenas Dual Audio/Legendado/Dublados: 200000
    - **Upgrade Until Custom Format Score** Recomendado:
-      - **Filmes/Series Sem HDR: 25500
+      - **Filmes/Series Sem HDR: 25000
       - **Filmes/Series Com HDR: 26500
       - **Animes : 60000000
 4. Clique em **Save**
-5. **Opcional Altamente Recomendavel:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) - LEIA TODA A PAGINA
+5. **Pré Requisitos OBRIGATÓRIO:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) - Sem Estas Configurações, no momento do Import, ocorrerá erros ao importar.
   - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
 ```
 {Series TitleYear} - S{season:00}E{episode:00} - {Episode CleanTitle:90} {[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
@@ -282,6 +209,65 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 ```
 {Movie CleanTitle} {(Release Year)} - {{Edition Tags}} {[MediaInfo 3D]}{[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
 ```
+## Prowlarr Custom Indexers - Brazilian Trackers
+Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
+## Propósito
+A comunidade brasileira de trackers faz um **trabalho excepcional** disponibilizando conteúdo de qualidade em português. No entanto, cada tracker segue sua própria convenção de nomenclatura, o que é perfeitamente compreensível dada a diversidade e autonomia de cada comunidade.
+
+Estes indexers foram desenvolvidos para criar uma **camada de padronização** que unifica os títulos dos releases brasileiros em diversos trackers, tanto públicos quanto privados, **sem alterar o excelente trabalho já realizado pelas comunidades**.
+
+Com esta padronização, você terá:
+- ✅ **Resultados consistentes** entre diferentes trackers
+- ✅ **Custom Formats funcionando corretamente** no Radarr/Sonarr
+- ✅ **Melhor experiência na automação** de downloads
+- ✅ **Priorização inteligente** de releases em português brasileiro
+
+## Padronizações Aplicadas
+
+| Original | Padronizado |
+|----------|-------------|
+| `DUAL`, `Dual Ãudio` | `BRAZILIAN-DUAL-AUDIO` |
+| `Dublado` | `DUBLADO` |
+| `Nacional` | `NACIONAL` |
+| `Legendado` | `LEGENDADO` |
+
+## 💚 Reconhecimento
+
+Nosso profundo agradecimento a todas as comunidades de trackers brasileiros pelo trabalho contínuo e dedicado. Esta customização apenas adiciona uma camada de padronização técnica para facilitar a automação, preservando totalmente a qualidade e integridade dos releases originais.
+
+---
+
+## 🚀 Resultado
+
+Com estes indexers customizados, você terá acesso ao excelente conteúdo disponibilizado pelas comunidades brasileiras com a vantagem adicional de uma nomenclatura padronizada, garantindo uma experiência superior na automação de mídia em português brasileiro.
+
+## Instalação
+
+### 1. Localize a pasta de definições do Prowlarr
+```bash
+# Docker
+/config/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+
+# Windows
+C:\ProgramData\Prowlarr\Definitions\Custom # Se não houver a pasta Custom, crie manualmente.
+
+# Linux
+~/.config/Prowlarr/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+```
+
+### 2. Adicione os arquivos `.yml` nesta pasta
+
+Copie os indexers customizados para o diretório `/config/Definitions/Custom`
+
+### 3. Reinicie o Prowlarr
+```bash
+docker restart prowlarr
+```
+
+### 4. Configure os indexers no Prowlarr
+
+Acesse **Indexers** → **Add Indexer** e procure pelos indexers com nomes "trashguides-pt-br. e desativa os padores do Prowlarr para estes indexes.
+
 ## Configurando Manualmente os custom Formats
 ## obs: siga apenas este passo se não deseja o uso do configarr.
 #### No Radarr/Sonarr:
@@ -388,17 +374,17 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 ```
 Obs: Ja efetua o download do docker compose. e também ja tem criado o script para baixar os custom formats, caso queira baixa-lo, use este script abaixo:
 
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 
 #Script de Download dos Custom Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
 
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
@@ -438,35 +424,35 @@ EOF
 
 ```bash
 # Opção 1: Legendados Sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
   -o config/config.yml
 
 # Opção 2: Legendados COM HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 3: Dublados sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
   -o config/config.yml
 
 # Opção 4: Dublados Com HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 5: Legendados Sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
   -o config/config.yml 
 
 # Opção 6: Legendados COM HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 7: Dublados sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 8: Dublados Com HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 ```
 
@@ -520,7 +506,7 @@ sonarr:
 cat > download-custom-formats.sh << 'EOF'
 #!/bin/bash
 
-BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats"
+BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
 
 echo "📥 Baixando custom formats..."
 # Função para baixar com tratamento de erro
@@ -533,32 +519,15 @@ download_format() {
     }
 }
 
-      # Custom Formats Globais DUAL AUDIO
-      download_format 'custom-web-tier-ptbr-dual.json'
-
-      # Custom Formats Globais Legendados
-      download_format 'custom-web-tier-ptbr-leg.json'
-      download_format 'custom-web-tier-ptbr-leg-not-group.json'
-      download_format 'custom-web-tier-ptbr-leg-bad-group.json'
-      
-      # Custom Formats Globais Dublados
-      download_format 'custom-web-tier-ptbr-dub.json'
-      download_format 'custom-web-tier-ptbr-dub-not-group.json'
-      download_format 'custom-web-tier-ptbr-dub-bad-group.json'
-      
-      # Custom Formats RADARR ANIMES
-      download_format 'custom-animes-not-brazilian-radarr.json'
-      download_format 'custom-animes-not-original-radarr.json'
-      download_format 'custom-animes-not-portuguese-radarr.json'
-      download_format 'custom-animes-toonshub-pt-radarr.json'
-      download_format 'custom-animes-toonshub-ptbr-radarr.json'
-      
-      # Custom Formats SONARR ANIMES
-      download_format 'custom-animes-not-brazilian-sonarr.json'
-      download_format 'custom-animes-not-original-sonarr.json'
-      download_format 'custom-animes-not-portuguese-sonarr.json'
-      download_format 'custom-animes-toonshub-pt-sonarr.json'
-      download_format 'custom-animes-toonshub-ptbr-sonarr.json'
+# Custom Formats Globais
+download_format 'custom-pt-br-dual-audio.json'
+download_format 'custom-pt-br-dual-language.json'
+download_format 'custom-pt-br-dublado-language.json'
+download_format 'custom-pt-br-dublado.json'
+download_format 'custom-pt-br-legendado.json'
+download_format 'custom-pt-br-original-language.json'
+download_format 'custom-pt-br-web-tier-bad-group.json'
+download_format 'custom-pt-br-web-tier.json'
 
 
 echo "✅ Custom formats baixados com sucesso!"
@@ -599,7 +568,7 @@ volumes:
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
 ```
 Obs: O script acima efetua o download do arquivo docker-compose.yaml, siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
 ### 2. Criar secrets.yml
@@ -635,35 +604,35 @@ EOF
 
 ```bash
 # Opção 1: Legendados Sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
   -o config/config.yml
 
 # Opção 2: Legendados COM HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 3: Dublados sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
   -o config/config.yml
 
 # Opção 4: Dublados Com HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 5: Legendados Sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
   -o config/config.yml 
 
 # Opção 6: Legendados COM HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 7: Dublados sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 8: Dublados Com HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 ```
 
@@ -723,7 +692,7 @@ services:
     container_name: configarr-download
     command: >
       sh -c "
-      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats'
+      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats'
       
       # Criar diretório se não existir
       mkdir -p /config/custom-formats
@@ -740,32 +709,15 @@ services:
           }
       }
       
-      # Custom Formats Globais DUAL AUDIO
-      download_format 'custom-web-tier-ptbr-dual.json'
-
-      # Custom Formats Globais Legendados
-      download_format 'custom-web-tier-ptbr-leg.json'
-      download_format 'custom-web-tier-ptbr-leg-not-group.json'
-      download_format 'custom-web-tier-ptbr-leg-bad-group.json'
-      
-      # Custom Formats Globais Dublados
-      download_format 'custom-web-tier-ptbr-dub.json'
-      download_format 'custom-web-tier-ptbr-dub-not-group.json'
-      download_format 'custom-web-tier-ptbr-dub-bad-group.json'
-      
-      # Custom Formats RADARR ANIMES
-      download_format 'custom-animes-not-brazilian-radarr.json'
-      download_format 'custom-animes-not-original-radarr.json'
-      download_format 'custom-animes-not-portuguese-radarr.json'
-      download_format 'custom-animes-toonshub-pt-radarr.json'
-      download_format 'custom-animes-toonshub-ptbr-radarr.json'
-      
-      # Custom Formats SONARR ANIMES
-      download_format 'custom-animes-not-brazilian-sonarr.json'
-      download_format 'custom-animes-not-original-sonarr.json'
-      download_format 'custom-animes-not-portuguese-sonarr.json'
-      download_format 'custom-animes-toonshub-pt-sonarr.json'
-      download_format 'custom-animes-toonshub-ptbr-sonarr.json'
+		# Custom Formats Globais
+		download_format 'custom-pt-br-dual-audio.json'
+		download_format 'custom-pt-br-dual-language.json'
+		download_format 'custom-pt-br-dublado-language.json'
+		download_format 'custom-pt-br-dublado.json'
+		download_format 'custom-pt-br-legendado.json'
+		download_format 'custom-pt-br-original-language.json'
+		download_format 'custom-pt-br-web-tier-bad-group.json'
+		download_format 'custom-pt-br-web-tier.json'
       
       echo '✅ Custom formats baixados com sucesso!'
       "
@@ -910,7 +862,7 @@ spec:
                   echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/main/custom-formats"
+                  BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
                   
                   # Função para download com retry
                   download_format() {
@@ -923,32 +875,15 @@ spec:
                     }
                   }
                   
-                  # Custom Formats Globais DUAL-AUDIO
-                  download_format "custom-web-tier-ptbr-dual.json"
-                  
-                  # Custom Formats Globais LEGENDADOS
-                  download_format "custom-web-tier-ptbr-leg.json"
-                  download_format "custom-web-tier-ptbr-leg-not-group.json"
-                  download_format "custom-web-tier-ptbr-leg-bad-group.json"
-                  
-                  # Custom Formats Globais DUBLADOS
-                  download_format "custom-web-tier-ptbr-dub.json"
-                  download_format "custom-web-tier-ptbr-dub-not-group.json"
-                  download_format "custom-web-tier-ptbr-dub-bad-group.json"
-                  
-                  # Custom Formats RADARR ANIMES
-                  download_format "custom-animes-not-brazilian-radarr.json"
-                  download_format "custom-animes-not-original-radarr.json"
-                  download_format "custom-animes-not-portuguese-radarr.json"
-                  download_format "custom-animes-toonshub-pt-radarr.json"
-                  download_format "custom-animes-toonshub-ptbr-radarr.json"
-                  
-                  # Custom Formats SONARR ANIMES
-                  download_format "custom-animes-not-brazilian-sonarr.json"
-                  download_format "custom-animes-not-original-sonarr.json"
-                  download_format "custom-animes-not-portuguese-sonarr.json"
-                  download_format "custom-animes-toonshub-pt-sonarr.json"
-                  download_format "custom-animes-toonshub-ptbr-sonarr.json"
+						# Custom Formats Globais
+						download_format 'custom-pt-br-dual-audio.json'
+						download_format 'custom-pt-br-dual-language.json'
+						download_format 'custom-pt-br-dublado-language.json'
+						download_format 'custom-pt-br-dublado.json'
+						download_format 'custom-pt-br-legendado.json'
+						download_format 'custom-pt-br-original-language.json'
+						download_format 'custom-pt-br-web-tier-bad-group.json'
+						download_format 'custom-pt-br-web-tier.json'
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/
@@ -1028,28 +963,6 @@ kubectl delete job configarr-test -n media
 
 ---
 
-## 📊 Estrutura de Scores
-
-### Filmes/Séries (Radarr/Sonarr)
-
-| Categoria | Faixa de Score |
-|-----------|----------------|
-| **Custom Formats PT-BR** | +8000 a +20000 |
-| **Áudio de Alta Qualidade** | +1000 a +5000 |
-| **Remux/Bluray Tiers** | +1700 a +1950 |
-| **Penalizações** | -10000 a -100000 |
-
-### Animes (Radarr/Sonarr)
-
-| Categoria | Score |
-|-----------|-------|
-| **Web Tier PT-BR Dual** | +40000000 a +60000000 |
-| **ToonsHub PT-BR** | +750000 |
-| **ToonsHub PT-PT** | +700000 |
-| **Penalizações (Sem PT-BR)** | -100000 |
-
-> **Nota:** Os scores para animes são intencionalmente muito altos para garantir prioridade absoluta sobre outros formatos.
-
 ---
 
 ## 🔄 Atualizações Automáticas
@@ -1109,15 +1022,6 @@ Contribuições são muito bem-vindas! Seja adicionando novos custom formats, me
 7. **Push** para o branch (`git push origin feature/novo-formato`)
 8. Abra um **Pull Request** detalhando suas mudanças
 
-### Padrão de Nomenclatura
-
-Para manter a consistência do repositório:
-
-- **`custom-web-tier-ptbr-*.json`** - Formatos para web releases PT-BR
-- **`custom-animes-*.json`** - Formatos específicos para animes
-- **Prefixo `custom-`** - Para diferenciar dos formatos oficiais do TRaSH
-- **Sufixo `-radarr` ou `-sonarr`** - Para especificar a aplicação
-
 ### Diretrizes de Custom Formats
 
 - Use regex precisos e testados
@@ -1170,7 +1074,6 @@ R: Abra uma [issue no GitHub](https://github.com/marcosviniciusi/trash-guides-pt
 
 - Baseado no trabalho excepcional do [TRaSH Guides](https://trash-guides.info/)
 - Desenvolvido com ❤️ para a comunidade brasileira de *arr apps
-- Mantido por [Marcos Gabriel](https://github.com/marcosviniciusi)
 - Agradecimento especial a todos os [contribuidores](https://github.com/marcosviniciusi/trash-guides-ptbr/graphs/contributors)
 
 ---

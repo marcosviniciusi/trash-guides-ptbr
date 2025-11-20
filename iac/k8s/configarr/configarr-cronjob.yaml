@@ -2,9 +2,8 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: configarr-sync
-  namespace: arr
 spec:
-  schedule: "0 */6 * * *"
+  schedule: "*/10 * * * *"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   jobTemplate:
@@ -35,31 +34,15 @@ spec:
                     }
                   }
                   
-                  # Custom Formats Globais Legendados
-                  download_format "custom-web-tier-ptbr-dual.json"
-                  download_format "custom-web-tier-ptbr-leg.json"
-                  download_format "custom-web-tier-ptbr-leg-not-group.json"
-                  download_format "custom-web-tier-ptbr-leg-bad-group.json"
-                  
-                  # Custom Formats Globais Legendados
-                  download_format "custom-web-tier-ptbr-dual.json"
-                  download_format "custom-web-tier-ptbr-dub.json"
-                  download_format "custom-web-tier-ptbr-dub-not-group.json"
-                  download_format "custom-web-tier-ptbr-dub-bad-group.json"
-                  
-                  # Radarr
-                  download_format "custom-animes-not-brazilian-radarr.json"
-                  download_format "custom-animes-not-original-radarr.json"
-                  download_format "custom-animes-not-portuguese-radarr.json"
-                  download_format "custom-animes-toonshub-pt-radarr.json"
-                  download_format "custom-animes-toonshub-ptbr-radarr.json"
-                  
-                  # Sonarr
-                  download_format "custom-animes-not-brazilian-sonarr.json"
-                  download_format "custom-animes-not-original-sonarr.json"
-                  download_format "custom-animes-not-portuguese-sonarr.json"
-                  download_format "custom-animes-toonshub-pt-sonarr.json"
-                  download_format "custom-animes-toonshub-ptbr-sonarr.json"
+                  # Custom Novos
+                  download_format 'custom-pt-br-dual-audio.json'
+                  download_format 'custom-pt-br-dual-language.json'
+                  download_format 'custom-pt-br-dublado-language.json'
+                  download_format 'custom-pt-br-dublado.json'
+                  download_format 'custom-pt-br-legendado.json'
+                  download_format 'custom-pt-br-original-language.json'
+                  download_format 'custom-pt-br-web-tier-bad-group.json'
+                  download_format 'custom-pt-br-web-tier.json'
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/                 
@@ -102,4 +85,4 @@ spec:
                 name: configarr-config
             - name: secret-volume
               secret:
-                secretName: configarr-secrets
+                secretName: configarr-secrets  # ← MUDOU AQUI: de configarr-secrets para configarr
