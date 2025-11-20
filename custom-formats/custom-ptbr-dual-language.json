@@ -1,0 +1,27 @@
+{
+  "trash_id": "custom-ptbr-dual-language",
+  "name": "Brazilian Dual Languange",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Original Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": -2,
+        "exceptLanguage": false
+      }
+    },
+    {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": false
+      }
+    }
+  ]
+}
