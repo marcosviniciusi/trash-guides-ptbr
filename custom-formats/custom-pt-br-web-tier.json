@@ -31,15 +31,6 @@
       }
     },
     {
-      "name": "Levaculik",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Levaculik)$"
-      }
-    },
-    {
       "name": "By Tontom",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
