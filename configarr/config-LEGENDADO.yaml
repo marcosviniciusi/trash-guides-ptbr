@@ -457,6 +457,11 @@ radarr:
             score: 7
       ############################ Streaming Services ############################
       - trash_ids:
+          - custom-pt-br-globoplay # Globoplay
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
           - b3b3a6ac74ecbd56bcdbefa4799fb9df # AMZN
         assign_scores_to:
           - name: HD
@@ -954,6 +959,11 @@ radarr:
           - name: HD
             score: -100000      
       ############################ Streaming Services ############################
+      - trash_ids:
+          - custom-pt-br-globoplay # Globoplay
+        assign_scores_to:
+          - name: HD
+            score: 0
       - trash_ids:
           - b3b3a6ac74ecbd56bcdbefa4799fb9df # AMZN
         assign_scores_to:
@@ -1457,6 +1467,11 @@ sonarr:
     
       ############################ Streaming ############################
       - trash_ids:
+          - custom-pt-br-globoplay # Globoplay
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
           - d660701077794679fd59e8bdf4ce3a29 # AMZN
           - f67c9ca88f463a48346062e8ad07713f # ATVP
           - 77a7b25585c18af08f60b1547bb9b4fb # CC
@@ -1837,6 +1852,11 @@ sonarr:
           - name: HD
             score: 3
      ############################ STREAMING ############################
+      - trash_ids:
+          - custom-pt-br-globoplay # Globoplay
+        assign_scores_to:
+          - name: HD
+            score: 0
       - trash_ids:
           - 3e0b26604165f463f3e8e192261e7284 # CR
         assign_scores_to:

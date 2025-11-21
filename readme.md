@@ -111,6 +111,7 @@ trash-guides-ptbr/
 │   ├── custom-pt-br-legendado.json                    # Regex para Releases Legendados
 │   ├── custom-pt-br-original-language.json            # Lingua Original ( Tag para Importação Verifiando o Audio)
 │   ├── custom-pt-br-web-tier-bad-group.json           # Grupos Não Confiaveis
+│   ├── custom-pt-br-globoplay.json                    # Tag GloboPlay
 │   └── custom-pt-br-web-tier.json                     # Releases Groups PT-BR
 ├── iac/                                               # Infraestrutura como Código
 │   ├── docker-compose/ 
@@ -143,11 +144,13 @@ trash-guides-ptbr/
 | Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
 |---------------|-----------|-------------------|----------------------------------------------|
 | **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000000 |
-| **custom-pt-br-dual-languageg** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
+| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
 | **custom-pt-br-legendado** | Prioriza Releases COM REGEX LEGENDADOS e afins... | +7500 | +25000000 |
 | **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +8000 | +1000 |
 | **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +800000 |
 | **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000000 |
+| **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
+
 
 ## DUBLADOS
 ------------------------------------------------------------------
@@ -158,12 +161,12 @@ trash-guides-ptbr/
 | Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
 |---------------|-----------|-------------------|----------------------------------------------|
 | **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000000 |
-| **custom-pt-br-dual-languageg** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
+| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
 | **custom-pt-br-dublado** | Prioriza Releases COM REGEX Dublados e afins... | +7500 | +25000000 |
 | **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +8000 | +1000 |
 | **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +800000 |
 | **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000000 |
-
+| **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 
 ## 🔧 Configurando os Quality Profiles
 
@@ -528,6 +531,7 @@ download_format 'custom-pt-br-legendado.json'
 download_format 'custom-pt-br-original-language.json'
 download_format 'custom-pt-br-web-tier-bad-group.json'
 download_format 'custom-pt-br-web-tier.json'
+download_format 'custom-pt-br-globoplay.json'
 
 
 echo "✅ Custom formats baixados com sucesso!"
@@ -718,6 +722,7 @@ services:
 		download_format 'custom-pt-br-original-language.json'
 		download_format 'custom-pt-br-web-tier-bad-group.json'
 		download_format 'custom-pt-br-web-tier.json'
+    download_format 'custom-pt-br-globoplay.json'
       
       echo '✅ Custom formats baixados com sucesso!'
       "
@@ -884,6 +889,7 @@ spec:
 						download_format 'custom-pt-br-original-language.json'
 						download_format 'custom-pt-br-web-tier-bad-group.json'
 						download_format 'custom-pt-br-web-tier.json'
+            download_format 'custom-pt-br-globoplay.json'
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/

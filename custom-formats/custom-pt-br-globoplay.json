@@ -1,0 +1,34 @@
+{
+  "trash_id": "custom-pt-br-globoplay",
+  "name": "GloboPlay",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [
+    {
+      "name": "GloboPlay",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\b(GLBO)\\b"
+      }
+    },
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 8
+      }
+    }
+  ]
+}

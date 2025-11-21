@@ -43,6 +43,7 @@ spec:
                   download_format 'custom-pt-br-original-language.json'
                   download_format 'custom-pt-br-web-tier-bad-group.json'
                   download_format 'custom-pt-br-web-tier.json'
+                  download_format 'custom-pt-br-globoplay.json'
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/                 

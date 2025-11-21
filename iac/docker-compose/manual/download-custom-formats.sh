@@ -22,6 +22,8 @@ download_format 'custom-pt-br-legendado.json'
 download_format 'custom-pt-br-original-language.json'
 download_format 'custom-pt-br-web-tier-bad-group.json'
 download_format 'custom-pt-br-web-tier.json'
+download_format 'custom-pt-br-globoplay.json'
+
 
 
 echo "✅ Custom formats baixados com sucesso!"
