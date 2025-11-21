@@ -1,4 +1,16 @@
 # TRaSH Guides PT-BR - Custom Formats
+# ⚠️ Aviso Importante
+
+Um novo modelo de automação foi introduzido na branch `develop`, trazendo melhorias significativas em relação ao modelo anterior.
+
+## O que muda?
+
+A branch `master` será descontinuada. Para garantir a estabilidade das automações já existentes, ela permanecerá disponível, porém não receberá mais atualizações.
+
+## Como migrar para o novo modelo?
+
+1. Remova todos os Custom Formats existentes
+2. Siga o tutorial disponível na branch `develop` para recriar suas configurações
 
 Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para conteúdo nacional com (DUAL-AUDIO)/legendas PT-BR e também o Dublado.
 
