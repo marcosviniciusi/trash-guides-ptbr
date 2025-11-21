@@ -244,6 +244,8 @@ Nosso profundo agradecimento a todas as comunidades de trackers brasileiros pelo
 
 Com estes indexers customizados, você terá acesso ao excelente conteúdo disponibilizado pelas comunidades brasileiras com a vantagem adicional de uma nomenclatura padronizada, garantindo uma experiência superior na automação de mídia em português brasileiro.
 
+PS: Não altera conteudo/titulo, apenas a altera a forma como é apresentado o titulo para o sonarr e radarr. Toda a estrutura é mantida.
+
 ## Instalação
 
 ### 1. Localize a pasta de definições do Prowlarr
