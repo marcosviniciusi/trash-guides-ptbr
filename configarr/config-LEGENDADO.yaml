@@ -1463,7 +1463,7 @@ sonarr:
           - 3bc5f395426614e155e585a2f056cdf1 # Season Pack
         assign_scores_to:
           - name: HD
-            score: 20          
+            score: 1000          
     
       ############################ Streaming ############################
       - trash_ids:
