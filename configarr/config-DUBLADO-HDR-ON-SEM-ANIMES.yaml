@@ -965,37 +965,141 @@ sonarr:
     
       ############################ Streaming ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globoplay
+          - custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
-            score: 0
+            score: 75
       - trash_ids:
           - d660701077794679fd59e8bdf4ce3a29 # AMZN
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - f67c9ca88f463a48346062e8ad07713f # ATVP
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 77a7b25585c18af08f60b1547bb9b4fb # CC
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 36b72f59f4ea20aad9316f475f2d9fbb # DCU
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 89358767a60cc28783cdc3d0be9388a4 # DSNP
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 7a235133c87f7da4c8cccceca7e3c7a6 # HBO
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - a880d6abc21e7c16884f3ae393f84179 # HMAX
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - f6cce30f1733d5c8194222a7507909bb # Hulu
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 0ac24a2a68a9700bcb7eeca8e5cd644c # iT
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - d34870697c9db575f17700212167be23 # NF
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - b2b980877494b560443631eb1f473867 # NLZ
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - fb1a91cdc0f26f7ca0696e0e95274645 # OViD
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 1656adc6d7bb2c8cca6acfb6592db421 # PCOK
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - c67a75ae4a1715f2bb4d492755ba4195 # PMTP
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 3ac5d84fce98bab1b531393e9c82f467 # QIBI
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - c30d2958827d1867c73318a5a2957eb1 # RED
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - ae58039e1319178e6be73caab5c42166 # SHO
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 1efe8da11bfd74fbbcd4d8117ddb9213 # STAN
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 5d2317d99af813b6529c7ebf01c83533 # VDL
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 43b3cf48cb385cd3eac608ee6bca7f09 # UHD Streaming Boost
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 218e93e5702f44a68ad9e3c6ba87d2f0 # UHD Streaming Cut
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - bbcaf03147de0f73be2be4a9078dfa03 # 4OD UK
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - fcc09418f67ccaddcf3b641a22c5cfd7 # ALL4 UK
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - dc503e2425126fa1d0a9ad6168c83b3f # iP UK
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - fa5a16b951004c23e980d2913694a137 # ITVX UK
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - 9f72dc1059a6b277c21cee6a1f15f13f # My5 UK
+        assign_scores_to:
+          - name: HD
+            score: 75
+      - trash_ids:
           - b66a699fba6f9df91becab798d7502e5 # NOW UK
         assign_scores_to:
           - name: HD
