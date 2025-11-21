@@ -146,6 +146,12 @@ search:
         # Substitui "Nacional" por "NACIONAL"
         - name: re_replace
           args: ['(?i)Nacional', 'NACIONAL']
+        # Remove espaços múltiplos
+        - name: re_replace
+          args: ['\s{2,}', ' ']
+        # Remove espaço antes do hífen do release group
+        - name: re_replace
+          args: ['\s+-BJSHARE', '-BJSHARE']
         - name: append
           args: "-BJSHARE"
 
@@ -154,6 +160,9 @@ search:
       filters:
         - name: re_replace
           args: ["\\[|\\]", " "]
+        # Remove espaços múltiplos
+        - name: re_replace
+          args: ['\s{2,}', ' ']
         - name: append
           args: "-BJSHARE"
 
