@@ -1,6 +1,6 @@
 {
   "trash_id": "custom-pt-br-dublado-language",
-  "name": "Brazilian Dublado Languange",
+  "name": "Brazilian Language",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
@@ -11,6 +11,16 @@
       "fields": {
         "value": 18,
         "exceptLanguage": false
+      }
+    },
+    {
+      "name": "NOT Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": true
       }
     }
   ]
