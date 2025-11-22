@@ -1921,15 +1921,6 @@
       }
     },
     {
-      "name": "HANDJOB",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(HANDJOB)$"
-      }
-    },
-    {
       "name": "RMB",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
