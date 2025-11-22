@@ -248,7 +248,7 @@ radarr:
           - cae4ca30163749b891686f95532519bd # AV1
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10000000
       - trash_ids:
           - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
         assign_scores_to:
@@ -786,7 +786,7 @@ sonarr:
           - 15a05bc7c1a36e2b57fd628f8977e2fc # AV1
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10000000
       - trash_ids:
           - 15a05bc7c1a36e2b57fd628f8977e2fc # x265 (HD)
         assign_scores_to:
