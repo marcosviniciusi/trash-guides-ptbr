@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: configarr-sync
 spec:
-  schedule: "*/10 * * * *"
+  schedule: "0 3 * * *"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   jobTemplate:
