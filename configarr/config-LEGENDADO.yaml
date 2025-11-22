@@ -393,7 +393,7 @@ radarr:
           - name: HD
             score: 1850
       - trash_ids:
-          - c20f169ef63c5f40c2def54abaf4438e # UHD Bluray Tier 01
+          - 4d74ac4c4db0b64bff6ce0cffef99bf0 # UHD Bluray Tier 01
         assign_scores_to:
           - name: HD
             score: 1800
@@ -796,27 +796,27 @@ radarr:
           - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 30000000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 30000000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dual-language # Brazilian DUAL Laguage
         assign_scores_to:
           - name: HD
-            score: 30000000
+            score: 30000
       - trash_ids:
           - custom-pt-br-legendado # Brazilian Legendado
         assign_scores_to:
           - name: HD
-            score: 25000000
+            score: 25000
       - trash_ids:
           - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 20000000
+            score: 20000
       - trash_ids:
           - custom-pt-br-original-language # Original Language
         assign_scores_to:
@@ -1291,7 +1291,7 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - 15a05bc7c1a36e2b57fd628f8977e2fc # x265 (HD)
+          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
         assign_scores_to:
           - name: HD
             score: 0
@@ -1769,7 +1769,7 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - 15a05bc7c1a36e2b57fd628f8977e2fc # x265 (HD)
+          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
         assign_scores_to:
           - name: HD
             score: 0
@@ -1828,27 +1828,27 @@ sonarr:
           - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 30000000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 30000000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
         assign_scores_to:
           - name: HD
-            score: 30000000
+            score: 30000
       - trash_ids:
           - custom-pt-br-legendado # Brazilian Legendado
         assign_scores_to:
           - name: HD
-            score: 25000000
+            score: 25000
       - trash_ids:
           - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 20000000
+            score: 20000
       - trash_ids:
           - custom-pt-br-original-language # Original Language
         assign_scores_to:

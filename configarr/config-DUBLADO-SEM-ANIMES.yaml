@@ -393,7 +393,7 @@ radarr:
           - name: HD
             score: 1850
       - trash_ids:
-          - c20f169ef63c5f40c2def54abaf4438e # UHD Bluray Tier 01
+          - 4d74ac4c4db0b64bff6ce0cffef99bf0 # UHD Bluray Tier 01
         assign_scores_to:
           - name: HD
             score: 1800
@@ -457,7 +457,7 @@ radarr:
             score: 7
       ############################ Streaming Services ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globoplay
+          - custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
             score: 0
@@ -571,7 +571,6 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 0
-
 # =================================================================================================
 #                                               SONARR
 # =================================================================================================
@@ -789,7 +788,7 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - 15a05bc7c1a36e2b57fd628f8977e2fc # x265 (HD)
+          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
         assign_scores_to:
           - name: HD
             score: 0
@@ -874,32 +873,32 @@ sonarr:
           - custom-pt-br-web-tier ##Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 10000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dual-language ##Brazilian DUAL LANGUAGE
         assign_scores_to:
           - name: HD
-            score: 10000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dual-audio # Brazilian DUAL AUDIO
         assign_scores_to:
           - name: HD
-            score: 10000
+            score: 30000
       - trash_ids:
           - custom-pt-br-dublado # Brazilian dublado
         assign_scores_to:
           - name: HD
-            score: 7500
+            score: 25000
       - trash_ids:
           - custom-pt-br-web-tier-bad-group # Bad Brazilian Groups
         assign_scores_to:
           - name: HD
-            score: 7000
+            score: 20000
       - trash_ids:
           - custom-pt-br-dublado-language # dublado
         assign_scores_to:
           - name: HD
-            score: 2000 
+            score: 25000 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 9965a052eb87b0d10313b1cea89eb451 # Remux Tier 01
@@ -1099,3 +1098,4 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 75
+            

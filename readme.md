@@ -143,12 +143,12 @@ trash-guides-ptbr/
 
 | Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
 |---------------|-----------|-------------------|----------------------------------------------|
-| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000000 |
-| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
-| **custom-pt-br-legendado** | Prioriza Releases COM REGEX LEGENDADOS e afins... | +7500 | +25000000 |
+| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000 |
+| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000 |
+| **custom-pt-br-legendado** | Prioriza Releases COM REGEX LEGENDADOS e afins... | +7500 | +25000 |
 | **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +8000 | +1000 |
-| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +800000 |
-| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000000 |
+| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
+| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000 |
 | **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 
 
@@ -160,12 +160,12 @@ trash-guides-ptbr/
 
 | Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
 |---------------|-----------|-------------------|----------------------------------------------|
-| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000000 |
-| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000000 |
-| **custom-pt-br-dublado** | Prioriza Releases COM REGEX Dublados e afins... | +7500 | +25000000 |
-| **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +8000 | +1000 |
-| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +800000 |
-| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000000 |
+| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000 |
+| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000 |
+| **custom-pt-br-dublado** | Prioriza Releases COM REGEX Dublados e afins... | +7500 | +25000 |
+| **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +8000 | +25000 |
+| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
+| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000 |
 | **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 
 ## 🔧 Configurando os Quality Profiles
@@ -189,11 +189,11 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
       - **Filmes/Series Mix de Conteudos Gringos mas que prefira PT-BR: 250 ( caso tenha um Bazarr configurado)
       - **Filmes/Series Apenas Dual Audio/Legendados: 7500 
       - **Filmes/Series Apenas Dual Audio/Dublado: 7500
-      - **Animes GLOBAL Apenas Dual Audio/Legendado/Dublados: 200000
+      - **Animes GLOBAL Apenas Dual Audio/Legendado/Dublados: 19000
    - **Upgrade Until Custom Format Score** Recomendado:
-      - **Filmes/Series Sem HDR: 25000
-      - **Filmes/Series Com HDR: 26500
-      - **Animes : 60000000
+      - **Filmes/Series Sem HDR: 23100
+      - **Filmes/Series Com HDR: 24500
+      - **Animes : 60000
 4. Clique em **Save**
 5. **Pré Requisitos OBRIGATÓRIO:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) - Sem Estas Configurações, no momento do Import, ocorrerá erros ao importar.
   - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)

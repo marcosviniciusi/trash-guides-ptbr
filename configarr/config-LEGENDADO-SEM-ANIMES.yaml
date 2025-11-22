@@ -393,7 +393,7 @@ radarr:
           - name: HD
             score: 1850
       - trash_ids:
-          - c20f169ef63c5f40c2def54abaf4438e # UHD Bluray Tier 01
+          - 4d74ac4c4db0b64bff6ce0cffef99bf0 # UHD Bluray Tier 01
         assign_scores_to:
           - name: HD
             score: 1800
@@ -457,7 +457,7 @@ radarr:
             score: 7
       ############################ Streaming Services ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globoplay
+          - custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
             score: 0
@@ -570,7 +570,8 @@ radarr:
           - 3dce1fce9ac06d1349dfbd9186289385 # NOW
         assign_scores_to:
           - name: HD
-            score: 
+            score: 0
+
 # =================================================================================================
 #                                               SONARR
 # =================================================================================================
@@ -788,7 +789,7 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - 15a05bc7c1a36e2b57fd628f8977e2fc # x265 (HD)
+          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
         assign_scores_to:
           - name: HD
             score: 0
