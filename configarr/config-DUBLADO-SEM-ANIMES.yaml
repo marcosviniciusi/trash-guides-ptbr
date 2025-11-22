@@ -686,11 +686,6 @@ sonarr:
           - name: HD
             score: 20 
       - trash_ids:
-          - 3fbafa924f361e66fbc6187af82dfa85 # 5.0
-        assign_scores_to:
-          - name: HD
-            score: 25 
-      - trash_ids:
           - 3fbafa924f361e66fbc6187af82dfa85 # 5.1
         assign_scores_to:
           - name: HD

@@ -1188,11 +1188,6 @@ sonarr:
           - name: HD
             score: 20 
       - trash_ids:
-          - 3fbafa924f361e66fbc6187af82dfa85 # 5.0
-        assign_scores_to:
-          - name: HD
-            score: 25 
-      - trash_ids:
           - 3fbafa924f361e66fbc6187af82dfa85 # 5.1
         assign_scores_to:
           - name: HD
@@ -1716,11 +1711,6 @@ sonarr:
           - name: HD
             score: 20 
       - trash_ids:
-          - 3fbafa924f361e66fbc6187af82dfa85 # 5.0
-        assign_scores_to:
-          - name: HD
-            score: 25 
-      - trash_ids:
           - 3fbafa924f361e66fbc6187af82dfa85 # 5.1
         assign_scores_to:
           - name: HD
@@ -1808,77 +1798,72 @@ sonarr:
           - 949c16fe0a8147f50ba82cc2df9411c9 # Anime BD Tier 1
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - ed7f1e315e000aef424a58517fa48727 #Anime DB Tier 2
         assign_scores_to:
           - name: HD
-            score: -100000  
+            score: -10 
       - trash_ids:            
           - 096e406c92baa713da4a72d88030b815 # Anime DB Tier 3
         assign_scores_to:
           - name: HD
-            score: -100000  
+            score: -10  
       - trash_ids:                   
           - 30feba9da3030c5ed1e0f7d610bcadc4 # Anime DB Tier 4
         assign_scores_to:
           - name: HD
-            score: -100000 
+            score: -10
       - trash_ids:     
           - 545a76b14ddc349b8b185a6344e28b04 # Anime DB Tier 5
         assign_scores_to:
           - name: HD
-            score: -100000      
+            score: -10      
       - trash_ids:             
           - 25d2afecab632b1582eaf03b63055f72 # Anime Db Tier 6
         assign_scores_to:
           - name: HD
-            score: -100000   
+            score: -10   
       - trash_ids:                 
           - 0329044e3d9137b08502a9f84a7e58db # Anime DB Tier 7
         assign_scores_to:
           - name: HD
-            score: -100000   
+            score: -10  
       - trash_ids:    
           - c81bbfb47fed3d5a3ad027d077f889de # Anime DB Tier 8
         assign_scores_to:
           - name: HD
-            score: -100000   
+            score: -10  
       - trash_ids:    
           - e0014372773c8f0e1bef8824f00c7dc4 # Anime Web Tier 01 (Muxers)
         assign_scores_to:
           - name: HD
-            score: -100000   
-      - trash_ids: 
-          - e0014372773c8f0e1bef8824f00c7dc4 # Anime Web Tier 02 (Top FanSubs)
-        assign_scores_to:
-          - name: HD
-            score: -100000
+            score: -10  
       - trash_ids: 
           - c27f2ae6a4e82373b0f1da094e2489ad # Anime Web Tier 03 (Official Subs)
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids: 
           - 4fd5528a3a8024e6b49f9c67053ea5f3 # Anime Web Tier 04 (Official Subs)
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids: 
           - 29c2a13d091144f63307e4a8ce963a39 # Anime Web Tier 05 (FanSubs)
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids: 
           - dc262f88d74c651b12e9d90b39f6c753 # Anime Web Tier 06 (FanSubs)
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids: 
           - b4a1b3d705159cdca36d71e57ca86871 # Anime Raws
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids: 
           - 026d5aadd1a6b4e550b134cb6c72b3ca # Uncensored
         assign_scores_to:
@@ -1888,52 +1873,52 @@ sonarr:
           - 9c14d194486c4014d422adc64092d794 #  Dubs English Audio
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - 2c29a39a4fdfd6d258799bc4c09731b9 #  French Audio Version VFF
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - 7ae924ee9b2f39df3283c6c0beb8a2aa #  French Audio Version VOF
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - b6816a0e1d4b64bf3550ad3b74b009b6 #  French Audio Version VFI
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - 34789ec3caa819f087e23bbf9999daf7 #  French Audio Version VF2
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - 802dd70b856c423a9b0cb7f34ac42be1 #  French Audio Version VOQ
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
       - trash_ids:
           - 82085412d9a53ba8d8e46fc624eb701d #  French Audio Version VQ
         assign_scores_to:
           - name: HD
-            score: -100000    
+            score: -10  
       - trash_ids:
           - 0ce1e39a4676c6692ce47935278dac76 #  French Audio Version VFB
         assign_scores_to:
           - name: HD
-            score: -100000 
+            score: -10
       - trash_ids:
           - 07a32f77690263bb9fda1842db7e273f #  French Audio Version VOSTFR
         assign_scores_to:
           - name: HD
-            score: -100000   
+            score: -10 
       - trash_ids:
           - ea0bb4b6ba388992fad1092703b5ff7b #  FASTSUB
         assign_scores_to:
           - name: HD
-            score: -100000
+            score: -10
      ############################ Versions ############################
       - trash_ids: 
           - d2d7b8a9d39413da5f44054080e028a3 # V0
