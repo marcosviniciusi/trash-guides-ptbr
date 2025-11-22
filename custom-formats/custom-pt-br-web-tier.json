@@ -2398,6 +2398,15 @@
       }
     },
     {
+      "name": "Bakarayo",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Bakarayo)$"
+      }
+    },
+    {
       "name": "Bakuhatsu",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -2998,6 +3007,15 @@
       "required": false,
       "fields": {
         "value": "^(NexelSUBS)$"
+      }
+    },
+    {
+      "name": "OF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(OF)$"
       }
     },
     {

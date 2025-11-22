@@ -9,7 +9,7 @@
       "negate": false,
       "required": true,
       "fields": {
-        "value": "(?i)\\b(legendado|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"
+        "value": "(?i)\\b(legendado|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|por[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"
       }
     },
     {
