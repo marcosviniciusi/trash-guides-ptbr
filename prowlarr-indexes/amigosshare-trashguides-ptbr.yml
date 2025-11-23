@@ -211,6 +211,9 @@ search:
         # Substitui "Brazilian Legendado" ou "Legendado" por "LEGENDADO"
         - name: re_replace
           args: ['(?i)(brazilian\s+)?legendado', 'LEGENDADO']
+        # Adiciona -ASC no final
+        - name: append
+          args: "-ASC"          
     details:
       selector: a[href*="torrents-details.php?id="], a[href*="details-misc.php?id="]
       attribute: href
