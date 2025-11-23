@@ -3199,6 +3199,15 @@
       }
     },
     {
+      "name": "ASC",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ASC)$"
+      }
+    },
+    {
       "name": "Saikou-BR",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
