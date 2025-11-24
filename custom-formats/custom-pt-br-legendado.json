@@ -1,15 +1,24 @@
 {
   "trash_id": "custom-pt-br-legendado",
-  "name": "Brazilian Legendado",
+  "name": "Brazilian Subtitles",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
       "name": "PT-BR Legendado",
       "implementation": "ReleaseTitleSpecification",
       "negate": false,
-      "required": true,
+      "required": false,
       "fields": {
         "value": "(?i)\\b(legendado|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|por[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b"
+      }
+    },
+    {
+      "name": "Portuguese Subtitle",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\[subs?[-\\[].*\\bPT\\b.*\\]"
       }
     },
     {
