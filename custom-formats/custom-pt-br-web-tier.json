@@ -85,6 +85,15 @@
       }
     },
     {
+      "name": "Webrogue",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Webrogue)$"
+      }
+    },
+    {
       "name": "GHB",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -451,6 +460,15 @@
       "required": false,
       "fields": {
         "value": "^(DODEN)$"
+      }
+    },
+    {
+      "name": "SHAKAW",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SHAKAW)$"
       }
     },
     {
