@@ -234,24 +234,6 @@ A configuração correta da nomenclatura de arquivos elimina esse risco ao garan
 
 ---
 
-### ⚠️ Conclusão
-
-Sem a devida configuração de nomenclatura, o sistema não conseguirá distinguir adequadamente entre releases com legendas PT-BR e aqueles sem legendas, comprometendo a eficácia do Custom Format "Brazilian Subtitles" e podendo gerar loops de upgrade indesejados.
-
-
-
-
-Race Condition Potencial
-Cenário de Risco:
-Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação:
-
-O Custom Format pode não ser aplicado corretamente
-O sistema pode tentar fazer upgrade desnecessário buscando releases "melhores"
-Metadados de legenda podem ser perdidos entre as etapas de processamento
-
-Mitigação:
-A configuração correta da nomenclatura de arquivos elimina esse risco ao garantir que as informações de legendas sejam explicitamente incluídas no nome do arquivo finalizado.
-
 ***Configurando os formatos de arquivos:***
  - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
 ```
