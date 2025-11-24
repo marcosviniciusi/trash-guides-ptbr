@@ -195,13 +195,65 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
       - **Filmes/Series Com HDR: 24500
       - **Animes : 60000
 4. Clique em **Save**
-5. **Pré Requisitos OBRIGATÓRIO:** 
 
-- É obrigatório configurar corretamente os esquemas de nomeação de arquivos do Sonarr e do Radarr.
-- Sem essas configurações, podem ocorrer erros durante o processo de importação.
-- Uma nomeação adequada permite que vídeos que já possuem legendas sejam identificados corretamente após o import.
-- Devido a limitações do Radarr e do Sonarr no pós-import, a identificação dos arquivos depende exclusivamente do nome do arquivo e do idioma do áudio. Para que o custom format Brazilian Subtitles funcione corretamente, essa configuração é indispensável.
-- Sem essa configuração, podem ocorrer erros pós-import relacionados a race conditions, especialmente quando há legendas que não são reconhecidas pelo nome do arquivo.
+## **Pré-Requisitos OBRIGATÓRIO:** Estrutura de Nomeação dos Arquivos
+
+### Configuração de Nomenclatura de Arquivos
+
+A configuração adequada dos esquemas de nomeação de arquivos no Sonarr e Radarr é **estritamente obrigatória** para o funcionamento correto do sistema de Custom Formats.
+
+**Importância Crítica:**
+- Sem essa configuração, o processo de importação pode falhar ou gerar resultados inconsistentes
+- A nomenclatura padronizada permite identificação precisa de vídeos que já possuem legendas embutidas
+- Garante que metadados essenciais sejam preservados no nome do arquivo após importação
+
+### Limitações Técnicas do Pós-Import
+
+Devido a restrições arquiteturais do Radarr e Sonarr, o sistema de detecção pós-importação possui limitações específicas:
+
+1. **Análise Baseada em Nome de Arquivo**
+   - A identificação depende exclusivamente da nomenclatura do arquivo físico
+   - Metadados que não estejam refletidos no nome podem ser perdidos
+
+2. **Detecção de Idioma via MediaInfo**
+   - O sistema detecta apenas o idioma das trilhas de áudio através do MediaInfo
+   - Legendas externas ou embutidas não são automaticamente refletidas no nome
+
+3. **Dependência do Custom Format "Brazilian Subtitles"**
+   - Para funcionamento correto, o arquivo deve conter as tags apropriadas no nome
+   - Exemplo: `[subs-[PT]]` ou termos como "LEGENDADO" preservados na nomenclatura
+
+### Race Condition Potencial
+
+**Cenário de Risco:**
+Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação:
+
+- O Custom Format pode não ser aplicado corretamente
+- O sistema pode tentar fazer upgrade desnecessário buscando releases "melhores"
+- Metadados de legenda podem ser perdidos entre as etapas de processamento
+
+**Mitigação:**
+A configuração correta da nomenclatura de arquivos elimina esse risco ao garantir que as informações de legendas sejam explicitamente incluídas no nome do arquivo finalizado.
+
+---
+
+### ⚠️ Conclusão
+
+Sem a devida configuração de nomenclatura, o sistema não conseguirá distinguir adequadamente entre releases com legendas PT-BR e aqueles sem legendas, comprometendo a eficácia do Custom Format "Brazilian Subtitles" e podendo gerar loops de upgrade indesejados.
+
+
+
+
+Race Condition Potencial
+Cenário de Risco:
+Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação:
+
+O Custom Format pode não ser aplicado corretamente
+O sistema pode tentar fazer upgrade desnecessário buscando releases "melhores"
+Metadados de legenda podem ser perdidos entre as etapas de processamento
+
+Mitigação:
+A configuração correta da nomenclatura de arquivos elimina esse risco ao garantir que as informações de legendas sejam explicitamente incluídas no nome do arquivo finalizado.
 
 ***Configurando os formatos de arquivos:***
  - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
