@@ -226,11 +226,8 @@ Devido a restrições arquiteturais do Radarr e Sonarr, o sistema de detecção 
 ### Race Condition Potencial
 
 **Cenário de Risco:**
-Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação:
+Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação.
 
-- O Custom Format pode não ser aplicado corretamente
-- O sistema pode tentar fazer upgrade desnecessário buscando releases "melhores"
-- Metadados de legenda podem ser perdidos entre as etapas de processamento
 
 **Mitigação:**
 A configuração correta da nomenclatura de arquivos elimina esse risco ao garantir que as informações de legendas sejam explicitamente incluídas no nome do arquivo finalizado.
