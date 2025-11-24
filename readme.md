@@ -242,7 +242,21 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 ```
 #Formato de Filme Padrão
 {Movie-CleanTitle}-{(Release-Year)}-[imdbid-{ImdbId}]-{Edition-Tags}-{[Custom-Formats]}{[Quality-Full]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo_AudioCodec}-{Mediainfo_AudioChannels]}{[Mediainfo_VideoCodec]}-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+
 ```
+
+## Habilite "Mostrar Opções Avançadas" na mesma pagina ao topo e configure os seguintes campos abaixo:
+
+-  **"Importar Arquivos adicionais"** e adicine estes valores:
+```
+srt,nfo,sub,ass,ssa
+```
+
+-  **"Analisar Arquivos de Videos"**
+
+-  **"Verificar Novamente a Pasta do Filme/Serie Após Atualização"** para **"SEMPRE"**.
+
+
 ## Prowlarr Custom Indexers - Brazilian Trackers
 Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
 ## Propósito
