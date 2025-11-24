@@ -1,0 +1,25 @@
+{
+  "trash_id": "trackers-movies-premium",
+  "name": "Trackers Premium PT-BR",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Locadora",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 81
+      }
+    },
+    {
+      "name": "CapybaraBR",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 85
+      }
+    }
+  ]
+}

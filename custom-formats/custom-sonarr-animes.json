@@ -1,0 +1,25 @@
+{
+  "trash_id": "trackers-series-animes",
+  "name": "Trackers Anime PT-BR",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "UniOtaku",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 33
+      }
+    },
+    {
+      "name": "ShaKaw",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 92
+      }
+    }
+  ]
+}

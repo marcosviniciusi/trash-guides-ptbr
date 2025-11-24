@@ -1,0 +1,34 @@
+{
+  "trash_id": "trackers-movies-medium",
+  "name": "Trackers Comunidade PT-BR",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "SAMARITANO",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 74
+      }
+    },
+    {
+      "name": "BrasilTracker",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 86
+      }
+    },
+    {
+      "name": "ASC",
+      "implementation": "IndexerFlagSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 75
+      }
+    }
+  ]
+}
