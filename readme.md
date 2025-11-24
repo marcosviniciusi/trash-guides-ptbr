@@ -195,22 +195,45 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
       - **Filmes/Series Com HDR: 24500
       - **Animes : 60000
 4. Clique em **Save**
-5. **Pré Requisitos OBRIGATÓRIO:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) - Sem Estas Configurações, no momento do Import, ocorrerá erros ao importar.
+5. **Pré Requisitos OBRIGATÓRIO:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) - Sem Estas Configurações, no momento do Import, ocorrerá erros ao importar, a inclusão permite a videos já com legendas que possam ser identificados após o import, Devido a uma limitação do radarr e Sonarr, Poderá ocorrer erros pós import de race Conditional
   - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
 ```
-{Series TitleYear} - S{season:00}E{episode:00} - {Episode CleanTitle:90} {[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
+#Primeiro Campo - Formato do Episódio Padrão
+{Series_TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode_CleanTitle}-[{Custom_Formats_}{Quality_Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo_VideoCodec]}[{Mediainfo_AudioCodec}-{Mediainfo_AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
+```
+#Segundo Campo - Formato do episódio diário
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+```
+```
+#Terceiro Campo - Formato do episódio de anime
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+```
+
  - [Radarr Filmes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
 ```
-{Movie CleanTitle} {(Release Year)} - {{Edition Tags}} {[MediaInfo 3D]}{[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
+#Formato de Filme Padrão
+{Movie-CleanTitle}-{(Release-Year)}-[imdbid-{ImdbId}]-{Edition-Tags}-{[Custom-Formats]}{[Quality-Full]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo_AudioCodec}-{Mediainfo_AudioChannels]}{[Mediainfo_VideoCodec]}-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
+
   - [Sonarr Animes](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#anime)
 ```
-{Series TitleYear} - S{season:00}E{episode:00} - {absolute:000} - {Episode CleanTitle:90} {[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{MediaInfo AudioLanguages}{[MediaInfo VideoDynamicRangeType]}[{Mediainfo VideoCodec }{MediaInfo VideoBitDepth}bit]{-Release Group}
+#Primeiro Campo - Formato do Episódio Padrão
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
 ```
+```
+#Segundo Campo - Formato do episódio diário
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+```
+```
+#Terceiro Campo - Formato do episódio de anime
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+```
+
   - [Radarr Animes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
 ```
-{Movie CleanTitle} {(Release Year)} - {{Edition Tags}} {[MediaInfo 3D]}{[Custom Formats]}{[Quality Full]}{[Mediainfo AudioCodec}{ Mediainfo AudioChannels]}{[MediaInfo VideoDynamicRangeType]}{[Mediainfo VideoCodec]}{-Release Group}
+#Formato de Filme Padrão
+{Movie-CleanTitle}-{(Release-Year)}-[imdbid-{ImdbId}]-{Edition-Tags}-{[Custom-Formats]}{[Quality-Full]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo_AudioCodec}-{Mediainfo_AudioChannels]}{[Mediainfo_VideoCodec]}-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ## Prowlarr Custom Indexers - Brazilian Trackers
 Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
