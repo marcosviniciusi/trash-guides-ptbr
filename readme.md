@@ -195,8 +195,16 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
       - **Filmes/Series Com HDR: 24500
       - **Animes : 60000
 4. Clique em **Save**
-5. **Pré Requisitos OBRIGATÓRIO:** Configuração de esquemas de nomes dos arquivos [Sonarr](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#recommended-naming-scheme) e [Radarr](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#recommended-naming-scheme) - Sem Estas Configurações, no momento do Import, ocorrerá erros ao importar, a inclusão permite a videos já com legendas que possam ser identificados após o import, Devido a uma limitação do radarr e Sonarr, Poderá ocorrer erros pós import de race Conditional
-  - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
+5. **Pré Requisitos OBRIGATÓRIO:** 
+
+- É obrigatório configurar corretamente os esquemas de nomeação de arquivos do Sonarr e do Radarr.
+- Sem essas configurações, podem ocorrer erros durante o processo de importação.
+- Uma nomeação adequada permite que vídeos que já possuem legendas sejam identificados corretamente após o import.
+- Devido a limitações do Radarr e do Sonarr no pós-import, a identificação dos arquivos depende exclusivamente do nome do arquivo e do idioma do áudio. Para que o custom format Brazilian Subtitles funcione corretamente, essa configuração é indispensável.
+- Sem essa configuração, podem ocorrer erros pós-import relacionados a race conditions, especialmente quando há legendas que não são reconhecidas pelo nome do arquivo.
+
+***Configurando os formatos de arquivos:***
+ - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
 ```
 #Primeiro Campo - Formato do Episódio Padrão
 {Series_TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode_CleanTitle}-[{Custom_Formats_}{Quality_Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo_VideoCodec]}[{Mediainfo_AudioCodec}-{Mediainfo_AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
