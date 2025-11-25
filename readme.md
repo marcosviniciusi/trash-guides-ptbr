@@ -258,15 +258,15 @@ A configuração correta da nomenclatura de arquivos elimina esse risco ao garan
   - [Sonarr Animes](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#anime)
 ```
 #Primeiro Campo - Formato do Episódio Padrão
-{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ```
 #Segundo Campo - Formato do episódio diário
-{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ```
 #Terceiro Campo - Formato do episódio de anime
-{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-{Episode-CleanTitle}-[{Custom-Formats-}{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}-{Mediainfo-AudioChannels}]-[audio{MediaInfo-AudioLanguages}]-[subs-{MediaInfo-SubtitleLanguages}]{-Release-Group}
+{Series-TitleYear}-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Full}]{[MediaInfo-VideoDynamicRangeType]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 
   - [Radarr Animes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
@@ -455,17 +455,17 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 ```
 Obs: Ja efetua o download do docker compose. e também ja tem criado o script para baixar os custom formats, caso queira baixa-lo, use este script abaixo:
 
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
 
 #Script de Download dos Custom Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
 
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
@@ -505,35 +505,35 @@ EOF
 
 ```bash
 # Opção 1: Legendados Sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO.yaml \
   -o config/config.yml
 
 # Opção 2: Legendados COM HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 3: Dublados sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO.yaml \
   -o config/config.yml
 
 # Opção 4: Dublados Com HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 5: Legendados Sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
   -o config/config.yml 
 
 # Opção 6: Legendados COM HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 7: Dublados sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 8: Dublados Com HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 ```
 
@@ -587,7 +587,7 @@ sonarr:
 cat > download-custom-formats.sh << 'EOF'
 #!/bin/bash
 
-BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
+BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/custom-formats"
 
 echo "📥 Baixando custom formats..."
 # Função para baixar com tratamento de erro
@@ -650,7 +650,7 @@ volumes:
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
 ```
 Obs: O script acima efetua o download do arquivo docker-compose.yaml, siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
 ### 2. Criar secrets.yml
@@ -686,35 +686,35 @@ EOF
 
 ```bash
 # Opção 1: Legendados Sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO.yaml \
   -o config/config.yml
 
 # Opção 2: Legendados COM HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 3: Dublados sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO.yaml \
   -o config/config.yml
 
 # Opção 4: Dublados Com HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO-HDR-ON.yaml \
   -o config/config.yml
 
 # Opção 5: Legendados Sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
   -o config/config.yml 
 
 # Opção 6: Legendados COM HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 7: Dublados sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO-SEM-ANIMES.yaml \
   -o config/config.yml
 
 # Opção 8: Dublados Com HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
   -o config/config.yml
 ```
 
@@ -774,7 +774,7 @@ services:
     container_name: configarr-download
     command: >
       sh -c "
-      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats'
+      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/custom-formats'
       
       # Criar diretório se não existir
       mkdir -p /config/custom-formats
@@ -945,7 +945,7 @@ spec:
                   echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
+                  BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/master/custom-formats"
                   
                   # Função para download com retry
                   download_format() {
