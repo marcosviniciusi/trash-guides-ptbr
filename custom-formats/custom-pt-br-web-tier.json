@@ -1489,15 +1489,6 @@
       }
     },
     {
-      "name": "HHWEB",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(HHWEB)$"
-      }
-    },
-    {
       "name": "Sheriff",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
