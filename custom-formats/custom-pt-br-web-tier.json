@@ -1507,6 +1507,15 @@
       }
     },
     {
+      "name": "BiPOLAR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BiPOLAR)$"
+      }
+    },
+    {
       "name": "SAMBiQUiRA",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
