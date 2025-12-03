@@ -274,6 +274,15 @@
       }
     },
     {
+      "name": "palato",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(palato)$"
+      }
+    },
+    {
       "name": "DKS",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
