@@ -3343,6 +3343,15 @@
       }
     },
     {
+      "name": "SPiRiT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SPiRiT)$"
+      }
+    },
+    {
       "name": "SubTNT",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
