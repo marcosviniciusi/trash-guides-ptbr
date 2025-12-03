@@ -697,6 +697,15 @@
       }
     },
     {
+      "name": "Sammahel",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Sammahel)$"
+      }
+    },
+    {
       "name": "AnjinhoDJ",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
