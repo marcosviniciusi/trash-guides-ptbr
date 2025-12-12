@@ -571,6 +571,15 @@
       }
     },
     {
+      "name": "nosferato",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(nosferato)$"
+      }
+    },
+    {
       "name": "BlueAM",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
