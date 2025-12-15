@@ -589,6 +589,15 @@
       }
     },
     {
+      "name": "NODLABS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(NODLABS)$"
+      }
+    },
+    {
       "name": "NoGroup",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -2710,6 +2719,15 @@
       "required": false,
       "fields": {
         "value": "^(Hihan Fansub)$"
+      }
+    },
+    {
+      "name": "BS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BS)$"
       }
     },
     {
