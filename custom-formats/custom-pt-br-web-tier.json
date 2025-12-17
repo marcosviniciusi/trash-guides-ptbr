@@ -3604,12 +3604,12 @@
       }
     },
     {
-      "name": "aaaaaaaArmandex",
+      "name": "Armandex",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(aaaaaaaArmandex)$"
+        "value": "^(Armandex)$"
       }
     },
     {
