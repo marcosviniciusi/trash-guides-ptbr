@@ -375,7 +375,7 @@ radarr:
           - custom-pt-br-dublado-language # dublado
         assign_scores_to:
           - name: HD
-            score: 2000 
+            score: 7500 
       ############################ Tier Premiere English ############################ 
       - trash_ids:
           - 3a3ff47579026e76d6504ebea39390de # Remux Tier 01
@@ -821,7 +821,7 @@ radarr:
           - custom-pt-br-dublado-language # dublado
         assign_scores_to:
           - name: HD
-            score: 2000   
+            score: 7500   
       ############################# UNWANTED ############################
       - trash_ids:
           - fb3ccc5d5cc8f77c9055d4cb4561dded # Anime BD Tier 01 (Top SeaDex Muxers)

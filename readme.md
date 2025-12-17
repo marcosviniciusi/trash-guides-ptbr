@@ -146,9 +146,9 @@ trash-guides-ptbr/
 | **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000 |
 | **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000 |
 | **custom-pt-br-legendado** | Prioriza Releases COM REGEX LEGENDADOS e afins... | +7500 | +25000 |
-| **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +8000 | +1000 |
+| **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +300 | +1000 |
 | **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
-| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000 |
+| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +10000 | +30000 |
 | **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 
 
@@ -163,9 +163,9 @@ trash-guides-ptbr/
 | **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000 |
 | **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000 |
 | **custom-pt-br-dublado** | Prioriza Releases COM REGEX Dublados e afins... | +7500 | +25000 |
-| **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +8000 | +25000 |
+| **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +7500 | +25000 |
 | **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
-| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +300 | +30000 |
+| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +10000 | +30000 |
 | **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 
 ## 🔧 Configurando os Quality Profiles
