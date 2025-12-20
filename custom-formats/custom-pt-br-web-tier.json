@@ -3649,6 +3649,15 @@
       }
     },
     {
+      "name": "ANDY",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ANDY)$"
+      }
+    },
+    {
       "name": "ÓINC Fansub",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
