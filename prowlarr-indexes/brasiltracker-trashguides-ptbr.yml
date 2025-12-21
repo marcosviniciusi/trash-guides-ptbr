@@ -198,3 +198,32 @@ search:
       text: 1.0
     minimumseedtime:
       text: 172800
+# --- Mapeamento de Campos Padrão ---
+    details:
+      selector: url
+    download:
+      selector: download_url
+    poster:
+      selector: poster
+    imdbid:
+      selector: imdb_id
+    tmdbid:
+      selector: tmdb_id
+    date:
+      selector: created_at
+      filters:
+        - name: dateparse
+          args: "yyyy-MM-dd HH:mm:ss"
+    size:
+      selector: size
+    seeders:
+      selector: seeders
+    leechers:
+      selector: leechers
+    grabs:
+      selector: times_completed
+    downloadvolumefactor:
+      selector: freeleech
+      case:
+        1: 0
+        0: 1

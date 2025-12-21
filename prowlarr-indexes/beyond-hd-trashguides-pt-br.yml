@@ -1,0 +1,119 @@
+---
+id: beyond-hd-ptbr
+name: BeyondHD TrashGuides PT-BR
+description: "BeyondHD API com detecção automática de PT-BR e injeção de tags para Custom Formats"
+language: en-US
+type: private
+encoding: UTF-8
+requestDelay: 2
+links:
+  - https://beyond-hd.me/
+
+caps:
+  categorymappings:
+    - {id: 1, cat: Movies, desc: "Movies"}
+    - {id: 2, cat: TV, desc: "TV"}
+
+  modes:
+    search: [q]
+    tv-search: [q, season, ep, imdbid, tmdbid]
+    movie-search: [q, imdbid, tmdbid]
+
+settings:
+  - name: apikey
+    type: text
+    label: API Key
+  - name: rsskey
+    type: text
+    label: RSS Key
+    default: ""
+  - name: info_rss
+    type: info
+    label: Importante
+    default: "Obrigatório: Forneça sua RSS Key (do painel de usuário do BHD) para que a API retorne o download_url."
+
+search:
+  paths:
+    - path: api/torrents/{{ .Config.apikey }}
+      method: post
+      response:
+        type: json
+
+  inputs:
+    action: search
+    search: "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}"
+    rsskey: "{{ .Config.rsskey }}"
+    limit: 100
+
+  rows:
+    selector: results
+
+  fields:
+    category:
+      selector: category
+      case:
+        "Movie": 1
+        "Movies": 1
+        "TV": 2
+        "TV Show": 2
+        "TV Shows": 2
+        "*": 1
+    _tag_dual:
+      selector: audios
+      optional: true
+      filters:
+        - name: re_replace
+          args: ["(?i).*(Portuguese|Brazilian).*", "BRAZILIAN-DUAL-AUDIO"]
+        - name: re_replace
+          args: ["(?i)^(?!BRAZILIAN-DUAL-AUDIO$).*", ""]
+        - name: toupper
+
+    # 2. Processa Legenda: Mesma lógica.
+    _tag_sub:
+      selector: subtitles
+      optional: true
+      filters:
+        - name: re_replace
+          args: ["(?i).*(Portuguese|Brazilian).*", "LEGENDADO"]
+        - name: re_replace
+          args: ["(?i)^(?!LEGENDADO$).*", ""]
+        - name: toupper
+
+    title_base:
+      selector: name
+
+    # 3. Montagem do Título: Adiciona a tag detectada ao final
+    # Lógica: Mostra a tag de Áudio. Se NÃO tiver áudio PT, mostra a tag de Legenda.
+    title:
+      text: "{{ .Result.title_base }} {{ if .Result._tag_dual }}{{ .Result._tag_dual }}{{ else }}{{ .Result._tag_sub }}{{ end }} -BHD"
+      filters:
+        - name: re_replace
+          args: ["\\s+", " "]
+    details:
+      selector: url
+    download:
+      selector: download_url
+    poster:
+      selector: poster
+    imdbid:
+      selector: imdb_id
+    tmdbid:
+      selector: tmdb_id
+    date:
+      selector: created_at
+      filters:
+        - name: dateparse
+          args: "yyyy-MM-dd HH:mm:ss"
+    size:
+      selector: size
+    seeders:
+      selector: seeders
+    leechers:
+      selector: leechers
+    grabs:
+      selector: times_completed
+    downloadvolumefactor:
+      selector: freeleech
+      case:
+        1: 0
+        0: 1
