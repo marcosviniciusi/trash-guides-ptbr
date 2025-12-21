@@ -250,17 +250,22 @@ radarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
+          - custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 2899d84dc9372de3408e6d8cc18e9666 # x264
+          - custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 9170d55c319f4fe40da8711ba9d8050d # x265 (NO HD)
+          - custom-h264 # h264
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
+          - custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -271,11 +276,6 @@ radarr:
             score: -100000
       - trash_ids:
           - ff86c4326018682f817830ced463332b # MPEG2
-        assign_scores_to:
-          - name: HD
-            score: 0
-      - trash_ids:
-          - 839bea857ed2c0a8e084f3cbdbd65ecb # x265 (no HDR/DV)
         assign_scores_to:
           - name: HD
             score: 0
@@ -742,17 +742,22 @@ radarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
+          - custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 2899d84dc9372de3408e6d8cc18e9666 # x264
+          - custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 9170d55c319f4fe40da8711ba9d8050d # x265 (NO HD)
+          - custom-h264 # h264
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
+          - custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -763,11 +768,6 @@ radarr:
             score: -10000000
       - trash_ids:
           - ff86c4326018682f817830ced463332b # MPEG2
-        assign_scores_to:
-          - name: HD
-            score: 0
-      - trash_ids:
-          - 839bea857ed2c0a8e084f3cbdbd65ecb # x265 (no HDR/DV)
         assign_scores_to:
           - name: HD
             score: 0
@@ -1291,17 +1291,22 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
+          - custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - cddfb4e32db826151d97352b8e37c648 # x264
+          - custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - c9eafd50846d299b862ca9bb6ea91950 # x265 (NO HD)
+          - custom-h264 # h264
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
+          - custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -1317,11 +1322,6 @@ sonarr:
             score: 0
       - trash_ids:
           - 7ba05c6e0e14e793538174c679126996 # Multi
-        assign_scores_to:
-          - name: HD
-            score: 0
-      - trash_ids:
-          - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         assign_scores_to:
           - name: HD
             score: 0
@@ -1769,17 +1769,22 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
+          - custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - cddfb4e32db826151d97352b8e37c648 # x264
+          - custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - c9eafd50846d299b862ca9bb6ea91950 # x265 (NO HD)
+          - custom-h264 # h264
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
+          - custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -1795,11 +1800,6 @@ sonarr:
             score: 0
       - trash_ids:
           - 7ba05c6e0e14e793538174c679126996 # Multi
-        assign_scores_to:
-          - name: HD
-            score: 0
-      - trash_ids:
-          - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         assign_scores_to:
           - name: HD
             score: 0
