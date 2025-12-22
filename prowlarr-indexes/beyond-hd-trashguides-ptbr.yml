@@ -58,6 +58,8 @@ search:
         "TV Show": 2
         "TV Shows": 2
         "*": 1
+    
+    # Detecta se tem áudio PT-BR
     _tag_dual:
       selector: audios
       optional: true
@@ -68,7 +70,7 @@ search:
           args: ["(?i)^(?!BRAZILIAN-DUAL-AUDIO$).*", ""]
         - name: toupper
 
-    # 2. Processa Legenda: Mesma lógica.
+    # Detecta se tem legenda PT-BR
     _tag_sub:
       selector: subtitles
       optional: true
@@ -82,13 +84,21 @@ search:
     title_base:
       selector: name
 
-    # 3. Montagem do Título: Adiciona a tag detectada ao final
-    # Lógica: Mostra a tag de Áudio. Se NÃO tiver áudio PT, mostra a tag de Legenda.
+    # Monta o título: insere a tag ANTES do release group
     title:
-      text: "{{ .Result.title_base }} {{ if .Result._tag_dual }}{{ .Result._tag_dual }}{{ else }}{{ .Result._tag_sub }}{{ end }} -BHD"
+      text: "{{ .Result.title_base }}"
       filters:
+        # Remove espaços extras
         - name: re_replace
           args: ["\\s+", " "]
+        # Captura tudo até o último "-" (release group) e injeta a tag PT-BR antes dele
+        # Formato: "Título 1080p WEB-DL H.264-GRUPO" → "Título 1080p WEB-DL H.264 LEGENDADO-GRUPO"
+        - name: re_replace
+          args: ["^(.+)-([^-]+)$", "$1 {{ if .Result._tag_dual }}{{ .Result._tag_dual }}{{ else }}{{ .Result._tag_sub }}{{ end }}-$2"]
+        # Remove espaços extras novamente
+        - name: re_replace
+          args: ["\\s+", " "]
+    
     details:
       selector: url
     download:
@@ -117,3 +127,7 @@ search:
       case:
         1: 0
         0: 1
+    uploadvolumefactor:
+      text: 1
+    minimumratio:
+      text: 1.0
