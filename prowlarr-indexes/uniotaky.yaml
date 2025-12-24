@@ -1,0 +1,108 @@
+uniotaku-trashguides-ptbr.yml: |-
+    ---
+    id: uniotaku
+    name: UniOtaku TrashGuides PT-BR
+    description: "UniOtaku (Gazelle Engine) - Baseado na definição oficial Jackett"
+    language: pt-BR
+    type: private
+    encoding: UTF-8
+    links:
+      - https://tracker.uniotaku.com/
+
+    caps:
+      categorymappings:
+        - {id: 1, cat: TV/Anime, desc: "Animes - Séries"}
+        - {id: 2, cat: Movies, desc: "Animes - Filmes"}
+        - {id: 3, cat: TV/Anime, desc: "Animes - OVAs"}
+        - {id: 4, cat: TV/Anime, desc: "Animes - Specials"}
+        - {id: 5, cat: Movies, desc: "Filmes"}
+        - {id: 6, cat: TV, desc: "Séries"}
+        - {id: 7, cat: Audio, desc: "Músicas"}
+        - {id: 8, cat: Books, desc: "Mangás/Light Novels"}
+
+      modes:
+        search: [q]
+        tv-search: [q, season, ep]
+        movie-search: [q]
+
+    settings:
+      - name: username
+        type: text
+        label: Username
+      - name: password
+        type: password
+        label: Password
+
+    login:
+      path: login.php
+      method: post
+      inputs:
+        username: "{{ .Config.username }}"
+        password: "{{ .Config.password }}"
+        keeplogged: 1
+        login: "Log in"
+      error:
+        - selector: span.warning, font[color="red"]
+      test:
+        path: index.php
+        selector: a[href^="logout.php"]
+
+    search:
+      paths:
+        - path: torrents.php
+      inputs:
+        searchstr: "{{ .Keywords }}"
+        order_by: time
+        order_way: desc
+        action: basic
+        
+      rows:
+        # Seletor baseado na classe padrão da Gazelle
+        selector: table.torrent_table > tbody > tr.torrent
+
+      fields:
+        # Na Gazelle, o título geralmente está dentro de uma div ou link com informações de grupo
+        title_base:
+          selector: a[href^="torrents.php?id="]
+        _tags:
+          selector: div.tags
+          optional: true
+        
+        title:
+          text: "{{ .Result.title_base }}"
+          filters:
+            - name: re_replace
+              args: ["(?i).*(Dual Audio|Dublado|Português|Portuguese|Dual).*", "BRAZILIAN-DUAL-AUDIO"]
+            - name: re_replace
+              args: ["(?i).*(Legendado|Sub).*", "LEGENDADO"]
+            - name: append
+              args: " -UniO"
+            - name: re_replace
+              args: ["\\s+", " "]
+            - name: trim
+
+        details:
+          selector: a[href^="torrents.php?id="]
+          attribute: href
+        download:
+          selector: a[href^="torrents.php?action=download&id="]
+          attribute: href
+        size:
+          selector: td:nth-child(5)
+        seeders:
+          selector: td:nth-child(8)
+        leechers:
+          selector: td:nth-child(9)
+        grabs:
+          selector: td:nth-child(7)
+        date:
+          selector: td:nth-child(4) span
+          attribute: title
+          optional: true
+          filters:
+            - name: dateparse
+              args: "MMM dd yyyy, HH:mm"
+        downloadvolumefactor:
+          case:
+            "strong:contains(\"Freeleech\")": 0
+            "*": 1
