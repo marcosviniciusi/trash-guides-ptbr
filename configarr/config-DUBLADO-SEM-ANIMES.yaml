@@ -952,7 +952,7 @@ sonarr:
           - name: HD
             score: 0
       - trash_ids:                
-          - 3bc5f395426614e155e585a2f056cdf1 # Season Pack
+          - custom-season-pack # Season Pack
         assign_scores_to:
           - name: HD
             score: 1000          

@@ -31,7 +31,7 @@ download_format 'sonarr-custom-pt-br-x264.json'
 download_format 'sonarr-custom-pt-br-x265.json'
 download_format 'sonarr-custom-pt-br-h264.json'
 download_format 'sonarr-custom-pt-br-h265.json'
-
+download_format 'custom-season-pack.json'
 
 
 echo "✅ Custom formats baixados com sucesso!"

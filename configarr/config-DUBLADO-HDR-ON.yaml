@@ -1460,7 +1460,7 @@ sonarr:
           - name: HD
             score: 0
       - trash_ids:                
-          - 3bc5f395426614e155e585a2f056cdf1 # Season Pack
+          - custom-season-pack # Season Pack
         assign_scores_to:
           - name: HD
             score: 1000          
@@ -1864,6 +1864,11 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 25000 
+      - trash_ids:                
+          - custom-season-pack # Season Pack
+        assign_scores_to:
+          - name: HD
+            score: 1000 
       ############################ UNWANTED ############################
       - trash_ids:
           - 949c16fe0a8147f50ba82cc2df9411c9 # Anime BD Tier 1
