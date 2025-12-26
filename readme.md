@@ -111,7 +111,16 @@ trash-guides-ptbr/
 │   ├── custom-pt-br-legendado.json                    # Regex para Releases Legendados
 │   ├── custom-pt-br-original-language.json            # Lingua Original ( Tag para Importação Verifiando o Audio)
 │   ├── custom-pt-br-web-tier-bad-group.json           # Grupos Não Confiaveis
-│   ├── custom-pt-br-globoplay.json                    # Tag GloboPlay
+│   ├── sonarr-custom-pt-br-globoplay.json             # Tag GloboPlay Sonarr
+│   ├── radarr-custom-pt-br-globoplay.json             # Tag GloboPlay Sonarr
+│   ├── sonarr-custom-pt-br-x265.json.json             # Tag x265 Encoder Sonarr
+│   ├── sonarr-custom-pt-br-h265.json.json             # Tag h265 Encoder Sonarr
+│   ├── sonarr-custom-pt-br-x264.json.json             # Tag x264 Encoder Sonarr
+│   ├── sonarr-custom-pt-br-h264.json.json             # Tag h264 Encoder Sonarr
+│   ├── radarr-custom-pt-br-x265.json.json             # Tag x265 Encoder Radarr
+│   ├── radarr-custom-pt-br-h265.json.json             # Tag h265 Encoder Radarr
+│   ├── radarr-custom-pt-br-x264.json.json             # Tag x264 Encoder Radarr
+│   ├── radarr-custom-pt-br-h264.json.json             # Tag h264 Encoder Radarr
 │   └── custom-pt-br-web-tier.json                     # Releases Groups PT-BR
 ├── iac/                                               # Infraestrutura como Código
 │   ├── docker-compose/ 
@@ -609,7 +618,17 @@ download_format 'custom-pt-br-legendado.json'
 download_format 'custom-pt-br-original-language.json'
 download_format 'custom-pt-br-web-tier-bad-group.json'
 download_format 'custom-pt-br-web-tier.json'
-download_format 'custom-pt-br-globoplay.json'
+download_format 'sonarr-custom-pt-br-globoplay.json'
+download_format 'radarr-custom-pt-br-globoplay.json'
+download_format 'radarr-custom-pt-br-x264.json'
+download_format 'radarr-custom-pt-br-x265.json'
+download_format 'radarr-custom-pt-br-h264.json'
+download_format 'radarr-custom-pt-br-h265.json'
+download_format 'sonarr-custom-pt-br-x264.json'
+download_format 'sonarr-custom-pt-br-x265.json'
+download_format 'sonarr-custom-pt-br-h264.json'
+download_format 'sonarr-custom-pt-br-h265.json'
+download_format 'custom-season-pack.json'
 
 
 echo "✅ Custom formats baixados com sucesso!"
@@ -792,15 +811,25 @@ services:
       }
       
 		# Custom Formats Globais
-		download_format 'custom-pt-br-dual-audio.json'
-		download_format 'custom-pt-br-dual-language.json'
-		download_format 'custom-pt-br-dublado-language.json'
-		download_format 'custom-pt-br-dublado.json'
-		download_format 'custom-pt-br-legendado.json'
-		download_format 'custom-pt-br-original-language.json'
-		download_format 'custom-pt-br-web-tier-bad-group.json'
-		download_format 'custom-pt-br-web-tier.json'
-    download_format 'custom-pt-br-globoplay.json'
+      download_format 'custom-pt-br-dual-audio.json'
+      download_format 'custom-pt-br-dual-language.json'
+      download_format 'custom-pt-br-dublado-language.json'
+      download_format 'custom-pt-br-dublado.json'
+      download_format 'custom-pt-br-legendado.json'
+      download_format 'custom-pt-br-original-language.json'
+      download_format 'custom-pt-br-web-tier-bad-group.json'
+      download_format 'custom-pt-br-web-tier.json'
+      download_format 'sonarr-custom-pt-br-globoplay.json'
+      download_format 'radarr-custom-pt-br-globoplay.json'
+      download_format 'radarr-custom-pt-br-x264.json'
+      download_format 'radarr-custom-pt-br-x265.json'
+      download_format 'radarr-custom-pt-br-h264.json'
+      download_format 'radarr-custom-pt-br-h265.json'
+      download_format 'sonarr-custom-pt-br-x264.json'
+      download_format 'sonarr-custom-pt-br-x265.json'
+      download_format 'sonarr-custom-pt-br-h264.json'
+      download_format 'sonarr-custom-pt-br-h265.json'
+      download_format 'custom-season-pack.json'
       
       echo '✅ Custom formats baixados com sucesso!'
       "
@@ -959,15 +988,25 @@ spec:
                   }
                   
 						# Custom Formats Globais
-						download_format 'custom-pt-br-dual-audio.json'
-						download_format 'custom-pt-br-dual-language.json'
-						download_format 'custom-pt-br-dublado-language.json'
-						download_format 'custom-pt-br-dublado.json'
-						download_format 'custom-pt-br-legendado.json'
-						download_format 'custom-pt-br-original-language.json'
-						download_format 'custom-pt-br-web-tier-bad-group.json'
-						download_format 'custom-pt-br-web-tier.json'
-            download_format 'custom-pt-br-globoplay.json'
+                  download_format 'custom-pt-br-dual-audio.json'
+                  download_format 'custom-pt-br-dual-language.json'
+                  download_format 'custom-pt-br-dublado-language.json'
+                  download_format 'custom-pt-br-dublado.json'
+                  download_format 'custom-pt-br-legendado.json'
+                  download_format 'custom-pt-br-original-language.json'
+                  download_format 'custom-pt-br-web-tier-bad-group.json'
+                  download_format 'custom-pt-br-web-tier.json'
+                  download_format 'sonarr-custom-pt-br-globoplay.json'
+                  download_format 'radarr-custom-pt-br-globoplay.json'
+                  download_format 'radarr-custom-pt-br-x264.json'
+                  download_format 'radarr-custom-pt-br-x265.json'
+                  download_format 'radarr-custom-pt-br-h264.json'
+                  download_format 'radarr-custom-pt-br-h265.json'
+                  download_format 'sonarr-custom-pt-br-x264.json'
+                  download_format 'sonarr-custom-pt-br-x265.json'
+                  download_format 'sonarr-custom-pt-br-h264.json'
+                  download_format 'sonarr-custom-pt-br-h265.json'
+                  download_format 'custom-season-pack.json'
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/
