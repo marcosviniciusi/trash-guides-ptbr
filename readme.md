@@ -158,8 +158,8 @@ trash-guides-ptbr/
 | **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +300 | +1000 |
 | **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
 | **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +10000 | +30000 |
-| **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
-| **Tag Encoders** | Apenas Tag Do tipo do Encoder | +0 | +0 |
+| **custom-pt-br-globoplay** *| Apenas Tag GloboPlay | +0 | +0 |
+| **Tag Encoders** *| Apenas Tag Do tipo do Encoder | +0 | +0 |
 
 - **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
 - **Custom Formats exclusivos do Radarr/Sonarr** Custom Formats de encoders e streaming são específicos para cada aplicação. Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
@@ -178,8 +178,8 @@ trash-guides-ptbr/
 | **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +7500 | +25000 |
 | **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
 | **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +10000 | +30000 |
-| **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
-| **Tag Encoders** | Apenas Tag Do tipo do Encoder | +0 | +0 |
+| **custom-pt-br-globoplay** *| Apenas Tag GloboPlay | +0 | +0 |
+| **Tag Encoders** *| Apenas Tag Do tipo do Encoder | +0 | +0 |
 
 - **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
 - **Custom Formats exclusivos do Radarr/Sonarr** Custom Formats de encoders e streaming são específicos para cada aplicação. Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
