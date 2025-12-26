@@ -162,6 +162,7 @@ trash-guides-ptbr/
 | **Tag Encoders** | Apenas Tag Do tipo do Encoder | +0 | +0 |
 
 - **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
+- **Custom Formats exclusivos do Radarr/Sonarr** Custom Formats de encoders e streaming são específicos para cada aplicação. Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
 
 ## DUBLADOS
 ------------------------------------------------------------------
@@ -181,6 +182,7 @@ trash-guides-ptbr/
 | **Tag Encoders** | Apenas Tag Do tipo do Encoder | +0 | +0 |
 
 - **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
+- **Custom Formats exclusivos do Radarr/Sonarr** Custom Formats de encoders e streaming são específicos para cada aplicação. Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
 
 ## 🔧 Configurando os Quality Profiles
 
