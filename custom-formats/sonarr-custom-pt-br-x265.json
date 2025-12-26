@@ -1,5 +1,5 @@
 {
-  "trash_id": "sonarr-custom-sonarr-x265",
+  "trash_id": "sonarr-custom-x265",
   "name": "X265",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
