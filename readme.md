@@ -161,7 +161,7 @@ trash-guides-ptbr/
 | **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 | **Tag Encoders** | Apenas Tag Do tipo do Encoder | +0 | +0 |
 
-- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão.
+- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
 
 ## DUBLADOS
 ------------------------------------------------------------------
@@ -180,7 +180,7 @@ trash-guides-ptbr/
 | **custom-pt-br-globoplay** | Apenas Tag GloboPlay | +0 | +0 |
 | **Tag Encoders** | Apenas Tag Do tipo do Encoder | +0 | +0 |
 
-- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão.
+- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
 
 ## 🔧 Configurando os Quality Profiles
 
