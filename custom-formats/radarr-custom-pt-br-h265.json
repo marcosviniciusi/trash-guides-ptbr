@@ -1,15 +1,24 @@
 {
-  "trash_id": "custom-x264",
-  "name": "X264",
+  "trash_id": "radarr-custom-h265",
+  "name": "H265",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "x264",
+      "name": "h265",
       "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": "\\bx[ ._-]?264\\b"
+        "value": "\\bh[ ._-]?265\\b|\\bHEVC(\\b|\\d)"
+      }
+    },
+    {
+      "name": "Not x265",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "\\bx[ ._-]?265\\b"
       }
     },
     {

@@ -250,17 +250,22 @@ radarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
+          - radarr-custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 2899d84dc9372de3408e6d8cc18e9666 # x264
+          - radarr-custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 9170d55c319f4fe40da8711ba9d8050d # x265 (NO HD)
+          - radarr-custom-h264 # h264
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
+          - radarr-custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -737,17 +742,22 @@ radarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
+          - radarr-custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 2899d84dc9372de3408e6d8cc18e9666 # x264
+          - radarr-custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - 9170d55c319f4fe40da8711ba9d8050d # x265 (NO HD)
+          - radarr-custom-h264 # h264
+        assign_scores_to:
+          - name: HD
+            score: 0
+      - trash_ids:
+          - radarr-custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -1281,22 +1291,22 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - custom-x264 # x264
+          - sonarr-custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - custom-x265 # x265
+          - sonarr-custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - custom-h264 # h264
+          - sonarr-custom-h264 # h264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - custom-h265 # h265
+          - sonarr-custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0
@@ -1764,22 +1774,22 @@ sonarr:
           - name: HD
             score: -10000000
       - trash_ids:
-          - custom-x264 # x264
+          - sonarr-custom-x264 # x264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - custom-x265 # x265
+          - sonarr-custom-x265 # x265
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - custom-h264 # h264
+          - sonarr-custom-h264 # h264
         assign_scores_to:
           - name: HD
             score: 0
       - trash_ids:
-          - custom-h265 # h265
+          - sonarr-custom-h265 # h265
         assign_scores_to:
           - name: HD
             score: 0

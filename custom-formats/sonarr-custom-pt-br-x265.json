@@ -1,5 +1,5 @@
 {
-  "trash_id": "custom-x265",
+  "trash_id": "sonarr-custom-sonarr-x265",
   "name": "X265",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
@@ -14,11 +14,11 @@
     },
     {
       "name": "Not Remux",
-      "implementation": "QualityModifierSpecification",
+      "implementation": "SourceSpecification",
       "negate": true,
       "required": true,
       "fields": {
-        "value": 5
+        "value": 7
       }
     }
   ]

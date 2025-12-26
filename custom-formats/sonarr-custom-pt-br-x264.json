@@ -1,0 +1,25 @@
+{
+  "trash_id": "sonarr-custom-sonarr-x264",
+  "name": "X264",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "x264",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\bx[ ._-]?264\\b"
+      }
+    },
+    {
+      "name": "Not Remux",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    }
+  ]
+}

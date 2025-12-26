@@ -32,10 +32,14 @@ services:
       download_format 'custom-pt-br-original-language.json'
       download_format 'custom-pt-br-web-tier-bad-group.json'
       download_format 'custom-pt-br-web-tier.json'
-      download_format 'custom-pt-br-x264.json'
-      download_format 'custom-pt-br-x265.json'
-      download_format 'custom-pt-br-h264.json'
-      download_format 'custom-pt-br-h265.json'
+      download_format 'radarr-custom-pt-br-x264.json'
+      download_format 'radarr-custom-pt-br-x265.json'
+      download_format 'radarr-custom-pt-br-h264.json'
+      download_format 'radarr-custom-pt-br-h265.json'
+      download_format 'sonarr-custom-pt-br-x264.json'
+      download_format 'sonarr-custom-pt-br-x265.json'
+      download_format 'sonarr-custom-pt-br-h264.json'
+      download_format 'sonarr-custom-pt-br-h265.json'
       
       echo '✅ Custom formats baixados com sucesso!'
       "
