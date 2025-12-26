@@ -1,0 +1,16 @@
+{
+  "trash_id": "custom-sp",
+  "name": "SP",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [
+    {
+      "name": "Season Packs",
+      "implementation": "ReleaseTypeSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 3
+      }
+    }
+  ]
+}
