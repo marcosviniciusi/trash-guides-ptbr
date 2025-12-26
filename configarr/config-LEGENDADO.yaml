@@ -457,7 +457,7 @@ radarr:
             score: 7
       ############################ Streaming Services ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globo
+          - radarr-custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
             score: 0
@@ -960,7 +960,7 @@ radarr:
             score: -10     
       ############################ Streaming Services ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globo
+          - radarr-custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
             score: 0
@@ -1462,7 +1462,7 @@ sonarr:
     
       ############################ Streaming ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globo
+          - sonarr-custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
             score: 75
@@ -2013,7 +2013,7 @@ sonarr:
             score: 3
      ############################ STREAMING ############################
       - trash_ids:
-          - custom-pt-br-globoplay # Globo
+          - sonarr-custom-pt-br-globoplay # Globo
         assign_scores_to:
           - name: HD
             score: 0
