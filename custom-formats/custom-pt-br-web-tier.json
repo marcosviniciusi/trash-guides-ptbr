@@ -607,6 +607,15 @@
       }
     },
     {
+      "name": "SAMARITANO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SAMARITANO)$"
+      }
+    },
+    {
       "name": "SiGLA",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
