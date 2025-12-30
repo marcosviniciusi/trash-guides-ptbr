@@ -320,6 +320,20 @@ def modify_uniotaku(title):
     
     return modified
 
+def modify_shakaw(title):
+    """
+    Regras específicas do ShaKaw:
+    - Adiciona sufixo -SHAKAW no final se não existir
+    """
+    modified = title
+    
+    # Verifica se já tem -SHAKAW no final
+    if not re.search(r'-SHAKAW$', modified, flags=re.IGNORECASE):
+        # Adiciona -SHAKAW no final
+        modified = f"{modified}-SHAKAW"
+    
+    return modified
+
 def modify_global(title):
     """
     Regras globais aplicadas quando não há regra específica do indexer.
@@ -372,13 +386,15 @@ def get_indexer_function(indexer):
         return modify_brasiltracker
     elif 'bjshare' in indexer_normalized:
         return modify_bjshare
-    elif 'amigosshare' in indexer_normalized or 'amigos' in indexer_normalized:
+    elif 'amigosshare' in indexer_normalized:
         return modify_amigosshare
     elif 'locadora' in indexer_normalized:
         return modify_locadora
     elif 'samaritano' in indexer_normalized:
         return modify_samaritano
-    elif 'uniotaku' in indexer_normalized or 'otaku' in indexer_normalized:
+    elif 'shakaw' in indexer_normalized:
+        return modify_shakaw
+    elif 'uniotaku' in indexer_normalized:
         return modify_uniotaku
     else:
         return None

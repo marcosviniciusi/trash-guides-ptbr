@@ -1,7 +1,7 @@
 ---
-id: shakaw-trashguides-ptbr
-name: ShaKaw TrashGuides PT-BR
-description: "ShaKaw is a BRAZILIAN Private Torrent Tracker for ANIME"
+id: shakaw-cookie
+name: ShaKaw (Cookie)
+description: "ShaKaw is a BRAZILIAN Private Torrent Tracker for ANIME - Cookie Authentication"
 language: pt-BR
 type: private
 encoding: UTF-8
@@ -32,7 +32,7 @@ caps:
 settings:
   - name: cookie
     type: text
-    label: Cookie
+    label: Cookie (PHPSESSID)
   - name: info_cookie
     type: info
     label: Como obter o Cookie
@@ -40,7 +40,11 @@ settings:
       1. Faça login no ShaKaw pelo navegador
       2. Pressione F12 → Application → Cookies → tracker.shakaw.com.br
       3. Copie o valor do cookie PHPSESSID
-      4. Cole aqui (formato: abc123def456... OU PHPSESSID=abc123def456...)
+      4. Cole aqui
+      
+      Formatos aceitos:
+      - abc123def456...
+      - PHPSESSID=abc123def456...
   - name: freeleech
     type: checkbox
     label: Search freeleech only
@@ -71,9 +75,6 @@ search:
           args: categoria_id
     title:
       selector: a.link_torrent, a.link_golden_torrent
-      filters:
-        - name: append
-          args: "-SHAKAW"
     details:
       selector: a.link_torrent, a.link_golden_torrent
       attribute: href
