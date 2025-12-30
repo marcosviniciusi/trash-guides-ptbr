@@ -553,6 +553,15 @@
       }
     },
     {
+      "name": "BRASILTRACKER",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BRASILTRACKER)$"
+      }
+    },
+    {
       "name": "alfaHD",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

@@ -22,15 +22,6 @@
       }
     },
     {
-      "name": "BRASILTRACKER",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(BRASILTRACKER)$"
-      }
-    },
-    {
       "name": "DRENAN",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
