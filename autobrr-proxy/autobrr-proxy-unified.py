@@ -185,9 +185,20 @@ def normalize_dots_in_title(title):
 # ============================================================================
 
 def modify_capybarabr(title):
+    """
+    Regras específicas do CapybaraBR:
+    - DUAL → BRAZILIAN-DUAL-AUDIO
+    """
     return re.sub(r'\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO', title, flags=re.IGNORECASE)
 
 def modify_brasiltracker(title):
+    """
+    Regras específicas do BrasilTracker:
+    - Dual Audio → BRAZILIAN-DUAL-AUDIO
+    - Subs/Legendado → LEGENDADO
+    - Nacional → NACIONAL
+    - Dublado → DUBLADO
+    """
     modified = title
     modified = re.sub(r'(?i)Dual\s+Audio', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'(?i)\b(Subs|Legendado)\b', 'LEGENDADO', modified)
@@ -196,6 +207,12 @@ def modify_brasiltracker(title):
     return re.sub(r'\s+', ' ', modified)
 
 def modify_bjshare(title):
+    """
+    Regras específicas do Bj-Share:
+    - Dual Áudio → BRAZILIAN-DUAL-AUDIO
+    - Legendado → LEGENDADO
+    - Nacional → NACIONAL
+    """
     modified = title
     modified = re.sub(r'Dual\s+[\x80-\xFF]udio', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'Dual\s+.udio', 'BRAZILIAN-DUAL-AUDIO', modified)
@@ -204,22 +221,46 @@ def modify_bjshare(title):
     return re.sub(r'\s{2,}', ' ', modified)
 
 def modify_amigosshare(title):
+    """
+    Regras específicas do AmigosShare:
+    - dual-audio → BRAZILIAN-DUAL-AUDIO
+    - dublado → DUBLADO
+    - nacional → NACIONAL
+    - legendado → LEGENDADO
+    - Se não tiver marcador BR e não tiver grupo → adiciona -ASC
+    """
     modified = title
+    
+    # Aplica as conversões padrão
     modified = re.sub(r'(?i)(brazilian\s+)?dual-audio', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'(?i)(brazilian\s+)?dublado', 'DUBLADO', modified)
     modified = re.sub(r'(?i)(brazilian\s+)?nacional', 'NACIONAL', modified)
     modified = re.sub(r'(?i)(brazilian\s+)?legendado', 'LEGENDADO', modified)
+    
+    # Verifica se tem marcador brasileiro
     has_br_marker = re.search(
         r'(LEGENDADO|BRAZILIAN-DUAL-AUDIO|NACIONAL|DUBLADO)',
         modified,
         flags=re.IGNORECASE
     )
+    
+    # Verifica se tem grupo de release (-Grupo no final)
     has_release_group = re.search(r'-[A-Za-z0-9]+$', modified)
+    
+    # Se NÃO tem marcador brasileiro E NÃO tem grupo de release
     if not has_br_marker and not has_release_group:
         modified = f"{modified}-ASC"
+    
     return modified
 
 def modify_locadora(title):
+    """
+    Regras específicas do Locadora:
+    - Remove sufixos: / Language (Code)
+    - DUAL- → BRAZILIAN-DUAL-AUDIO-
+    - Adiciona LEGENDADO para idiomas não-PT
+    - Remove -JPN
+    """
     modified = title
     modified = re.sub(r'(?i)\bDUAL-', 'BRAZILIAN-DUAL-AUDIO-', modified)
     modified = re.sub(r'(?i)\s*/\s*Portuguese\s*\([^)]*\)\s+\w+.*$', '', modified)
@@ -228,39 +269,56 @@ def modify_locadora(title):
     return re.sub(r'(?i)-JPN', '', modified)
 
 def modify_samaritano(title):
+    """
+    Regras específicas do Samaritano:
+    - DUAL → BRAZILIAN-DUAL-AUDIO
+    - MULTI → BRAZILIAN-DUAL-AUDIO
+    - -NoGroup → -SAMARITANO
+    - Se não tiver grupo de release → adiciona -SAMARITANO
+    """
     modified = title
     
+    # Converte DUAL → BRAZILIAN-DUAL-AUDIO
     modified = re.sub(r'(?i)\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO', modified)
+    
+    # Converte MULTI → BRAZILIAN-DUAL-AUDIO
     modified = re.sub(r'(?i)\bMULTI\b', 'BRAZILIAN-DUAL-AUDIO', modified)
+    
+    # Substitui NoGroup por SAMARITANO
     modified = re.sub(r'(?i)-NoGroup\b', '-SAMARITANO', modified)
+    
+    # Verifica se tem grupo de release (-Grupo no final)
     has_release_group = re.search(r'-[A-Za-z0-9]+$', modified)
+    
+    # Se NÃO tem grupo de release, adiciona -SAMARITANO
     if not has_release_group:
         modified = f"{modified}-SAMARITANO"
     
     return modified
 
 def modify_uniotaku(title):
+    """
+    Regras específicas do UniOtaku:
+    - Remove TODOS os colchetes [xxx]
+    - Adiciona LEGENDADO antes do release group
+    """
     modified = title
+    
+    # Remove TODOS os colchetes e o conteúdo dentro
     modified = re.sub(r'\[([^\]]+)\]', r'\1', modified)
+    
+    # Remove espaços múltiplos
     modified = re.sub(r'\s+', ' ', modified).strip()
-    parts = modified.rsplit(' ', 1)
+    
+    # Adiciona LEGENDADO antes do último "palavra" (release group)
+    # Divide por espaços e adiciona LEGENDADO antes do último elemento
+    parts = modified.rsplit(' ', 1)  # Separa no último espaço
     if len(parts) == 2:
         modified = f"{parts[0]} LEGENDADO {parts[1]}"
     else:
         modified = f"{modified} LEGENDADO"
+    
     return modified
-
-INDEXER_RULES = {
-    'capybarabr': modify_capybarabr,
-    'brasiltracker': modify_brasiltracker,
-    'bjshare': modify_bjshare,
-    'bj-share': modify_bjshare,
-    'amigosshare': modify_amigosshare,
-    'amigos-share': modify_amigosshare,
-    'locadora': modify_locadora,
-    'samaritano': modify_samaritano,
-    'uniotaku': modify_uniotaku,
-}
 
 def modify_global(title):
     """
@@ -269,6 +327,8 @@ def modify_global(title):
     Apenas detecta padrões EXPLICITAMENTE brasileiros.
     """
     modified = title
+    
+    # Detecta padrões PT-BR explícitos e adiciona LEGENDADO
     ptbr_patterns = r'(?i:\b(legendado|brazilian(-portuguese)?|brazil|portuguese|pt[-\s]?br(asil)?|port[-\s]?br|por[-\s]?br|pt[-\s]?br[-\s]sub(s)?|sub(s)?[-\s]pt[-\s]?br)\b)|\[subs?[-\[].*\bPT\b.*\]|\[subs?-\[\bPT\b[+\]]'
     
     if re.search(ptbr_patterns, modified, flags=re.IGNORECASE):
@@ -283,7 +343,56 @@ def modify_global(title):
     
     return modified
 
+# ============================================================================
+# DETECÇÃO INTELIGENTE DE INDEXER
+# ============================================================================
+
+def get_indexer_function(indexer):
+    """
+    Detecta a função de modificação baseada no nome do indexer.
+    Procura pela PALAVRA-CHAVE no nome, independente de prefixos/sufixos.
+    
+    Suporta formatos como:
+    - torznab_amigosshare
+    - newznab_capybarabr
+    - prowlarr_locadora
+    - CapybaraBR-trashguides
+    - BrasilTracker (Prowlarr)
+    """
+    if not indexer:
+        return None
+    
+    # Normaliza: lowercase, remove espaços, hífens, underscores e parênteses
+    indexer_normalized = indexer.lower().replace(' ', '').replace('-', '').replace('_', '').replace('(', '').replace(')', '')
+    
+    # Procura por palavra-chave no nome (ordem importa! Mais específico primeiro)
+    if 'capybara' in indexer_normalized or 'capybarabr' in indexer_normalized:
+        return modify_capybarabr
+    elif 'brasiltracker' in indexer_normalized:
+        return modify_brasiltracker
+    elif 'bjshare' in indexer_normalized:
+        return modify_bjshare
+    elif 'amigosshare' in indexer_normalized or 'amigos' in indexer_normalized:
+        return modify_amigosshare
+    elif 'locadora' in indexer_normalized:
+        return modify_locadora
+    elif 'samaritano' in indexer_normalized:
+        return modify_samaritano
+    elif 'uniotaku' in indexer_normalized or 'otaku' in indexer_normalized:
+        return modify_uniotaku
+    else:
+        return None
+
 def modify_title(title, indexer=None, app_name=None):
+    """
+    Aplica modificações no título baseado no indexer detectado.
+    
+    Fluxo:
+    1. Normaliza pontos no título
+    2. Detecta função de modificação baseada no indexer
+    3. Aplica regras específicas ou globais
+    4. Loga as mudanças
+    """
     if not title:
         return title
     
@@ -292,11 +401,11 @@ def modify_title(title, indexer=None, app_name=None):
     # 1. Normaliza pontos PRIMEIRO
     title = normalize_dots_in_title(title)
     
-    # 2. Aplica regras do indexer
-    indexer_key = indexer.lower().replace(' ', '').replace('-', '') if indexer else None
+    # 2. Detecta a função de modificação baseada no indexer
+    modify_func = get_indexer_function(indexer)
     
-    if indexer_key and indexer_key in INDEXER_RULES:
-        modified = INDEXER_RULES[indexer_key](title)
+    if modify_func:
+        modified = modify_func(title)
         logger.info(f"[{app_name.upper() if app_name else 'UNKNOWN'}] Applied {indexer} rules")
     else:
         modified = modify_global(title)
@@ -497,7 +606,7 @@ def health():
         except Exception as e:
             status[app_subpath] = {"status": "unreachable", "type": config['type'], "name": config['name'], "url": config['url'], "error": str(e)}
     
-    return jsonify({"proxy": "ok", "indexers_supported": list(INDEXER_RULES.keys()), "apps": status})
+    return jsonify({"proxy": "ok", "indexers_supported": ["capybarabr", "brasiltracker", "bjshare", "amigosshare", "locadora", "samaritano", "uniotaku"], "apps": status})
 
 @app.route('/')
 def index():
@@ -506,7 +615,7 @@ def index():
         display_name = f"{config['name']} ({config['type']})" if config['name'] else config['type']
         endpoints[app_subpath] = {"url": f"http://proxy:8888/{app_subpath}", "type": config['type'], "name": config['name'], "target": config['url']}
     
-    return jsonify({"service": "autobrr-proxy-unified", "version": "1.0.9", "indexers_supported": list(INDEXER_RULES.keys()), "total_apps": len(APPS), "endpoints": endpoints, "log_level": LOG_LEVEL})
+    return jsonify({"service": "autobrr-proxy-unified", "version": "1.1.0", "indexers_supported": ["capybarabr", "brasiltracker", "bjshare", "amigosshare", "locadora", "samaritano", "uniotaku"], "total_apps": len(APPS), "endpoints": endpoints, "log_level": LOG_LEVEL})
 
 if __name__ == '__main__':
     if not APPS:
