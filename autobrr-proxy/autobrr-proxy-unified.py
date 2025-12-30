@@ -205,17 +205,46 @@ def modify_capybarabr(title):
 def modify_brasiltracker(title):
     """
     BrasilTracker:
-    - Dual Audio → BRAZILIAN-DUAL-AUDIO
-    - Subs/Legendado → LEGENDADO
-    - Nacional → NACIONAL
-    - Dublado → DUBLADO
+    - Remove barras (/) APENAS da parte técnica (após o ano)
+    - Mantém barras no título/título alternativo
+    - Conversões de marcadores brasileiros
+    - Adiciona -BRASILTRACKER
     """
     modified = title
+    
+    # Padrão: tudo até o primeiro (AAAA) é título
+    # Depois do (AAAA) até o fim é parte técnica
+    match = re.match(r'^(.*?\(\d{4}\))\s*/\s*(.*)$', modified)
+    
+    if match:
+        # Parte 1: Título completo (pode ter /) + ano
+        movie_part = match.group(1)
+        
+        # Parte 2: Informações técnicas (remove todas as barras)
+        technical_part = match.group(2)
+        technical_part = re.sub(r'\s*/\s*', ' ', technical_part)
+        
+        # Junta novamente
+        modified = f"{movie_part} {technical_part}"
+    else:
+        # Fallback: se não encontrou ano (AAAA), remove todas as barras
+        modified = re.sub(r'\s*/\s*', ' ', modified)
+    
+    # Remove espaços múltiplos
+    modified = re.sub(r'\s+', ' ', modified).strip()
+    
+    # Conversões
+    modified = re.sub(r'(?i)Brazilian\s+Dual\s+Audio', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'(?i)Dual\s+Audio', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'(?i)\b(Subs|Legendado)\b', 'LEGENDADO', modified)
     modified = re.sub(r'(?i)\bNacional\b', 'NACIONAL', modified)
     modified = re.sub(r'(?i)\bDublado\b', 'DUBLADO', modified)
-    return re.sub(r'\s+', ' ', modified)
+    
+    # Adiciona -BRASILTRACKER
+    if not has_release_group(modified):
+        modified = f"{modified}-BRASILTRACKER"
+    
+    return modified
 
 def modify_bjshare(title):
     """
