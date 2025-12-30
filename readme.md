@@ -305,100 +305,6 @@ srt,nfo,sub,ass,ssa
 
 
 
-
-
-
-
-
-
-
-
-# TRaSH Guides PT-BR - Integração com Autobrr Proxy
-
-## 🔄 Alternativa Flexível: Autobrr Proxy PT-BR
-
-Além dos Custom Formats do Prowlarr, você pode optar por uma solução mais flexível usando o **Autobrr Proxy PT-BR** para manipulação dinâmica de títulos.
-
-### 🎯 Vantagens do Autobrr Proxy
-
-- ✅ **Manipulação em tempo real**: Modifica títulos antes de chegarem ao Radarr/Sonarr
-- ✅ **Maior flexibilidade**: Regras customizáveis por indexer
-- ✅ **Independente do Prowlarr**: Funciona com indexers padrão do Prowlarr
-- ✅ **Logs detalhados**: Acompanhe cada modificação aplicada
-- ✅ **Normalização automática**: Remove pontos, padroniza formatos técnicos
-- ✅ **Multi-instância**: Diferentes regras para Movies, Series e Animes
-
-### 📋 Como Funciona
-```
-┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
-│  Prowlarr   │────▶│  Autobrr Proxy   │────▶│  Radarr     │
-│  (Indexers  │     │  PT-BR           │     │  Sonarr     │
-│   Padrão)   │     │                  │     │             │
-│             │     │ • Normaliza      │     │ (recebe     │
-│             │     │   pontos         │     │  títulos    │
-│             │     │ • Transforma     │     │  padrões)   │
-│             │     │   DUAL→BR-DUAL   │     │             │
-│             │     │ • Adiciona       │     │             │
-│             │     │   LEGENDADO      │     │             │
-└─────────────┘     └──────────────────┘     └─────────────┘
-```
-
-### 🔧 Configuração Recomendada
-
-#### Opção 1: Somente Autobrr Proxy (Recomendado)
-
-**Use indexers PADRÃO do Prowlarr + Autobrr Proxy**
-
-1. Configure os indexers PT-BR no Prowlarr **SEM modificações nos Custom Formats**
-2. Use os nomes originais: `CapybaraBR`, `BrasilTracker`, `Locadora`, etc
-3. Configure o Autobrr Proxy conforme documentação em `/autobrr-proxy/README.md`
-4. O proxy aplicará todas as transformações necessárias automaticamente
-
-**Vantagens:**
-- ✅ Configuração mais simples
-- ✅ Sem duplicação de indexers
-- ✅ Atualizações de regras no proxy (não precisa reconfigurar Prowlarr)
-
-#### Opção 2: TRaSH Guides + Autobrr Proxy (Para uso com Huntarr)
-
-**Use AMBOS os tipos de indexers se você também usa Huntarr**
-
-Huntarr precisa dos indexers modificados (TRaSH Guides) para funcionar corretamente com torrents antigos que já existem nos trackers. Para garantir compatibilidade total:
-
-**Configure 2 versões de cada indexer:**
-
-| Indexer | Nome | Prioridade | Uso |
-|---------|------|------------|-----|
-| `CapybaraBR-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
-| `CapybaraBR` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
-| `BrasilTracker-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
-| `BrasilTracker` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
-
-**Por que essa ordem de prioridade?**
-
-- **Indexers padrão (prioridade 2)**: Usados pelo Autobrr para torrents **novos** detectados em tempo real
-- **Indexers TRaSH (prioridade 1)**: Usados pelo Huntarr para buscar torrents **antigos** que já existem nos trackers
-
-**Exemplo de configuração no Prowlarr:**
-```
-Indexers:
-├─ CapybaraBR-trashguides (Priority: 1) ← Para Huntarr
-├─ CapybaraBR (Priority: 2)              ← Para Autobrr + Proxy
-├─ BrasilTracker-trashguides (Priority: 1) ← Para Huntarr  
-├─ BrasilTracker (Priority: 2)             ← Para Autobrr + Proxy
-├─ Locadora-trashguides (Priority: 1)      ← Para Huntarr
-└─ Locadora (Priority: 2)                  ← Para Autobrr + Proxy
-```
-
-**Vantagens:**
-- ✅ Compatibilidade total com Huntarr (busca torrents antigos)
-- ✅ Autobrr com manipulação flexível (torrents novos)
-- ✅ Cobertura completa: conteúdo novo e antigo
-- ✅ Prioriza torrents novos via Autobrr (prioridade maior)
-
-**Desvantagens:**
-- ⚠️ Mais indexers para gerenciar
-
 ## Prowlarr Custom Indexers - Brazilian Trackers
 Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
 ## Propósito
@@ -420,6 +326,56 @@ Com esta padronização, você terá:
 | `Dublado` | `DUBLADO` |
 | `Nacional` | `NACIONAL` |
 | `Legendado` | `LEGENDADO` |
+
+
+## 💚 Reconhecimento
+
+Nosso profundo agradecimento a todas as comunidades de trackers brasileiros pelo trabalho contínuo e dedicado. Esta customização apenas adiciona uma camada de padronização técnica para facilitar a automação, preservando totalmente a qualidade e integridade dos releases originais.
+
+---
+
+## 🚀 Resultado
+
+Com estes indexers customizados, você terá acesso ao excelente conteúdo disponibilizado pelas comunidades brasileiras com a vantagem adicional de uma nomenclatura padronizada, garantindo uma experiência superior na automação de mídia em português brasileiro.
+
+PS: Não altera conteudo/titulo, apenas a altera a forma como é apresentado o titulo para o sonarr e radarr. Toda a estrutura é mantida.
+
+## Instalação
+
+### 1. Localize a pasta de definições do Prowlarr
+```bash
+# Docker
+/config/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+
+# Windows
+C:\ProgramData\Prowlarr\Definitions\Custom # Se não houver a pasta Custom, crie manualmente.
+
+# Linux
+~/.config/Prowlarr/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+```
+
+### 2. Adicione os arquivos `.yml` nesta pasta
+
+Copie os indexers customizados para o diretório `/config/Definitions/Custom`
+
+### 3. Reinicie o Prowlarr
+```bash
+docker restart prowlarr
+```
+
+### 4. Configure os indexers no Prowlarr
+
+Acesse **Indexers** → **Add Indexer** e procure pelos indexers com nomes "trashguides-pt-br. e desativa os padores do Prowlarr para estes indexes.
+
+## Configurando Manualmente os custom Formats
+## obs: siga apenas este passo se não deseja o uso do configarr.
+#### No Radarr/Sonarr:
+
+1. Acesse **Settings → Custom Formats**
+2. Clique em **+** para adicionar novo formato
+3. Cole o conteúdo do JSON desejado (disponível na pasta `custom-formats/`)
+4. Salve e configure o score no Quality Profile correspondente
+---
 
 ## 🔄 Alternativa Flexível: Prowlarr e Autobrr Proxy PT-BR
 
@@ -545,56 +501,6 @@ Dessa forma você terá:
 - ✅ Torrents novos detectados e modificados pelo Autobrr Proxy
 - ✅ Torrents antigos encontrados pelo Huntarr via indexers TRaSH
 - ✅ Melhor cobertura e compatibilidade total
-
----
-
-## 💚 Reconhecimento
-
-Nosso profundo agradecimento a todas as comunidades de trackers brasileiros pelo trabalho contínuo e dedicado. Esta customização apenas adiciona uma camada de padronização técnica para facilitar a automação, preservando totalmente a qualidade e integridade dos releases originais.
-
----
-
-## 🚀 Resultado
-
-Com estes indexers customizados, você terá acesso ao excelente conteúdo disponibilizado pelas comunidades brasileiras com a vantagem adicional de uma nomenclatura padronizada, garantindo uma experiência superior na automação de mídia em português brasileiro.
-
-PS: Não altera conteudo/titulo, apenas a altera a forma como é apresentado o titulo para o sonarr e radarr. Toda a estrutura é mantida.
-
-## Instalação
-
-### 1. Localize a pasta de definições do Prowlarr
-```bash
-# Docker
-/config/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
-
-# Windows
-C:\ProgramData\Prowlarr\Definitions\Custom # Se não houver a pasta Custom, crie manualmente.
-
-# Linux
-~/.config/Prowlarr/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
-```
-
-### 2. Adicione os arquivos `.yml` nesta pasta
-
-Copie os indexers customizados para o diretório `/config/Definitions/Custom`
-
-### 3. Reinicie o Prowlarr
-```bash
-docker restart prowlarr
-```
-
-### 4. Configure os indexers no Prowlarr
-
-Acesse **Indexers** → **Add Indexer** e procure pelos indexers com nomes "trashguides-pt-br. e desativa os padores do Prowlarr para estes indexes.
-
-## Configurando Manualmente os custom Formats
-## obs: siga apenas este passo se não deseja o uso do configarr.
-#### No Radarr/Sonarr:
-
-1. Acesse **Settings → Custom Formats**
-2. Clique em **+** para adicionar novo formato
-3. Cole o conteúdo do JSON desejado (disponível na pasta `custom-formats/`)
-4. Salve e configure o score no Quality Profile correspondente
 
 ---
 
