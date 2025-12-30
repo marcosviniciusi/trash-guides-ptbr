@@ -304,6 +304,101 @@ srt,nfo,sub,ass,ssa
 -  **"Verificar Novamente a Pasta do Filme/Serie Após Atualização"** para **"SEMPRE"**.
 
 
+
+
+
+
+
+
+
+
+
+# TRaSH Guides PT-BR - Integração com Autobrr Proxy
+
+## 🔄 Alternativa Flexível: Autobrr Proxy PT-BR
+
+Além dos Custom Formats do Prowlarr, você pode optar por uma solução mais flexível usando o **Autobrr Proxy PT-BR** para manipulação dinâmica de títulos.
+
+### 🎯 Vantagens do Autobrr Proxy
+
+- ✅ **Manipulação em tempo real**: Modifica títulos antes de chegarem ao Radarr/Sonarr
+- ✅ **Maior flexibilidade**: Regras customizáveis por indexer
+- ✅ **Independente do Prowlarr**: Funciona com indexers padrão do Prowlarr
+- ✅ **Logs detalhados**: Acompanhe cada modificação aplicada
+- ✅ **Normalização automática**: Remove pontos, padroniza formatos técnicos
+- ✅ **Multi-instância**: Diferentes regras para Movies, Series e Animes
+
+### 📋 Como Funciona
+```
+┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
+│  Prowlarr   │────▶│  Autobrr Proxy   │────▶│  Radarr     │
+│  (Indexers  │     │  PT-BR           │     │  Sonarr     │
+│   Padrão)   │     │                  │     │             │
+│             │     │ • Normaliza      │     │ (recebe     │
+│             │     │   pontos         │     │  títulos    │
+│             │     │ • Transforma     │     │  padrões)   │
+│             │     │   DUAL→BR-DUAL   │     │             │
+│             │     │ • Adiciona       │     │             │
+│             │     │   LEGENDADO      │     │             │
+└─────────────┘     └──────────────────┘     └─────────────┘
+```
+
+### 🔧 Configuração Recomendada
+
+#### Opção 1: Somente Autobrr Proxy (Recomendado)
+
+**Use indexers PADRÃO do Prowlarr + Autobrr Proxy**
+
+1. Configure os indexers PT-BR no Prowlarr **SEM modificações nos Custom Formats**
+2. Use os nomes originais: `CapybaraBR`, `BrasilTracker`, `Locadora`, etc
+3. Configure o Autobrr Proxy conforme documentação em `/autobrr-proxy/README.md`
+4. O proxy aplicará todas as transformações necessárias automaticamente
+
+**Vantagens:**
+- ✅ Configuração mais simples
+- ✅ Sem duplicação de indexers
+- ✅ Atualizações de regras no proxy (não precisa reconfigurar Prowlarr)
+
+#### Opção 2: TRaSH Guides + Autobrr Proxy (Para uso com Huntarr)
+
+**Use AMBOS os tipos de indexers se você também usa Huntarr**
+
+Huntarr precisa dos indexers modificados (TRaSH Guides) para funcionar corretamente com torrents antigos que já existem nos trackers. Para garantir compatibilidade total:
+
+**Configure 2 versões de cada indexer:**
+
+| Indexer | Nome | Prioridade | Uso |
+|---------|------|------------|-----|
+| `CapybaraBR-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
+| `CapybaraBR` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
+| `BrasilTracker-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
+| `BrasilTracker` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
+
+**Por que essa ordem de prioridade?**
+
+- **Indexers padrão (prioridade 2)**: Usados pelo Autobrr para torrents **novos** detectados em tempo real
+- **Indexers TRaSH (prioridade 1)**: Usados pelo Huntarr para buscar torrents **antigos** que já existem nos trackers
+
+**Exemplo de configuração no Prowlarr:**
+```
+Indexers:
+├─ CapybaraBR-trashguides (Priority: 1) ← Para Huntarr
+├─ CapybaraBR (Priority: 2)              ← Para Autobrr + Proxy
+├─ BrasilTracker-trashguides (Priority: 1) ← Para Huntarr  
+├─ BrasilTracker (Priority: 2)             ← Para Autobrr + Proxy
+├─ Locadora-trashguides (Priority: 1)      ← Para Huntarr
+└─ Locadora (Priority: 2)                  ← Para Autobrr + Proxy
+```
+
+**Vantagens:**
+- ✅ Compatibilidade total com Huntarr (busca torrents antigos)
+- ✅ Autobrr com manipulação flexível (torrents novos)
+- ✅ Cobertura completa: conteúdo novo e antigo
+- ✅ Prioriza torrents novos via Autobrr (prioridade maior)
+
+**Desvantagens:**
+- ⚠️ Mais indexers para gerenciar
+
 ## Prowlarr Custom Indexers - Brazilian Trackers
 Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
 ## Propósito
@@ -325,6 +420,133 @@ Com esta padronização, você terá:
 | `Dublado` | `DUBLADO` |
 | `Nacional` | `NACIONAL` |
 | `Legendado` | `LEGENDADO` |
+
+## 🔄 Alternativa Flexível: Prowlarr e Autobrr Proxy PT-BR
+
+Além dos Custom Formats do Prowlarr, você pode optar por uma solução mais flexível usando o **Autobrr Proxy PT-BR** para manipulação dinâmica de títulos.
+
+### 🎯 Vantagens do Autobrr Proxy
+
+- ✅ **Manipulação em tempo real**: Modifica títulos antes de chegarem ao Radarr/Sonarr
+- ✅ **Maior flexibilidade**: Regras customizáveis por indexer
+- ✅ **Independente do Prowlarr**: Funciona com indexers padrão do Prowlarr
+- ✅ **Logs detalhados**: Acompanhe cada modificação aplicada
+- ✅ **Normalização automática**: Remove pontos, padroniza formatos técnicos
+- ✅ **Multi-instância**: Diferentes regras para Movies, Series e Animes
+
+### 📋 Como Funciona
+```
+┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
+│  Prowlarr   │────▶│  Autobrr Proxy   │────▶│  Radarr     │
+│  (Indexers  │     │  PT-BR           │     │  Sonarr     │
+│   Padrão)   │     │                  │     │             │
+│             │     │ • Normaliza      │     │ (recebe     │
+│             │     │   pontos         │     │  títulos    │
+│             │     │ • Transforma     │     │  padrões)   │
+│             │     │   DUAL→BR-DUAL   │     │             │
+│             │     │ • Adiciona       │     │             │
+│             │     │   LEGENDADO      │     │             │
+└─────────────┘     └──────────────────┘     └─────────────┘
+```
+
+### 🔧 Configuração Recomendada
+
+#### Opção 1: Somente Autobrr Proxy (Recomendado)
+
+**Use indexers PADRÃO do Prowlarr + Autobrr Proxy**
+
+1. Configure os indexers PT-BR no Prowlarr **SEM modificações nos Custom Formats**
+2. Use os nomes originais: `CapybaraBR`, `BrasilTracker`, `Locadora`, etc
+3. Configure o Autobrr Proxy conforme documentação em `/autobrr-proxy/README.md`
+4. O proxy aplicará todas as transformações necessárias automaticamente
+
+**Vantagens:**
+- ✅ Configuração mais simples
+- ✅ Sem duplicação de indexers
+- ✅ Atualizações de regras no proxy (não precisa reconfigurar Prowlarr)
+
+**Desvantagens:**
+- ⚠️ Se procurar releases antigos, as regras não se aplicação
+- ⚠️ Imcompatibilidade se usar o App Huntarr
+
+#### Opção 2: TRaSH Guides + Autobrr Proxy + Prowlarr(Para uso com Huntarr)
+
+**Use AMBOS os tipos de indexers se você também usa Huntarr**
+
+Huntarr precisa dos indexers modificados (TRaSH Guides) para funcionar corretamente com torrents antigos que já existem nos trackers. Para garantir compatibilidade total:
+
+**Configure 2 versões de cada indexer:**
+
+| Indexer | Nome | Prioridade | Uso |
+|---------|------|------------|-----|
+| `CapybaraBR-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
+| `CapybaraBR` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
+| `BrasilTracker-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
+| `BrasilTracker` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
+
+**Por que essa ordem de prioridade?**
+
+- **Indexers padrão (prioridade 2)**: Usados pelo Autobrr para torrents **novos** detectados em tempo real
+- **Indexers TRaSH (prioridade 1)**: Usados pelo Huntarr para buscar torrents **antigos** que já existem nos trackers
+
+**Exemplo de configuração no Prowlarr:**
+```
+Indexers:
+├─ tracker1-trashguides (Priority: 1) ← Para Huntarr
+├─ Traker1 (Priority: 2)              ← Para Autobrr + Proxy
+├─ Traker2-trashguides (Priority: 1) ← Para Huntarr  
+├─ Traker2 (Priority: 2)             ← Para Autobrr + Proxy
+├─ Traker3-trashguides (Priority: 1)      ← Para Huntarr
+└─ Traker3 (Priority: 2)                  ← Para Autobrr + Proxy
+```
+
+**Vantagens:**
+- ✅ Compatibilidade total com Huntarr (busca torrents antigos)
+- ✅ Autobrr com manipulação flexível (torrents novos)
+- ✅ Cobertura completa: conteúdo novo e antigo
+- ✅ Prioriza torrents novos via Autobrr (prioridade maior)
+
+**Desvantagens:**
+- ⚠️ Mais indexers para gerenciar
+- ⚠️ Duplicação de configuração
+
+### 🔗 Documentação Completa
+
+Para instruções detalhadas de configuração, variáveis de ambiente, troubleshooting e exemplos, consulte:
+
+**📖 [Documentação Completa do Autobrr Proxy](./autobrr-proxy/README.md)**
+
+A documentação inclui:
+- Configuração dinâmica de múltiplas instâncias *arr
+- Regras específicas por indexer brasileiro
+- Normalização automática de títulos
+- Logs detalhados e modo DEBUG
+- Health checks e monitoramento
+- Exemplos práticos de uso
+
+### 🤔 Qual Abordagem Escolher?
+
+| Cenário | Solução Recomendada |
+|---------|---------------------|
+| **Uso apenas de Autobrr** | Opção 1: TRaSH Guides (Custom Formats) + Somente Autobrr Proxy |
+| **Uso de Autobrr + Huntarr** | Opção 2: TRaSH Guides (Custom Formats)  + Indexes Modifiados Prowlarr + Autobrr Proxy |
+| **Uso apenas de Prowlarr manual** | Opção 3: TRaSH Guides (Custom Formats) + Indexes Modificados Prowlarr |
+
+### 💡 Dica Pro
+
+Se você usa Huntarr e quer a melhor experiência:
+
+1. Configure os **2 tipos de indexers** (TRaSH + Padrão)
+2. Defina **prioridades corretas** (TRaSH=1, Padrão=2)
+3. Configure o **Autobrr Proxy** apontando para os indexers padrão
+4. Huntarr usará os indexers TRaSH automaticamente para buscas
+
+Dessa forma você terá:
+- ✅ Torrents novos detectados e modificados pelo Autobrr Proxy
+- ✅ Torrents antigos encontrados pelo Huntarr via indexers TRaSH
+- ✅ Melhor cobertura e compatibilidade total
+
+---
 
 ## 💚 Reconhecimento
 

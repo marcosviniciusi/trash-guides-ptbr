@@ -101,6 +101,86 @@ def load_apps_from_env():
 APPS = load_apps_from_env()
 
 # ============================================================================
+# FUNÇÃO PARA NORMALIZAR PONTOS NO TÍTULO
+# ============================================================================
+
+def normalize_dots_in_title(title):
+    """
+    Substitui pontos por espaços, exceto DENTRO de padrões técnicos.
+    Exemplos:
+    - .H.264 → H.264 (remove ponto inicial, mantém interno)
+    - .DDP5.1 → DDP5.1 (remove ponto inicial, mantém interno)
+    - .x265 → x265 (remove ponto inicial)
+    """
+    # Remove extensão se houver (para processar e adicionar de volta depois)
+    extension_match = re.search(r'\.(mkv|mp4|avi|m4v|ts|m2ts)$', title, re.IGNORECASE)
+    extension = extension_match.group(0) if extension_match else ''
+    if extension:
+        title = title[:-len(extension)]
+    
+    # Padrões técnicos - SEM o ponto inicial!
+    technical_patterns = [
+        # Video codecs
+        r'H\.26[45]',                      # H.264, H.265
+        r'x26[45]',                        # x264, x265
+        r'h26[45]',                        # h264, h265
+        
+        # Audio codecs com canais (formato compacto: DDP5.1, AAC2.0)
+        r'DDP\d\.\d',                      # DDP5.1
+        r'AAC\d\.\d',                      # AAC2.0
+        r'DD\d\.\d',                       # DD5.1
+        r'AC3\d\.\d',                      # AC35.1
+        
+        # Audio codecs com espaço (DD 5.1, AAC 2.0)
+        r'DD[P+]?\s+\d\.\d',               # DD 5.1, DD+ 5.1, DDP 5.1
+        r'AAC\s+\d\.\d',                   # AAC 2.0
+        r'FLAC\s+\d\.\d',                  # FLAC 2.0
+        r'AC-?3\s+\d\.\d',                 # AC3 5.1, AC-3 5.1
+        r'E-?AC-?3\s+\d\.\d',              # E-AC3 5.1, EAC3 5.1
+        
+        # DTS variants
+        r'DTS[-:]?X?\s*\d\.\d',            # DTS 5.1, DTS:X 7.1, DTS-X 7.1
+        r'DTS[-\s]?HD[-\s]?MA\s*\d\.\d',   # DTS-HD MA 7.1
+        r'DTS[-\s]?HD\s*\d\.\d',           # DTS-HD 5.1
+        
+        # TrueHD, Atmos
+        r'TrueHD\s*\d\.\d',                # TrueHD 7.1
+        r'Atmos\s*\d\.\d',                 # Atmos 7.1
+        
+        # Versões
+        r'v\d+',                           # v2, v3
+    ]
+    
+    # Adiciona ponto opcional ANTES de cada padrão para captura
+    technical_patterns_with_dot = [rf'\.?{pattern}' for pattern in technical_patterns]
+    
+    # Temporariamente substitui padrões técnicos por placeholders
+    placeholders = {}
+    for i, pattern in enumerate(technical_patterns_with_dot):
+        for match in re.finditer(pattern, title, re.IGNORECASE):
+            placeholder = f'__TECH{i}_{len(placeholders)}__'
+            # Remove o ponto inicial se existir
+            original = match.group(0).lstrip('.')
+            placeholders[placeholder] = original
+            title = title.replace(match.group(0), placeholder)
+    
+    # Substitui pontos por espaços (exceto nos placeholders)
+    title = title.replace('.', ' ')
+    
+    # Restaura padrões técnicos (agora sem ponto inicial)
+    for placeholder, original in placeholders.items():
+        title = title.replace(placeholder, original)
+    
+    # Remove espaços múltiplos
+    title = re.sub(r'\s+', ' ', title).strip()
+    
+    # Adiciona extensão de volta se havia
+    if extension:
+        title = f"{title}{extension}"
+    
+    return title
+
+# ============================================================================
 # REGRAS DE MODIFICAÇÃO POR INDEXER
 # ============================================================================
 
@@ -128,7 +208,16 @@ def modify_amigosshare(title):
     modified = re.sub(r'(?i)(brazilian\s+)?dual-audio', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'(?i)(brazilian\s+)?dublado', 'DUBLADO', modified)
     modified = re.sub(r'(?i)(brazilian\s+)?nacional', 'NACIONAL', modified)
-    return re.sub(r'(?i)(brazilian\s+)?legendado', 'LEGENDADO', modified)
+    modified = re.sub(r'(?i)(brazilian\s+)?legendado', 'LEGENDADO', modified)
+    has_br_marker = re.search(
+        r'(LEGENDADO|BRAZILIAN-DUAL-AUDIO|NACIONAL|DUBLADO)',
+        modified,
+        flags=re.IGNORECASE
+    )
+    has_release_group = re.search(r'-[A-Za-z0-9]+$', modified)
+    if not has_br_marker and not has_release_group:
+        modified = f"{modified}-ASC"
+    return modified
 
 def modify_locadora(title):
     modified = title
@@ -139,7 +228,27 @@ def modify_locadora(title):
     return re.sub(r'(?i)-JPN', '', modified)
 
 def modify_samaritano(title):
-    return re.sub(r'(?i)\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO', title)
+    modified = title
+    
+    modified = re.sub(r'(?i)\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO', modified)
+    modified = re.sub(r'(?i)\bMULTI\b', 'BRAZILIAN-DUAL-AUDIO', modified)
+    modified = re.sub(r'(?i)-NoGroup\b', '-SAMARITANO', modified)
+    has_release_group = re.search(r'-[A-Za-z0-9]+$', modified)
+    if not has_release_group:
+        modified = f"{modified}-SAMARITANO"
+    
+    return modified
+
+def modify_uniotaku(title):
+    modified = title
+    modified = re.sub(r'\[([^\]]+)\]', r'\1', modified)
+    modified = re.sub(r'\s+', ' ', modified).strip()
+    parts = modified.rsplit(' ', 1)
+    if len(parts) == 2:
+        modified = f"{parts[0]} LEGENDADO {parts[1]}"
+    else:
+        modified = f"{modified} LEGENDADO"
+    return modified
 
 INDEXER_RULES = {
     'capybarabr': modify_capybarabr,
@@ -150,19 +259,40 @@ INDEXER_RULES = {
     'amigos-share': modify_amigosshare,
     'locadora': modify_locadora,
     'samaritano': modify_samaritano,
+    'uniotaku': modify_uniotaku,
 }
 
 def modify_global(title):
+    """
+    Regras globais aplicadas quando não há regra específica do indexer.
+    NÃO converte DUAL genérico (pode ser idiomas não-PT em trackers gringos).
+    Apenas detecta padrões EXPLICITAMENTE brasileiros.
+    """
     modified = title
-    modified = re.sub(r'\bDUAL\b', 'BRAZILIAN-DUAL-AUDIO', modified, flags=re.IGNORECASE)
-    modified = re.sub(r'\bPT-BR\b', 'BRAZILIAN', modified, flags=re.IGNORECASE)
-    return re.sub(r'\bPortuguese\b', 'BRAZILIAN', modified, flags=re.IGNORECASE)
+    ptbr_patterns = r'(?i:\b(legendado|brazilian(-portuguese)?|brazil|portuguese|pt[-\s]?br(asil)?|port[-\s]?br|por[-\s]?br|pt[-\s]?br[-\s]sub(s)?|sub(s)?[-\s]pt[-\s]?br)\b)|\[subs?[-\[].*\bPT\b.*\]|\[subs?-\[\bPT\b[+\]]'
+    
+    if re.search(ptbr_patterns, modified, flags=re.IGNORECASE):
+        if not re.search(r'(LEGENDADO|BRAZILIAN-DUAL-AUDIO|NACIONAL|DUBLADO|ASC|SAMARITANO)', modified, flags=re.IGNORECASE):
+            # Adiciona .LEGENDADO antes do último componente (-Group)
+            if re.search(r'-[A-Za-z0-9]+$', modified):
+                # Tem grupo de release
+                modified = re.sub(r'(-[A-Za-z0-9]+)$', r'.LEGENDADO\1', modified)
+            else:
+                # Não tem grupo de release
+                modified = f"{modified}.LEGENDADO"
+    
+    return modified
 
 def modify_title(title, indexer=None, app_name=None):
     if not title:
         return title
     
     original_title = title
+    
+    # 1. Normaliza pontos PRIMEIRO
+    title = normalize_dots_in_title(title)
+    
+    # 2. Aplica regras do indexer
     indexer_key = indexer.lower().replace(' ', '').replace('-', '') if indexer else None
     
     if indexer_key and indexer_key in INDEXER_RULES:
@@ -171,7 +301,7 @@ def modify_title(title, indexer=None, app_name=None):
     else:
         modified = modify_global(title)
         if indexer:
-            logger.info(f"[{app_name.upper() if app_name else 'UNKNOWN'}] No specific rules for {indexer}")
+            logger.info(f"[{app_name.upper() if app_name else 'UNKNOWN'}] No specific rules for {indexer}, applied global rules")
     
     if modified != original_title:
         logger.info(f"[{app_name.upper() if app_name else 'UNKNOWN'}] Title modified:")
@@ -376,7 +506,7 @@ def index():
         display_name = f"{config['name']} ({config['type']})" if config['name'] else config['type']
         endpoints[app_subpath] = {"url": f"http://proxy:8888/{app_subpath}", "type": config['type'], "name": config['name'], "target": config['url']}
     
-    return jsonify({"service": "autobrr-proxy-unified", "version": "1.0.7", "indexers_supported": list(INDEXER_RULES.keys()), "total_apps": len(APPS), "endpoints": endpoints, "log_level": LOG_LEVEL})
+    return jsonify({"service": "autobrr-proxy-unified", "version": "1.0.9", "indexers_supported": list(INDEXER_RULES.keys()), "total_apps": len(APPS), "endpoints": endpoints, "log_level": LOG_LEVEL})
 
 if __name__ == '__main__':
     if not APPS:

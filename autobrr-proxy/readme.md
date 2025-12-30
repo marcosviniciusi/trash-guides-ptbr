@@ -10,11 +10,14 @@ O Autobrr Proxy atua como uma **camada de tradução** entre o Autobrr e seus ap
 
 | Padrão Original | Convertido Para |
 |----------------|-----------------|
-| `DUAL`, `Dual Áudio` | `BRAZILIAN-DUAL-AUDIO` |
+| `DUAL`, `MULTI`, `Dual Áudio` | `BRAZILIAN-DUAL-AUDIO` |
 | `Dublado`, `DUBLADO` | `DUBLADO` |
 | `Nacional`, `NACIONAL` | `NACIONAL` |
 | `Legendado`, `LEGENDADO` | `LEGENDADO` |
-| `PT-BR`, `Portuguese` | `BRAZILIAN` |
+| `Portuguese`, `Brazil`, `PT-BR` | Adiciona `LEGENDADO` |
+| Títulos com pontos (`.`) | Converte para espaços preservando padrões técnicos |
+| `[Colchetes]` (UniOtaku) | Remove colchetes e adiciona `LEGENDADO` |
+| `-NoGroup` (Samaritano) | Substitui por `-SAMARITANO` |
 
 ### 🎯 Por que usar?
 
@@ -22,6 +25,7 @@ O Autobrr Proxy atua como uma **camada de tradução** entre o Autobrr e seus ap
 - ✅ **Custom Formats funcionam corretamente**: Garante que os CFs detectem releases PT-BR
 - ✅ **Configuração dinâmica**: Suporta quantos *arr apps você precisar (1 a 99)
 - ✅ **Regras por indexer**: Cada tracker brasileiro tem regras específicas otimizadas
+- ✅ **Normalização de títulos**: Remove pontos e padroniza formatação
 - ✅ **Logs detalhados**: DEBUG mode mostra exatamente o que está sendo modificado
 - ✅ **Zero downtime**: Proxy transparente - se falhar, Autobrr continua funcionando
 - ✅ **Multi-instância**: Gerencie Movies, Series e Animes separadamente
@@ -31,11 +35,13 @@ O Autobrr Proxy atua como uma **camada de tradução** entre o Autobrr e seus ap
 ┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
 │   Autobrr   │────▶│  Proxy PT-BR     │────▶│  Radarr     │
 │             │     │                  │     │  Sonarr     │
-│ (detecta    │     │ • Transforma     │     │  (recebe    │
-│  releases)  │     │   títulos        │     │   títulos   │
-│             │     │ • Aplica regras  │     │   padrões)  │
-└─────────────┘     │ • Loga tudo      │     └─────────────┘
-                    └──────────────────┘
+│ (detecta    │     │ • Normaliza      │     │  (recebe    │
+│  releases)  │     │   pontos         │     │   títulos   │
+│             │     │ • Transforma     │     │   padrões)  │
+│             │     │   títulos        │     │             │
+│             │     │ • Aplica regras  │     │             │
+│             │     │ • Loga tudo      │     │             │
+└─────────────┘     └──────────────────┘     └─────────────┘
 ```
 
 ### 📦 Docker Compose
@@ -73,7 +79,7 @@ services:
       - APP_02_TYPE=radarr
       - APP_02_NAME=animes-movies
       - APP_02_SUBPATH=radarr-animes
-      - APP_02_URL=https://animes-movies.example.com:PORTA
+      - APP_02_URL=https://animes-movies.example.com:443
       - APP_02_API_KEY=sua-api-key-radarr-animes
       
       # ============================================
@@ -82,7 +88,7 @@ services:
       - APP_03_TYPE=sonarr
       - APP_03_NAME=series
       - APP_03_SUBPATH=sonarr-series
-      - APP_03_URL=https://series.example.com:PORTA
+      - APP_03_URL=https://series.example.com:443
       - APP_03_API_KEY=sua-api-key-sonarr
       
       # ============================================
@@ -91,7 +97,7 @@ services:
       - APP_04_TYPE=sonarr
       - APP_04_NAME=animes-tv
       - APP_04_SUBPATH=sonarr-animes
-      - APP_04_URL=https://animes-tv.example.com:PORTA
+      - APP_04_URL=https://animes-tv.example.com:443
       - APP_04_API_KEY=sua-api-key-sonarr-animes
       
       # ============================================
@@ -135,7 +141,7 @@ services:
       - APP_01_TYPE=radarr
       - APP_01_NAME=movies
       - APP_01_SUBPATH=radarr-movies
-      - APP_01_URL=http://RADARR_IP:7878
+      - APP_01_URL=http://radarr:7878
       - APP_01_API_KEY=sua-api-key-aqui
     networks:
       - media
@@ -162,7 +168,7 @@ Cada aplicação requer 5 variáveis obrigatórias, onde `XX` é um número de `
 | `APP_XX_TYPE` | ✅ | Tipo de aplicação | `radarr`, `sonarr`, `lidarr`, `readarr`, `whisparr` |
 | `APP_XX_NAME` | ⚠️ | Nome amigável (aparece nos logs) | `movies`, `series`, `animes-tv` |
 | `APP_XX_SUBPATH` | ✅ | Caminho do endpoint no proxy | `radarr-movies`, `sonarr-series` |
-| `APP_XX_URL` | ✅ | URL completa da aplicação | `https://radarr.example.com:PORTA` |
+| `APP_XX_URL` | ✅ | URL completa da aplicação | `https://radarr.example.com:443` |
 | `APP_XX_API_KEY` | ✅ | API Key da aplicação | `abc123def456...` |
 
 **Notas importantes:**
@@ -219,19 +225,65 @@ No Autobrr, clique em **Test** ao lado do client configurado. Deve aparecer:
 
 ### 🔍 Indexers Suportados e Regras
 
-O proxy detecta automaticamente o indexer pelo campo `indexer` enviado pelo Autobrr e aplica as regras específicas:
+O proxy detecta automaticamente o indexer pelo campo `indexer` enviado pelo Autobrr e aplica as regras específicas.
 
-| Indexer | Detecção | Regras Aplicadas |
-|---------|----------|------------------|
-| **CapybaraBR** | `CapybaraBR`, `capybara-br` | `DUAL` → `BRAZILIAN-DUAL-AUDIO` |
-| **BrasilTracker** | `BrasilTracker`, `brasil-tracker` | `Dual Audio` → `BRAZILIAN-DUAL-AUDIO`<br>`Subs/Legendado` → `LEGENDADO`<br>`Nacional` → `NACIONAL`<br>`Dublado` → `DUBLADO` |
-| **Bj-Share** | `Bj-Share`, `bjshare` | `Dual Áudio` → `BRAZILIAN-DUAL-AUDIO`<br>`Legendado` → `LEGENDADO`<br>`Nacional` → `NACIONAL` |
-| **AmigosShare** | `AmigosShare`, `amigos-share` | Padroniza: `dual-audio`, `dublado`, `nacional`, `legendado` |
-| **Locadora** | `Locadora`, `locadora.cc` | Remove sufixos: `/ Language (Code)`<br>`DUAL-` → `BRAZILIAN-DUAL-AUDIO-`<br>Adiciona `LEGENDADO` para idiomas não-PT |
-| **Samaritano** | `Samaritano` | `DUAL` → `BRAZILIAN-DUAL-AUDIO` |
-| **Outros** | Qualquer indexer | Regras globais:<br>`DUAL` → `BRAZILIAN-DUAL-AUDIO`<br>`PT-BR` → `BRAZILIAN`<br>`Portuguese` → `BRAZILIAN` |
+**⚠️ IMPORTANTE: Nomes dos Indexers no Autobr**
 
-**Nota:** A detecção é **case-insensitive** e ignora espaços/hífens. Ex: `Capybara-BR` = `CapybaraBR` = `capybarabr`
+Para que o proxy funcione corretamente, os indexers **devem ser configurados** no Autobrr com os seguintes nomes **EXATOS** (case-insensitive):
+
+| Indexer no Autobrr | Nomes Aceitos | Regras Aplicadas |
+|---------------------|---------------|------------------|
+| **CapybaraBR** | `CapybaraBR`, `capybara-br`, `capybarabr` | • `DUAL` → `BRAZILIAN-DUAL-AUDIO` |
+| **BrasilTracker** | `BrasilTracker`, `brasil-tracker`, `brasiltracker` | • `Dual Audio` → `BRAZILIAN-DUAL-AUDIO`<br>• `Subs/Legendado` → `LEGENDADO`<br>• `Nacional` → `NACIONAL`<br>• `Dublado` → `DUBLADO` |
+| **Bj-Share** | `Bj-Share`, `bjshare`, `bj-share` | • `Dual Áudio` → `BRAZILIAN-DUAL-AUDIO`<br>• `Legendado` → `LEGENDADO`<br>• `Nacional` → `NACIONAL` |
+| **AmigosShare** | `AmigosShare`, `amigos-share`, `amigosshare` | • `dual-audio` → `BRAZILIAN-DUAL-AUDIO`<br>• `dublado` → `DUBLADO`<br>• `nacional` → `NACIONAL`<br>• `legendado` → `LEGENDADO`<br>• Sem marcador BR + sem grupo → adiciona `-ASC` |
+| **Locadora** | `Locadora`, `locadora.cc`, `locadora` | • Remove sufixos: `/ Language (Code)`<br>• `DUAL-` → `BRAZILIAN-DUAL-AUDIO-`<br>• Adiciona `LEGENDADO` para idiomas não-PT<br>• Remove `-JPN` |
+| **Samaritano** | `Samaritano`, `samaritano` | • `DUAL` → `BRAZILIAN-DUAL-AUDIO`<br>• `MULTI` → `BRAZILIAN-DUAL-AUDIO`<br>• `-NoGroup` → `-SAMARITANO`<br>• Sem grupo → adiciona `-SAMARITANO` |
+| **UniOtaku** | `UniOtaku`, `uniotaku` | • Remove TODOS os colchetes `[xxx]`<br>• Adiciona `LEGENDADO` antes do release group |
+| **Outros** | Qualquer outro nome | • Detecta padrões PT-BR explícitos<br>• Adiciona `LEGENDADO` quando apropriado<br>• NÃO converte `DUAL` genérico |
+
+**Como configurar no autobrr:**
+```
+Autobrr → Indexers → [Seu Indexer] → Nome do Indexer
+                                       └─> Use exatamente: CapybaraBR
+                                                          BrasilTracker
+                                                          Bj-Share
+                                                          AmigosShare
+                                                          Locadora
+                                                          Samaritano
+                                                          UniOtaku
+```
+
+**Nota:** A detecção é **case-insensitive** e ignora espaços/hífens internos. Exemplos válidos:
+- `CapybaraBR` = `capybarabr` = `Capybara-BR` ✅
+- `BrasilTracker` = `brasiltracker` = `Brasil-Tracker` ✅
+- `Bj-Share` = `bjshare` = `BJ-SHARE` ✅
+
+### 🔄 Normalização de Títulos
+
+O proxy aplica normalização automática em **todos** os títulos antes de aplicar regras específicas:
+
+#### Conversão de Pontos para Espaços
+
+**Substitui pontos (`.`) por espaços, EXCETO:**
+- ✅ Extensões de arquivo: `.mkv`, `.mp4`, `.avi`, `.m4v`, `.ts`, `.m2ts`
+- ✅ Codecs de vídeo: `H.264`, `H.265`, `x264`, `x265`, `h264`, `h265`
+- ✅ Codecs de áudio: `DDP5.1`, `DD 5.1`, `AAC2.0`, `AC3 5.1`, `E-AC3 5.1`
+- ✅ DTS variants: `DTS 5.1`, `DTS:X 7.1`, `DTS-HD MA 7.1`
+- ✅ Outros áudios: `TrueHD 7.1`, `Atmos 7.1`, `FLAC 2.0`
+- ✅ Versões: `v2`, `v3`
+
+**Exemplos:**
+```
+Input:  Its.Florida.Man.S02E04.1080p.WEB-DL.DDP5.1.H.264-STC.mkv
+Output: Its Florida Man S02E04 1080p WEB-DL DDP5.1 H.264-STC.mkv
+
+Input:  Die.Simpsons.S16E16.German.DL.1080p.WebHD.H264-RWF
+Output: Die Simpsons S16E16 German DL 1080p WebHD H264-RWF
+
+Input:  Movie.2024.1080p.BluRay.DD 5.1.x265-Group
+Output: Movie 2024 1080p BluRay DD 5.1 x265-Group
+```
 
 ### 📊 Monitoramento e Debug
 
@@ -244,14 +296,15 @@ curl http://localhost:8888/ | jq
 ```json
 {
   "service": "autobrr-proxy-unified",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "indexers_supported": [
     "capybarabr",
     "brasiltracker",
     "bjshare",
     "amigosshare",
     "locadora",
-    "samaritano"
+    "samaritano",
+    "uniotaku"
   ],
   "total_apps": 4,
   "endpoints": {
@@ -259,13 +312,7 @@ curl http://localhost:8888/ | jq
       "url": "http://proxy:8888/radarr-movies",
       "type": "radarr",
       "name": "movies",
-      "target": "https://RADARR_IP:PORTA"
-    },
-    "sonarr-series": {
-      "url": "http://proxy:8888/sonarr-series",
-      "type": "sonarr",
-      "name": "series",
-      "target": "https://SONARR_IP.:PORTA"
+      "target": "https://movies.example.com:443"
     }
   }
 }
@@ -286,21 +333,15 @@ curl http://localhost:8888/health | jq
     "bjshare",
     "amigosshare",
     "locadora",
-    "samaritano"
+    "samaritano",
+    "uniotaku"
   ],
   "apps": {
     "radarr-movies": {
       "status": "ok",
       "type": "radarr",
       "name": "movies",
-      "url": "http://RADARR_IP:7878"
-    },
-    "sonarr-series": {
-      "status": "unreachable",
-      "type": "sonarr",
-      "name": "series",
-      "url": "http://SONARR_IP:8686",
-      "error": "Connection timeout"
+      "url": "https://movies.example.com:443"
     }
   }
 }
@@ -331,11 +372,11 @@ docker logs -f autobrr-proxy
 ```
 📥 INCOMING REQUEST
    App:      movies (radarr)
-   Indexer:  REMOVED
+   Indexer:  CapybaraBR
 🔧 Processing title modification...
 ✅ Title was modified!
    Original: Movie.2024.DUAL.BluRay-Group
-   Modified: Movie.2024.BRAZILIAN-DUAL-AUDIO.BluRay-Group
+   Modified: Movie 2024 BRAZILIAN-DUAL-AUDIO BluRay-Group
 ```
 
 **LOG_LEVEL=DEBUG (verbose):**
@@ -352,61 +393,49 @@ docker logs -f autobrr-proxy
 📦 Request Payload:
    {
      "title": "Movie.2024.DUAL.BluRay-Group",
-     "indexer": "REMOVED",
+     "indexer": "CapybaraBR",
      "downloadUrl": "https://...",
      "size": 8589934592
    }
 🔧 Processing title modification...
 [RADARR-MOVIES] Applied CapybaraBR rules
 ✅ Title was modified!
-   Indexer:  REMOVED
+   Indexer:  CapybaraBR
    Original: Movie.2024.DUAL.BluRay-Group
-   Modified: Movie.2024.BRAZILIAN-DUAL-AUDIO.BluRay-Group
+   Modified: Movie 2024 BRAZILIAN-DUAL-AUDIO BluRay-Group
 📤 OUTGOING REQUEST
-   Target URL: https://RADARR_IP:7878/api/v3/release/push
+   Target URL: https://movies.example.com:443/api/v3/release/push
    Method:     POST
-📋 Outgoing Headers:
-   User-Agent: autobrr
-   Content-Type: application/json
-   X-Api-Key: 170e6d3f...9023
-📦 Payload being sent:
-   {
-     "title": "Movie.2024.BRAZILIAN-DUAL-AUDIO.BluRay-Group",
-     ...
-   }
 📨 RESPONSE RECEIVED
    Status Code: 200
    Status:      OK
 ✅ SUCCESS
 ```
 
-### 🐛 Troubleshooting
-
-#### ❌ Autobrr: "connection test failed: chunked line ends with bare LF"
-
-**Causa:** Versão antiga do proxy (< 1.0.6)
-
-**Solução:**
-```bash
-docker pull marcosviniciusi/autobrr-proxy-br:latest
-docker-compose down && docker-compose up -d
-```
-
-#### ❌ Autobrr: "Unable to parse" no Radarr/Sonarr
-
-**Causa:** Título do release original já está malformado (problema do tracker, não do proxy)
-
-**Exemplos comuns:**
-- Falta episódio: `Show S01 1080p` (deveria ser `S01E01`)
-- Título duplicado: `Show S01E01 Show 1080p`
-
-**Solução:** O proxy não pode consertar releases quebrados. Configure filtros no Autobrr para evitá-los.
-
 #### ❌ Títulos não estão sendo modificados
 
 **Diagnóstico:**
 
-1. **Ative DEBUG:**
+1. **Verifique o nome do indexer no autobrr:**
+```bash
+# Verifique se o nome está correto
+curl http://localhost:8888/ | jq '.indexers_supported'
+
+# Deve retornar:
+[
+  "capybarabr",
+  "brasiltracker",
+  "bjshare",
+  "amigosshare",
+  "locadora",
+  "samaritano",
+  "uniotaku"
+]
+```
+
+Se o seu indexer não aparece nessa lista, **renomeie no autobrr** para um dos nomes aceitos.
+
+2. **Ative DEBUG:**
 ```bash
 docker-compose down
 # Edite docker-compose.yml: LOG_LEVEL=DEBUG
@@ -414,17 +443,18 @@ docker-compose up -d
 docker logs -f autobrr-proxy
 ```
 
-2. **Verifique o indexer detectado:**
+3. **Verifique o indexer detectado:**
 ```
 🔖 Indexer: CapybaraBR  ← Nome detectado
 [RADARR-MOVIES] Applied CapybaraBR rules ← Regras aplicadas
 ℹ️  Title unchanged ← Não tinha DUAL no título
 ```
 
-3. **Confirme que o título TEM os termos esperados:**
+4. **Confirme que o título TEM os termos esperados:**
    - CapybaraBR: Precisa de `DUAL` no título
    - Locadora: Precisa de `/ Language (Code)` no final
    - BrasilTracker: Precisa de `Dual Audio`, `Legendado`, etc
+   - UniOtaku: Precisa de `[colchetes]` para remover
 
 #### ❌ API Key incorreta
 
@@ -456,6 +486,7 @@ docker logs autobrr-proxy
 ❌ No apps configured!
 ⛔ No apps configured. Exiting.
 ```
+
 - Faltam variáveis `APP_XX_*` no docker-compose
 - Verifique se pelo menos `APP_01_TYPE`, `APP_01_SUBPATH`, `APP_01_URL` e `APP_01_API_KEY` estão definidos
 
@@ -463,12 +494,14 @@ docker logs autobrr-proxy
 ```
 ⚠️  APP_01: Invalid TYPE 'raddarr'. Must be one of: radarr, sonarr, lidarr, readarr, whisparr. Skipping.
 ```
+
 - Corrija o tipo no `APP_XX_TYPE`
 
 **"Incomplete configuration":**
 ```
 ⚠️  APP_02: Incomplete configuration. Need TYPE, SUBPATH, URL, and API_KEY. Skipping.
 ```
+
 - Falta alguma variável obrigatória
 
 #### ❌ Autobrr não consegue acessar o proxy
@@ -499,23 +532,23 @@ networks:
 
 ### 📈 Exemplos de Uso Real
 
-#### Exemplo 1: Release com DUAL do Trackers pt-BR
+#### Exemplo 1: Release com DUAL do CapybaraBR
 
 **Input (Autobrr → Proxy):**
 ```json
 {
-  "title": "movie.2024.1080p.DUAL.BluRay.x264-ComandoFor",
-  "indexer": "tracker-pt-br",
-  "downloadUrl": "https://TRAKER.COM/download/55839"
+  "title": "Dune.Part.Two.2024.1080p.DUAL.BluRay.x264-ComandoFor",
+  "indexer": "CapybaraBR",
+  "downloadUrl": "https://capybarabr.com/download/55839"
 }
 ```
 
 **Output (Proxy → Radarr):**
 ```json
 {
-  "title": "MOVIE.2024.1080p.BRAZILIAN-DUAL-AUDIO.BluRay.x264-ComandoFor",
-  "indexer": "tracker-pt-br",
-  "downloadUrl": "https://TRAKER.COM/download/55839"
+  "title": "Dune Part Two 2024 1080p BRAZILIAN-DUAL-AUDIO BluRay x264-ComandoFor",
+  "indexer": "CapybaraBR",
+  "downloadUrl": "https://capybarabr.com/download/55839"
 }
 ```
 
@@ -523,44 +556,71 @@ networks:
 ```
 [RADARR-MOVIES] Applied CapybaraBR rules
 ✅ Title was modified!
-  Indexer:  tracker-pt-br
-  Original: movie.2024.1080p.DUAL.BluRay.x264-ComandoFor
-  Modified: movie.2024.1080p.BRAZILIAN-DUAL-AUDIO.BluRay.x264-ComandoFor
+  Indexer:  CapybaraBR
+  Original: Dune.Part.Two.2024.1080p.DUAL.BluRay.x264-ComandoFor
+  Modified: Dune Part Two 2024 1080p BRAZILIAN-DUAL-AUDIO BluRay x264-ComandoFor
 ```
 
-#### Exemplo 2: Release legendado do Locadora
+#### Exemplo 2: Release do UniOtaku com colchetes
 
 **Input:**
 ```json
 {
-  "title": "Anime.S01E13.1080p.WEB-DL.H.264.JPN-Group / Japanese (JP)",
-  "indexer": "Locadora"
+  "title": "Undead Unluck: Winter-hen [WEB][1080P][H264][DD+] [GAIA Fansub]",
+  "indexer": "UniOtaku"
 }
 ```
 
 **Output:**
 ```json
 {
-  "title": "Anime.S01E13.1080p.WEB-DL.H.264.LEGENDADO-Group",
-  "indexer": "Locadora"
+  "title": "Undead Unluck: Winter-hen WEB 1080P H264 DD+ GAIA LEGENDADO Fansub",
+  "indexer": "UniOtaku"
 }
 ```
 
 **Log:**
 ```
-[SONARR-ANIMES] Applied Locadora rules
+[SONARR-ANIMES] Applied UniOtaku rules
 ✅ Title was modified!
-  Indexer:  Locadora
-  Original: Anime.S01E13.1080p.WEB-DL.H.264.JPN-Group / Japanese (JP)
-  Modified: Anime.S01E13.1080p.WEB-DL.H.264.LEGENDADO-Group
+  Indexer:  UniOtaku
+  Original: Undead Unluck: Winter-hen [WEB][1080P][H264][DD+] [GAIA Fansub]
+  Modified: Undead Unluck: Winter-hen WEB 1080P H264 DD+ GAIA LEGENDADO Fansub
 ```
 
-#### Exemplo 3: Indexer desconhecido (regras globais)
+#### Exemplo 3: Release do Samaritano sem grupo
 
 **Input:**
 ```json
 {
-  "title": "Movie.2024.DUAL.WEB-DL-GenericGroup",
+  "title": "Movie 2024 MULTI 1080p BluRay",
+  "indexer": "Samaritano"
+}
+```
+
+**Output:**
+```json
+{
+  "title": "Movie 2024 BRAZILIAN-DUAL-AUDIO 1080p BluRay-SAMARITANO",
+  "indexer": "Samaritano"
+}
+```
+
+**Log:**
+```
+[RADARR-MOVIES] Applied Samaritano rules
+✅ Title was modified!
+  Indexer:  Samaritano
+  Original: Movie 2024 MULTI 1080p BluRay
+  Modified: Movie 2024 BRAZILIAN-DUAL-AUDIO 1080p BluRay-SAMARITANO
+```
+
+#### Exemplo 4: Indexer desconhecido com padrão PT-BR
+
+**Input:**
+```json
+{
+  "title": "Movie.2024.portuguese.1080p-GenericGroup",
   "indexer": "TrackerXYZ"
 }
 ```
@@ -568,7 +628,7 @@ networks:
 **Output:**
 ```json
 {
-  "title": "Movie.2024.BRAZILIAN-DUAL-AUDIO.WEB-DL-GenericGroup",
+  "title": "Movie 2024 portuguese 1080p.LEGENDADO-GenericGroup",
   "indexer": "TrackerXYZ"
 }
 ```
@@ -578,8 +638,8 @@ networks:
 [RADARR-MOVIES] No specific rules for TrackerXYZ, applied global rules
 ✅ Title was modified!
   Indexer:  TrackerXYZ
-  Original: Movie.2024.DUAL.WEB-DL-GenericGroup
-  Modified: Movie.2024.BRAZILIAN-DUAL-AUDIO.WEB-DL-GenericGroup
+  Original: Movie.2024.portuguese.1080p-GenericGroup
+  Modified: Movie 2024 portuguese 1080p.LEGENDADO-GenericGroup
 ```
 
 ### 🔐 Segurança
@@ -614,11 +674,14 @@ curl http://localhost:8888/ | jq -r '.version'
 
 ### 💡 Dicas Pro
 
-1. **Use nomes descritivos em `APP_XX_NAME`** para facilitar leitura dos logs
-2. **Ative DEBUG temporariamente** quando adicionar novos indexers
-3. **Monitore o health check** periodicamente para detectar problemas
-4. **Crie alertas** no Uptime Kuma ou similar para o endpoint `/health`
-5. **Backup do docker-compose.yml** com todas as configurações
+1. **Use os nomes EXATOS dos indexers** conforme tabela acima no autobrr
+2. **Use nomes descritivos em `APP_XX_NAME`** para facilitar leitura dos logs
+3. **Ative DEBUG temporariamente** quando adicionar novos indexers
+4. **Monitore o health check** periodicamente para detectar problemas
+5. **Crie alertas** no Uptime Kuma ou similar para o endpoint `/health`
+6. **Backup do docker-compose.yml** com todas as configurações
+7. **Teste cada indexer individualmente** após configurar no Autobrr
+8. **Verifique os logs regularmente** para identificar padrões não cobertos
 
 ---
 
