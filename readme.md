@@ -254,15 +254,27 @@ A configuração correta da nomenclatura de arquivos elimina esse risco ao garan
  - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
 ```
 #Primeiro Campo - Formato do Episódio Padrão
-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ```
 #Segundo Campo - Formato do episódio diário
-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ```
 #Terceiro Campo - Formato do episódio de anime
-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+```
+```
+#Formato de Pasta das Séries
+{Series_TitleYear}-[imdb-{ImdbId}]
+```
+```
+#Formato da Pasta da Temporada
+Season {season:00}
+```
+```
+#Formato da Pasta para Especiais
+Specials
 ```
 
  - [Radarr Filmes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
@@ -270,25 +282,45 @@ S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynam
 #Formato de Filme Padrão
 {Movie-CleanTitle}-{(Release-Year)}[imdbid-{ImdbId}]{[Quality-Title]}{[CUSTOM-FORMATS]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo-AudioCodec}{Mediainfo-AudioChannels]}{[Mediainfo-VideoCodec]}[{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
+```
+#Formato da pasta do filme
+{Movie CleanTitle}_({Release Year})_[imdbid-{ImdbId}]
+```
 
   - [Sonarr Animes](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#anime)
 ```
 #Primeiro Campo - Formato do Episódio Padrão
-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ```
 #Segundo Campo - Formato do episódio diário
-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
 ```
 ```
 #Terceiro Campo - Formato do episódio de anime
-S{season:00}E{episode:00}-{absolute:000}-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+```
+```
+#Formato de Pasta das Séries
+{Series_TitleYear}-[imdb-{ImdbId}]
+```
+```
+#Formato da Pasta da Temporada
+Season {season:00}
+```
+```
+#Formato da Pasta para Especiais
+Specials
 ```
 
   - [Radarr Animes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
 ```
 #Formato de Filme Padrão
 {Movie-CleanTitle}-{(Release-Year)}[imdbid-{ImdbId}]{[Quality-Title]}{[CUSTOM-FORMATS]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo-AudioCodec}{Mediainfo-AudioChannels]}{[Mediainfo-VideoCodec]}[{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+```
+```
+#Formato da pasta do filme
+{Movie CleanTitle}_({Release Year})_[imdbid-{ImdbId}]
 ```
 
 ## Habilite "Mostrar Opções Avançadas" na mesma pagina ao topo e configure os seguintes campos abaixo:
