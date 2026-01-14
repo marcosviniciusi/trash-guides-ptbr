@@ -4,15 +4,6 @@
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "DragsterPS\"",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(DragsterPS)$"
-      }
-    },
-    {
       "name": "ASM",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,

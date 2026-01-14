@@ -22,6 +22,15 @@
       }
     },
     {
+      "name": "DragsterPS\"",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DragsterPS)$"
+      }
+    },
+    {
       "name": "iNSS",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
