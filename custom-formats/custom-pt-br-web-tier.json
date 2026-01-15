@@ -2686,6 +2686,24 @@
       }
     },
     {
+      "name": "Judas",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Judas)$"
+      }
+    },
+    {
+      "name": "Kirinashi",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Kirinashi)$"
+      }
+    },
+    {
       "name": "HF",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
