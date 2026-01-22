@@ -320,10 +320,6 @@ def modify_samaritano(title):
     modified = re.sub(r'(?i)\bMULTI\b', 'BRAZILIAN-DUAL-AUDIO', modified)
     modified = re.sub(r'(?i)-NoGroup\b', '-SAMARITANO', modified)
     
-    # Se NÃO tem grupo → adiciona -SAMARITANO
-    if not has_release_group(modified):
-        modified = f"{modified}-SAMARITANO"
-    
     return modified
 
 def modify_shakaw(title):
