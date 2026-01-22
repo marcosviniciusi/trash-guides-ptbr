@@ -1084,6 +1084,33 @@
       }
     },
     {
+      "name": "C.A.A",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(C.A.A)$"
+      }
+    },
+    {
+      "name": "TombDoc",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TombDoc)$"
+      }
+    },
+    {
+      "name": "BRF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BRF)$"
+      }
+    },
+    {
       "name": "CartoonNOW",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -2044,6 +2071,33 @@
       "required": false,
       "fields": {
         "value": "^(JB88)$"
+      }
+    },
+    {
+      "name": "FG4LL4RD0",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(FG4LL4RD0)$"
+      }
+    },
+    {
+      "name": "BT123",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(BT123)$"
+      }
+    },
+    {
+      "name": "NoUsEr",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(NoUsEr)$"
       }
     },
     {
