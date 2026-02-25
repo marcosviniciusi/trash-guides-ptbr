@@ -127,6 +127,7 @@ search:
       selector: download_link
     infohash:
       selector: info_hash
+      optional: true
     poster:
       selector: meta.poster
       filters:
