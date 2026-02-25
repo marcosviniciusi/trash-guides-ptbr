@@ -1,6 +1,6 @@
 {
   "trash_id": "radarr-uhd-remux-pt-br-gen",
-  "name": "Release PT-BR Remux Generic",
+  "name": "Release PT-BR UHD Remux Generic",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {

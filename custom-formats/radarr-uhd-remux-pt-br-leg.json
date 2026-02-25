@@ -1,6 +1,6 @@
 {
   "trash_id": "radarr-uhd-remux-pt-br-leg",
-  "name": "Release PT-BR Remux Legendado",
+  "name": "Release PT-BR UHD Remux Legendado",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
