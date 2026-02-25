@@ -1,12 +1,48 @@
 {
-  "trash_id": "custom-pt-br-web-tier",
-  "name": "WEB Tier Brazilian",
+  "trash_id": "sonarr-udh-remux-pt-br-gen",
+  "name": "Release PT-BR UDH-Remux Generic",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
+      "name": "PT-BR Legendado",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "(?i:\\b(legendado|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|por[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b)|\\[subs?[-\\[].*\\bPT\\b.*\\]|\\[subs?-\\[\\bPT\\b[+\\]]"
+      }
+    },
+    {
+      "name": "NOT PT-BR Dublado",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)\\b(BRAZILIAN-DUAL-AUDIO|NACIONAL|dublado|brasil[-\\s]dub|pt[-\\s]?br[-\\s]dub(s)?|dub(s)?[-\\s]pt[-\\s]?br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|BRAZILIAN[-\\s]DUAL[-\\s]AUDIO)\\b"
+      }
+    },
+    {
+      "name": "Remux",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    },
+    {
       "name": "encorebr",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(encorebr)$"
@@ -15,7 +51,7 @@
     {
       "name": "FênixFansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FênixFansub)$"
@@ -24,7 +60,7 @@
     {
       "name": "EraiRaws",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(EraiRaws)$"
@@ -33,7 +69,7 @@
     {
       "name": "DragsterPS\"",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DragsterPS)$"
@@ -42,7 +78,7 @@
     {
       "name": "iNSS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(iNSS)$"
@@ -51,7 +87,7 @@
     {
       "name": "Yatogam1",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Yatogam1)$"
@@ -60,7 +96,7 @@
     {
       "name": "By Tontom",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(By Tontom)$"
@@ -69,7 +105,7 @@
     {
       "name": "HanaEncode",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(HanaEncode)$"
@@ -78,7 +114,7 @@
     {
       "name": "SubVision",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SubVision)$"
@@ -87,7 +123,7 @@
     {
       "name": "MAD Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MAD Fansub)$"
@@ -96,7 +132,7 @@
     {
       "name": "Anipakku",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anipakku)$"
@@ -105,7 +141,7 @@
     {
       "name": "Infinite-Owari",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Infinite-Owari)$"
@@ -114,7 +150,7 @@
     {
       "name": "Webrogue",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Webrogue)$"
@@ -123,7 +159,7 @@
     {
       "name": "GHB",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GHB)$"
@@ -132,7 +168,7 @@
     {
       "name": "MLH",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MLH)$"
@@ -141,7 +177,7 @@
     {
       "name": "G4RiS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(G4RiS)$"
@@ -150,7 +186,7 @@
     {
       "name": "FLY",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FLY)$"
@@ -159,7 +195,7 @@
     {
       "name": "jus",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(jus)$"
@@ -168,7 +204,7 @@
     {
       "name": "ElM4g0",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ElM4g0)$"
@@ -177,7 +213,7 @@
     {
       "name": "BAD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BAD)$"
@@ -186,7 +222,7 @@
     {
       "name": "UPD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(UPD)$"
@@ -195,7 +231,7 @@
     {
       "name": "Weguer",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Weguer)$"
@@ -204,7 +240,7 @@
     {
       "name": "THR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(THR)$"
@@ -213,7 +249,7 @@
     {
       "name": "Rick SD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Rick SD)$"
@@ -222,7 +258,7 @@
     {
       "name": "LissBean",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LissBean)$"
@@ -231,7 +267,7 @@
     {
       "name": "Moikano",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Moikano)$"
@@ -240,7 +276,7 @@
     {
       "name": "MDG",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MDG)$"
@@ -249,7 +285,7 @@
     {
       "name": "Treecher",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Treecher)$"
@@ -258,7 +294,7 @@
     {
       "name": "BEN THE MEN",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BEN THE MEN)$"
@@ -267,7 +303,7 @@
     {
       "name": "Asy",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Asy)$"
@@ -276,7 +312,7 @@
     {
       "name": "MADRUGA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MADRUGA)$"
@@ -285,7 +321,7 @@
     {
       "name": "DM",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DM)$"
@@ -294,7 +330,7 @@
     {
       "name": "CBR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(CBR)$"
@@ -303,7 +339,7 @@
     {
       "name": "palato",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(palato)$"
@@ -312,7 +348,7 @@
     {
       "name": "DKS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DKS)$"
@@ -321,7 +357,7 @@
     {
       "name": "BJSHARE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BJSHARE)$"
@@ -330,7 +366,7 @@
     {
       "name": "GMN",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GMN)$"
@@ -339,7 +375,7 @@
     {
       "name": "H0LL0W",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(H0LL0W)$"
@@ -348,7 +384,7 @@
     {
       "name": "TexWiller",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TexWiller)$"
@@ -357,7 +393,7 @@
     {
       "name": "FOXX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FOXX)$"
@@ -366,7 +402,7 @@
     {
       "name": "OhKara",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OhKara)$"
@@ -375,7 +411,7 @@
     {
       "name": "Neophitus",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Neophitus)$"
@@ -384,7 +420,7 @@
     {
       "name": "dinrolin",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(dinrolin)$"
@@ -393,7 +429,7 @@
     {
       "name": "OWL",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OWL)$"
@@ -402,7 +438,7 @@
     {
       "name": "XerifeWoody",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(XerifeWoody)$"
@@ -411,7 +447,7 @@
     {
       "name": "RARBR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(RARBR)$"
@@ -420,7 +456,7 @@
     {
       "name": "100REAL",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(100REAL)$"
@@ -429,7 +465,7 @@
     {
       "name": "JOKeR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(JOKeR)$"
@@ -438,7 +474,7 @@
     {
       "name": "ZimaBlue",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ZimaBlue)$"
@@ -447,7 +483,7 @@
     {
       "name": "GoodMonster",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GoodMonster)$"
@@ -456,7 +492,7 @@
     {
       "name": "FF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FF)$"
@@ -465,7 +501,7 @@
     {
       "name": "GUEIRA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GUEIRA)$"
@@ -474,7 +510,7 @@
     {
       "name": "KALAX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KALAX)$"
@@ -483,7 +519,7 @@
     {
       "name": "NoUs3r",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NoUs3r)$"
@@ -492,7 +528,7 @@
     {
       "name": "DODEN",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DODEN)$"
@@ -501,7 +537,7 @@
     {
       "name": "SHAKAW",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SHAKAW)$"
@@ -510,7 +546,7 @@
     {
       "name": "santhiago",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(santhiago)$"
@@ -519,7 +555,7 @@
     {
       "name": "Minato",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Minato)$"
@@ -528,7 +564,7 @@
     {
       "name": "TOMATE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TOMATE)$"
@@ -537,7 +573,7 @@
     {
       "name": "OLYMPUS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OLYMPUS)$"
@@ -546,7 +582,7 @@
     {
       "name": "sh4down",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(sh4down)$"
@@ -555,7 +591,7 @@
     {
       "name": "Kallango",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kallango)$"
@@ -564,7 +600,7 @@
     {
       "name": "LMB",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LMB)$"
@@ -573,7 +609,7 @@
     {
       "name": "BRASILTRACKER",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BRASILTRACKER)$"
@@ -582,7 +618,7 @@
     {
       "name": "alfaHD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(alfaHD)$"
@@ -591,7 +627,7 @@
     {
       "name": "C0RAL",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(C0RAL)$"
@@ -600,7 +636,7 @@
     {
       "name": "nosferato",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(nosferato)$"
@@ -609,7 +645,7 @@
     {
       "name": "BlueAM",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BlueAM)$"
@@ -618,7 +654,7 @@
     {
       "name": "NODLABS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NODLABS)$"
@@ -627,7 +663,7 @@
     {
       "name": "NoGroup",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NoGroup)$"
@@ -636,7 +672,7 @@
     {
       "name": "SAMARITANO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SAMARITANO)$"
@@ -645,7 +681,7 @@
     {
       "name": "SiGLA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SiGLA)$"
@@ -654,7 +690,7 @@
     {
       "name": "RiPER",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(RiPER)$"
@@ -663,7 +699,7 @@
     {
       "name": "BiOMA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BiOMA)$"
@@ -672,7 +708,7 @@
     {
       "name": "PiA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(PiA)$"
@@ -681,7 +717,7 @@
     {
       "name": "Potatin",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Potatin)$"
@@ -690,7 +726,7 @@
     {
       "name": "cza",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(cza)$"
@@ -699,7 +735,7 @@
     {
       "name": "LACTATO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LACTATO)$"
@@ -708,7 +744,7 @@
     {
       "name": "PD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(PD)$"
@@ -717,7 +753,7 @@
     {
       "name": "Eri",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Eri)$"
@@ -726,7 +762,7 @@
     {
       "name": "NeX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NeX)$"
@@ -735,7 +771,7 @@
     {
       "name": "C76",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(C76)$"
@@ -744,7 +780,7 @@
     {
       "name": "NiNGU3M",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NiNGU3M)$"
@@ -753,7 +789,7 @@
     {
       "name": "gong",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(gong)$"
@@ -762,7 +798,7 @@
     {
       "name": "Sammahel",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sammahel)$"
@@ -771,7 +807,7 @@
     {
       "name": "AnjinhoDJ",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AnjinhoDJ)$"
@@ -780,7 +816,7 @@
     {
       "name": "Lannister",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Lannister)$"
@@ -789,7 +825,7 @@
     {
       "name": "ByJames",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ByJames)$"
@@ -798,7 +834,7 @@
     {
       "name": "iZARDs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(iZARDs)$"
@@ -807,7 +843,7 @@
     {
       "name": "wastaken",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(wastaken)$"
@@ -816,7 +852,7 @@
     {
       "name": "Berto",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Berto)$"
@@ -825,7 +861,7 @@
     {
       "name": "FreedomHD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FreedomHD)$"
@@ -834,7 +870,7 @@
     {
       "name": "Tars",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Tars)$"
@@ -843,7 +879,7 @@
     {
       "name": "xbmingame",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(xbmingame)$"
@@ -852,7 +888,7 @@
     {
       "name": "TupaC",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TupaC)$"
@@ -861,7 +897,7 @@
     {
       "name": "Anitsu",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anitsu)$"
@@ -870,7 +906,7 @@
     {
       "name": "Coringa",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Coringa)$"
@@ -879,7 +915,7 @@
     {
       "name": "Cory",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Cory)$"
@@ -888,7 +924,7 @@
     {
       "name": "KUCHU",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KUCHU)$"
@@ -897,7 +933,7 @@
     {
       "name": "WyrM",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(WyrM)$"
@@ -906,7 +942,7 @@
     {
       "name": "LCD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LCD)$"
@@ -915,7 +951,7 @@
     {
       "name": "AndersonDJ",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AndersonDJ)$"
@@ -924,7 +960,7 @@
     {
       "name": "Emmid",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Emmid)$"
@@ -933,7 +969,7 @@
     {
       "name": "RK",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(RK)$"
@@ -942,7 +978,7 @@
     {
       "name": "princeputt20",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(princeputt20)$"
@@ -951,7 +987,7 @@
     {
       "name": "BlurayHT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BlurayHT)$"
@@ -960,7 +996,7 @@
     {
       "name": "Extr3muss",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Extr3muss)$"
@@ -969,7 +1005,7 @@
     {
       "name": "gris",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(gris)$"
@@ -978,7 +1014,7 @@
     {
       "name": "XiQUEXiQUE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(XiQUEXiQUE)$"
@@ -987,7 +1023,7 @@
     {
       "name": "OscarNiemeyer",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OscarNiemeyer)$"
@@ -996,7 +1032,7 @@
     {
       "name": "SUPERSIZE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SUPERSIZE)$"
@@ -1005,7 +1041,7 @@
     {
       "name": "JoeKerr",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(JoeKerr)$"
@@ -1014,7 +1050,7 @@
     {
       "name": "NIMA4K",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NIMA4K)$"
@@ -1023,7 +1059,7 @@
     {
       "name": "anonymous07",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(anonymous07)$"
@@ -1032,7 +1068,7 @@
     {
       "name": "Vict0r",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Vict0r)$"
@@ -1041,7 +1077,7 @@
     {
       "name": "jefspfc",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(jefspfc)$"
@@ -1050,7 +1086,7 @@
     {
       "name": "curvamorbach",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(curvamorbach)$"
@@ -1059,7 +1095,7 @@
     {
       "name": "HomeTheater",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(HomeTheater)$"
@@ -1068,7 +1104,7 @@
     {
       "name": "KHEZU",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KHEZU)$"
@@ -1077,7 +1113,7 @@
     {
       "name": "GHSTBNY",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GHSTBNY)$"
@@ -1086,7 +1122,7 @@
     {
       "name": "C.A.A",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(C.A.A)$"
@@ -1095,7 +1131,7 @@
     {
       "name": "TombDoc",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TombDoc)$"
@@ -1104,7 +1140,7 @@
     {
       "name": "BRF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BRF)$"
@@ -1113,7 +1149,7 @@
     {
       "name": "CartoonNOW",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(CartoonNOW)$"
@@ -1122,7 +1158,7 @@
     {
       "name": "DMTIVD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DMTIVD)$"
@@ -1131,7 +1167,7 @@
     {
       "name": "LTDA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LTDA)$"
@@ -1140,7 +1176,7 @@
     {
       "name": "jhonatan28",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(jhonatan28)$"
@@ -1149,7 +1185,7 @@
     {
       "name": "machado98",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(machado98)$"
@@ -1158,7 +1194,7 @@
     {
       "name": "Artgenone",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Artgenone)$"
@@ -1167,7 +1203,7 @@
     {
       "name": "Vietnam",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Vietnam)$"
@@ -1176,7 +1212,7 @@
     {
       "name": "barbosa96",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(barbosa96)$"
@@ -1185,7 +1221,7 @@
     {
       "name": "JK",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(JK)$"
@@ -1194,7 +1230,7 @@
     {
       "name": "Mersenne",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Mersenne)$"
@@ -1203,7 +1239,7 @@
     {
       "name": "PlusHD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(PlusHD)$"
@@ -1212,7 +1248,7 @@
     {
       "name": "LoboGhost",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LoboGhost)$"
@@ -1221,7 +1257,7 @@
     {
       "name": "N3G4N",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(N3G4N)$"
@@ -1230,7 +1266,7 @@
     {
       "name": "Jeffe",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Jeffe)$"
@@ -1239,7 +1275,7 @@
     {
       "name": "tokar86a",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(tokar86a)$"
@@ -1248,7 +1284,7 @@
     {
       "name": "Tex-Willer",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Tex-Willer)$"
@@ -1257,7 +1293,7 @@
     {
       "name": "Unknown96",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Unknown96)$"
@@ -1266,7 +1302,7 @@
     {
       "name": "RICKSZ",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(RICKSZ)$"
@@ -1275,7 +1311,7 @@
     {
       "name": "SpartacusBR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SpartacusBR)$"
@@ -1284,7 +1320,7 @@
     {
       "name": "Max78",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Max78)$"
@@ -1293,7 +1329,7 @@
     {
       "name": "BAKED",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BAKED)$"
@@ -1302,7 +1338,7 @@
     {
       "name": "Lucano22",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Lucano22)$"
@@ -1311,7 +1347,7 @@
     {
       "name": "nukmasta",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(nukmasta)$"
@@ -1320,7 +1356,7 @@
     {
       "name": "HDCLUB",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(HDCLUB)$"
@@ -1329,7 +1365,7 @@
     {
       "name": "LAZERS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LAZERS)$"
@@ -1338,7 +1374,7 @@
     {
       "name": "ESiR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ESiR)$"
@@ -1347,7 +1383,7 @@
     {
       "name": "Levaculik",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Levaculik)$"
@@ -1356,7 +1392,7 @@
     {
       "name": "WARHD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(WARHD)$"
@@ -1365,7 +1401,7 @@
     {
       "name": "yeezus",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(yeezus)$"
@@ -1374,7 +1410,7 @@
     {
       "name": "b1guuuu",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(b1guuuu)$"
@@ -1383,7 +1419,7 @@
     {
       "name": "Mont",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Mont)$"
@@ -1392,7 +1428,7 @@
     {
       "name": "TunAnuT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TunAnuT)$"
@@ -1401,7 +1437,7 @@
     {
       "name": "TELAQUENTE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TELAQUENTE)$"
@@ -1410,7 +1446,7 @@
     {
       "name": "SyncTeam",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SyncTeam)$"
@@ -1419,7 +1455,7 @@
       {
       "name": "EcK",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(EcK)$"
@@ -1428,7 +1464,7 @@
     {
       "name": "Highvoltage",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Highvoltage)$"
@@ -1437,7 +1473,7 @@
     {
       "name": "Tontom",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Tontom)$"
@@ -1446,7 +1482,7 @@
     {
       "name": "insinuendo",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(insinuendo)$"
@@ -1455,7 +1491,7 @@
    {
       "name": "PCH",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(PCH)$"
@@ -1464,7 +1500,7 @@
     {
       "name": "G.O.A.T",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(G.O.A.T)$"
@@ -1473,7 +1509,7 @@
     {
       "name": "JR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(JR)$"
@@ -1482,7 +1518,7 @@
     {
       "name": "nLiBRA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(nLiBRA)$"
@@ -1491,7 +1527,7 @@
     {
       "name": "Coys",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Coys)$"
@@ -1500,7 +1536,7 @@
     {
       "name": "BLACK007",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BLACK007)$"
@@ -1509,7 +1545,7 @@
     {
       "name": "v99",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(v99)$"
@@ -1518,7 +1554,7 @@
     {
       "name": "SHAKA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SHAKA)$"
@@ -1527,7 +1563,7 @@
     {
       "name": "QuickIO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(QuickIO)$"
@@ -1536,7 +1572,7 @@
     {
       "name": "AmantedoHarpia",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AmantedoHarpia)$"
@@ -1545,7 +1581,7 @@
     {
       "name": "WTV",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(WTV)$"
@@ -1554,7 +1590,7 @@
     {
       "name": "TAiCHi",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TAiCHi)$"
@@ -1563,7 +1599,7 @@
     {
       "name": "ENiO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ENiO)$"
@@ -1572,7 +1608,7 @@
     {
       "name": "Rick.SD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Rick.SD)$"
@@ -1581,7 +1617,7 @@
     {
       "name": "andrehsa",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(andrehsa)$"
@@ -1590,7 +1626,7 @@
     {
       "name": "GUR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GUR)$"
@@ -1599,7 +1635,7 @@
     {
       "name": "Sheriff",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sheriff)$"
@@ -1608,7 +1644,7 @@
     {
       "name": "Deffcon",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Deffcon)$"
@@ -1617,7 +1653,7 @@
     {
       "name": "BiPOLAR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BiPOLAR)$"
@@ -1626,7 +1662,7 @@
     {
       "name": "SAMBiQUiRA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SAMBiQUiRA)$"
@@ -1635,7 +1671,7 @@
     {
       "name": "Sphynx",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sphynx)$"
@@ -1644,7 +1680,7 @@
     {
       "name": "VOiD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(VOiD)$"
@@ -1653,7 +1689,7 @@
     {
       "name": "BNd",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BNd)$"
@@ -1662,7 +1698,7 @@
     {
       "name": "AzX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AzX)$"
@@ -1671,7 +1707,7 @@
     {
       "name": "FALCAO_NEGRO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FALCAO_NEGRO)$"
@@ -1680,7 +1716,7 @@
     {
       "name": "SMURF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SMURF)$"
@@ -1689,7 +1725,7 @@
     {
       "name": "Parade",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Parade)$"
@@ -1698,7 +1734,7 @@
     {
       "name": "IceBlue",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(IceBlue)$"
@@ -1707,7 +1743,7 @@
     {
       "name": "marinaldomax",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(marinaldomax)$"
@@ -1716,7 +1752,7 @@
     {
       "name": "ZBR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ZBR)$"
@@ -1725,7 +1761,7 @@
     {
       "name": "LEOVOORHEES",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LEOVOORHEES)$"
@@ -1734,7 +1770,7 @@
     {
       "name": "BARRiCHELLO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BARRiCHELLO)$"
@@ -1743,7 +1779,7 @@
     {
       "name": "Franzopl",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Franzopl)$"
@@ -1752,7 +1788,7 @@
     {
       "name": "MattMurdock",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MattMurdock)$"
@@ -1761,7 +1797,7 @@
     {
       "name": "ROBSON2015",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ROBSON2015)$"
@@ -1770,7 +1806,7 @@
     {
       "name": "DrABR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DrABR)$"
@@ -1779,7 +1815,7 @@
     {
       "name": "Troidex",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Troidex)$"
@@ -1788,7 +1824,7 @@
     {
       "name": "SBLePT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SBLePT)$"
@@ -1797,7 +1833,7 @@
     {
       "name": "3LT0N",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(3LT0N)$"
@@ -1806,7 +1842,7 @@
     {
       "name": "Sherlock",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sherlock)$"
@@ -1815,7 +1851,7 @@
     {
       "name": "Adamantium",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Adamantium)$"
@@ -1824,7 +1860,7 @@
     {
       "name": "ESTAGIARIO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ESTAGIARIO)$"
@@ -1833,7 +1869,7 @@
     {
       "name": "BdC",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BdC)$"
@@ -1842,7 +1878,7 @@
     {
       "name": "GoT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GoT)$"
@@ -1851,7 +1887,7 @@
     {
       "name": "vnlls",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(vnlls)$"
@@ -1860,7 +1896,7 @@
     {
       "name": "ZMG",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ZMG)$"
@@ -1869,7 +1905,7 @@
     {
       "name": "FileHD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FileHD)$"
@@ -1878,7 +1914,7 @@
     {
       "name": "ZNM",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ZNM)$"
@@ -1887,7 +1923,7 @@
     {
       "name": "MemoriadaTV",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MemoriadaTV)$"
@@ -1896,7 +1932,7 @@
     {
       "name": "AConduta",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AConduta)$"
@@ -1905,7 +1941,7 @@
     {
       "name": "Professor_X",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Professor_X)$"
@@ -1914,7 +1950,7 @@
     {
       "name": "FiDO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FiDO)$"
@@ -1923,7 +1959,7 @@
     {
       "name": "tijuco",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(tijuco)$"
@@ -1932,7 +1968,7 @@
     {
       "name": "Anonimo",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anonimo)$"
@@ -1941,7 +1977,7 @@
     {
       "name": "lendker",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(lendker)$"
@@ -1950,7 +1986,7 @@
     {
       "name": "xprince00",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(xprince00)$"
@@ -1959,7 +1995,7 @@
     {
       "name": "NTZ",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NTZ)$"
@@ -1968,7 +2004,7 @@
     {
       "name": "BRHD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BRHD)$"
@@ -1977,7 +2013,7 @@
     {
       "name": "SACERDOTi",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SACERDOTi)$"
@@ -1986,7 +2022,7 @@
     {
       "name": "SH3LBY",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SH3LBY)$"
@@ -1995,7 +2031,7 @@
     {
       "name": "Tossato",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Tossato)$"
@@ -2004,7 +2040,7 @@
     {
       "name": "iFPD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(iFPD)$"
@@ -2013,7 +2049,7 @@
     {
       "name": "FreddieGellar",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FreddieGellar)$"
@@ -2022,7 +2058,7 @@
     {
       "name": "AZVD",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AZVD)$"
@@ -2031,7 +2067,7 @@
     {
       "name": "faBR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(faBR)$"
@@ -2040,7 +2076,7 @@
     {
       "name": "MrHulk",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MrHulk)$"
@@ -2049,7 +2085,7 @@
     {
       "name": "RMB",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(RMB)$"
@@ -2058,7 +2094,7 @@
     {
       "name": "GandaX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GandaX)$"
@@ -2067,7 +2103,7 @@
     {
       "name": "JB88",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(JB88)$"
@@ -2076,7 +2112,7 @@
     {
       "name": "FG4LL4RD0",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FG4LL4RD0)$"
@@ -2085,7 +2121,7 @@
     {
       "name": "BT123",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BT123)$"
@@ -2094,7 +2130,7 @@
     {
       "name": "NoUsEr",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NoUsEr)$"
@@ -2103,7 +2139,7 @@
     {
       "name": "WitchHunter",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(WitchHunter)$"
@@ -2112,7 +2148,7 @@
     {
       "name": "galego",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(galego)$"
@@ -2121,7 +2157,7 @@
     {
       "name": "DoVi",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DoVi)$"
@@ -2130,7 +2166,7 @@
     {
       "name": "Spaghettimancer",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Spaghettimancer)$"
@@ -2139,7 +2175,7 @@
     {
       "name": "3N10",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(3N10)$"
@@ -2148,7 +2184,7 @@
     {
       "name": "Aldrin",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Aldrin)$"
@@ -2157,7 +2193,7 @@
     {
       "name": "Mpira",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Mpira)$"
@@ -2166,7 +2202,7 @@
     {
       "name": "LON",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LON)$"
@@ -2175,7 +2211,7 @@
     {
       "name": "gooz",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(gooz)$"
@@ -2184,7 +2220,7 @@
     {
       "name": "GHK",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GHK)$"
@@ -2193,7 +2229,7 @@
     {
       "name": "C3PO",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(C3PO)$"
@@ -2202,7 +2238,7 @@
     {
       "name": "XerifeWoodyPride",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(XerifeWoodyPride)$"
@@ -2211,7 +2247,7 @@
     {
       "name": "Biomallard",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Biomallard)$"
@@ -2220,7 +2256,7 @@
     {
       "name": "Infinite",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Infinite)$"
@@ -2229,7 +2265,7 @@
     {
       "name": "RO455",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(RO455)$"
@@ -2238,7 +2274,7 @@
     {
       "name": "CYPHER",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(CYPHER)$"
@@ -2247,7 +2283,7 @@
     {
       "name": "Thecs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Thecs)$"
@@ -2256,7 +2292,7 @@
     {
       "name": "Leonhart",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Leonhart)$"
@@ -2265,7 +2301,7 @@
     {
       "name": "ADWeb",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ADWeb)$"
@@ -2274,7 +2310,7 @@
     {
       "name": "BENTHEMEN",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BENTHEMEN)$"
@@ -2283,7 +2319,7 @@
       {
       "name": "oarton27",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(oarton27)$"
@@ -2292,7 +2328,7 @@
       {
       "name": "XaR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(XaR)$"
@@ -2301,7 +2337,7 @@
     {
       "name": "AFLA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AFLA)$"
@@ -2310,7 +2346,7 @@
     {
       "name": "ACRE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ACRE)$"
@@ -2319,7 +2355,7 @@
     {
       "name": "AE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AE)$"
@@ -2328,7 +2364,7 @@
     {
       "name": "AMAX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AMAX)$"
@@ -2337,7 +2373,7 @@
     {
       "name": "AMF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AMF)$"
@@ -2346,7 +2382,7 @@
     {
       "name": "ANPLT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ANPLT)$"
@@ -2355,7 +2391,7 @@
     {
       "name": "ANTR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ANTR)$"
@@ -2364,7 +2400,7 @@
     {
       "name": "AWH",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AWH)$"
@@ -2373,7 +2409,7 @@
     {
       "name": "About Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(About Fansub)$"
@@ -2382,7 +2418,7 @@
     {
       "name": "Absolute Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Absolute Fansub)$"
@@ -2391,7 +2427,7 @@
     {
       "name": "Agaman",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Agaman)$"
@@ -2400,7 +2436,7 @@
     {
       "name": "Akogare Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Akogare Fansub)$"
@@ -2409,7 +2445,7 @@
     {
       "name": "AniMercosul",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AniMercosul)$"
@@ -2418,7 +2454,7 @@
     {
       "name": "Anime Future",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anime Future)$"
@@ -2427,7 +2463,7 @@
     {
       "name": "Anime Gods",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anime Gods)$"
@@ -2436,7 +2472,7 @@
     {
       "name": "Anime Planet",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anime Planet)$"
@@ -2445,7 +2481,7 @@
     {
       "name": "Anime no Reppuu",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Anime no Reppuu)$"
@@ -2454,7 +2490,7 @@
     {
       "name": "AnimeP2P",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AnimeP2P)$"
@@ -2463,7 +2499,7 @@
     {
       "name": "AnimeTHT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AnimeTHT)$"
@@ -2472,7 +2508,7 @@
     {
       "name": "AnimeTracker",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AnimeTracker)$"
@@ -2481,7 +2517,7 @@
     {
       "name": "AnimesPLUS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(AnimesPLUS)$"
@@ -2490,7 +2526,7 @@
     {
       "name": "Avalon Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Avalon Fansub)$"
@@ -2499,7 +2535,7 @@
     {
       "name": "Avidown",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Avidown)$"
@@ -2508,7 +2544,7 @@
     {
       "name": "Avidown Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Avidown Fansub)$"
@@ -2517,7 +2553,7 @@
     {
       "name": "Aya Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Aya Fansub)$"
@@ -2526,7 +2562,7 @@
     {
       "name": "BD_SUBS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BD_SUBS)$"
@@ -2535,7 +2571,7 @@
     {
       "name": "BTR Subs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BTR Subs)$"
@@ -2544,7 +2580,7 @@
     {
       "name": "Bakarayo-Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Bakarayo-Fansub)$"
@@ -2553,7 +2589,7 @@
     {
       "name": "Bakarayo",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Bakarayo)$"
@@ -2562,7 +2598,7 @@
     {
       "name": "Bakuhatsu",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Bakuhatsu)$"
@@ -2571,7 +2607,7 @@
     {
       "name": "Barazoku",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Barazoku)$"
@@ -2580,7 +2616,7 @@
     {
       "name": "Bloody FanSub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Bloody FanSub)$"
@@ -2589,7 +2625,7 @@
     {
       "name": "Boteco Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Boteco Fansub)$"
@@ -2598,7 +2634,7 @@
     {
       "name": "Bruthais Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Bruthais Fansub)$"
@@ -2607,7 +2643,7 @@
     {
       "name": "CAN! !SUB",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(CAN! !SUB)$"
@@ -2616,7 +2652,7 @@
     {
       "name": "Cachorro Loko",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Cachorro Loko)$"
@@ -2625,7 +2661,7 @@
     {
       "name": "CdaSubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(CdaSubs)$"
@@ -2634,7 +2670,7 @@
     {
       "name": "Câncer Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Câncer Fansub)$"
@@ -2643,7 +2679,7 @@
     {
       "name": "DBBR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DBBR)$"
@@ -2652,7 +2688,7 @@
     {
       "name": "DataBaseSub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(DataBaseSub)$"
@@ -2661,7 +2697,7 @@
     {
       "name": "Dragon Seven",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Dragon Seven)$"
@@ -2670,7 +2706,7 @@
     {
       "name": "ECN Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ECN Fansub)$"
@@ -2679,7 +2715,7 @@
     {
       "name": "Eternal Animes",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Eternal Animes)$"
@@ -2688,7 +2724,7 @@
     {
       "name": "Eupho",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Eupho)$"
@@ -2697,7 +2733,7 @@
     {
       "name": "FAL",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FAL)$"
@@ -2706,7 +2742,7 @@
     {
       "name": "FUCKILL FANSUB",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(FUCKILL FANSUB)$"
@@ -2715,7 +2751,7 @@
     {
       "name": "GAIA Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GAIA Fansub)$"
@@ -2724,7 +2760,7 @@
     {
       "name": "GHS Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(GHS Fansub)$"
@@ -2733,7 +2769,7 @@
     {
       "name": "Grupo Kirinashi",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Grupo Kirinashi)$"
@@ -2742,7 +2778,7 @@
     {
       "name": "Judas",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Judas)$"
@@ -2751,7 +2787,7 @@
     {
       "name": "Kirinashi",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kirinashi)$"
@@ -2760,7 +2796,7 @@
     {
       "name": "HF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(HF)$"
@@ -2769,7 +2805,7 @@
     {
       "name": "HNK Fansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(HNK Fansubs)$"
@@ -2778,7 +2814,7 @@
     {
       "name": "Hacchi Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Hacchi Fansub)$"
@@ -2787,7 +2823,7 @@
     {
       "name": "HarderFansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(HarderFansub)$"
@@ -2796,7 +2832,7 @@
     {
       "name": "Hayai Subs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Hayai Subs)$"
@@ -2805,7 +2841,7 @@
     {
       "name": "Heaven Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Heaven Fansub)$"
@@ -2814,7 +2850,7 @@
     {
       "name": "Heijin-BR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Heijin-BR)$"
@@ -2823,7 +2859,7 @@
     {
       "name": "Hihan Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Hihan Fansub)$"
@@ -2832,7 +2868,7 @@
     {
       "name": "BS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(BS)$"
@@ -2841,7 +2877,7 @@
     {
       "name": "Hirameki Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Hirameki Fansub)$"
@@ -2850,7 +2886,7 @@
     {
       "name": "Hokkaido",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Hokkaido)$"
@@ -2859,7 +2895,7 @@
     {
       "name": "Hontou Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Hontou Fansub)$"
@@ -2868,7 +2904,7 @@
     {
       "name": "Ichiban Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Ichiban Fansub)$"
@@ -2877,7 +2913,7 @@
     {
       "name": "Infinite Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Infinite Fansub)$"
@@ -2886,7 +2922,7 @@
     {
       "name": "InuYasha Downs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(InuYasha Downs)$"
@@ -2895,7 +2931,7 @@
     {
       "name": "Isekai Subs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Isekai Subs)$"
@@ -2904,7 +2940,7 @@
     {
       "name": "Ivereste",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Ivereste)$"
@@ -2913,7 +2949,7 @@
     {
       "name": "Jai N Kai",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Jai N Kai)$"
@@ -2922,7 +2958,7 @@
     {
       "name": "KIIS Scansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KIIS Scansubs)$"
@@ -2931,7 +2967,7 @@
     {
       "name": "KNK",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KNK)$"
@@ -2940,7 +2976,7 @@
     {
       "name": "KNK Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KNK Fansub)$"
@@ -2949,7 +2985,7 @@
     {
       "name": "KURE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KURE)$"
@@ -2958,7 +2994,7 @@
     {
       "name": "Kaminari",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kaminari)$"
@@ -2967,7 +3003,7 @@
     {
       "name": "Kanshin Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kanshin Fansub)$"
@@ -2976,7 +3012,7 @@
     {
       "name": "KatawareDoki",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(KatawareDoki)$"
@@ -2985,7 +3021,7 @@
     {
       "name": "Kawaii Otome",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kawaii Otome)$"
@@ -2994,7 +3030,7 @@
     {
       "name": "Kazoku",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kazoku)$"
@@ -3003,7 +3039,7 @@
     {
       "name": "Kintoun",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kintoun)$"
@@ -3012,7 +3048,7 @@
     {
       "name": "Kiyoteru Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kiyoteru Fansub)$"
@@ -3021,7 +3057,7 @@
     {
       "name": "Koisuru Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Koisuru Fansub)$"
@@ -3030,7 +3066,7 @@
     {
       "name": "Konoha-Sannins",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Konoha-Sannins)$"
@@ -3039,7 +3075,7 @@
     {
       "name": "Kouyou Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kouyou Fansub)$"
@@ -3048,7 +3084,7 @@
     {
       "name": "Kurai-Ken",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kurai-Ken)$"
@@ -3057,7 +3093,7 @@
     {
       "name": "Kyun Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Kyun Fansub)$"
@@ -3066,7 +3102,7 @@
     {
       "name": "L-A",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(L-A)$"
@@ -3075,7 +3111,7 @@
     {
       "name": "LEVA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LEVA)$"
@@ -3084,7 +3120,7 @@
     {
       "name": "LWS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(LWS)$"
@@ -3093,7 +3129,7 @@
     {
       "name": "Lake Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Lake Fansub)$"
@@ -3102,7 +3138,7 @@
     {
       "name": "Liga do Sul",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Liga do Sul)$"
@@ -3111,7 +3147,7 @@
     {
       "name": "Lost Woods Sub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Lost Woods Sub)$"
@@ -3120,7 +3156,7 @@
     {
       "name": "Lotk-fansuber",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Lotk-fansuber)$"
@@ -3129,7 +3165,7 @@
     {
       "name": "MAF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MAF)$"
@@ -3138,7 +3174,7 @@
     {
       "name": "MMS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(MMS)$"
@@ -3147,7 +3183,7 @@
     {
       "name": "Moshi Moshi",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Moshi Moshi)$"
@@ -3156,7 +3192,7 @@
     {
       "name": "Mundo do Shoujo",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Mundo do Shoujo)$"
@@ -3165,7 +3201,7 @@
     {
       "name": "NAF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NAF)$"
@@ -3174,7 +3210,7 @@
     {
       "name": "NewZect",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NewZect)$"
@@ -3183,7 +3219,7 @@
     {
       "name": "NexelSUBS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(NexelSUBS)$"
@@ -3192,7 +3228,7 @@
     {
       "name": "OF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OF)$"
@@ -3201,7 +3237,7 @@
     {
       "name": "OF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OF)$"
@@ -3210,7 +3246,7 @@
     {
       "name": "OMDA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OMDA)$"
@@ -3219,7 +3255,7 @@
     {
       "name": "OWF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(OWF)$"
@@ -3228,7 +3264,7 @@
     {
       "name": "One Piece EX",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(One Piece EX)$"
@@ -3237,7 +3273,7 @@
     {
       "name": "Onmitsu Fansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Onmitsu Fansubs)$"
@@ -3246,7 +3282,7 @@
     {
       "name": "Otakus Fans",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Otakus Fans)$"
@@ -3255,7 +3291,7 @@
     {
       "name": "Owari Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Owari Fansub)$"
@@ -3264,7 +3300,7 @@
     {
       "name": "PA Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(PA Fansub)$"
@@ -3273,7 +3309,7 @@
     {
       "name": "PSF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(PSF)$"
@@ -3282,7 +3318,7 @@
     {
       "name": "Proxy Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Proxy Fansub)$"
@@ -3291,7 +3327,7 @@
     {
       "name": "Qubeley Fansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Qubeley Fansubs)$"
@@ -3300,7 +3336,7 @@
     {
       "name": "Riichi Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Riichi Fansub)$"
@@ -3309,7 +3345,7 @@
     {
       "name": "Ryoran Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Ryoran Fansub)$"
@@ -3318,7 +3354,7 @@
     {
       "name": "Ryuji Subs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Ryuji Subs)$"
@@ -3327,7 +3363,7 @@
     {
       "name": "Ryuusei Fansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Ryuusei Fansubs)$"
@@ -3336,7 +3372,7 @@
     {
       "name": "SCA Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SCA Fansub)$"
@@ -3345,7 +3381,7 @@
     {
       "name": "SEELE",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SEELE)$"
@@ -3354,7 +3390,7 @@
     {
       "name": "START Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(START Fansub)$"
@@ -3363,7 +3399,7 @@
     {
       "name": "STF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(STF)$"
@@ -3372,7 +3408,7 @@
     {
       "name": "STNL",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(STNL)$"
@@ -3381,7 +3417,7 @@
     {
       "name": "ASC",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ASC)$"
@@ -3390,7 +3426,7 @@
     {
       "name": "Saikou-BR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Saikou-BR)$"
@@ -3399,7 +3435,7 @@
     {
       "name": "Sakurai Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sakurai Fansub)$"
@@ -3408,7 +3444,7 @@
     {
       "name": "Seicher",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Seicher)$"
@@ -3417,7 +3453,7 @@
     {
       "name": "Seisenshi Fansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Seisenshi Fansubs)$"
@@ -3426,7 +3462,7 @@
     {
       "name": "Shakai Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Shakai Fansub)$"
@@ -3435,7 +3471,7 @@
     {
       "name": "Shinka Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Shinka Fansub)$"
@@ -3444,7 +3480,7 @@
     {
       "name": "Shinkai Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Shinkai Fansub)$"
@@ -3453,7 +3489,7 @@
     {
       "name": "Shinonome",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Shinonome)$"
@@ -3462,7 +3498,7 @@
     {
       "name": "Silex Fansubs",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Silex Fansubs)$"
@@ -3471,7 +3507,7 @@
     {
       "name": "Sobre Animes",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sobre Animes)$"
@@ -3480,7 +3516,7 @@
     {
       "name": "SocietyGuild",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SocietyGuild)$"
@@ -3489,7 +3525,7 @@
     {
       "name": "Spiido",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Spiido)$"
@@ -3498,7 +3534,7 @@
     {
       "name": "SPiRiT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SPiRiT)$"
@@ -3507,7 +3543,7 @@
     {
       "name": "SubTNT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(SubTNT)$"
@@ -3516,7 +3552,7 @@
     {
       "name": "Sukinime",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Sukinime)$"
@@ -3525,7 +3561,7 @@
     {
       "name": "TBF",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TBF)$"
@@ -3534,7 +3570,7 @@
     {
       "name": "TEST-KUN",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TEST-KUN)$"
@@ -3543,7 +3579,7 @@
     {
       "name": "TMP",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TMP)$"
@@ -3552,7 +3588,7 @@
     {
       "name": "TNNAC",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TNNAC)$"
@@ -3561,7 +3597,7 @@
     {
       "name": "TNT",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TNT)$"
@@ -3570,7 +3606,7 @@
     {
       "name": "Tadaima Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Tadaima Fansub)$"
@@ -3579,7 +3615,7 @@
     {
       "name": "Taikutsu-kun",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Taikutsu-kun)$"
@@ -3588,7 +3624,7 @@
     {
       "name": "Tenrou Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Tenrou Fansub)$"
@@ -3597,7 +3633,7 @@
     {
       "name": "Trinisete",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Trinisete)$"
@@ -3606,7 +3642,7 @@
     {
       "name": "7sprite7",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(7sprite7)$"
@@ -3615,7 +3651,7 @@
     {
       "name": "TsunTsun",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(TsunTsun)$"
@@ -3624,7 +3660,7 @@
     {
       "name": "UniOtaku",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(UniOtaku)$"
@@ -3633,7 +3669,7 @@
     {
       "name": "Valar Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Valar Fansub)$"
@@ -3642,7 +3678,7 @@
     {
       "name": "Wakan Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Wakan Fansub)$"
@@ -3651,7 +3687,7 @@
     {
       "name": "Wasureta",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Wasureta)$"
@@ -3660,7 +3696,7 @@
     {
       "name": "World Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(World Fansub)$"
@@ -3669,7 +3705,7 @@
     {
       "name": "X-Sports Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(X-Sports Fansub)$"
@@ -3678,7 +3714,7 @@
     {
       "name": "YFLA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(YFLA)$"
@@ -3687,7 +3723,7 @@
     {
       "name": "Yami Studio",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Yami Studio)$"
@@ -3696,7 +3732,7 @@
     {
       "name": "YusukeFLA",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(YusukeFLA)$"
@@ -3705,7 +3741,7 @@
     {
       "name": "Zamba",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Zamba)$"
@@ -3714,7 +3750,7 @@
     {
       "name": "Zettai-BR",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Zettai-BR)$"
@@ -3723,7 +3759,7 @@
     {
       "name": "Armandex",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(Armandex)$"
@@ -3732,7 +3768,7 @@
     {
       "name": "e2",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(e2)$"
@@ -3741,7 +3777,7 @@
     {
       "name": "e2 Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(e2 Fansub)$"
@@ -3750,7 +3786,7 @@
     {
       "name": "morningspeed",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(morningspeed)$"
@@ -3759,7 +3795,7 @@
     {
       "name": "piracicaba97",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(piracicaba97)$"
@@ -3768,7 +3804,7 @@
     {
       "name": "ANDY",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ANDY)$"
@@ -3777,7 +3813,7 @@
     {
       "name": "ÓINC Fansub",
       "implementation": "ReleaseGroupSpecification",
-      "negate": false,
+      "negate": true,
       "required": false,
       "fields": {
         "value": "^(ÓINC Fansub)$"
