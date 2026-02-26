@@ -3845,6 +3845,15 @@
       "fields": {
         "value": "^(SubVision_&_Kalling)$"
       }
+    },
+    {
+      "name": "FF-GF",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(FF-GF)$"
+      }
     }
   ]
 }
