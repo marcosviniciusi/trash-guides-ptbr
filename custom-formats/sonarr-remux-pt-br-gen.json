@@ -3845,6 +3845,15 @@
       "fields": {
         "value": "^(ÓINC Fansub)$"
       }
+    },
+    {
+      "name": "SubVision_&_Kalling",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(SubVision_&_Kalling)$"
+      }
     }
   ]
 }

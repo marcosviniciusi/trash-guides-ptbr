@@ -22,6 +22,15 @@
       }
     },
     {
+      "name": "BLURAY",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 9
+      }
+    },
+    {
       "name": "Not REMUX",
       "implementation": "QualityModifierSpecification",
       "negate": true,
@@ -3835,6 +3844,15 @@
       "required": true,
       "fields": {
         "value": "^(ÓINC Fansub)$"
+      }
+    },
+    {
+      "name": "SubVision_&_Kalling",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(SubVision_&_Kalling)$"
       }
     }
   ]

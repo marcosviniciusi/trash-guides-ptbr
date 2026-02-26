@@ -40,6 +40,15 @@
       }
     },
     {
+      "name": "Not BLURAY",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 9
+      }
+    },
+    {
       "name": "Not 2160p",
       "implementation": "ResolutionSpecification",
       "negate": true,
@@ -3826,6 +3835,15 @@
       "required": false,
       "fields": {
         "value": "^(ÓINC Fansub)$"
+      }
+    },
+    {
+      "name": "SubVision_&_Kalling",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SubVision_&_Kalling)$"
       }
     }
   ]
