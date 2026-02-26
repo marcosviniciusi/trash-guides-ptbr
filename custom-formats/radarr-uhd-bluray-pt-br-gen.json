@@ -21,7 +21,7 @@
         "value": "(?i)\\b(BRAZILIAN-DUAL-AUDIO|NACIONAL|dublado|brasil[-\\s]dub|pt[-\\s]?br[-\\s]dub(s)?|dub(s)?[-\\s]pt[-\\s]?br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|BRAZILIAN[-\\s]DUAL[-\\s]AUDIO)\\b"
       }
     },
-  {
+    {
       "name": "Not REMUX",
       "implementation": "QualityModifierSpecification",
       "negate": true,
@@ -1470,7 +1470,7 @@
         "value": "^(SyncTeam)$"
       }
     },
-      {
+    {
       "name": "EcK",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -1506,7 +1506,7 @@
         "value": "^(insinuendo)$"
       }
     },
-   {
+    {
       "name": "PCH",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -2334,7 +2334,7 @@
         "value": "^(BENTHEMEN)$"
       }
     },
-      {
+    {
       "name": "oarton27",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
@@ -2343,7 +2343,7 @@
         "value": "^(oarton27)$"
       }
     },
-      {
+    {
       "name": "XaR",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,

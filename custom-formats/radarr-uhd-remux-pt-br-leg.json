@@ -1434,7 +1434,7 @@
         "value": "^(SyncTeam)$"
       }
     },
-      {
+    {
       "name": "EcK",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -1470,7 +1470,7 @@
         "value": "^(insinuendo)$"
       }
     },
-   {
+    {
       "name": "PCH",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -2298,7 +2298,7 @@
         "value": "^(BENTHEMEN)$"
       }
     },
-      {
+    {
       "name": "oarton27",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -2307,7 +2307,7 @@
         "value": "^(oarton27)$"
       }
     },
-      {
+    {
       "name": "XaR",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
