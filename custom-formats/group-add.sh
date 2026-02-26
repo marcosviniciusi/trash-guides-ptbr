@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Usage: ./add_groups.sh GroupName1 GroupName2 GroupName3
 # Adds release groups to all *-dual.json, *-gen.json, *-leg.json files in current directory
+# *-gen.json: negate=true, required=true
+# *-dual.json, *-leg.json: negate=false, required=false
 
 set -euo pipefail
 
@@ -9,7 +11,6 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-# Find all target JSON files
 FILES=$(find . -maxdepth 1 -type f \( -name "*-dual.json" -o -name "*-gen.json" -o -name "*-leg.json" \))
 
 if [ -z "$FILES" ]; then
@@ -17,32 +18,26 @@ if [ -z "$FILES" ]; then
   exit 1
 fi
 
-# Build the JSON block to insert (one entry per group)
-build_entries() {
-  local entries=""
-  for group in "$@"; do
-    entries+=$(printf '    ,\n    {\n      "name": "%s",\n      "implementation": "ReleaseGroupSpecification",\n      "negate": false,\n      "required": false,\n      "fields": {\n        "value": "^(%s)$"\n      }\n    }' "$group" "$group")
-    entries+=$'\n'
-  done
-  echo "$entries"
-}
-
-ENTRIES=$(build_entries "$@")
-
 for file in $FILES; do
   echo "Processing: $file"
 
-  # Check if file ends with ] (closing the specifications array)
-  # Insert before the last ]
-  # Strategy: remove last line ("]"), append entries, then close
+  # Detect negate/required based on filename
+  if [[ "$file" == *-gen.json ]]; then
+    NEGATE="true"
+    REQUIRED="true"
+  else
+    NEGATE="false"
+    REQUIRED="false"
+  fi
 
-  # Use python for reliable JSON manipulation
-  python3 - "$file" "$@" <<'PYEOF'
+  python3 - "$file" "$NEGATE" "$REQUIRED" "$@" <<'PYEOF'
 import sys
 import json
 
 filepath = sys.argv[1]
-groups = sys.argv[2:]
+negate   = sys.argv[2] == "true"
+required = sys.argv[3] == "true"
+groups   = sys.argv[4:]
 
 with open(filepath, 'r', encoding='utf-8') as f:
     data = json.load(f)
@@ -57,8 +52,8 @@ for group in groups:
     entry = {
         "name": group,
         "implementation": "ReleaseGroupSpecification",
-        "negate": False,
-        "required": False,
+        "negate": negate,
+        "required": required,
         "fields": {
             "value": f"^({group})$"
         }
@@ -66,7 +61,7 @@ for group in groups:
     data['specifications'].append(entry)
     existing_names.add(group)
     added += 1
-    print(f"  ADDED: {group}")
+    print(f"  ADDED: {group} (negate={str(negate).lower()}, required={str(required).lower()})")
 
 with open(filepath, 'w', encoding='utf-8') as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
