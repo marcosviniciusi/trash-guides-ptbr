@@ -1,6 +1,6 @@
 {
   "trash_id": "sonarr-uhd-remux-pt-br-leg",
-  "name": "Release PT-BR UDH-Remux Legendado",
+  "name": "Release PT-BR UHD-Remux Legendado",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
@@ -28,15 +28,6 @@
       "required": true,
       "fields": {
         "value": 2160
-      }
-    },
-    {
-      "name": "Not BLURAY",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 6
       }
     },
     {

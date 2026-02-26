@@ -49,15 +49,6 @@
       }
     },
     {
-      "name": "Not BLURAY",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 9
-      }
-    },
-    {
       "name": "Not 2160p",
       "implementation": "ResolutionSpecification",
       "negate": true,

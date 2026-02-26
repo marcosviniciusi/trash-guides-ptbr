@@ -31,15 +31,6 @@
       }
     },
     {
-      "name": "Not BLURAY",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 6
-      }
-    },
-    {
       "name": "WEBDL",
       "implementation": "SourceSpecification",
       "negate": true,

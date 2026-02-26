@@ -1,6 +1,6 @@
 {
   "trash_id": "sonarr-uhd-remux-pt-br-gen",
-  "name": "Release PT-BR UDH-Remux Generic",
+  "name": "Release PT-BR UHD-Remux Generic",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
@@ -37,15 +37,6 @@
       "required": true,
       "fields": {
         "value": 2160
-      }
-    },
-    {
-      "name": "Not BLURAY",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 6
       }
     },
     {

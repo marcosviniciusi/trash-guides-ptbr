@@ -58,15 +58,6 @@
       }
     },
     {
-      "name": "Not BLURAY",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 9
-      }
-    },
-    {
       "name": "encorebr",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
