@@ -22,10 +22,28 @@
       }
     },
     {
+      "name": "Not WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "Not WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    },
+    {
       "name": "Not 2160p",
       "implementation": "ResolutionSpecification",
       "negate": true,
-      "required": false,
+      "required": true,
       "fields": {
         "value": 2160
       }

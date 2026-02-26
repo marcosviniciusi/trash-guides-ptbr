@@ -43,7 +43,7 @@
       "name": "Not 2160p",
       "implementation": "ResolutionSpecification",
       "negate": true,
-      "required": false,
+      "required": true,
       "fields": {
         "value": 2160
       }
@@ -55,6 +55,15 @@
       "required": true,
       "fields": {
         "value": 5
+      }
+    },
+    {
+      "name": "Not BLURAY",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 9
       }
     },
     {

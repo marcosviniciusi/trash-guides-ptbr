@@ -34,18 +34,27 @@
       "name": "Not REMUX",
       "implementation": "QualityModifierSpecification",
       "negate": true,
-      "required": true,
+      "required": false,
       "fields": {
         "value": 5
       }
     },
     {
-      "name": "Not 2160p",
-      "implementation": "ResolutionSpecification",
+      "name": "Not WEBDL",
+      "implementation": "SourceSpecification",
       "negate": true,
-      "required": false,
+      "required": true,
       "fields": {
-        "value": 2160
+        "value": 7
+      }
+    },
+    {
+      "name": "Not WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 8
       }
     },
     {

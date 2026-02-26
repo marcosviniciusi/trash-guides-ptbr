@@ -25,9 +25,36 @@
       "name": "Not 2160p",
       "implementation": "ResolutionSpecification",
       "negate": true,
-      "required": false,
+      "required": true,
       "fields": {
         "value": 2160
+      }
+    },
+    {
+      "name": "Not BLURAY",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 4
       }
     },
     {

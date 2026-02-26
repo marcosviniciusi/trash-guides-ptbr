@@ -34,7 +34,7 @@
       "name": "Not 2160p",
       "implementation": "ResolutionSpecification",
       "negate": true,
-      "required": false,
+      "required": true,
       "fields": {
         "value": 2160
       }
