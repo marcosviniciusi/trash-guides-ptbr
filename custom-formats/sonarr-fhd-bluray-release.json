@@ -24,7 +24,7 @@
     {
       "name": "1080p",
       "implementation": "ResolutionSpecification",
-      "negate": true,
+      "negate": false,
       "required": true,
       "fields": {
         "value": 1080
