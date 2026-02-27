@@ -57,8 +57,18 @@ groups   = sys.argv[4:]
 with open(filepath, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-existing_names = {s['name'] for s in data.get('specifications', [])}
+all_names = [s['name'] for s in data.get('specifications', [])]
+seen = set()
+dupes_in_file = []
+for n in all_names:
+    if n in seen:
+        dupes_in_file.append(n)
+    seen.add(n)
 
+if dupes_in_file:
+    print(f"  WARNING: existing duplicates in file: {dupes_in_file}")
+
+existing_names = set(all_names)
 added = 0
 for group in groups:
     if group in existing_names:
