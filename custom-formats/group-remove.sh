@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # Usage: ./remove_groups.sh GroupName1 GroupName2 GroupName3
-# Removes release groups from all *-dual.json, *-gen.json, *-leg.json files in current directory
+# Removes release groups from the 4 CF json files in current directory
+#
+#   custom-brazilian-group-tier-dual-audio.json
+#   custom-brazilian-group-tier-subtitles.json
+#   custom-brazilian-dual-language.json
+#   custom-brazilian-subtitles.json
 
 set -euo pipefail
 
@@ -9,10 +14,15 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-FILES=$(find . -maxdepth 1 -type f \( -name "*-dual.json" -o -name "*-gen.json" -o -name "*-leg.json" \))
+FILES=$(find . -maxdepth 1 -type f \( \
+  -name "custom-brazilian-group-tier-dual-audio.json" -o \
+  -name "custom-brazilian-group-tier-subtitles.json" -o \
+  -name "custom-brazilian-dual-language.json" -o \
+  -name "custom-brazilian-subtitles.json" \
+\))
 
 if [ -z "$FILES" ]; then
-  echo "No *-dual.json, *-gen.json or *-leg.json files found in current directory."
+  echo "No matching files found in current directory."
   exit 1
 fi
 
@@ -29,7 +39,6 @@ groups_to_remove = set(sys.argv[2:])
 with open(filepath, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-original_count = len(data.get('specifications', []))
 removed = []
 not_found = []
 

@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 # Usage: ./add_groups.sh GroupName1 GroupName2 GroupName3
-# Adds release groups to all *-dual.json, *-gen.json, *-leg.json files in current directory
-# *-gen.json: negate=true, required=true
-# *-dual.json, *-leg.json: negate=false, required=false
+# Adds release groups to the 4 CF json files in current directory
+#
+# negate=false, required=false:
+#   custom-brazilian-group-tier-dual-audio.json
+#   custom-brazilian-group-tier-subtitles.json
+#
+# negate=true, required=true:
+#   custom-brazilian-dual-language.json
+#   custom-brazilian-subtitles.json
 
 set -euo pipefail
 
@@ -11,24 +17,33 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-FILES=$(find . -maxdepth 1 -type f \( -name "*-dual.json" -o -name "*-gen.json" -o -name "*-leg.json" \))
+FILES=$(find . -maxdepth 1 -type f \( \
+  -name "custom-brazilian-group-tier-dual-audio.json" -o \
+  -name "custom-brazilian-group-tier-subtitles.json" -o \
+  -name "custom-brazilian-dual-language.json" -o \
+  -name "custom-brazilian-subtitles.json" \
+\))
 
 if [ -z "$FILES" ]; then
-  echo "No *-dual.json, *-gen.json or *-leg.json files found in current directory."
+  echo "No matching files found in current directory."
   exit 1
 fi
 
 for file in $FILES; do
   echo "Processing: $file"
 
-  # Detect negate/required based on filename
-  if [[ "$file" == *-gen.json ]]; then
-    NEGATE="true"
-    REQUIRED="true"
-  else
-    NEGATE="false"
-    REQUIRED="false"
-  fi
+  basename=$(basename "$file")
+
+  case "$basename" in
+    "custom-brazilian-group-tier-dual-audio.json"|"custom-brazilian-group-tier-subtitles.json")
+      NEGATE="false"
+      REQUIRED="false"
+      ;;
+    "custom-brazilian-dual-language.json"|"custom-brazilian-subtitles.json")
+      NEGATE="true"
+      REQUIRED="true"
+      ;;
+  esac
 
   python3 - "$file" "$NEGATE" "$REQUIRED" "$@" <<'PYEOF'
 import sys
