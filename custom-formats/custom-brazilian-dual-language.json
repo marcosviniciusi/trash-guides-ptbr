@@ -51,7 +51,7 @@
       }
     },
     {
-      "name": "DragsterPS\"",
+      "name": "DragsterPS",
       "implementation": "ReleaseGroupSpecification",
       "negate": true,
       "required": true,
@@ -3207,15 +3207,6 @@
       "required": true,
       "fields": {
         "value": "^(NexelSUBS)$"
-      }
-    },
-    {
-      "name": "OF",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "^(OF)$"
       }
     },
     {
