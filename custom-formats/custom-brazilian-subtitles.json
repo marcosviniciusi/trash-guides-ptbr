@@ -13,6 +13,16 @@
       }
     },
     {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": false
+      }
+    },
+    {
       "name": "NOT PT-BR Dublado",
       "implementation": "ReleaseTitleSpecification",
       "negate": true,
