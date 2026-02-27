@@ -1,6 +1,6 @@
 {
   "trash_id": "radarr-uhd-bluray-release",
-  "name": "UHD Bluray Releas",
+  "name": "UHD Bluray Release",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
