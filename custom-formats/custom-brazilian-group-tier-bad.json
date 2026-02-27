@@ -1,6 +1,6 @@
 {
-  "trash_id": "custom-pt-br-web-tier-bad-group",
-  "name": "WEB Tier Brazilian Bad Groups",
+  "trash_id": "custom-brazilian-group-tier-bad",
+  "name": "Brazilian Group Tier Bad",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {

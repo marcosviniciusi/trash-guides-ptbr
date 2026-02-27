@@ -1,69 +1,26 @@
 {
-  "trash_id": "sonarr-uhd-bluray-pt-br-gen",
-  "name": "Release PT-BR UHD Bluray Generic",
+  "trash_id": "custom-brazilian-dual-language",
+  "name": "Brazilian Dual Language",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "PT-BR Legendado",
-      "implementation": "ReleaseTitleSpecification",
+      "name": "Original Language",
+      "implementation": "LanguageSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": "(?i:\\b(legendado|brazilian(-portuguese)?|brazil|pt[-\\s]?br(asil)?|port[-\\s]?br|por[-\\s]?br|pt[-\\s]?br[-\\s]sub(s)?|sub(s)?[-\\s]pt[-\\s]?br)\\b)|\\[subs?[-\\[].*\\bPT\\b.*\\]|\\[subs?-\\[\\bPT\\b[+\\]]"
+        "value": -2,
+        "exceptLanguage": false
       }
     },
     {
-      "name": "NOT PT-BR Dublado",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "(?i)\\b(BRAZILIAN-DUAL-AUDIO|NACIONAL|dublado|brasil[-\\s]dub|pt[-\\s]?br[-\\s]dub(s)?|dub(s)?[-\\s]pt[-\\s]?br|audio[-\\s]pt[-\\s]?br|br[-\\s](dub|audio)|BRAZILIAN[-\\s]DUAL[-\\s]AUDIO)\\b"
-      }
-    },
-    {
-      "name": "BLURAY",
-      "implementation": "SourceSpecification",
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": 6
-      }
-    },
-    {
-      "name": "Not Remux",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": false,
-      "fields": {
-        "value": 7
-      }
-    },
-    {
-      "name": "Not WEBDL",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 7
-      }
-    },
-    {
-      "name": "Not WEBRIP",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 8
-      }
-    },
-    {
-      "name": "2160p",
-      "implementation": "ResolutionSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": 2160
+        "value": 18,
+        "exceptLanguage": false
       }
     },
     {

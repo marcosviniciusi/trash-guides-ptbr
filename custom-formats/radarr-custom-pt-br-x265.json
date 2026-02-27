@@ -11,15 +11,6 @@
       "fields": {
         "value": "\\bx[ ._-]?265\\b"
       }
-    },
-    {
-      "name": "Not Remux",
-      "implementation": "QualityModifierSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 5
-      }
     }
   ]
 }

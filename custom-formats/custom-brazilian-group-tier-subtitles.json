@@ -1,51 +1,15 @@
 {
-  "trash_id": "radarr-uhd-remux-pt-br-dual",
-  "name": "Release PT-BR UHD Remux DUAL",
+  "trash_id": "custom-brazilian-group-tier-subtitles",
+  "name": "Brazilian Group Tier - Subtitles",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
       "name": "Brazilian Dual Audio",
       "implementation": "ReleaseTitleSpecification",
-      "negate": false,
+      "negate": true,
       "required": true,
       "fields": {
         "value": "\\b(BRAZILIAN-DUAL-AUDIO|NACIONAL|DUAL)\\b"
-      }
-    },
-    {
-      "name": "Remux",
-      "implementation": "QualityModifierSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": 5
-      }
-    },
-    {
-      "name": "2160p",
-      "implementation": "ResolutionSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": 2160
-      }
-    },
-    {
-      "name": "Not WEBDL",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 7
-      }
-    },
-    {
-      "name": "Not WEBRIP",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 8
       }
     },
     {

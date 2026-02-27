@@ -20,15 +20,6 @@
       "fields": {
         "value": "\\bx[ ._-]?265\\b"
       }
-    },
-    {
-      "name": "Not Remux",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 7
-      }
     }
   ]
 }
