@@ -1,6 +1,6 @@
 {
-  "trash_id": "radarr-hd-bluray-release",
-  "name": "HD Bluray Release",
+  "trash_id": "radarr-fhd-bluray-release",
+  "name": "FHD Bluray Release",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
@@ -40,12 +40,12 @@
       }
     },
     {
-      "name": "720p",
+      "name": "1080p",
       "implementation": "ResolutionSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": 720
+        "value": 1080
       }
     }
   ]

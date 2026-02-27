@@ -1,42 +1,51 @@
 {
-  "trash_id": "sonarr-hd-remux-release",
-  "name": "HD Remux Release",
+  "trash_id": "radarr-fhd-web-release",
+  "name": "FHD Web Release",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "Remux",
+      "name": "WEBDL",
       "implementation": "SourceSpecification",
       "negate": false,
-      "required": true,
+      "required": false,
       "fields": {
         "value": 7
       }
     },
     {
-      "name": "720p",
+      "name": "WEBRIP",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 8
+      }
+    },
+    {
+      "name": "1080p",
       "implementation": "ResolutionSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": 720
+        "value": 1080
       }
     },
     {
-      "name": "WEBDL",
+      "name": "Not REMUX",
+      "implementation": "QualityModifierSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 5
+      }
+    },
+    {
+      "name": "Not BLURAY",
       "implementation": "SourceSpecification",
       "negate": true,
       "required": true,
       "fields": {
-        "value": 3
-      }
-    },
-    {
-      "name": "WEBRIP",
-      "implementation": "SourceSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 4
+        "value": 9
       }
     }
   ]

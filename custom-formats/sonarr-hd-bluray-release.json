@@ -22,12 +22,12 @@
       }
     },
     {
-      "name": "Not 2160p",
+      "name": "720p",
       "implementation": "ResolutionSpecification",
-      "negate": true,
+      "negate": false,
       "required": true,
       "fields": {
-        "value": 2160
+        "value": 720
       }
     },
     {

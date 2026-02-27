@@ -1,6 +1,6 @@
 {
-  "trash_id": "sonarr-hd-remux-release",
-  "name": "HD Remux Release",
+  "trash_id": "sonarr-fhd-remux-release",
+  "name": "FHD Remux Release",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
@@ -13,12 +13,12 @@
       }
     },
     {
-      "name": "720p",
+      "name": "1080p",
       "implementation": "ResolutionSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": 720
+        "value": 1080
       }
     },
     {
