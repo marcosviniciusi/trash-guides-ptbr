@@ -1129,15 +1129,6 @@
       }
     },
     {
-      "name": "WEBDL",
-      "implementation": "SourceSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": 3
-      }
-    },
-    {
       "name": "DRACULA",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
