@@ -1154,6 +1154,69 @@
       "fields": {
         "value": "^(ViSiON)$"
       }
+    },
+    {
+      "name": "YUTeamHD",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(YUTeamHD)$"
+      }
+    },
+    {
+      "name": "KAFKA",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(KAFKA)$"
+      }
+    },
+    {
+      "name": "j3rico",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(j3rico)$"
+      }
+    },
+    {
+      "name": "N1H4L",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(N1H4L)$"
+      }
+    },
+    {
+      "name": "CONSORTiUM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(CONSORTiUM)$"
+      }
+    },
+    {
+      "name": "PTerWEB",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(PTerWEB)$"
+      }
+    },
+    {
+      "name": "MainFrame",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MainFrame)$"
+      }
     }
   ]
 }
