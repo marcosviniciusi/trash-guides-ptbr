@@ -42,8 +42,8 @@
     {
       "name": "DragsterPS",
       "implementation": "ReleaseGroupSpecification",
-      "negate": true,
-      "required": true,
+      "negate": false,
+      "required": false,
       "fields": {
         "value": "^(DragsterPS)$"
       }
