@@ -418,6 +418,15 @@
       }
     },
     {
+      "name": "SPiRiT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SPiRiT)$"
+      }
+    },
+    {
       "name": "WiLDCAT",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
