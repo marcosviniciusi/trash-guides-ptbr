@@ -1,0 +1,20 @@
+{
+    "author": "Josh.5 / Marcos Gabriel",
+    "compatibility": [
+        1,
+        2
+    ],
+    "description": "Convert DTS, FLAC, Opus and Vorbis audio streams to EAC3 5.1 (Dolby Digital Plus). Sources above 6 channels are downmixed to 5.1.",
+    "icon": "https://raw.githubusercontent.com/Josh5/unmanic.plugin.dts_to_dd/master/icon.png",
+    "id": "dts_to_dd",
+    "name": "Convert audio to EAC3 5.1",
+    "platform": [
+        "all"
+    ],
+    "priorities": {
+        "on_library_management_file_test": 99,
+        "on_worker_process": 0
+    },
+    "tags": "audio,ffmpeg,eac3,dolby,library file test",
+    "version": "1.0.0"
+}

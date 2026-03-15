@@ -1,0 +1,16 @@
+{
+    "author": "Marcos (vinicius)",
+    "compatibility": [
+        2
+    ],
+    "description": "Keeps only PT-BR subtitles embedded in the MKV, removes everything else",
+    "icon": "",
+    "id": "equalize_subtitles_ptbr",
+    "name": "Equalize Subtitles PT-BR",
+    "priorities": {
+        "on_library_management_file_test": 50,
+        "on_worker_process": 50
+    },
+    "tags": "subtitle,portuguese",
+    "version": "3.3.1"
+}

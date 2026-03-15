@@ -1,0 +1,436 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+    plugins.videotoolbox.py
+
+    Written by:               Marcos <your-email@example.com>
+    Date:                     21 Jan 2025, (8:00 PM)
+
+    Copyright:
+        Copyright (C) 2025 Marcos
+
+        This program is free software: you can redistribute it and/or modify it under the terms of the GNU General
+        Public License as published by the Free Software Foundation, version 3.
+
+        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+        implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+        for more details.
+
+        You should have received a copy of the GNU General Public License along with this program.
+        If not, see <https://www.gnu.org/licenses/>.
+
+"""
+from video_transcoder.lib.encoders.base import Encoder
+
+
+class VideoToolboxEncoder(Encoder):
+    """
+    VideoToolbox hardware encoder for Apple Silicon (M1/M2/M3/M4) and Intel Macs.
+    
+    VideoToolbox provides hardware-accelerated encoding for H.264 and HEVC on macOS.
+    - Apple Silicon Macs (M1+): Full hardware acceleration with excellent performance
+    - Intel Macs (2017+): Hardware acceleration available but with some limitations
+    
+    Note: VideoToolbox uses different quality parameters than software encoders:
+    - Quality scale: 0-100 (higher = better quality)
+    - No preset or tune options (these are libx264/libx265 specific)
+    - Limited profile support compared to software encoders
+    """
+
+    def __init__(self, settings=None, probe=None):
+        super().__init__(settings=settings, probe=probe)
+
+    def provides(self):
+        return {
+            "h264_videotoolbox": {
+                "codec": "h264",
+                "label": "GPU - VideoToolbox H.264 (Apple Silicon)",
+            },
+            "hevc_videotoolbox": {
+                "codec": "hevc",
+                "label": "GPU - VideoToolbox HEVC (Apple Silicon)",
+            },
+        }
+
+    def options(self):
+        return {
+            "videotoolbox_profile":                    "auto",
+            "videotoolbox_encoder_ratecontrol_method": "quality",
+            "videotoolbox_constant_quality_scale":     "65",
+            "videotoolbox_average_bitrate":            "5",
+            "videotoolbox_max_bitrate":                "0",
+            "videotoolbox_buffer_size":                "0",
+        }
+
+    def generate_default_args(self):
+        """
+        Generate default FFmpeg args for VideoToolbox encoder.
+        VideoToolbox doesn't require hardware context setup like VAAPI/QSV.
+        
+        :return: Tuple of (generic_kwargs, advanced_kwargs)
+        """
+        generic_kwargs = {}
+        advanced_kwargs = {}
+        return generic_kwargs, advanced_kwargs
+
+    def generate_filtergraphs(self, current_filter_args, smart_filters, encoder_name):
+        """
+        Generate filtergraph for VideoToolbox encoder.
+        
+        VideoToolbox works best with software pixel formats. Hardware upload
+        is handled automatically by the encoder.
+        
+        :param current_filter_args: Current filter arguments
+        :param smart_filters: Smart filters to apply
+        :param encoder_name: Name of the encoder (h264_videotoolbox or hevc_videotoolbox)
+        :return: Dictionary with filtergraph configuration
+        """
+        generic_kwargs = {}
+        advanced_kwargs = {}
+        start_filter_args = []
+        end_filter_args = []
+
+        is_hevc = (encoder_name == "hevc_videotoolbox")
+
+        # Check software format to use
+        target_fmt = self._target_pix_fmt_for_encoder(encoder_name)
+
+        # Handle HDR (only for HEVC)
+        if is_hevc:
+            target_color_config = self._target_color_config_for_encoder(encoder_name)
+        else:
+            target_color_config = {
+                "apply_color_params": False
+            }
+
+        # If we have existing filters:
+        if smart_filters or current_filter_args:
+            start_filter_args.append(f'format={target_fmt}')
+            if target_color_config.get('apply_color_params'):
+                # Apply setparams filter to preserve HDR tags
+                end_filter_args.append(target_color_config['setparams_filter'])
+
+        # Return built args
+        return {
+            "generic_kwargs":    generic_kwargs,
+            "advanced_kwargs":   advanced_kwargs,
+            "smart_filters":     smart_filters,
+            "start_filter_args": start_filter_args,
+            "end_filter_args":   end_filter_args,
+        }
+
+    def encoder_details(self, encoder):
+        provides = self.provides()
+        return provides.get(encoder, {})
+
+    def stream_args(self, stream_info, stream_id, encoder_name, filter_state=None):
+        """
+        Generate encoder arguments for VideoToolbox.
+        
+        VideoToolbox uses different parameters than software encoders:
+        - Quality control: -q:v (0-100, higher = better)
+        - Bitrate control: -b:v
+        - No -preset, -tune, or -crf options
+        
+        :param stream_info: Stream information from probe
+        :param stream_id: Stream identifier
+        :param encoder_name: Encoder name (h264_videotoolbox or hevc_videotoolbox)
+        :param filter_state: Current filter state
+        :return: Dictionary with encoding arguments
+        """
+        generic_kwargs = {}
+        advanced_kwargs = {}
+        encoder_args = []
+        stream_args = []
+
+        is_hevc = (encoder_name == "hevc_videotoolbox")
+
+        # Handle HDR for HEVC
+        if is_hevc:
+            target_color_config = self._target_color_config_for_encoder(encoder_name)
+            if target_color_config.get('apply_color_params'):
+                # VideoToolbox automatically handles HDR when proper color tags are set
+                # Add HDR color tags to the encoder output stream
+                for k, v in target_color_config.get('stream_color_params', {}).items():
+                    stream_args += [k, v]
+
+        # Use defaults for basic mode
+        if self.settings.get_setting('mode') in ['basic']:
+            # VideoToolbox uses -q:v for quality (0-100, higher = better quality)
+            # Quality equivalents to software encoders:
+            # hevc_videotoolbox q=65 ≈ libx265 crf=28
+            # h264_videotoolbox q=50 ≈ libx264 crf=23
+            default_q = 65 if is_hevc else 50
+            encoder_args += ['-q:v', str(default_q)]
+            return {
+                "generic_kwargs":  generic_kwargs,
+                "advanced_kwargs": advanced_kwargs,
+                "encoder_args":    encoder_args,
+                "stream_args":     stream_args,
+            }
+
+        # Standard mode - add configured encoder args
+        if self.settings.get_setting('videotoolbox_encoder_ratecontrol_method') in ['quality']:
+            # Quality-based encoding (recommended)
+            encoder_args += [
+                '-q:v', str(self.settings.get_setting('videotoolbox_constant_quality_scale')),
+            ]
+        elif self.settings.get_setting('videotoolbox_encoder_ratecontrol_method') in ['bitrate']:
+            # Bitrate-based encoding
+            bitrate_mbps = self.settings.get_setting('videotoolbox_average_bitrate')
+            encoder_args += [
+                '-b:v', '{}M'.format(bitrate_mbps),
+            ]
+
+        # Add VBV constraints if configured (for rate control)
+        max_bitrate = int(self.settings.get_setting('videotoolbox_max_bitrate'))
+        buffer_size = int(self.settings.get_setting('videotoolbox_buffer_size'))
+        
+        if max_bitrate > 0:
+            encoder_args += ['-maxrate', '{}k'.format(max_bitrate)]
+        
+        if buffer_size > 0:
+            encoder_args += ['-bufsize', '{}k'.format(buffer_size)]
+
+        # Add configured stream args (profile)
+        if self.settings.get_setting('videotoolbox_profile') and self.settings.get_setting('videotoolbox_profile') not in ('auto', 'disabled'):
+            stream_args += ['-profile:v:{}'.format(stream_id), str(self.settings.get_setting('videotoolbox_profile'))]
+
+        # Add hvc1 tag for HEVC for better QuickTime/Apple compatibility
+        if is_hevc:
+            stream_args += ['-tag:v:{}'.format(stream_id), 'hvc1']
+
+        return {
+            "generic_kwargs":  generic_kwargs,
+            "advanced_kwargs": advanced_kwargs,
+            "encoder_args":    encoder_args,
+            "stream_args":     stream_args,
+        }
+
+    def __set_default_option(self, select_options, key, default_option=None):
+        """
+        Sets the default option if the currently set option is not available
+
+        :param select_options: List of available options
+        :param key: Settings key to check
+        :param default_option: Default option to use if current is invalid
+        :return: None
+        """
+        available_options = []
+        for option in select_options:
+            available_options.append(option.get('value'))
+            if not default_option:
+                default_option = option.get('value')
+        if self.settings.get_setting(key) not in available_options:
+            self.settings.set_setting(key, default_option)
+
+    def get_videotoolbox_profile_form_settings(self):
+        """
+        Get form settings for profile selection.
+        
+        VideoToolbox has limited profile support compared to software encoders.
+        """
+        values = {
+            "label":          "Profile",
+            "sub_setting":    True,
+            "input_type":     "select",
+            "select_options": [],
+        }
+        
+        # Only show if a VideoToolbox encoder is selected
+        if self.settings.get_setting('video_encoder') not in ['h264_videotoolbox', 'hevc_videotoolbox']:
+            values["display"] = "hidden"
+            return values
+            
+        if self.settings.get_setting('video_encoder') in ['h264_videotoolbox']:
+            values["select_options"] = [
+                {
+                    "value": "auto",
+                    "label": "Auto – Let VideoToolbox select automatically (recommended)",
+                },
+                {
+                    "value": "baseline",
+                    "label": "Baseline – Maximum compatibility",
+                },
+                {
+                    "value": "main",
+                    "label": "Main – Good balance",
+                },
+                {
+                    "value": "high",
+                    "label": "High – Best quality and compression",
+                },
+            ]
+        elif self.settings.get_setting('video_encoder') in ['hevc_videotoolbox']:
+            values["select_options"] = [
+                {
+                    "value": "auto",
+                    "label": "Auto – Let VideoToolbox select automatically (recommended)",
+                },
+                {
+                    "value": "main",
+                    "label": "Main – 8-bit content",
+                },
+                {
+                    "value": "main10",
+                    "label": "Main10 – 10-bit content (HDR)",
+                },
+            ]
+        self.__set_default_option(values['select_options'], 'videotoolbox_profile')
+        if self.settings.get_setting('mode') not in ['standard']:
+            values["display"] = "hidden"
+        return values
+
+    def get_videotoolbox_encoder_ratecontrol_method_form_settings(self):
+        """
+        Get form settings for rate control method selection.
+        """
+        values = {
+            "label":          "Encoder rate control method",
+            "sub_setting":    True,
+            "input_type":     "select",
+            "select_options": [
+                {
+                    "value": "quality",
+                    "label": "Quality-based (q:v) – Recommended for most use cases",
+                },
+                {
+                    "value": "bitrate",
+                    "label": "Bitrate-based (b:v) – For strict size targets",
+                },
+            ]
+        }
+        
+        # Only show if a VideoToolbox encoder is selected
+        if self.settings.get_setting('video_encoder') not in ['h264_videotoolbox', 'hevc_videotoolbox']:
+            values["display"] = "hidden"
+            return values
+            
+        self.__set_default_option(values['select_options'], 'videotoolbox_encoder_ratecontrol_method', default_option='quality')
+        if self.settings.get_setting('mode') not in ['standard']:
+            values["display"] = "hidden"
+        return values
+
+    def get_videotoolbox_constant_quality_scale_form_settings(self):
+        """
+        Get form settings for quality scale selection.
+        
+        VideoToolbox uses 0-100 scale (higher = better quality).
+        This is different from libx264/libx265 CRF where lower = better.
+        """
+        values = {
+            "label":          "Quality scale (0-100, higher = better quality)",
+            "description":    "",
+            "sub_setting":    True,
+            "input_type":     "slider",
+            "slider_options": {
+                "min": 0,
+                "max": 100,
+            },
+        }
+        
+        # Only show if a VideoToolbox encoder is selected
+        if self.settings.get_setting('video_encoder') not in ['h264_videotoolbox', 'hevc_videotoolbox']:
+            values["display"] = "hidden"
+            return values
+            
+        if self.settings.get_setting('mode') not in ['standard']:
+            values["display"] = "hidden"
+        if self.settings.get_setting('videotoolbox_encoder_ratecontrol_method') not in ['quality']:
+            values["display"] = "hidden"
+        
+        if self.settings.get_setting('video_encoder') in ['h264_videotoolbox']:
+            values["description"] = (
+                "Recommended: 50 (equivalent to libx264 crf=23)\n"
+                "Higher values = better quality but larger files\n"
+                "Lower values = smaller files but lower quality"
+            )
+        elif self.settings.get_setting('video_encoder') in ['hevc_videotoolbox']:
+            values["description"] = (
+                "Recommended: 65 (equivalent to libx265 crf=28)\n"
+                "Higher values = better quality but larger files\n"
+                "Lower values = smaller files but lower quality"
+            )
+        return values
+
+    def get_videotoolbox_average_bitrate_form_settings(self):
+        """
+        Get form settings for bitrate selection.
+        """
+        values = {
+            "label":          "Target bitrate (Mbps)",
+            "sub_setting":    True,
+            "input_type":     "slider",
+            "slider_options": {
+                "min":    1,
+                "max":    50,
+                "suffix": "M"
+            },
+        }
+        
+        # Only show if a VideoToolbox encoder is selected
+        if self.settings.get_setting('video_encoder') not in ['h264_videotoolbox', 'hevc_videotoolbox']:
+            values["display"] = "hidden"
+            return values
+            
+        if self.settings.get_setting('mode') not in ['standard']:
+            values["display"] = "hidden"
+        if self.settings.get_setting('videotoolbox_encoder_ratecontrol_method') not in ['bitrate']:
+            values["display"] = "hidden"
+        return values
+
+    def get_videotoolbox_max_bitrate_form_settings(self):
+        """
+        Get form settings for maximum bitrate (VBV maxrate).
+        
+        Useful for streaming and controlling bitrate spikes.
+        Set to 0 to disable.
+        """
+        values = {
+            "label":          "Maximum bitrate (kbps) - Optional VBV control",
+            "description":    "Limits bitrate spikes. Example: 3800 for 720p Netflix-like quality. 0 = disabled",
+            "sub_setting":    True,
+            "input_type":     "slider",
+            "slider_options": {
+                "min":    0,
+                "max":    20000,
+                "suffix": "k"
+            },
+        }
+        
+        # Only show if a VideoToolbox encoder is selected
+        if self.settings.get_setting('video_encoder') not in ['h264_videotoolbox', 'hevc_videotoolbox']:
+            values["display"] = "hidden"
+            return values
+            
+        if self.settings.get_setting('mode') not in ['standard']:
+            values["display"] = "hidden"
+        return values
+
+    def get_videotoolbox_buffer_size_form_settings(self):
+        """
+        Get form settings for buffer size (VBV bufsize).
+        
+        Usually set to 2x maxrate. Set to 0 to disable.
+        """
+        values = {
+            "label":          "Buffer size (kbps) - Optional VBV control",
+            "description":    "Buffer for rate control. Usually 2x maxrate. Example: 7600 (for maxrate 3800). 0 = disabled",
+            "sub_setting":    True,
+            "input_type":     "slider",
+            "slider_options": {
+                "min":    0,
+                "max":    40000,
+                "suffix": "k"
+            },
+        }
+        
+        # Only show if a VideoToolbox encoder is selected
+        if self.settings.get_setting('video_encoder') not in ['h264_videotoolbox', 'hevc_videotoolbox']:
+            values["display"] = "hidden"
+            return values
+            
+        if self.settings.get_setting('mode') not in ['standard']:
+            values["display"] = "hidden"
+        return values

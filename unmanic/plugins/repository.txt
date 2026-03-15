@@ -1,1 +1,2 @@
+https://raw.githubusercontent.com/Unmanic/unmanic-plugins/repo/repo.json
 https://raw.githubusercontent.com/Josh5/unmanic-plugins/repo/repo.json
