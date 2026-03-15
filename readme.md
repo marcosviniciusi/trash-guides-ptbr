@@ -42,6 +42,7 @@ Se este projeto foi útil para você, considere:
     - [Docker Compose - Execução Agendada](#docker-compose---execução-agendada-com-ofelia)
     - [Kubernetes](#️-kubernetes)
 - [Atualizações Automáticas](#-atualizações-automáticas)
+- [Releases e Versionamento](#-releases-e-versionamento)
 - [Contribuindo](#-contribuindo)
 - [FAQ](#-faq)
 
@@ -118,6 +119,8 @@ trash-guides-ptbr/
 │   ├── custom-brazilian-dual-language.json             # Detecção Dual Language
 │   ├── custom-brazilian-group-tier-subtitles.json      # Grupos PT-BR com Legendas
 │   ├── custom-brazilian-subtitles.json                 # Detecção Legendas PT-BR
+│   ├── custom-brazilian-group-tier-dubbed.json         # Grupos PT-BR com Dublagem
+│   ├── custom-brazilian-dubbed.json                    # Detecção Dublado PT-BR
 │   ├── custom-original-language.json                   # Língua Original
 │   ├── custom-brazilian-group-tier-bad.json            # Grupos Não Confiáveis
 │   ├── custom-us-group-tier-premium.json               # Grupos Premium US
@@ -168,8 +171,8 @@ Existem **3 tipos de perfil** que controlam o comportamento de 4K e HDR:
 
 | Língua | Prioridade | Descrição |
 |--------|-----------|-----------|
-| **DUBLADO** | Dual Audio (30000) > Legendas (20000) | Prioriza releases com áudio em português |
-| **LEGENDADO** | Legendas (30000) > Dual Audio (20000) | Prioriza releases com legendas em português |
+| **DUBLADO** | Dual Audio (30000) > Dubbed Group (25000) > Dubbed (24000) > Legendas (20000) | Prioriza releases com áudio em português |
+| **LEGENDADO** | Legendas (30000) > Dubbed Group (25000) > Dubbed (24000) > Dual Audio (20000) | Prioriza releases com legendas em português |
 
 ### Combinações Disponíveis
 
@@ -198,6 +201,8 @@ Cada tipo + língua possui variante **COM** e **SEM ANIMES** (12 configs total):
 | **custom-brazilian-dual-language** | Detecção Dual Language | +29500 | +19500 |
 | **custom-brazilian-group-tier-subtitles** | Grupos PT-BR com Legendas | +20000 | +30000 |
 | **custom-brazilian-subtitles** | Detecção Legendas PT-BR | +19500 | +29500 |
+| **custom-brazilian-group-tier-dubbed** | Grupos PT-BR com Dublagem | +25000 | +25000 |
+| **custom-brazilian-dubbed** | Detecção Dublado PT-BR | +24000 | +24000 |
 | **custom-original-language** | Língua Original | +1000 | +1000 |
 | **custom-brazilian-group-tier-bad** | Grupos Não Confiáveis | +15000 | +15000 |
 | **custom-us-group-tier-premium** | Grupos Premium US | +5000 | +5000 |
@@ -264,6 +269,8 @@ Os scores de Video Quality controlam a preferência por conteúdo UHD/4K vs HD/F
 |---|---|---|
 | Grupos Dual Audio | +30000 | +20000 |
 | Dual Language | +29500 | +19500 |
+| Grupos Dubbed | +25000 | +25000 |
+| Dubbed | +24000 | +24000 |
 | Grupos Legendas | +20000 | +30000 |
 | Legendas PT-BR | +19500 | +29500 |
 | Língua Original | +1000 | +1000 |
@@ -734,17 +741,17 @@ docker run ghcr.io/raydak-labs/configarr:latest
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/docker-compose-manual.yaml -o docker-compose.yaml
 ```
 Obs: Ja efetua o download do docker compose. e também ja tem criado o script para baixar os custom formats, caso queira baixa-lo, use este script abaixo:
 
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/docker-compose-manual.yaml -o docker-compose.yaml
 
 #Script de Download dos Custom Formats
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/manual/download-custom-formats.sh -o download-custom-formats.sh
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/download-custom-formats.sh -o download-custom-formats.sh
 
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
@@ -786,29 +793,29 @@ EOF
 # ==================== DUBLADO ====================
 
 # Opção 1: DUBLADO - 4K + HDR (qualidade máxima)
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K-HDR.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-DUBLADO-4K-HDR.yaml \
   -o config/config.yml
 
 # Opção 2: DUBLADO - 4K sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-DUBLADO-4K.yaml \
   -o config/config.yml
 
 # Opção 3: DUBLADO - Sem 4K e sem HDR (apenas HD/FHD)
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-DUBLADO.yaml \
   -o config/config.yml
 
 # ==================== LEGENDADO ====================
 
 # Opção 4: LEGENDADO - 4K + HDR (qualidade máxima)
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K-HDR.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-LEGENDADO-4K-HDR.yaml \
   -o config/config.yml
 
 # Opção 5: LEGENDADO - 4K sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-LEGENDADO-4K.yaml \
   -o config/config.yml
 
 # Opção 6: LEGENDADO - Sem 4K e sem HDR (apenas HD/FHD)
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-LEGENDADO.yaml \
   -o config/config.yml
 
 # ==================== SEM ANIMES ====================
@@ -870,7 +877,7 @@ sonarr:
 cat > download-custom-formats.sh << 'EOF'
 #!/bin/bash
 
-BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
+BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
 
 echo "📥 Baixando custom formats..."
 # Função para baixar com tratamento de erro
@@ -883,17 +890,20 @@ download_format() {
     }
 }
 
-# Custom Formats PT-BR
+# Idioma PT-BR
 download_format 'custom-brazilian-group-tier-dual-audio.json'
 download_format 'custom-brazilian-dual-language.json'
 download_format 'custom-brazilian-group-tier-subtitles.json'
 download_format 'custom-brazilian-subtitles.json'
+download_format 'custom-brazilian-group-tier-dubbed.json'
+download_format 'custom-brazilian-dubbed.json'
 download_format 'custom-original-language.json'
 download_format 'custom-brazilian-group-tier-bad.json'
 download_format 'custom-us-group-tier-premium.json'
-# Tags e Codecs
+# Plataformas
 download_format 'sonarr-custom-pt-br-globoplay.json'
 download_format 'radarr-custom-pt-br-globoplay.json'
+# Codec
 download_format 'radarr-custom-pt-br-x264.json'
 download_format 'radarr-custom-pt-br-x265.json'
 download_format 'radarr-custom-pt-br-h264.json'
@@ -902,28 +912,28 @@ download_format 'sonarr-custom-pt-br-x264.json'
 download_format 'sonarr-custom-pt-br-x265.json'
 download_format 'sonarr-custom-pt-br-h264.json'
 download_format 'sonarr-custom-pt-br-h265.json'
+# Season Pack
 download_format 'sonarr-custom-season-pack.json'
 # Release Quality - Radarr
 download_format 'radarr-uhd-remux-release.json'
 download_format 'radarr-fhd-remux-release.json'
+download_format 'radarr-hd-remux-release.json'
 download_format 'radarr-uhd-bluray-release.json'
 download_format 'radarr-fhd-bluray-release.json'
+download_format 'radarr-hd-bluray-release.json'
 download_format 'radarr-uhd-web-release.json'
 download_format 'radarr-fhd-web-release.json'
-download_format 'radarr-hd-remux-release.json'
-download_format 'radarr-hd-bluray-release.json'
 download_format 'radarr-hd-web-release.json'
 # Release Quality - Sonarr
 download_format 'sonarr-uhd-remux-release.json'
 download_format 'sonarr-fhd-remux-release.json'
+download_format 'sonarr-hd-remux-release.json'
 download_format 'sonarr-uhd-bluray-release.json'
 download_format 'sonarr-fhd-bluray-release.json'
+download_format 'sonarr-hd-bluray-release.json'
 download_format 'sonarr-uhd-web-release.json'
 download_format 'sonarr-fhd-web-release.json'
-download_format 'sonarr-hd-remux-release.json'
-download_format 'sonarr-hd-bluray-release.json'
 download_format 'sonarr-hd-web-release.json'
-
 
 echo "✅ Custom formats baixados com sucesso!"
 EOF
@@ -963,7 +973,7 @@ volumes:
 ```bash
 mkdir -p configarr/{config,secrets,custom_formats}
 cd configarr
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/iac/docker-compose/automatico/docker-compose.yaml -o docker-compose.yaml
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/docker-compose-automatico.yaml -o docker-compose.yaml
 ```
 Obs: O script acima efetua o download do arquivo docker-compose.yaml, siga os passos 2 e 3, poderá ir direto a esta [Passo de execuçãp](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#5-executar).
 ### 2. Criar secrets.yml
@@ -1001,29 +1011,29 @@ EOF
 # ==================== DUBLADO ====================
 
 # DUBLADO - 4K + HDR (qualidade máxima)
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K-HDR.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-DUBLADO-4K-HDR.yaml \
   -o config/config.yml
 
 # DUBLADO - 4K sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-DUBLADO-4K.yaml \
   -o config/config.yml
 
 # DUBLADO - Sem 4K e sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-DUBLADO.yaml \
   -o config/config.yml
 
 # ==================== LEGENDADO ====================
 
 # LEGENDADO - 4K + HDR (qualidade máxima)
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K-HDR.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-LEGENDADO-4K-HDR.yaml \
   -o config/config.yml
 
 # LEGENDADO - 4K sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-LEGENDADO-4K.yaml \
   -o config/config.yml
 
 # LEGENDADO - Sem 4K e sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/config-LEGENDADO.yaml \
   -o config/config.yml
 
 # ==================== SEM ANIMES ====================
@@ -1087,33 +1097,35 @@ services:
     container_name: configarr-download
     command: >
       sh -c "
-      BASE_URL='https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats'
-      
-      # Criar diretório se não existir
-      mkdir -p /config/custom-formats
-      
+      BASE_URL='https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download'
+
+      mkdir -p /config/custom_formats
+
       echo '📥 Baixando custom formats...'
-      
-      # Função para baixar com tratamento de erro
+
       download_format() {
           local file=$$1
           echo '  → '$$file
-          curl -fsSL "$$BASE_URL/$$file" -o "/config/custom-formats/$$file" || {
+          curl -fsSL \"$$BASE_URL/$$file\" -o \"/config/custom_formats/$$file\" || {
               echo '❌ Erro ao baixar '$$file
               return 1
           }
       }
-      
-		# Custom Formats PT-BR
+
+      # Idioma PT-BR
       download_format 'custom-brazilian-group-tier-dual-audio.json'
       download_format 'custom-brazilian-dual-language.json'
       download_format 'custom-brazilian-group-tier-subtitles.json'
       download_format 'custom-brazilian-subtitles.json'
+      download_format 'custom-brazilian-group-tier-dubbed.json'
+      download_format 'custom-brazilian-dubbed.json'
       download_format 'custom-original-language.json'
       download_format 'custom-brazilian-group-tier-bad.json'
       download_format 'custom-us-group-tier-premium.json'
+      # Plataformas
       download_format 'sonarr-custom-pt-br-globoplay.json'
       download_format 'radarr-custom-pt-br-globoplay.json'
+      # Codec
       download_format 'radarr-custom-pt-br-x264.json'
       download_format 'radarr-custom-pt-br-x265.json'
       download_format 'radarr-custom-pt-br-h264.json'
@@ -1122,24 +1134,27 @@ services:
       download_format 'sonarr-custom-pt-br-x265.json'
       download_format 'sonarr-custom-pt-br-h264.json'
       download_format 'sonarr-custom-pt-br-h265.json'
+      # Season Pack
       download_format 'sonarr-custom-season-pack.json'
+      # Release Quality - Radarr
       download_format 'radarr-uhd-remux-release.json'
       download_format 'radarr-fhd-remux-release.json'
+      download_format 'radarr-hd-remux-release.json'
       download_format 'radarr-uhd-bluray-release.json'
       download_format 'radarr-fhd-bluray-release.json'
+      download_format 'radarr-hd-bluray-release.json'
       download_format 'radarr-uhd-web-release.json'
       download_format 'radarr-fhd-web-release.json'
-      download_format 'radarr-hd-remux-release.json'
-      download_format 'radarr-hd-bluray-release.json'
       download_format 'radarr-hd-web-release.json'
+      # Release Quality - Sonarr
       download_format 'sonarr-uhd-remux-release.json'
       download_format 'sonarr-fhd-remux-release.json'
+      download_format 'sonarr-hd-remux-release.json'
       download_format 'sonarr-uhd-bluray-release.json'
       download_format 'sonarr-fhd-bluray-release.json'
+      download_format 'sonarr-hd-bluray-release.json'
       download_format 'sonarr-uhd-web-release.json'
       download_format 'sonarr-fhd-web-release.json'
-      download_format 'sonarr-hd-remux-release.json'
-      download_format 'sonarr-hd-bluray-release.json'
       download_format 'sonarr-hd-web-release.json'
       
       echo '✅ Custom formats baixados com sucesso!'
@@ -1285,9 +1300,8 @@ spec:
                   echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  BASE_URL="https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/custom-formats"
-                  
-                  # Função para download com retry
+                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
+
                   download_format() {
                     local file=$1
                     echo "  → Baixando: $file"
@@ -1297,18 +1311,21 @@ spec:
                       return 1
                     }
                   }
-                  
-						# Custom Formats Globais
-                  download_format 'custom-pt-br-dual-audio.json'
-                  download_format 'custom-pt-br-dual-language.json'
-                  download_format 'custom-pt-br-dublado-language.json'
-                  download_format 'custom-pt-br-dublado.json'
-                  download_format 'custom-pt-br-legendado.json'
-                  download_format 'custom-pt-br-original-language.json'
-                  download_format 'custom-pt-br-web-tier-bad-group.json'
-                  download_format 'custom-pt-br-web-tier.json'
+
+                  # Idioma PT-BR
+                  download_format 'custom-brazilian-group-tier-dual-audio.json'
+                  download_format 'custom-brazilian-dual-language.json'
+                  download_format 'custom-brazilian-group-tier-subtitles.json'
+                  download_format 'custom-brazilian-subtitles.json'
+                  download_format 'custom-brazilian-group-tier-dubbed.json'
+                  download_format 'custom-brazilian-dubbed.json'
+                  download_format 'custom-original-language.json'
+                  download_format 'custom-brazilian-group-tier-bad.json'
+                  download_format 'custom-us-group-tier-premium.json'
+                  # Plataformas
                   download_format 'sonarr-custom-pt-br-globoplay.json'
                   download_format 'radarr-custom-pt-br-globoplay.json'
+                  # Codec
                   download_format 'radarr-custom-pt-br-x264.json'
                   download_format 'radarr-custom-pt-br-x265.json'
                   download_format 'radarr-custom-pt-br-h264.json'
@@ -1317,7 +1334,28 @@ spec:
                   download_format 'sonarr-custom-pt-br-x265.json'
                   download_format 'sonarr-custom-pt-br-h264.json'
                   download_format 'sonarr-custom-pt-br-h265.json'
-                  download_format 'custom-season-pack.json'
+                  # Season Pack
+                  download_format 'sonarr-custom-season-pack.json'
+                  # Release Quality - Radarr
+                  download_format 'radarr-uhd-remux-release.json'
+                  download_format 'radarr-fhd-remux-release.json'
+                  download_format 'radarr-hd-remux-release.json'
+                  download_format 'radarr-uhd-bluray-release.json'
+                  download_format 'radarr-fhd-bluray-release.json'
+                  download_format 'radarr-hd-bluray-release.json'
+                  download_format 'radarr-uhd-web-release.json'
+                  download_format 'radarr-fhd-web-release.json'
+                  download_format 'radarr-hd-web-release.json'
+                  # Release Quality - Sonarr
+                  download_format 'sonarr-uhd-remux-release.json'
+                  download_format 'sonarr-fhd-remux-release.json'
+                  download_format 'sonarr-hd-remux-release.json'
+                  download_format 'sonarr-uhd-bluray-release.json'
+                  download_format 'sonarr-fhd-bluray-release.json'
+                  download_format 'sonarr-hd-bluray-release.json'
+                  download_format 'sonarr-uhd-web-release.json'
+                  download_format 'sonarr-fhd-web-release.json'
+                  download_format 'sonarr-hd-web-release.json'
                   
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/
@@ -1438,6 +1476,46 @@ spec:
 ```
 
 > **Dica:** Use [crontab.guru](https://crontab.guru/) para testar expressões cron.
+
+---
+
+## 📦 Releases e Versionamento
+
+### Branch Strategy
+
+| Branch | Finalidade | Downloads |
+|--------|-----------|-----------|
+| **alpha** | Desenvolvimento ativo | Testes internos |
+| **beta** | Validação | `latest` release |
+| **stable** | Produção | Releases versionadas (v1.0.0) |
+
+> **Nota:** As branches `develop` e `main` permanecem intactas para compatibilidade com downloads existentes.
+
+### Como Baixar
+
+**Custom Formats (sempre a versão mais recente):**
+```
+https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/NOME-DO-ARQUIVO.json
+```
+
+**Configs versionados:**
+```
+https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/v1.0.0/config-DUBLADO-4K-HDR.yaml
+```
+
+### Criando uma Release
+
+Releases são criadas automaticamente via GitHub Actions:
+
+1. **Via tag:** `git tag v1.0.0 && git push origin v1.0.0`
+2. **Via GitHub UI:** Actions > Release > Run workflow (informar versao e branch)
+
+Cada release inclui:
+- Todos os custom formats JSON como assets individuais
+- Todos os configs YAML como assets individuais
+- ZIPs: `custom-formats.zip`, `configarr-configs.zip`, `trash-guides-ptbr-completo.zip`
+- Docker compose files renomeados (`docker-compose-manual.yaml`, `docker-compose-automatico.yaml`)
+- Script `download-custom-formats.sh`
 
 ---
 

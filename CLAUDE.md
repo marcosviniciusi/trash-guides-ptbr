@@ -13,6 +13,8 @@ Arquivos JSON locais referenciados nos configs via `trash_ids`:
 - `custom-brazilian-dual-language.json` - Deteccao de dual language
 - `custom-brazilian-group-tier-subtitles.json` - Grupos PT-BR com legendas
 - `custom-brazilian-subtitles.json` - Deteccao de legendas PT-BR
+- `custom-brazilian-group-tier-dubbed.json` - Grupos PT-BR com dublagem
+- `custom-brazilian-dubbed.json` - Deteccao de dublado PT-BR
 - `custom-original-language.json` - Lingua original
 - `custom-brazilian-group-tier-bad.json` - Grupos ruins PT-BR
 - `custom-us-group-tier-premium.json` - Grupos premium US
@@ -46,8 +48,8 @@ Arquivos JSON locais referenciados nos configs via `trash_ids`:
 3. **Base** (sem sufixo extra) - Sem 4K e sem HDR (ambos penalizados com -10000)
 
 **Linguas:**
-- **DUBLADO** - Prioriza dual-audio > dual-language > subtitles
-- **LEGENDADO** - Prioriza subtitles > dual-audio > dual-language
+- **DUBLADO** - Prioriza dual-audio(30000) > dual-language(29500) > dubbed-group(25000) > dubbed(24000) > subtitles(20000)
+- **LEGENDADO** - Prioriza subtitles(30000) > subtitles-detect(29500) > dubbed-group(25000) > dubbed(24000) > dual-audio(20000)
 
 ## Estrutura de Scores
 
@@ -135,6 +137,8 @@ Mono=1, Stereo=10, 3.0=15, 4.0=20, 5.1=25, 6.1=30, 7.1=35
 |---|---|---|
 | custom-brazilian-group-tier-dual-audio | 30000 | 30000 |
 | custom-brazilian-dual-language | 29500 | 29500 |
+| custom-brazilian-group-tier-dubbed | 25000 | 25000 |
+| custom-brazilian-dubbed | 24000 | 24000 |
 | custom-brazilian-group-tier-subtitles | 20000 | 20000 |
 | custom-brazilian-subtitles | 19500 | 19500 |
 | custom-original-language | 1000 | 1000 |
@@ -146,6 +150,8 @@ Mono=1, Stereo=10, 3.0=15, 4.0=20, 5.1=25, 6.1=30, 7.1=35
 |---|---|---|
 | custom-brazilian-group-tier-subtitles | 30000 | 30000 |
 | custom-brazilian-subtitles | 29500 | 29500 |
+| custom-brazilian-group-tier-dubbed | 25000 | 25000 |
+| custom-brazilian-dubbed | 24000 | 24000 |
 | custom-brazilian-group-tier-dual-audio | 20000 | 20000 |
 | custom-brazilian-dual-language | 19500 | 19500 |
 | custom-original-language | 1000 | 1000 |
@@ -217,6 +223,26 @@ Cada config tem 4 secoes (ou 2 para SEM-ANIMES):
 6. Atualizar k8s configarr-config.yaml
 7. Atualizar README.md com nova documentacao
 8. Commit e push
+
+## Releases e Versionamento
+
+### Branch Strategy
+- **alpha** - Desenvolvimento ativo (branch de trabalho do Claude)
+- **beta** - Validacao (release `latest`)
+- **stable** - Producao (releases versionadas v1.0.0)
+- **develop/main** - NAO TOCAR (compatibilidade com downloads existentes)
+
+### GitHub Actions (.github/workflows/release.yml)
+- Trigger: push de tag `v*.*.*` OU workflow_dispatch manual (versao + branch)
+- Assets gerados: JSONs individuais, YAMLs individuais, ZIPs, docker-compose renomeados, script sh
+- URLs de download:
+  - Latest: `https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/ARQUIVO`
+  - Versionado: `https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/vX.Y.Z/ARQUIVO`
+
+### Download Scripts
+- BASE_URL aponta para `releases/latest/download` (NAO mais para raw.githubusercontent)
+- Todos os scripts (manual sh, docker-compose automatico, k8s cronjob) usam nomes `custom-brazilian-*`
+- curl -fsSL com flag -L ja segue redirects do GitHub Releases (302)
 
 ## Regras de Negocio
 

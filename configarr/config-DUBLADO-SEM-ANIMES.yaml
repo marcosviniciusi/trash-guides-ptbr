@@ -404,6 +404,16 @@ radarr:
           - name: HD
             score: 29500
       - trash_ids:
+          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
+        assign_scores_to:
+          - name: HD
+            score: 25000
+      - trash_ids:
+          - custom-brazilian-dubbed # Pt-BR Dubbed
+        assign_scores_to:
+          - name: HD
+            score: 24000
+      - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
@@ -916,6 +926,16 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 29500
+      - trash_ids:
+          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
+        assign_scores_to:
+          - name: HD
+            score: 25000
+      - trash_ids:
+          - custom-brazilian-dubbed # Pt-BR Dubbed
+        assign_scores_to:
+          - name: HD
+            score: 24000
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
