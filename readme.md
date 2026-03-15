@@ -7,6 +7,36 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
 [![Sonarr Compatible](https://img.shields.io/badge/Sonarr-Compatible-green)](https://github.com/Sonarr/Sonarr)
 [![TRaSH-Guides Compatible](https://img.shields.io/badge/TRaSHGuides-Compatible-green)](https://github.com/TRaSH-Guides/Guides)
 
+---
+
+> ## ⚠️ IMPORTANTE: Branches e Releases
+>
+> ### 🚨 As branches `main` e `develop` NÃO serão mais atualizadas!
+>
+> **Todo o desenvolvimento agora acontece nas branches de release abaixo.**
+> Se você estava usando `main` ou `develop`, migre para a branch `stable`.
+>
+> | Branch | Release | Descrição |
+> |--------|---------|-----------|
+> | **`stable`** | [![Stable](https://img.shields.io/badge/stable-green)](#) | **Produção** — Testado, validado e sem erros (incluindo classificação de grupos). Atualização mensal. |
+> | **`beta`** | [![Beta](https://img.shields.io/badge/beta-yellow)](#) | **Pré-produção** — Validado pelo mantenedor, mas pode conter erros e classificações errôneas de grupos. |
+> | **`alpha`** | [![Alpha](https://img.shields.io/badge/alpha-red)](#) | **Desenvolvimento** — Validações e testes em andamento. **Evitar usar em ambiente produtivo.** |
+>
+> ### Como usar a branch correta
+>
+> ```bash
+> # Para produção (recomendado)
+> git clone -b stable https://github.com/marcosviniciusi/trash-guides-ptbr.git
+>
+> # Para testar novidades antes de todo mundo
+> git clone -b beta https://github.com/marcosviniciusi/trash-guides-ptbr.git
+> ```
+>
+> **Downloads via Release:** cada branch gera uma release automática com todos os arquivos (JSONs, configs, ZIPs, scripts).
+> Basta acessar a [página de Releases](https://github.com/marcosviniciusi/trash-guides-ptbr/releases) e escolher o canal desejado.
+
+---
+
 ## 🌟 Apoie o Projeto
 
 Se este projeto foi útil para você, considere:
@@ -153,6 +183,7 @@ trash-guides-ptbr/
 │           ├── configarr-secrets.yaml
 │           └── kustomization.yaml
 └── prowlarr-indexes/                                  # Indexes do Prowlarr Modificados
+    └── *.yml                                          # Definições customizadas de indexers
 ```
 
 ## 🎬 Perfis Disponíveis
@@ -323,60 +354,94 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
       - Animes: 60000
 4. Clique em **Save**
 
-## **Pré-Requisitos OBRIGATÓRIO:** Estrutura de Nomeação dos Arquivos
+## **Pré-Requisito OBRIGATÓRIO:** Estrutura de Nomeação dos Arquivos
 
-### Configuração de Nomenclatura de Arquivos
+### Por que essa configuração é essencial?
 
-A configuração adequada dos esquemas de nomeação de arquivos no Sonarr e Radarr é **estritamente obrigatória** para o funcionamento correto do sistema de Custom Formats.
+A nomeação dos arquivos no Radarr e Sonarr é o que permite que todo o sistema de Custom Formats funcione corretamente. Sem ela, os scores não são aplicados e a automação perde o sentido.
 
-**Importância Crítica:**
-- Sem essa configuração, o processo de importação pode falhar ou gerar resultados inconsistentes
-- A nomenclatura padronizada permite identificação precisa de vídeos que já possuem legendas embutidas
-- Garante que metadados essenciais sejam preservados no nome do arquivo após importação
+Os formatos abaixo utilizam duas tags fundamentais:
 
-### Limitações Técnicas do Pós-Import
+| Tag no nome do arquivo | O que faz |
+|------------------------|-----------|
+| `[audio-{MediaInfo-AudioLanguages}]` | Grava no nome do arquivo **todos os idiomas de áudio** detectados pelo MediaInfo (ex: `[audio-Portuguese Brazilian English]`) |
+| `[subs-{MediaInfo-SubtitleLanguages:PT}]` | Grava no nome do arquivo **todas as legendas embutidas** em Português detectadas pelo MediaInfo (ex: `[subs-[PT]]`) |
 
-Devido a restrições arquiteturais do Radarr e Sonarr, o sistema de detecção pós-importação possui limitações específicas:
+### Detecção automática de áudio e legendas PT-BR
 
-1. **Análise Baseada em Nome de Arquivo**
-   - A identificação depende exclusivamente da nomenclatura do arquivo físico
-   - Metadados que não estejam refletidos no nome podem ser perdidos
+Com essas tags, o Radarr/Sonarr **analisa o conteúdo real do arquivo** (via MediaInfo) após o download e inclui as informações de idioma diretamente no nome. Isso permite que os Custom Formats identifiquem automaticamente:
 
-2. **Detecção de Idioma via MediaInfo**
-   - O sistema detecta apenas o idioma das trilhas de áudio através do MediaInfo
-   - Legendas externas ou embutidas não são automaticamente refletidas no nome
+- **Áudio em PT-BR** — O Custom Format de `dubbed` detecta quando o arquivo contém trilha de áudio em português, mesmo que o release não tenha sido publicado por um grupo brasileiro. O score de dublado é aplicado corretamente.
+- **Legendas embutidas em PT-BR** — O Custom Format de `subtitles` detecta quando o arquivo contém legendas em português embutidas (não externas). O score de legendado é aplicado corretamente.
+- **Dual Audio** — Quando o arquivo contém **tanto** áudio original quanto áudio em português, os Custom Formats de `dual-audio` e `dual-language` identificam e aplicam o score máximo.
 
-3. **Dependência do Custom Format "Brazilian Subtitles"**
-   - Para funcionamento correto, o arquivo deve conter as tags apropriadas no nome
-   - Exemplo: `[subs-[PT]]` ou termos como "LEGENDADO" preservados na nomenclatura
+### Evitando Race Condition
 
-### Race Condition Potencial
+É comum que **grupos internacionais** (gringos) publiquem releases que já incluem áudio ou legendas em PT-BR embutidos — muitas vezes sem mencionar isso no título original do release. Sem a nomeação correta, o seguinte problema acontece:
 
-**Cenário de Risco:**
-Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação.
+```
+1. Radarr/Sonarr baixa o release "Movie.2024.1080p.BluRay.x264-GrupoGringo"
+2. O título não menciona PT-BR → Custom Formats não aplicam score de idioma
+3. Radarr/Sonarr encontra outro release e faz upgrade desnecessário
+4. Ou pior: descarta um release que já tinha PT-BR em favor de um sem
+```
 
+**Por que isso é especialmente problemático com legendas?**
 
-**Mitigação:**
-A configuração correta da nomenclatura de arquivos elimina esse risco ao garantir que as informações de legendas sejam explicitamente incluídas no nome do arquivo finalizado.
+Grupos internacionais frequentemente lançam releases com **qualidade de áudio e vídeo superior** — como Remuxes, Blu-rays com TrueHD Atmos ou DTS-HD MA — e muitos deles já incluem legendas em PT-BR embutidas no arquivo. Sem a detecção correta:
+
+- O Radarr/Sonarr **não reconhece** que o release já possui legendas PT-BR
+- O sistema faz um **upgrade para um release de grupo brasileiro** que pode ter qualidade de vídeo ou áudio inferior
+- Você **perde a qualidade real** (ex: troca um Remux com legendas PT-BR embutidas por um WEB-DL legendado)
+- O conceito de "upgrade" perde o sentido — ao invés de melhorar, o sistema **degrada** a qualidade
+
+> **Exemplo real:** Um Remux de 40GB com TrueHD Atmos e legendas PT-BR embutidas pode ser substituído por um WEB-DL de 5GB de um grupo brasileiro, simplesmente porque o Remux não recebeu score de legendado. Com a nomeação correta, o Remux recebe o score de legendas **e** o score máximo de qualidade, evitando esse downgrade absurdo.
+
+Com a nomeação configurada, o fluxo correto é:
+
+```
+1. Radarr/Sonarr baixa o release (ex: Remux de grupo gringo)
+2. Após a importação, MediaInfo analisa o arquivo real
+3. Detecta legendas PT-BR embutidas e/ou áudio PT-BR
+4. Renomeia o arquivo incluindo [audio-...] e [subs-...]
+5. Custom Formats reanalisam e aplicam os scores corretos
+6. O release recebe pontuação de idioma + pontuação de qualidade
+7. Resultado: sem upgrades desnecessários, qualidade preservada
+```
+
+> **Resumo:** A nomeação correta garante que a pontuação dos Custom Formats reflita o **conteúdo real do arquivo**, e não apenas o que o título do release diz. Releases de grupos internacionais com qualidade superior e PT-BR embutido são corretamente valorizados, evitando downgrades disfarçados de upgrades. O sistema sempre busca a **melhor combinação de qualidade + idioma**, que é o verdadeiro objetivo.
 
 ---
 
 ***Configurando os formatos de arquivos:***
- - [Sonarr Series](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#standard)
+
+#### Radarr (Filmes e Animes)
+
 ```
-#Primeiro Campo - Formato do Episódio Padrão
-S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
-```
-```
-#Segundo Campo - Formato do episódio diário
-S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+#Formato do Filme
+{Movie-CleanTitle}-{(Release-Year)}[imdbid-{ImdbId}]{[Quality-Title]}{[CUSTOM-FORMATS]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo-AudioCodec}{Mediainfo-AudioChannels]}{[Mediainfo-VideoCodec]}[audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages:PT}]{-Release_Group}
 ```
 ```
-#Terceiro Campo - Formato do episódio de anime
-S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
+#Formato da Pasta do Filme
+{Movie CleanTitle}_({Release Year})_[imdbid-{ImdbId}]
+```
+
+#### Sonarr (Series e Animes)
+
+```
+#Formato do Episodio Padrao
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages:PT}]{-Release_Group}
 ```
 ```
-#Formato de Pasta das Séries
+#Formato do Episodio Diario
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages:PT}]{-Release_Group}
+```
+```
+#Formato do Episodio de Anime
+S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][audio-{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages:PT}]{-Release_Group}
+```
+```
+#Formato de Pasta das Series
 {Series_TitleYear}-[imdb-{ImdbId}]
 ```
 ```
@@ -386,52 +451,6 @@ Season {season:00}
 ```
 #Formato da Pasta para Especiais
 Specials
-```
-
- - [Radarr Filmes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
-```
-#Formato de Filme Padrão
-{Movie-CleanTitle}-{(Release-Year)}[imdbid-{ImdbId}]{[Quality-Title]}{[CUSTOM-FORMATS]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo-AudioCodec}{Mediainfo-AudioChannels]}{[Mediainfo-VideoCodec]}[{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
-```
-```
-#Formato da pasta do filme
-{Movie CleanTitle}_({Release Year})_[imdbid-{ImdbId}]
-```
-
-  - [Sonarr Animes](https://trash-guides.info/Sonarr/Sonarr-recommended-naming-scheme/#anime)
-```
-#Primeiro Campo - Formato do Episódio Padrão
-S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
-```
-```
-#Segundo Campo - Formato do episódio diário
-S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
-```
-```
-#Terceiro Campo - Formato do episódio de anime
-S{season:00}E{episode:00}-{absolute:000}-[imdb-{ImdbId}]-[{Quality-Title}]{[MediaInfo-VideoDynamicRangeType]}{[CUSTOM-FORMATS]}[{MediaInfo-VideoBitDepth}bit]{[MediaInfo-VideoCodec]}[{Mediainfo-AudioCodec}{Mediainfo-AudioChannels}][{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
-```
-```
-#Formato de Pasta das Séries
-{Series_TitleYear}-[imdb-{ImdbId}]
-```
-```
-#Formato da Pasta da Temporada
-Season {season:00}
-```
-```
-#Formato da Pasta para Especiais
-Specials
-```
-
-  - [Radarr Animes](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#standard-movie-format)
-```
-#Formato de Filme Padrão
-{Movie-CleanTitle}-{(Release-Year)}[imdbid-{ImdbId}]{[Quality-Title]}{[CUSTOM-FORMATS]}{[MediaInfo-3D]}{[MediaInfo-VideoDynamicRangeType]}{[Mediainfo-AudioCodec}{Mediainfo-AudioChannels]}{[Mediainfo-VideoCodec]}[{MediaInfo-AudioLanguages}][subs-{MediaInfo-SubtitleLanguages}]{-Release_Group}
-```
-```
-#Formato da pasta do filme
-{Movie CleanTitle}_({Release Year})_[imdbid-{ImdbId}]
 ```
 
 ## Habilite "Mostrar Opções Avançadas" na mesma pagina ao topo e configure os seguintes campos abaixo:
@@ -447,67 +466,54 @@ srt,nfo,sub,ass,ssa
 
 
 
-## Prowlarr Custom Indexers - Brazilian Trackers
-Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
-## Propósito
-A comunidade brasileira de trackers faz um **trabalho excepcional** disponibilizando conteúdo de qualidade em português. No entanto, cada tracker segue sua própria convenção de nomenclatura, o que é perfeitamente compreensível dada a diversidade e autonomia de cada comunidade.
+## 🔍 Por que os Indexes Customizados do Prowlarr?
 
-Estes indexers foram desenvolvidos para criar uma **camada de padronização** que unifica os títulos dos releases brasileiros em diversos trackers, tanto públicos quanto privados, **sem alterar o excelente trabalho já realizado pelas comunidades**.
+Os Custom Formats do Radarr/Sonarr identificam releases brasileiros através de **palavras-chave padronizadas** no título (ex: `BRAZILIAN-DUAL-AUDIO`, `DUBLADO`, `LEGENDADO`). Porém, cada tracker brasileiro usa sua própria convenção de nomenclatura:
 
-Com esta padronização, você terá:
-- ✅ **Resultados consistentes** entre diferentes trackers
-- ✅ **Custom Formats funcionando corretamente** no Radarr/Sonarr
-- ✅ **Melhor experiência na automação** de downloads
-- ✅ **Priorização inteligente** de releases em português brasileiro
+| Tracker | Exemplo de título original |
+|---------|---------------------------|
+| Tracker A | `Filme.2024.DUAL.1080p` |
+| Tracker B | `Filme (2024) Dual Áudio 1080p` |
+| Tracker C | `Filme.2024.Nacional.1080p` |
 
-## Padronizações Aplicadas
+Sem padronização, o Radarr/Sonarr **não consegue identificar corretamente** se um release é dual audio, dublado ou legendado, e os scores dos Custom Formats não são aplicados.
 
-| Original | Padronizado |
-|----------|-------------|
-| `DUAL`, `Dual Ãudio` | `BRAZILIAN-DUAL-AUDIO` |
-| `Dublado` | `DUBLADO` |
+Os indexes customizados na pasta `prowlarr-indexes/` resolvem isso: eles **padronizam os títulos antes de chegarem ao Radarr/Sonarr**, sem alterar o conteúdo ou a estrutura dos releases.
+
+| Original no tracker | Padronizado para o Radarr/Sonarr |
+|---------------------|----------------------------------|
+| `DUAL`, `Dual Áudio`, `Dual Audio` | `BRAZILIAN-DUAL-AUDIO` |
+| `Dublado`, `DUB` | `DUBLADO` |
 | `Nacional` | `NACIONAL` |
-| `Legendado` | `LEGENDADO` |
+| `Legendado`, `LEG` | `LEGENDADO` |
 
+> **Importante:** Os indexes apenas alteram a forma como o título é **apresentado** ao Radarr/Sonarr. Nenhum conteúdo, link ou estrutura do tracker é modificado.
 
-## 💚 Reconhecimento
+### Instalacao dos Indexes
 
-Nosso profundo agradecimento a todas as comunidades de trackers brasileiros pelo trabalho contínuo e dedicado. Esta customização apenas adiciona uma camada de padronização técnica para facilitar a automação, preservando totalmente a qualidade e integridade dos releases originais.
-
----
-
-## 🚀 Resultado
-
-Com estes indexers customizados, você terá acesso ao excelente conteúdo disponibilizado pelas comunidades brasileiras com a vantagem adicional de uma nomenclatura padronizada, garantindo uma experiência superior na automação de mídia em português brasileiro.
-
-PS: Não altera conteudo/titulo, apenas a altera a forma como é apresentado o titulo para o sonarr e radarr. Toda a estrutura é mantida.
-
-## Instalação
-
-### 1. Localize a pasta de definições do Prowlarr
+1. Localize a pasta de definicoes customizadas do Prowlarr:
 ```bash
 # Docker
-/config/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+/config/Definitions/Custom
 
 # Windows
-C:\ProgramData\Prowlarr\Definitions\Custom # Se não houver a pasta Custom, crie manualmente.
+C:\ProgramData\Prowlarr\Definitions\Custom
 
 # Linux
-~/.config/Prowlarr/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+~/.config/Prowlarr/Definitions/Custom
 ```
+> Se a pasta `Custom` nao existir, crie manualmente.
 
-### 2. Adicione os arquivos `.yml` nesta pasta
+2. Copie os arquivos `.yml` da pasta `prowlarr-indexes/` para esse diretorio.
 
-Copie os indexers customizados para o diretório `/config/Definitions/Custom`
-
-### 3. Reinicie o Prowlarr
+3. Reinicie o Prowlarr:
 ```bash
 docker restart prowlarr
 ```
 
-### 4. Configure os indexers no Prowlarr
+4. No Prowlarr, acesse **Indexers** → **Add Indexer** e procure pelos nomes com sufixo `trashguides-ptbr`. Desative os indexers padrao equivalentes para evitar duplicacao.
 
-Acesse **Indexers** → **Add Indexer** e procure pelos indexers com nomes "trashguides-pt-br. e desativa os padores do Prowlarr para estes indexes.
+> **Agradecimento:** Nosso reconhecimento a todas as comunidades de trackers brasileiros pelo trabalho continuo e dedicado. Estes indexes apenas adicionam uma camada de padronizacao tecnica para facilitar a automacao.
 
 ## Configurando Manualmente os custom Formats
 ## obs: siga apenas este passo se não deseja o uso do configarr.
@@ -518,131 +524,6 @@ Acesse **Indexers** → **Add Indexer** e procure pelos indexers com nomes "tras
 3. Cole o conteúdo do JSON desejado (disponível na pasta `custom-formats/`)
 4. Salve e configure o score no Quality Profile correspondente
 ---
-
-## 🔄 Alternativa Flexível: Prowlarr e Autobrr Proxy PT-BR
-
-Além dos Custom Formats do Prowlarr, você pode optar por uma solução mais flexível usando o **Autobrr Proxy PT-BR** para manipulação dinâmica de títulos.
-
-### 🎯 Vantagens do Autobrr Proxy
-
-- ✅ **Manipulação em tempo real**: Modifica títulos antes de chegarem ao Radarr/Sonarr
-- ✅ **Maior flexibilidade**: Regras customizáveis por indexer
-- ✅ **Independente do Prowlarr**: Funciona com indexers padrão do Prowlarr
-- ✅ **Logs detalhados**: Acompanhe cada modificação aplicada
-- ✅ **Normalização automática**: Remove pontos, padroniza formatos técnicos
-- ✅ **Multi-instância**: Diferentes regras para Movies, Series e Animes
-
-### 📋 Como Funciona
-```
-┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
-│  Prowlarr   │────▶│  Autobrr Proxy   │────▶│  Radarr     │
-│  (Indexers  │     │  PT-BR           │     │  Sonarr     │
-│   Padrão)   │     │                  │     │             │
-│             │     │ • Normaliza      │     │ (recebe     │
-│             │     │   pontos         │     │  títulos    │
-│             │     │ • Transforma     │     │  padrões)   │
-│             │     │   DUAL→BR-DUAL   │     │             │
-│             │     │ • Adiciona       │     │             │
-│             │     │   LEGENDADO      │     │             │
-└─────────────┘     └──────────────────┘     └─────────────┘
-```
-
-### 🔧 Configuração Recomendada
-
-#### Opção 1: Somente Autobrr Proxy (Recomendado)
-
-**Use indexers PADRÃO do Prowlarr + Autobrr Proxy**
-
-1. Configure os indexers PT-BR no Prowlarr **SEM modificações nos Custom Formats**
-2. Use os nomes originais: `CapybaraBR`, `BrasilTracker`, `Locadora`, etc
-3. Configure o Autobrr Proxy conforme documentação em `/autobrr-proxy/README.md`
-4. O proxy aplicará todas as transformações necessárias automaticamente
-
-**Vantagens:**
-- ✅ Configuração mais simples
-- ✅ Sem duplicação de indexers
-- ✅ Atualizações de regras no proxy (não precisa reconfigurar Prowlarr)
-
-**Desvantagens:**
-- ⚠️ Se procurar releases antigos, as regras não se aplicação
-- ⚠️ Imcompatibilidade se usar o App Huntarr
-
-#### Opção 2: TRaSH Guides + Autobrr Proxy + Prowlarr(Para uso com Huntarr)
-
-**Use AMBOS os tipos de indexers se você também usa Huntarr**
-
-Huntarr precisa dos indexers modificados (TRaSH Guides) para funcionar corretamente com torrents antigos que já existem nos trackers. Para garantir compatibilidade total:
-
-**Configure 2 versões de cada indexer:**
-
-| Indexer | Nome | Prioridade | Uso |
-|---------|------|------------|-----|
-| `CapybaraBR-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
-| `CapybaraBR` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
-| `BrasilTracker-trashguides` | Com Custom Formats TRaSH | **1** (Menor) | Huntarr (torrents antigos) |
-| `BrasilTracker` | Padrão do Prowlarr | **2** (Maior) | Autobrr + Proxy (torrents novos) |
-
-**Por que essa ordem de prioridade?**
-
-- **Indexers padrão (prioridade 2)**: Usados pelo Autobrr para torrents **novos** detectados em tempo real
-- **Indexers TRaSH (prioridade 1)**: Usados pelo Huntarr para buscar torrents **antigos** que já existem nos trackers
-
-**Exemplo de configuração no Prowlarr:**
-```
-Indexers:
-├─ tracker1-trashguides (Priority: 1) ← Para Huntarr
-├─ Traker1 (Priority: 2)              ← Para Autobrr + Proxy
-├─ Traker2-trashguides (Priority: 1) ← Para Huntarr  
-├─ Traker2 (Priority: 2)             ← Para Autobrr + Proxy
-├─ Traker3-trashguides (Priority: 1)      ← Para Huntarr
-└─ Traker3 (Priority: 2)                  ← Para Autobrr + Proxy
-```
-
-**Vantagens:**
-- ✅ Compatibilidade total com Huntarr (busca torrents antigos)
-- ✅ Autobrr com manipulação flexível (torrents novos)
-- ✅ Cobertura completa: conteúdo novo e antigo
-- ✅ Prioriza torrents novos via Autobrr (prioridade maior)
-
-**Desvantagens:**
-- ⚠️ Mais indexers para gerenciar
-- ⚠️ Duplicação de configuração
-
-### 🔗 Documentação Completa
-
-Para instruções detalhadas de configuração, variáveis de ambiente, troubleshooting e exemplos, consulte:
-
-**📖 [Documentação Completa do Autobrr Proxy](./autobrr-proxy/README.md)**
-
-A documentação inclui:
-- Configuração dinâmica de múltiplas instâncias *arr
-- Regras específicas por indexer brasileiro
-- Normalização automática de títulos
-- Logs detalhados e modo DEBUG
-- Health checks e monitoramento
-- Exemplos práticos de uso
-
-### 🤔 Qual Abordagem Escolher?
-
-| Cenário | Solução Recomendada |
-|---------|---------------------|
-| **Uso apenas de Autobrr** | Opção 1: TRaSH Guides (Custom Formats) + Somente Autobrr Proxy |
-| **Uso de Autobrr + Huntarr** | Opção 2: TRaSH Guides (Custom Formats)  + Indexes Modifiados Prowlarr + Autobrr Proxy |
-| **Uso apenas de Prowlarr manual** | Opção 3: TRaSH Guides (Custom Formats) + Indexes Modificados Prowlarr |
-
-### 💡 Dica Pro
-
-Se você usa Huntarr e quer a melhor experiência:
-
-1. Configure os **2 tipos de indexers** (TRaSH + Padrão)
-2. Defina **prioridades corretas** (TRaSH=1, Padrão=2)
-3. Configure o **Autobrr Proxy** apontando para os indexers padrão
-4. Huntarr usará os indexers TRaSH automaticamente para buscas
-
-Dessa forma você terá:
-- ✅ Torrents novos detectados e modificados pelo Autobrr Proxy
-- ✅ Torrents antigos encontrados pelo Huntarr via indexers TRaSH
-- ✅ Melhor cobertura e compatibilidade total
 
 ---
 
@@ -873,74 +754,21 @@ sonarr:
 
 ### 4. Script de Download dos Custom Formats
 
+O script baixa automaticamente **todos os Custom Formats** disponíveis no release, sem precisar listar cada arquivo manualmente. Ao adicionar ou remover Custom Formats no repositório, o script do release é atualizado automaticamente pelo GitHub Actions.
+
 ```bash
-cat > download-custom-formats.sh << 'EOF'
-#!/bin/bash
-
-BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
-
-echo "📥 Baixando custom formats..."
-# Função para baixar com tratamento de erro
-download_format() {
-    local file=$1
-    echo "  → $file"
-    curl -fsSL "$BASE_URL/$file" -o "custom_formats/$file" || {
-        echo "❌ Erro ao baixar $file"
-        return 1
-    }
-}
-
-# Idioma PT-BR
-download_format 'custom-brazilian-group-tier-dual-audio.json'
-download_format 'custom-brazilian-dual-language.json'
-download_format 'custom-brazilian-group-tier-subtitles.json'
-download_format 'custom-brazilian-subtitles.json'
-download_format 'custom-brazilian-group-tier-dubbed.json'
-download_format 'custom-brazilian-dubbed.json'
-download_format 'custom-original-language.json'
-download_format 'custom-brazilian-group-tier-bad.json'
-download_format 'custom-us-group-tier-premium.json'
-# Plataformas
-download_format 'sonarr-custom-pt-br-globoplay.json'
-download_format 'radarr-custom-pt-br-globoplay.json'
-# Codec
-download_format 'radarr-custom-pt-br-x264.json'
-download_format 'radarr-custom-pt-br-x265.json'
-download_format 'radarr-custom-pt-br-h264.json'
-download_format 'radarr-custom-pt-br-h265.json'
-download_format 'sonarr-custom-pt-br-x264.json'
-download_format 'sonarr-custom-pt-br-x265.json'
-download_format 'sonarr-custom-pt-br-h264.json'
-download_format 'sonarr-custom-pt-br-h265.json'
-# Season Pack
-download_format 'sonarr-custom-season-pack.json'
-# Release Quality - Radarr
-download_format 'radarr-uhd-remux-release.json'
-download_format 'radarr-fhd-remux-release.json'
-download_format 'radarr-hd-remux-release.json'
-download_format 'radarr-uhd-bluray-release.json'
-download_format 'radarr-fhd-bluray-release.json'
-download_format 'radarr-hd-bluray-release.json'
-download_format 'radarr-uhd-web-release.json'
-download_format 'radarr-fhd-web-release.json'
-download_format 'radarr-hd-web-release.json'
-# Release Quality - Sonarr
-download_format 'sonarr-uhd-remux-release.json'
-download_format 'sonarr-fhd-remux-release.json'
-download_format 'sonarr-hd-remux-release.json'
-download_format 'sonarr-uhd-bluray-release.json'
-download_format 'sonarr-fhd-bluray-release.json'
-download_format 'sonarr-hd-bluray-release.json'
-download_format 'sonarr-uhd-web-release.json'
-download_format 'sonarr-fhd-web-release.json'
-download_format 'sonarr-hd-web-release.json'
-
-echo "✅ Custom formats baixados com sucesso!"
-EOF
+# Baixar o script do release
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/download-custom-formats.sh \
+  -o download-custom-formats.sh
 
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
 ```
+
+> **Dica:** Para usar um canal específico (alpha, beta, stable), passe a variável `CHANNEL`:
+> ```bash
+> CHANNEL=beta ./download-custom-formats.sh
+> ```
 
 ### 5. Docker Compose
 
@@ -1092,71 +920,21 @@ version: '3.8'
 
 services:
   # Download automático dos Custom Formats
+  # Baixa o script gerado dinamicamente pelo release e executa
   download-formats:
     image: curlimages/curl:latest
     container_name: configarr-download
     command: >
       sh -c "
-      BASE_URL='https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download'
+      CHANNEL='$${CHANNEL:-stable}'
+      BASE_URL='https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/$${CHANNEL}'
 
-      mkdir -p /config/custom_formats
+      echo '📥 Baixando script de custom formats...'
+      curl -fsSL -L \"$$BASE_URL/download-custom-formats.sh\" -o /tmp/download-custom-formats.sh
+      chmod +x /tmp/download-custom-formats.sh
 
-      echo '📥 Baixando custom formats...'
+      cd /config && CHANNEL=$$CHANNEL sh /tmp/download-custom-formats.sh
 
-      download_format() {
-          local file=$$1
-          echo '  → '$$file
-          curl -fsSL \"$$BASE_URL/$$file\" -o \"/config/custom_formats/$$file\" || {
-              echo '❌ Erro ao baixar '$$file
-              return 1
-          }
-      }
-
-      # Idioma PT-BR
-      download_format 'custom-brazilian-group-tier-dual-audio.json'
-      download_format 'custom-brazilian-dual-language.json'
-      download_format 'custom-brazilian-group-tier-subtitles.json'
-      download_format 'custom-brazilian-subtitles.json'
-      download_format 'custom-brazilian-group-tier-dubbed.json'
-      download_format 'custom-brazilian-dubbed.json'
-      download_format 'custom-original-language.json'
-      download_format 'custom-brazilian-group-tier-bad.json'
-      download_format 'custom-us-group-tier-premium.json'
-      # Plataformas
-      download_format 'sonarr-custom-pt-br-globoplay.json'
-      download_format 'radarr-custom-pt-br-globoplay.json'
-      # Codec
-      download_format 'radarr-custom-pt-br-x264.json'
-      download_format 'radarr-custom-pt-br-x265.json'
-      download_format 'radarr-custom-pt-br-h264.json'
-      download_format 'radarr-custom-pt-br-h265.json'
-      download_format 'sonarr-custom-pt-br-x264.json'
-      download_format 'sonarr-custom-pt-br-x265.json'
-      download_format 'sonarr-custom-pt-br-h264.json'
-      download_format 'sonarr-custom-pt-br-h265.json'
-      # Season Pack
-      download_format 'sonarr-custom-season-pack.json'
-      # Release Quality - Radarr
-      download_format 'radarr-uhd-remux-release.json'
-      download_format 'radarr-fhd-remux-release.json'
-      download_format 'radarr-hd-remux-release.json'
-      download_format 'radarr-uhd-bluray-release.json'
-      download_format 'radarr-fhd-bluray-release.json'
-      download_format 'radarr-hd-bluray-release.json'
-      download_format 'radarr-uhd-web-release.json'
-      download_format 'radarr-fhd-web-release.json'
-      download_format 'radarr-hd-web-release.json'
-      # Release Quality - Sonarr
-      download_format 'sonarr-uhd-remux-release.json'
-      download_format 'sonarr-fhd-remux-release.json'
-      download_format 'sonarr-hd-remux-release.json'
-      download_format 'sonarr-uhd-bluray-release.json'
-      download_format 'sonarr-fhd-bluray-release.json'
-      download_format 'sonarr-hd-bluray-release.json'
-      download_format 'sonarr-uhd-web-release.json'
-      download_format 'sonarr-fhd-web-release.json'
-      download_format 'sonarr-hd-web-release.json'
-      
       echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
@@ -1300,63 +1078,16 @@ spec:
                   echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
+                  CHANNEL="${CHANNEL:-stable}"
+                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/${CHANNEL}"
 
-                  download_format() {
-                    local file=$1
-                    echo "  → Baixando: $file"
-                    curl -fsSL --retry 3 --retry-delay 2 "$BASE_URL/$file" \
-                      -o "/config/custom_formats/$file" || {
-                      echo "❌ Erro ao baixar $file"
-                      return 1
-                    }
-                  }
+                  echo "📥 Baixando script de custom formats (canal: ${CHANNEL})..."
+                  curl -fsSL -L --retry 3 --retry-delay 2 \
+                    "$BASE_URL/download-custom-formats.sh" -o /tmp/download-custom-formats.sh
+                  chmod +x /tmp/download-custom-formats.sh
 
-                  # Idioma PT-BR
-                  download_format 'custom-brazilian-group-tier-dual-audio.json'
-                  download_format 'custom-brazilian-dual-language.json'
-                  download_format 'custom-brazilian-group-tier-subtitles.json'
-                  download_format 'custom-brazilian-subtitles.json'
-                  download_format 'custom-brazilian-group-tier-dubbed.json'
-                  download_format 'custom-brazilian-dubbed.json'
-                  download_format 'custom-original-language.json'
-                  download_format 'custom-brazilian-group-tier-bad.json'
-                  download_format 'custom-us-group-tier-premium.json'
-                  # Plataformas
-                  download_format 'sonarr-custom-pt-br-globoplay.json'
-                  download_format 'radarr-custom-pt-br-globoplay.json'
-                  # Codec
-                  download_format 'radarr-custom-pt-br-x264.json'
-                  download_format 'radarr-custom-pt-br-x265.json'
-                  download_format 'radarr-custom-pt-br-h264.json'
-                  download_format 'radarr-custom-pt-br-h265.json'
-                  download_format 'sonarr-custom-pt-br-x264.json'
-                  download_format 'sonarr-custom-pt-br-x265.json'
-                  download_format 'sonarr-custom-pt-br-h264.json'
-                  download_format 'sonarr-custom-pt-br-h265.json'
-                  # Season Pack
-                  download_format 'sonarr-custom-season-pack.json'
-                  # Release Quality - Radarr
-                  download_format 'radarr-uhd-remux-release.json'
-                  download_format 'radarr-fhd-remux-release.json'
-                  download_format 'radarr-hd-remux-release.json'
-                  download_format 'radarr-uhd-bluray-release.json'
-                  download_format 'radarr-fhd-bluray-release.json'
-                  download_format 'radarr-hd-bluray-release.json'
-                  download_format 'radarr-uhd-web-release.json'
-                  download_format 'radarr-fhd-web-release.json'
-                  download_format 'radarr-hd-web-release.json'
-                  # Release Quality - Sonarr
-                  download_format 'sonarr-uhd-remux-release.json'
-                  download_format 'sonarr-fhd-remux-release.json'
-                  download_format 'sonarr-hd-remux-release.json'
-                  download_format 'sonarr-uhd-bluray-release.json'
-                  download_format 'sonarr-fhd-bluray-release.json'
-                  download_format 'sonarr-hd-bluray-release.json'
-                  download_format 'sonarr-uhd-web-release.json'
-                  download_format 'sonarr-fhd-web-release.json'
-                  download_format 'sonarr-hd-web-release.json'
-                  
+                  cd /config && CHANNEL=$CHANNEL sh /tmp/download-custom-formats.sh
+
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/
               

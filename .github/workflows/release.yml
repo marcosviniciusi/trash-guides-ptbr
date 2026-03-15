@@ -105,8 +105,46 @@ jobs:
           cp iac/docker-compose/manual/docker-compose.yaml dist/docker-compose-manual.yaml
           cp iac/docker-compose/automatico/docker-compose.yaml dist/docker-compose-automatico.yaml
 
-          # Script de download
-          cp iac/docker-compose/manual/download-custom-formats.sh dist/
+      - name: Gerar script de download dinamicamente
+        run: |
+          CHANNEL="${{ steps.config.outputs.channel }}"
+          cat > dist/download-custom-formats.sh << SCRIPT
+          #!/bin/bash
+
+          # Canal de release: alpha, beta, stable ou tag (ex: v1.0.0)
+          # Altere para o canal desejado ou passe como variavel de ambiente:
+          #   CHANNEL=beta ./download-custom-formats.sh
+          CHANNEL="\${CHANNEL:-${CHANNEL}}"
+
+          BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/\${CHANNEL}"
+
+          mkdir -p custom_formats
+
+          echo "📥 Baixando custom formats (canal: \${CHANNEL})..."
+
+          download_format() {
+              local file=\$1
+              echo "  → \$file"
+              curl -fsSL -L "\$BASE_URL/\$file" -o "custom_formats/\$file" || {
+                  echo "❌ Erro ao baixar \$file"
+                  return 1
+              }
+          }
+
+          SCRIPT
+
+          # Gera as linhas de download a partir dos arquivos reais
+          for f in custom-formats/*.json; do
+            fname=$(basename "$f")
+            echo "download_format '${fname}'" >> dist/download-custom-formats.sh
+          done
+
+          cat >> dist/download-custom-formats.sh << 'SCRIPT'
+
+          echo "✅ Custom formats baixados com sucesso!"
+          SCRIPT
+
+          chmod +x dist/download-custom-formats.sh
 
       - name: Criar/Atualizar Release do canal (${{ steps.config.outputs.channel }})
         uses: softprops/action-gh-release@v2
