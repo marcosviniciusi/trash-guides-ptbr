@@ -358,41 +358,50 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
       - Animes: 60000
 4. Clique em **Save**
 
-## **Pré-Requisitos OBRIGATÓRIO:** Estrutura de Nomeação dos Arquivos
+## **Pré-Requisito OBRIGATÓRIO:** Estrutura de Nomeação dos Arquivos
 
-### Configuração de Nomenclatura de Arquivos
+### Por que essa configuração é essencial?
 
-A configuração adequada dos esquemas de nomeação de arquivos no Sonarr e Radarr é **estritamente obrigatória** para o funcionamento correto do sistema de Custom Formats.
+A nomeação dos arquivos no Radarr e Sonarr é o que permite que todo o sistema de Custom Formats funcione corretamente. Sem ela, os scores não são aplicados e a automação perde o sentido.
 
-**Importância Crítica:**
-- Sem essa configuração, o processo de importação pode falhar ou gerar resultados inconsistentes
-- A nomenclatura padronizada permite identificação precisa de vídeos que já possuem legendas embutidas
-- Garante que metadados essenciais sejam preservados no nome do arquivo após importação
+Os formatos abaixo utilizam duas tags fundamentais:
 
-### Limitações Técnicas do Pós-Import
+| Tag no nome do arquivo | O que faz |
+|------------------------|-----------|
+| `[audio-{MediaInfo-AudioLanguages}]` | Grava no nome do arquivo **todos os idiomas de áudio** detectados pelo MediaInfo (ex: `[audio-Portuguese Brazilian English]`) |
+| `[subs-{MediaInfo-SubtitleLanguages:PT}]` | Grava no nome do arquivo **todas as legendas embutidas** em Português detectadas pelo MediaInfo (ex: `[subs-[PT]]`) |
 
-Devido a restrições arquiteturais do Radarr e Sonarr, o sistema de detecção pós-importação possui limitações específicas:
+### Detecção automática de áudio e legendas PT-BR
 
-1. **Análise Baseada em Nome de Arquivo**
-   - A identificação depende exclusivamente da nomenclatura do arquivo físico
-   - Metadados que não estejam refletidos no nome podem ser perdidos
+Com essas tags, o Radarr/Sonarr **analisa o conteúdo real do arquivo** (via MediaInfo) após o download e inclui as informações de idioma diretamente no nome. Isso permite que os Custom Formats identifiquem automaticamente:
 
-2. **Detecção de Idioma via MediaInfo**
-   - O sistema detecta apenas o idioma das trilhas de áudio através do MediaInfo
-   - Legendas externas ou embutidas não são automaticamente refletidas no nome
+- **Áudio em PT-BR** — O Custom Format de `dubbed` detecta quando o arquivo contém trilha de áudio em português, mesmo que o release não tenha sido publicado por um grupo brasileiro. O score de dublado é aplicado corretamente.
+- **Legendas embutidas em PT-BR** — O Custom Format de `subtitles` detecta quando o arquivo contém legendas em português embutidas (não externas). O score de legendado é aplicado corretamente.
+- **Dual Audio** — Quando o arquivo contém **tanto** áudio original quanto áudio em português, os Custom Formats de `dual-audio` e `dual-language` identificam e aplicam o score máximo.
 
-3. **Dependência do Custom Format "Brazilian Subtitles"**
-   - Para funcionamento correto, o arquivo deve conter as tags apropriadas no nome
-   - Exemplo: `[subs-[PT]]` ou termos como "LEGENDADO" preservados na nomenclatura
+### Evitando Race Condition
 
-### Race Condition Potencial
+É comum que **grupos internacionais** (gringos) publiquem releases que já incluem áudio ou legendas em PT-BR embutidos — muitas vezes sem mencionar isso no título original do release. Sem a nomeação correta, o seguinte problema acontece:
 
-**Cenário de Risco:**
-Quando legendas estão presentes mas não são reconhecidas pela nomenclatura do arquivo, pode ocorrer uma condição de corrida (race condition) no fluxo pós-importação.
+```
+1. Radarr/Sonarr baixa o release "Movie.2024.1080p.BluRay.x264-GrupoGringo"
+2. O título não menciona PT-BR → Custom Formats não aplicam score de idioma
+3. Radarr/Sonarr encontra outro release e faz upgrade desnecessário
+4. Ou pior: descarta um release que já tinha PT-BR em favor de um sem
+```
 
+Com a nomeação configurada, o fluxo correto é:
 
-**Mitigação:**
-A configuração correta da nomenclatura de arquivos elimina esse risco ao garantir que as informações de legendas sejam explicitamente incluídas no nome do arquivo finalizado.
+```
+1. Radarr/Sonarr baixa o release
+2. Após a importação, MediaInfo analisa o arquivo real
+3. Detecta áudio PT-BR e/ou legendas PT-BR embutidas
+4. Renomeia o arquivo incluindo [audio-...] e [subs-...]
+5. Custom Formats reanalisam e aplicam os scores corretos
+6. O release recebe a pontuação adequada → sem upgrades desnecessários
+```
+
+> **Resumo:** A nomeação correta garante que a pontuação dos Custom Formats reflita o **conteúdo real do arquivo**, e não apenas o que o título do release diz. Isso evita upgrades desnecessários e garante que releases com PT-BR embutido sejam corretamente valorizados.
 
 ---
 
