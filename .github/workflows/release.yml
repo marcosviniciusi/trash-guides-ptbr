@@ -91,8 +91,9 @@ jobs:
           cp iac/docker-compose/manual/docker-compose.yaml dist/docker-compose-manual.yaml
           cp iac/docker-compose/automatico/docker-compose.yaml dist/docker-compose-automatico.yaml
 
-          # Script de download
+          # Script de download (substitui CHANNEL default pelo canal atual)
           cp iac/docker-compose/manual/download-custom-formats.sh dist/
+          sed -i 's|CHANNEL="${CHANNEL:-stable}"|CHANNEL="${CHANNEL:-${{ steps.config.outputs.channel }}}"|' dist/download-custom-formats.sh
 
       - name: Criar/Atualizar Release do canal (${{ steps.config.outputs.channel }})
         uses: softprops/action-gh-release@v2
