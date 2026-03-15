@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configarr-config
+  name: configarr-config-legendado
   namespace: arr
 data:
   config.yml: |
@@ -18,7 +18,7 @@ data:
       movies:
         base_url: !secret RADARR_URL
         api_key: !secret RADARR_API_KEY
-        
+
         custom_formats:
           ############################ AUDIO QUALITY ############################
           - trash_ids:
@@ -250,7 +250,7 @@ data:
             assign_scores_to:
               - name: HD
                 score: 25
-          
+
           - trash_ids:
               - db9b4c4b53d312a3ca5f1378f6440fc9 # Vinegar Syndrome
             assign_scores_to:
@@ -303,22 +303,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - radarr-custom-pt-br-x264 # x264
+              - radarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-x265 # x265
+              - radarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h264 # h264
+              - radarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h265 # h265
+              - radarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -414,12 +414,12 @@ data:
               - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
             assign_scores_to:
               - name: HD
-                score: 20000
+                score: 25000
           - trash_ids:
               - custom-brazilian-subtitles # Pt-BR Subtitles
             assign_scores_to:
               - name: HD
-                score: 19500
+                score: 24000
           - trash_ids:
               - custom-original-language # Original Language
             assign_scores_to:
@@ -435,20 +435,20 @@ data:
             assign_scores_to:
               - name: HD
                 score: 5000
-                   
+
            ############################ Repack/Proper ############################
           - trash_ids:
               - e7718d7a3ce595f289bfee26adc178f5 # Repack/Proper
             assign_scores_to:
               - name: HD
                 score: 0
-          
+
           - trash_ids:
               - ae43b294509409a6a13919dedd4764c4 # Repack2
             assign_scores_to:
               - name: HD
                 score: 0
-          
+
           - trash_ids:
               - 5caaaa1c08c1742aa4342d8c4cc463f2 # Repack3
             assign_scores_to:
@@ -574,7 +574,7 @@ data:
       animes-movies:
         base_url: !secret RADARR_ANIMES_URL
         api_key: !secret RADARR_ANIMES_API_KEY
-        
+
         custom_formats:
           ############################ AUDIO QUALITY ############################
           - trash_ids:
@@ -775,12 +775,12 @@ data:
               - 9c38ebb7384dada637be8899efa68e6f # SDR
             assign_scores_to:
               - name: HD
-                score: 10
+                score: 0
           - trash_ids:
               - 25c12f78430a3a23413652cbd1d48d77 # SDR (no WEBDL)
             assign_scores_to:
               - name: HD
-                score: 10
+                score: 0
           ############################ CoDECS ############################
           - trash_ids:
               - cae4ca30163749b891686f95532519bd # AV1
@@ -788,22 +788,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - radarr-custom-pt-br-x264 # x264
+              - radarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-x265 # x265
+              - radarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h264 # h264
+              - radarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h265 # h265
+              - radarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -843,22 +843,22 @@ data:
               - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
             assign_scores_to:
               - name: HD
-                score: 60000
+                score: 30000
           - trash_ids:
               - custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
-                score: 55000
+                score: 29500
           - trash_ids:
               - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
             assign_scores_to:
               - name: HD
-                score: 40000
+                score: 25000
           - trash_ids:
               - custom-brazilian-subtitles # Pt-BR Subtitles
             assign_scores_to:
               - name: HD
-                score: 35000
+                score: 24000
           - trash_ids:
               - custom-original-language # Original Language
             assign_scores_to:
@@ -1135,7 +1135,7 @@ data:
       series:
         base_url: !secret SONARR_URL
         api_key: !secret SONARR_API_KEY
-        
+
         custom_formats:
           ############################ AUDIO QUALITY ############################
           - trash_ids:
@@ -1218,7 +1218,7 @@ data:
             assign_scores_to:
               - name: HD
                 score: 500
-          
+
           ############################ AUDIO CHANNEL ############################
           - trash_ids:
               - bd6dd5e043aa27ff4696a08d011c7d96 # Mono
@@ -1364,20 +1364,20 @@ data:
             assign_scores_to:
               - name: HD
                 score: -100000
-          
+
            ############################ Repack/Proper ############################
           - trash_ids:
               - ec8fa7296b64e8cd390a1600981f3923 # Repack/Proper
             assign_scores_to:
               - name: HD
                 score: 0
-          
+
           - trash_ids:
               - eb3d5cc0a2be0db205fb823640db6a3c # Repack2
             assign_scores_to:
               - name: HD
                 score: 0
-          
+
           - trash_ids:
               - 44e7c4de10ae50265753082e5dc76047 # Repack3
             assign_scores_to:
@@ -1390,22 +1390,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - sonarr-custom-pt-br-x264 # x264
+              - sonarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-x265 # x265
+              - sonarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h264 # h264
+              - sonarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h265 # h265
+              - sonarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -1486,12 +1486,12 @@ data:
               - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
             assign_scores_to:
               - name: HD
-                score: 20000
+                score: 25000
           - trash_ids:
               - custom-brazilian-subtitles # Pt-BR Subtitles
             assign_scores_to:
               - name: HD
-                score: 19500
+                score: 24000
           - trash_ids:
               - custom-original-language # Original Language
             assign_scores_to:
@@ -1503,7 +1503,7 @@ data:
               - name: HD
                 score: 15000
           - trash_ids:                
-              - sonarr-custom-season-pack # Season Pack
+              - custom-season-pack # Season Pack
             assign_scores_to:
               - name: HD
                 score: 1500
@@ -1523,7 +1523,7 @@ data:
             assign_scores_to:
               - name: HD
                 score: 0        
-        
+
           ############################ Streaming ############################
           - trash_ids:
               - sonarr-custom-pt-br-globoplay # Globo
@@ -1669,7 +1669,7 @@ data:
       animes-tv:
         base_url: !secret SONARR_ANIMES_URL
         api_key: !secret SONARR_ANIMES_API_KEY
-        
+
         custom_formats:
           ############################ AUDIO QUALITY ############################
           - trash_ids:
@@ -1752,7 +1752,7 @@ data:
             assign_scores_to:
               - name: HD
                 score: 500
-                     
+
           ############################ AUDIO CHANNEL ############################
           - trash_ids:
               - bd6dd5e043aa27ff4696a08d011c7d96 # Mono
@@ -1879,22 +1879,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - sonarr-custom-pt-br-x264 # x264
+              - sonarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-x265 # x265
+              - sonarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h264 # h264
+              - sonarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h265 # h265
+              - sonarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -1939,22 +1939,22 @@ data:
               - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
             assign_scores_to:
               - name: HD
-                score: 60000
+                score: 30000
           - trash_ids:
               - custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
-                score: 55000
+                score: 29500
           - trash_ids:
               - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
             assign_scores_to:
               - name: HD
-                score: 45000
+                score: 25000
           - trash_ids:
               - custom-brazilian-subtitles # Pt-BR Subtitles
             assign_scores_to:
               - name: HD
-                score: 40000
+                score: 24000
           - trash_ids:
               - custom-original-language # Original Language
             assign_scores_to:
@@ -1971,11 +1971,11 @@ data:
               - name: HD
                 score: 0
           - trash_ids:                
-              - sonarr-custom-season-pack # Season Pack
+              - custom-season-pack # Season Pack
             assign_scores_to:
               - name: HD
                 score: 6000 
-  
+
           ############################ UNWANTED ############################
           - trash_ids:
               - 949c16fe0a8147f50ba82cc2df9411c9 # Anime BD Tier 1
