@@ -183,11 +183,7 @@ trash-guides-ptbr/
 │           ├── configarr-secrets.yaml
 │           └── kustomization.yaml
 └── prowlarr-indexes/                                  # Indexes do Prowlarr Modificados
-    ├── amigosshare-trashguides-ptbr.yml               # AmigosShare
-    ├── bjshare-trashguides-ptbr.yml                   # BJShare
-    ├── brasiltracker-trashguides-ptbr.yml             # BrasilTracker
-    ├── shakaw-cookie.yaml                             # Shakaw (cookie auth)
-    └── shakaw-trashguides-ptbr.yml                    # Shakaw
+    └── *.yml                                          # Definições customizadas de indexers
 ```
 
 ## 🎬 Perfis Disponíveis
@@ -492,16 +488,6 @@ Os indexes customizados na pasta `prowlarr-indexes/` resolvem isso: eles **padro
 | `Legendado`, `LEG` | `LEGENDADO` |
 
 > **Importante:** Os indexes apenas alteram a forma como o título é **apresentado** ao Radarr/Sonarr. Nenhum conteúdo, link ou estrutura do tracker é modificado.
-
-### Trackers suportados
-
-| Arquivo | Tracker |
-|---------|---------|
-| `amigosshare-trashguides-ptbr.yml` | AmigosShare |
-| `bjshare-trashguides-ptbr.yml` | BJShare |
-| `brasiltracker-trashguides-ptbr.yml` | BrasilTracker |
-| `shakaw-trashguides-ptbr.yml` | Shakaw |
-| `shakaw-cookie.yaml` | Shakaw (autenticacao via cookie) |
 
 ### Instalacao dos Indexes
 
