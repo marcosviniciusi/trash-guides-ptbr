@@ -390,18 +390,30 @@ Com essas tags, o Radarr/Sonarr **analisa o conteúdo real do arquivo** (via Med
 4. Ou pior: descarta um release que já tinha PT-BR em favor de um sem
 ```
 
+**Por que isso é especialmente problemático com legendas?**
+
+Grupos internacionais frequentemente lançam releases com **qualidade de áudio e vídeo superior** — como Remuxes, Blu-rays com TrueHD Atmos ou DTS-HD MA — e muitos deles já incluem legendas em PT-BR embutidas no arquivo. Sem a detecção correta:
+
+- O Radarr/Sonarr **não reconhece** que o release já possui legendas PT-BR
+- O sistema faz um **upgrade para um release de grupo brasileiro** que pode ter qualidade de vídeo ou áudio inferior
+- Você **perde a qualidade real** (ex: troca um Remux com legendas PT-BR embutidas por um WEB-DL legendado)
+- O conceito de "upgrade" perde o sentido — ao invés de melhorar, o sistema **degrada** a qualidade
+
+> **Exemplo real:** Um Remux de 40GB com TrueHD Atmos e legendas PT-BR embutidas pode ser substituído por um WEB-DL de 5GB de um grupo brasileiro, simplesmente porque o Remux não recebeu score de legendado. Com a nomeação correta, o Remux recebe o score de legendas **e** o score máximo de qualidade, evitando esse downgrade absurdo.
+
 Com a nomeação configurada, o fluxo correto é:
 
 ```
-1. Radarr/Sonarr baixa o release
+1. Radarr/Sonarr baixa o release (ex: Remux de grupo gringo)
 2. Após a importação, MediaInfo analisa o arquivo real
-3. Detecta áudio PT-BR e/ou legendas PT-BR embutidas
+3. Detecta legendas PT-BR embutidas e/ou áudio PT-BR
 4. Renomeia o arquivo incluindo [audio-...] e [subs-...]
 5. Custom Formats reanalisam e aplicam os scores corretos
-6. O release recebe a pontuação adequada → sem upgrades desnecessários
+6. O release recebe pontuação de idioma + pontuação de qualidade
+7. Resultado: sem upgrades desnecessários, qualidade preservada
 ```
 
-> **Resumo:** A nomeação correta garante que a pontuação dos Custom Formats reflita o **conteúdo real do arquivo**, e não apenas o que o título do release diz. Isso evita upgrades desnecessários e garante que releases com PT-BR embutido sejam corretamente valorizados.
+> **Resumo:** A nomeação correta garante que a pontuação dos Custom Formats reflita o **conteúdo real do arquivo**, e não apenas o que o título do release diz. Releases de grupos internacionais com qualidade superior e PT-BR embutido são corretamente valorizados, evitando downgrades disfarçados de upgrades. O sistema sempre busca a **melhor combinação de qualidade + idioma**, que é o verdadeiro objetivo.
 
 ---
 
