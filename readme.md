@@ -482,67 +482,64 @@ srt,nfo,sub,ass,ssa
 
 
 
-## Prowlarr Custom Indexers - Brazilian Trackers
-Indexers customizados para trackers brasileiros otimizados para Radarr/Sonarr com padronização de títulos.
-## Propósito
-A comunidade brasileira de trackers faz um **trabalho excepcional** disponibilizando conteúdo de qualidade em português. No entanto, cada tracker segue sua própria convenção de nomenclatura, o que é perfeitamente compreensível dada a diversidade e autonomia de cada comunidade.
+## 🔍 Por que os Indexes Customizados do Prowlarr?
 
-Estes indexers foram desenvolvidos para criar uma **camada de padronização** que unifica os títulos dos releases brasileiros em diversos trackers, tanto públicos quanto privados, **sem alterar o excelente trabalho já realizado pelas comunidades**.
+Os Custom Formats do Radarr/Sonarr identificam releases brasileiros através de **palavras-chave padronizadas** no título (ex: `BRAZILIAN-DUAL-AUDIO`, `DUBLADO`, `LEGENDADO`). Porém, cada tracker brasileiro usa sua própria convenção de nomenclatura:
 
-Com esta padronização, você terá:
-- ✅ **Resultados consistentes** entre diferentes trackers
-- ✅ **Custom Formats funcionando corretamente** no Radarr/Sonarr
-- ✅ **Melhor experiência na automação** de downloads
-- ✅ **Priorização inteligente** de releases em português brasileiro
+| Tracker | Exemplo de título original |
+|---------|---------------------------|
+| Tracker A | `Filme.2024.DUAL.1080p` |
+| Tracker B | `Filme (2024) Dual Áudio 1080p` |
+| Tracker C | `Filme.2024.Nacional.1080p` |
 
-## Padronizações Aplicadas
+Sem padronização, o Radarr/Sonarr **não consegue identificar corretamente** se um release é dual audio, dublado ou legendado, e os scores dos Custom Formats não são aplicados.
 
-| Original | Padronizado |
-|----------|-------------|
-| `DUAL`, `Dual Ãudio` | `BRAZILIAN-DUAL-AUDIO` |
-| `Dublado` | `DUBLADO` |
+Os indexes customizados na pasta `prowlarr-indexes/` resolvem isso: eles **padronizam os títulos antes de chegarem ao Radarr/Sonarr**, sem alterar o conteúdo ou a estrutura dos releases.
+
+| Original no tracker | Padronizado para o Radarr/Sonarr |
+|---------------------|----------------------------------|
+| `DUAL`, `Dual Áudio`, `Dual Audio` | `BRAZILIAN-DUAL-AUDIO` |
+| `Dublado`, `DUB` | `DUBLADO` |
 | `Nacional` | `NACIONAL` |
-| `Legendado` | `LEGENDADO` |
+| `Legendado`, `LEG` | `LEGENDADO` |
 
+> **Importante:** Os indexes apenas alteram a forma como o título é **apresentado** ao Radarr/Sonarr. Nenhum conteúdo, link ou estrutura do tracker é modificado.
 
-## 💚 Reconhecimento
+### Trackers suportados
 
-Nosso profundo agradecimento a todas as comunidades de trackers brasileiros pelo trabalho contínuo e dedicado. Esta customização apenas adiciona uma camada de padronização técnica para facilitar a automação, preservando totalmente a qualidade e integridade dos releases originais.
+| Arquivo | Tracker |
+|---------|---------|
+| `amigosshare-trashguides-ptbr.yml` | AmigosShare |
+| `bjshare-trashguides-ptbr.yml` | BJShare |
+| `brasiltracker-trashguides-ptbr.yml` | BrasilTracker |
+| `shakaw-trashguides-ptbr.yml` | Shakaw |
+| `shakaw-cookie.yaml` | Shakaw (autenticacao via cookie) |
 
----
+### Instalacao dos Indexes
 
-## 🚀 Resultado
-
-Com estes indexers customizados, você terá acesso ao excelente conteúdo disponibilizado pelas comunidades brasileiras com a vantagem adicional de uma nomenclatura padronizada, garantindo uma experiência superior na automação de mídia em português brasileiro.
-
-PS: Não altera conteudo/titulo, apenas a altera a forma como é apresentado o titulo para o sonarr e radarr. Toda a estrutura é mantida.
-
-## Instalação
-
-### 1. Localize a pasta de definições do Prowlarr
+1. Localize a pasta de definicoes customizadas do Prowlarr:
 ```bash
 # Docker
-/config/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+/config/Definitions/Custom
 
 # Windows
-C:\ProgramData\Prowlarr\Definitions\Custom # Se não houver a pasta Custom, crie manualmente.
+C:\ProgramData\Prowlarr\Definitions\Custom
 
 # Linux
-~/.config/Prowlarr/Definitions/Custom # Se não houver a pasta Custom, crie manualmente.
+~/.config/Prowlarr/Definitions/Custom
 ```
+> Se a pasta `Custom` nao existir, crie manualmente.
 
-### 2. Adicione os arquivos `.yml` nesta pasta
+2. Copie os arquivos `.yml` da pasta `prowlarr-indexes/` para esse diretorio.
 
-Copie os indexers customizados para o diretório `/config/Definitions/Custom`
-
-### 3. Reinicie o Prowlarr
+3. Reinicie o Prowlarr:
 ```bash
 docker restart prowlarr
 ```
 
-### 4. Configure os indexers no Prowlarr
+4. No Prowlarr, acesse **Indexers** → **Add Indexer** e procure pelos nomes com sufixo `trashguides-ptbr`. Desative os indexers padrao equivalentes para evitar duplicacao.
 
-Acesse **Indexers** → **Add Indexer** e procure pelos indexers com nomes "trashguides-pt-br. e desativa os padores do Prowlarr para estes indexes.
+> **Agradecimento:** Nosso reconhecimento a todas as comunidades de trackers brasileiros pelo trabalho continuo e dedicado. Estes indexes apenas adicionam uma camada de padronizacao tecnica para facilitar a automacao.
 
 ## Configurando Manualmente os custom Formats
 ## obs: siga apenas este passo se não deseja o uso do configarr.
