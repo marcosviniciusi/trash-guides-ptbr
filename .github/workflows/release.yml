@@ -68,6 +68,20 @@ jobs:
         with:
           ref: ${{ steps.config.outputs.channel }}
 
+      - name: Substituir CHANNEL default pelo canal atual em todo o repositorio
+        run: |
+          CHANNEL="${{ steps.config.outputs.channel }}"
+          echo "Substituindo CHANNEL default para: $CHANNEL"
+
+          # Substitui todas as variantes de CHANNEL hardcoded
+          # Formato shell script/k8s: CHANNEL="${CHANNEL:-stable}"
+          find iac/ -type f \( -name '*.sh' -o -name '*.yaml' -o -name '*.yml' \) \
+            -exec sed -i "s|CHANNEL=\"\${CHANNEL:-stable}\"|CHANNEL=\"\${CHANNEL:-${CHANNEL}}\"|g" {} +
+
+          # Formato docker-compose: CHANNEL='stable'
+          find iac/ -type f \( -name '*.yaml' -o -name '*.yml' \) \
+            -exec sed -i "s|CHANNEL='stable'|CHANNEL='${CHANNEL}'|g" {} +
+
       - name: Preparar assets
         run: |
           mkdir -p dist
@@ -78,7 +92,7 @@ jobs:
           # YAMLs individuais
           cp configarr/*.yaml dist/
 
-          # ZIPs
+          # ZIPs (ja com CHANNEL substituido)
           cd custom-formats && zip -j ../dist/custom-formats.zip *.json && cd ..
           cd configarr && zip -j ../dist/configarr-configs.zip *.yaml && cd ..
           zip -r dist/trash-guides-ptbr-completo.zip \
