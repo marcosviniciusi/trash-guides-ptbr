@@ -7,6 +7,36 @@ Custom Formats em Português Brasileiro para Radarr e Sonarr, otimizados para co
 [![Sonarr Compatible](https://img.shields.io/badge/Sonarr-Compatible-green)](https://github.com/Sonarr/Sonarr)
 [![TRaSH-Guides Compatible](https://img.shields.io/badge/TRaSHGuides-Compatible-green)](https://github.com/TRaSH-Guides/Guides)
 
+---
+
+> ## ⚠️ IMPORTANTE: Branches e Releases
+>
+> ### 🚨 As branches `main` e `develop` NÃO serão mais atualizadas!
+>
+> **Todo o desenvolvimento agora acontece nas branches de release abaixo.**
+> Se você estava usando `main` ou `develop`, migre para a branch `stable`.
+>
+> | Branch | Release | Descrição |
+> |--------|---------|-----------|
+> | **`stable`** | [![Stable](https://img.shields.io/badge/stable-green)](#) | **Produção** — Testado, validado e sem erros (incluindo classificação de grupos). Atualização mensal. |
+> | **`beta`** | [![Beta](https://img.shields.io/badge/beta-yellow)](#) | **Pré-produção** — Validado pelo mantenedor, mas pode conter erros e classificações errôneas de grupos. |
+> | **`alpha`** | [![Alpha](https://img.shields.io/badge/alpha-red)](#) | **Desenvolvimento** — Validações e testes em andamento. **Evitar usar em ambiente produtivo.** |
+>
+> ### Como usar a branch correta
+>
+> ```bash
+> # Para produção (recomendado)
+> git clone -b stable https://github.com/marcosviniciusi/trash-guides-ptbr.git
+>
+> # Para testar novidades antes de todo mundo
+> git clone -b beta https://github.com/marcosviniciusi/trash-guides-ptbr.git
+> ```
+>
+> **Downloads via Release:** cada branch gera uma release automática com todos os arquivos (JSONs, configs, ZIPs, scripts).
+> Basta acessar a [página de Releases](https://github.com/marcosviniciusi/trash-guides-ptbr/releases) e escolher o canal desejado.
+
+---
+
 ## 🌟 Apoie o Projeto
 
 Se este projeto foi útil para você, considere:
