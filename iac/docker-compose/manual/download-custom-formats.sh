@@ -1,6 +1,11 @@
 #!/bin/bash
 
-BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
+# Canal de release: alpha, beta, stable ou tag (ex: v1.0.0)
+# Altere para o canal desejado ou passe como variavel de ambiente:
+#   CHANNEL=beta ./download-custom-formats.sh
+CHANNEL="${CHANNEL:-stable}"
+
+BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/${CHANNEL}"
 
 mkdir -p custom_formats
 

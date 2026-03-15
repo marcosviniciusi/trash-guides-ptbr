@@ -21,7 +21,9 @@ spec:
                   echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
+                  # Canal de release: alpha, beta, stable ou tag (ex: v1.0.0)
+                  CHANNEL="${CHANNEL:-stable}"
+                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/${CHANNEL}"
 
                   # Função para download com retry
                   download_format() {
