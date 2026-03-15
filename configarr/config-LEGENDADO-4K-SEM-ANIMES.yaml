@@ -135,7 +135,7 @@ radarr:
           - radarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 7000
       - trash_ids:
           - radarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -145,7 +145,7 @@ radarr:
           - radarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - radarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -155,7 +155,7 @@ radarr:
           - radarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - radarr-fhd-web-release # FHD Web
         assign_scores_to:
@@ -404,12 +404,12 @@ radarr:
           - name: HD
             score: 29500
       - trash_ids:
-          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
+          - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
             score: 25000
       - trash_ids:
-          - custom-brazilian-dubbed # Pt-BR Dubbed
+          - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
             score: 24000
@@ -695,7 +695,7 @@ sonarr:
           - sonarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -100000
       - trash_ids:
           - sonarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -705,7 +705,7 @@ sonarr:
           - sonarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - sonarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -715,7 +715,7 @@ sonarr:
           - sonarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - sonarr-fhd-web-release # FHD Web
         assign_scores_to:
@@ -917,12 +917,12 @@ sonarr:
           - name: HD
             score: 29500
       - trash_ids:
-          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
+          - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
             score: 25000
       - trash_ids:
-          - custom-brazilian-dubbed # Pt-BR Dubbed
+          - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
             score: 24000

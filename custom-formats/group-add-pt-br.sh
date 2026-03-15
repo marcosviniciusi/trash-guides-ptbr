@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-# Usage: ./add_groups.sh GroupName1 GroupName2 GroupName3
-# Adds release groups to the 4 CF json files in current directory
+# Usage: ./group-add-pt-br.sh GroupName1 GroupName2 GroupName3
+# Adds release groups to the 6 Brazilian CF json files in current directory
 #
-# negate=false, required=false:
+# negate=false, required=false (group-tier - match positivo):
 #   custom-brazilian-group-tier-dual-audio.json
 #   custom-brazilian-group-tier-subtitles.json
+#   custom-brazilian-group-tier-dubbed.json
 #
-# negate=true, required=true:
+# negate=true, required=true (deteccao - exclui grupo da regex geral):
 #   custom-brazilian-dual-language.json
 #   custom-brazilian-subtitles.json
+#   custom-brazilian-dubbed.json
 
 set -euo pipefail
 
@@ -20,8 +22,10 @@ fi
 FILES=$(find . -maxdepth 1 -type f \( \
   -name "custom-brazilian-group-tier-dual-audio.json" -o \
   -name "custom-brazilian-group-tier-subtitles.json" -o \
+  -name "custom-brazilian-group-tier-dubbed.json" -o \
   -name "custom-brazilian-dual-language.json" -o \
-  -name "custom-brazilian-subtitles.json" \
+  -name "custom-brazilian-subtitles.json" -o \
+  -name "custom-brazilian-dubbed.json" \
 \))
 
 if [ -z "$FILES" ]; then
@@ -35,11 +39,11 @@ for file in $FILES; do
   basename=$(basename "$file")
 
   case "$basename" in
-    "custom-brazilian-group-tier-dual-audio.json"|"custom-brazilian-group-tier-subtitles.json")
+    "custom-brazilian-group-tier-dual-audio.json"|"custom-brazilian-group-tier-subtitles.json"|"custom-brazilian-group-tier-dubbed.json")
       NEGATE="false"
       REQUIRED="false"
       ;;
-    "custom-brazilian-dual-language.json"|"custom-brazilian-subtitles.json")
+    "custom-brazilian-dual-language.json"|"custom-brazilian-subtitles.json"|"custom-brazilian-dubbed.json")
       NEGATE="true"
       REQUIRED="true"
       ;;

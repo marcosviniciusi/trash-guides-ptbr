@@ -135,7 +135,7 @@ radarr:
           - radarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 7000
       - trash_ids:
           - radarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -145,7 +145,7 @@ radarr:
           - radarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - radarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -155,7 +155,7 @@ radarr:
           - radarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - radarr-fhd-web-release # FHD Web
         assign_scores_to:
@@ -692,7 +692,7 @@ radarr:
           - radarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 5000
       - trash_ids:
           - radarr-hd-remux-release # UHD Remux
         assign_scores_to:
@@ -702,7 +702,7 @@ radarr:
           - radarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - radarr-hd-bluray-release # HD Bluray
         assign_scores_to:
@@ -712,7 +712,7 @@ radarr:
           - radarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - radarr-hd-web-release # HD Web
         assign_scores_to:
@@ -1254,7 +1254,7 @@ sonarr:
           - sonarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -100000
       - trash_ids:
           - sonarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -1264,7 +1264,7 @@ sonarr:
           - sonarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - sonarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -1274,7 +1274,7 @@ sonarr:
           - sonarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - sonarr-fhd-web-release # FHD Web
         assign_scores_to:
@@ -1788,7 +1788,7 @@ sonarr:
           - sonarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -100000
       - trash_ids:
           - sonarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -1798,7 +1798,7 @@ sonarr:
           - sonarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - sonarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -1808,7 +1808,7 @@ sonarr:
           - sonarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - sonarr-fhd-web-release # FHD Web
         assign_scores_to:

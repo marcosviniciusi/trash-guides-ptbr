@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
-# Usage: ./remove_groups.sh GroupName1 GroupName2 GroupName3
-# Removes release groups from the 4 CF json files in current directory
+# Usage: ./group-remove-pt-br.sh GroupName1 GroupName2 GroupName3
+# Removes release groups from the 6 Brazilian CF json files in current directory
 #
+# group-tier (negate=false, required=false):
 #   custom-brazilian-group-tier-dual-audio.json
 #   custom-brazilian-group-tier-subtitles.json
+#   custom-brazilian-group-tier-dubbed.json
+#
+# deteccao (negate=true, required=true):
 #   custom-brazilian-dual-language.json
 #   custom-brazilian-subtitles.json
+#   custom-brazilian-dubbed.json
 
 set -euo pipefail
 
@@ -17,8 +22,10 @@ fi
 FILES=$(find . -maxdepth 1 -type f \( \
   -name "custom-brazilian-group-tier-dual-audio.json" -o \
   -name "custom-brazilian-group-tier-subtitles.json" -o \
+  -name "custom-brazilian-group-tier-dubbed.json" -o \
   -name "custom-brazilian-dual-language.json" -o \
-  -name "custom-brazilian-subtitles.json" \
+  -name "custom-brazilian-subtitles.json" -o \
+  -name "custom-brazilian-dubbed.json" \
 \))
 
 if [ -z "$FILES" ]; then
