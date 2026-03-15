@@ -303,22 +303,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - radarr-custom-pt-br-x264 # x264
+              - radarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-x265 # x265
+              - radarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h264 # h264
+              - radarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h265 # h265
+              - radarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -788,22 +788,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - radarr-custom-pt-br-x264 # x264
+              - radarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-x265 # x265
+              - radarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h264 # h264
+              - radarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - radarr-custom-pt-br-h265 # h265
+              - radarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -1390,22 +1390,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - sonarr-custom-pt-br-x264 # x264
+              - sonarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-x265 # x265
+              - sonarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h264 # h264
+              - sonarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h265 # h265
+              - sonarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -1503,7 +1503,7 @@ data:
               - name: HD
                 score: 15000
           - trash_ids:                
-              - sonarr-custom-season-pack # Season Pack
+              - custom-season-pack # Season Pack
             assign_scores_to:
               - name: HD
                 score: 1500
@@ -1879,22 +1879,22 @@ data:
               - name: HD
                 score: -10000000
           - trash_ids:
-              - sonarr-custom-pt-br-x264 # x264
+              - sonarr-custom-x264 # x264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-x265 # x265
+              - sonarr-custom-x265 # x265
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h264 # h264
+              - sonarr-custom-h264 # h264
             assign_scores_to:
               - name: HD
                 score: 0
           - trash_ids:
-              - sonarr-custom-pt-br-h265 # h265
+              - sonarr-custom-h265 # h265
             assign_scores_to:
               - name: HD
                 score: 0
@@ -1971,7 +1971,7 @@ data:
               - name: HD
                 score: 0
           - trash_ids:                
-              - sonarr-custom-season-pack # Season Pack
+              - custom-season-pack # Season Pack
             assign_scores_to:
               - name: HD
                 score: 6000 
