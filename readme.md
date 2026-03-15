@@ -172,7 +172,7 @@ Existem **3 tipos de perfil** que controlam o comportamento de 4K e HDR:
 | Língua | Prioridade | Descrição |
 |--------|-----------|-----------|
 | **DUBLADO** | Dual Audio (30000) > Dubbed Group (25000) > Dubbed (24000) > Legendas (20000) | Prioriza releases com áudio em português |
-| **LEGENDADO** | Legendas (30000) > Dubbed Group (25000) > Dubbed (24000) > Dual Audio (20000) | Prioriza releases com legendas em português |
+| **LEGENDADO** | Dual Audio (30000) > Legendas (25000) > Dubbed Group (20000) > Dubbed (19500) | Prioriza legendas, mas dual audio é sempre o melhor |
 
 ### Combinações Disponíveis
 
@@ -197,12 +197,12 @@ Cada tipo + língua possui variante **COM** e **SEM ANIMES** (12 configs total):
 
 | Custom Format | Descrição | Score DUBLADO | Score LEGENDADO |
 |---------------|-----------|---------------|-----------------|
-| **custom-brazilian-group-tier-dual-audio** | Grupos PT-BR com Dual Audio | +30000 | +20000 |
-| **custom-brazilian-dual-language** | Detecção Dual Language | +29500 | +19500 |
-| **custom-brazilian-group-tier-subtitles** | Grupos PT-BR com Legendas | +20000 | +30000 |
-| **custom-brazilian-subtitles** | Detecção Legendas PT-BR | +19500 | +29500 |
-| **custom-brazilian-group-tier-dubbed** | Grupos PT-BR com Dublagem | +25000 | +25000 |
-| **custom-brazilian-dubbed** | Detecção Dublado PT-BR | +24000 | +24000 |
+| **custom-brazilian-group-tier-dual-audio** | Grupos PT-BR com Dual Audio | +30000 | +30000 |
+| **custom-brazilian-dual-language** | Detecção Dual Language | +29500 | +29500 |
+| **custom-brazilian-group-tier-dubbed** | Grupos PT-BR com Dublagem | +25000 | +20000 |
+| **custom-brazilian-dubbed** | Detecção Dublado PT-BR | +24000 | +19500 |
+| **custom-brazilian-group-tier-subtitles** | Grupos PT-BR com Legendas | +20000 | +25000 |
+| **custom-brazilian-subtitles** | Detecção Legendas PT-BR | +19500 | +24000 |
 | **custom-original-language** | Língua Original | +1000 | +1000 |
 | **custom-brazilian-group-tier-bad** | Grupos Não Confiáveis | +15000 | +15000 |
 | **custom-us-group-tier-premium** | Grupos Premium US | +5000 | +5000 |
@@ -267,12 +267,12 @@ Os scores de Video Quality controlam a preferência por conteúdo UHD/4K vs HD/F
 
 | Custom Format | DUBLADO | LEGENDADO |
 |---|---|---|
-| Grupos Dual Audio | +30000 | +20000 |
-| Dual Language | +29500 | +19500 |
-| Grupos Dubbed | +25000 | +25000 |
-| Dubbed | +24000 | +24000 |
-| Grupos Legendas | +20000 | +30000 |
-| Legendas PT-BR | +19500 | +29500 |
+| Grupos Dual Audio | +30000 | +30000 |
+| Dual Language | +29500 | +29500 |
+| Grupos Dubbed | +25000 | +20000 |
+| Dubbed | +24000 | +19500 |
+| Grupos Legendas | +20000 | +25000 |
+| Legendas PT-BR | +19500 | +24000 |
 | Língua Original | +1000 | +1000 |
 | Grupos Ruins | +15000 | +15000 |
 | Grupos Premium US | +5000 | +5000 |

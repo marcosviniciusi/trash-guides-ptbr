@@ -397,32 +397,32 @@ radarr:
           - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
         assign_scores_to:
           - name: HD
-            score: 25000
+            score: 20000
       - trash_ids:
           - custom-brazilian-dubbed # Pt-BR Dubbed
         assign_scores_to:
           - name: HD
-            score: 24000
+            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
-            score: 20000
+            score: 30000
       - trash_ids:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 19500
+            score: 29500
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
-            score: 30000
+            score: 25000
       - trash_ids:
           - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 24000
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
@@ -846,32 +846,32 @@ radarr:
           - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
         assign_scores_to:
           - name: HD
-            score: 25000
+            score: 20000
       - trash_ids:
           - custom-brazilian-dubbed # Pt-BR Dubbed
         assign_scores_to:
           - name: HD
-            score: 24000
+            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
-            score: 20000
+            score: 30000
       - trash_ids:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 19500
+            score: 29500
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
-            score: 30000
+            score: 25000
       - trash_ids:
           - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 24000
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
@@ -1489,32 +1489,32 @@ sonarr:
           - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
         assign_scores_to:
           - name: HD
-            score: 25000
+            score: 20000
       - trash_ids:
           - custom-brazilian-dubbed # Pt-BR Dubbed
         assign_scores_to:
           - name: HD
-            score: 24000
+            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
-            score: 20000
+            score: 30000
       - trash_ids:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 19500
+            score: 29500
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
-            score: 30000
+            score: 25000
       - trash_ids:
           - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 24000
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
@@ -1962,32 +1962,32 @@ sonarr:
           - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
         assign_scores_to:
           - name: HD
-            score: 25000
+            score: 20000
       - trash_ids:
           - custom-brazilian-dubbed # Pt-BR Dubbed
         assign_scores_to:
           - name: HD
-            score: 24000
+            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
-            score: 20000
+            score: 30000
       - trash_ids:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 19500
+            score: 29500
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
-            score: 30000
+            score: 25000
       - trash_ids:
           - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 24000
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
