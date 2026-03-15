@@ -2,21 +2,22 @@ name: Release
 
 on:
   push:
+    branches: [alpha, beta, stable]
     tags: ['v*.*.*']
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versao (ex: v1.0.0)'
-        required: true
+        description: 'Versao (ex: v1.0.0) - apenas para release versionada manual'
+        required: false
       branch:
         description: 'Branch para release'
         required: true
         default: 'alpha'
-      prerelease:
-        description: 'Marcar como pre-release?'
-        required: false
-        type: boolean
-        default: false
+        type: choice
+        options:
+          - alpha
+          - beta
+          - stable
 
 permissions:
   contents: write
@@ -25,55 +26,96 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Determinar versao e contexto
-        id: version
+      - name: Determinar canal e versao
+        id: config
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "tag=${{ inputs.version }}" >> $GITHUB_OUTPUT
-            echo "prerelease=${{ inputs.prerelease }}" >> $GITHUB_OUTPUT
+            BRANCH="${{ inputs.branch }}"
+            VERSION="${{ inputs.version }}"
+          elif echo "$GITHUB_REF" | grep -q '^refs/tags/v'; then
+            # Tag push (v1.0.0) - sempre stable
+            BRANCH="stable"
+            VERSION="${GITHUB_REF#refs/tags/}"
           else
-            TAG="${GITHUB_REF#refs/tags/}"
-            echo "tag=$TAG" >> $GITHUB_OUTPUT
-            # Tags com -alpha ou -beta sao pre-release
-            if echo "$TAG" | grep -qE '-(alpha|beta|rc)'; then
-              echo "prerelease=true" >> $GITHUB_OUTPUT
-            else
-              echo "prerelease=false" >> $GITHUB_OUTPUT
-            fi
+            # Branch push
+            BRANCH="${GITHUB_REF#refs/heads/}"
+            VERSION=""
+          fi
+
+          # Definir tag do release rolling (alpha/beta/stable)
+          echo "channel=$BRANCH" >> $GITHUB_OUTPUT
+          echo "channel_tag=$BRANCH" >> $GITHUB_OUTPUT
+
+          # Pre-release para alpha e beta
+          if [ "$BRANCH" = "stable" ]; then
+            echo "prerelease=false" >> $GITHUB_OUTPUT
+            echo "make_latest=true" >> $GITHUB_OUTPUT
+          else
+            echo "prerelease=true" >> $GITHUB_OUTPUT
+            echo "make_latest=false" >> $GITHUB_OUTPUT
+          fi
+
+          # Se tiver versao, gerar release versionada tambem
+          if [ -n "$VERSION" ]; then
+            echo "versioned=true" >> $GITHUB_OUTPUT
+            echo "version_tag=$VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "versioned=false" >> $GITHUB_OUTPUT
+            echo "version_tag=" >> $GITHUB_OUTPUT
           fi
 
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref }}
+          ref: ${{ steps.config.outputs.channel }}
 
       - name: Preparar assets
         run: |
+          mkdir -p dist
+
+          # JSONs individuais
+          cp custom-formats/*.json dist/
+
+          # YAMLs individuais
+          cp configarr/*.yaml dist/
+
           # ZIPs
-          cd custom-formats && zip -j ../custom-formats.zip *.json && cd ..
-          cd configarr && zip -j ../configarr-configs.zip *.yaml && cd ..
-          zip -r trash-guides-ptbr-completo.zip \
+          cd custom-formats && zip -j ../dist/custom-formats.zip *.json && cd ..
+          cd configarr && zip -j ../dist/configarr-configs.zip *.yaml && cd ..
+          zip -r dist/trash-guides-ptbr-completo.zip \
             custom-formats/ \
             configarr/ \
             prowlarr-indexes/ \
             iac/
 
           # Docker compose com nomes claros
-          cp iac/docker-compose/manual/docker-compose.yaml docker-compose-manual.yaml
-          cp iac/docker-compose/automatico/docker-compose.yaml docker-compose-automatico.yaml
+          cp iac/docker-compose/manual/docker-compose.yaml dist/docker-compose-manual.yaml
+          cp iac/docker-compose/automatico/docker-compose.yaml dist/docker-compose-automatico.yaml
 
-      - name: Criar Release
+          # Script de download
+          cp iac/docker-compose/manual/download-custom-formats.sh dist/
+
+      - name: Criar/Atualizar Release do canal (${{ steps.config.outputs.channel }})
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.tag }}
-          name: Release ${{ steps.version.outputs.tag }}
-          prerelease: ${{ steps.version.outputs.prerelease }}
+          tag_name: ${{ steps.config.outputs.channel_tag }}
+          name: "${{ steps.config.outputs.channel }} (latest)"
+          prerelease: ${{ steps.config.outputs.prerelease }}
+          make_latest: ${{ steps.config.outputs.make_latest }}
+          body: |
+            Release rolling do canal **${{ steps.config.outputs.channel }}**.
+            Atualizada automaticamente a cada push na branch `${{ steps.config.outputs.channel }}`.
+
+            **Download:** `https://github.com/${{ github.repository }}/releases/download/${{ steps.config.outputs.channel_tag }}/ARQUIVO`
+
+            Commit: ${{ github.sha }}
+          files: dist/*
+
+      - name: Criar Release versionada (${{ steps.config.outputs.version_tag }})
+        if: steps.config.outputs.versioned == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.config.outputs.version_tag }}
+          name: "Release ${{ steps.config.outputs.version_tag }}"
+          prerelease: false
           generate_release_notes: true
-          files: |
-            custom-formats/*.json
-            configarr/*.yaml
-            custom-formats.zip
-            configarr-configs.zip
-            trash-guides-ptbr-completo.zip
-            docker-compose-manual.yaml
-            docker-compose-automatico.yaml
-            iac/docker-compose/manual/download-custom-formats.sh
+          files: dist/*
