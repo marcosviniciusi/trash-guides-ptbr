@@ -394,16 +394,6 @@ radarr:
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
       - trash_ids:
-          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-dubbed # Pt-BR Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 19500
-      - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
@@ -842,16 +832,6 @@ radarr:
             score: 5
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
-      - trash_ids:
-          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-dubbed # Pt-BR Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
@@ -1486,16 +1466,6 @@ sonarr:
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
       - trash_ids:
-          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-dubbed # Pt-BR Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 19500
-      - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
@@ -1958,16 +1928,6 @@ sonarr:
             score: 5
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
-      - trash_ids:
-          - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-dubbed # Pt-BR Dubbed
-        assign_scores_to:
-          - name: HD
-            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:

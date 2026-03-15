@@ -48,9 +48,10 @@ Arquivos JSON locais referenciados nos configs via `trash_ids`:
 3. **Base** (sem sufixo extra) - Sem 4K e sem HDR (ambos penalizados com -10000)
 
 **Linguas:**
-- **DUBLADO** - dual-audio(30000) > dual-language(29500) > dubbed-group(25000) > dubbed(24000) > subtitles-group(20000) > subtitles(19500)
-- **LEGENDADO** - dual-audio(30000) > dual-language(29500) > subtitles-group(25000) > subtitles(24000) > dubbed-group(20000) > dubbed(19500)
+- **DUBLADO** - dual-audio(30000) > dual-language(29500) > dubbed-group(25000) > dubbed(24000). SEM legendado.
+- **LEGENDADO** - dual-audio(30000) > dual-language(29500) > subtitles-group(25000) > subtitles(24000). SEM dublado.
 - Dual audio eh SEMPRE o mais alto em ambos perfis (tem os 2 audios)
+- Dublado NAO aparece em LEGENDADO e legendado NAO aparece em DUBLADO
 
 ## Estrutura de Scores
 
@@ -133,28 +134,24 @@ Mono=1, Stereo=10, 3.0=15, 4.0=20, 5.1=25, 6.1=30, 7.1=35
 
 ### PT-BR Tiers - Variavel por lingua
 
-**DUBLADO (prioriza audio PT-BR):**
+**DUBLADO (audio PT-BR, sem legendado):**
 | Custom Format | Score Movies/Series | Score Animes |
 |---|---|---|
 | custom-brazilian-group-tier-dual-audio | 30000 | 30000 |
 | custom-brazilian-dual-language | 29500 | 29500 |
 | custom-brazilian-group-tier-dubbed | 25000 | 25000 |
 | custom-brazilian-dubbed | 24000 | 24000 |
-| custom-brazilian-group-tier-subtitles | 20000 | 20000 |
-| custom-brazilian-subtitles | 19500 | 19500 |
 | custom-original-language | 1000 | 1000 |
 | custom-brazilian-group-tier-bad | 15000 | 15000 |
 | custom-us-group-tier-premium | 5000 | 5000 |
 
-**LEGENDADO (prioriza legendas, mas dual audio sempre no topo):**
+**LEGENDADO (legendas PT-BR, sem dublado):**
 | Custom Format | Score Movies/Series | Score Animes |
 |---|---|---|
 | custom-brazilian-group-tier-dual-audio | 30000 | 30000 |
 | custom-brazilian-dual-language | 29500 | 29500 |
 | custom-brazilian-group-tier-subtitles | 25000 | 25000 |
 | custom-brazilian-subtitles | 24000 | 24000 |
-| custom-brazilian-group-tier-dubbed | 20000 | 20000 |
-| custom-brazilian-dubbed | 19500 | 19500 |
 | custom-original-language | 1000 | 1000 |
 | custom-brazilian-group-tier-bad | 15000 | 15000 |
 | custom-us-group-tier-premium | 5000 | 5000 |

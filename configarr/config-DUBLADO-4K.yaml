@@ -414,16 +414,6 @@ radarr:
           - name: HD
             score: 24000
       - trash_ids:
-          - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-subtitles # Pt-BR Subtitles
-        assign_scores_to:
-          - name: HD
-            score: 19500
-      - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
           - name: HD
@@ -862,16 +852,6 @@ radarr:
         assign_scores_to:
           - name: HD
             score: 24000
-      - trash_ids:
-          - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-subtitles # Pt-BR Subtitles
-        assign_scores_to:
-          - name: HD
-            score: 19500
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
@@ -1506,16 +1486,6 @@ sonarr:
           - name: HD
             score: 24000
       - trash_ids:
-          - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-subtitles # Pt-BR Subtitles
-        assign_scores_to:
-          - name: HD
-            score: 19500
-      - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
           - name: HD
@@ -1978,16 +1948,6 @@ sonarr:
         assign_scores_to:
           - name: HD
             score: 24000
-      - trash_ids:
-          - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
-        assign_scores_to:
-          - name: HD
-            score: 20000
-      - trash_ids:
-          - custom-brazilian-subtitles # Pt-BR Subtitles
-        assign_scores_to:
-          - name: HD
-            score: 19500
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
