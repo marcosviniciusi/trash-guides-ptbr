@@ -754,74 +754,21 @@ sonarr:
 
 ### 4. Script de Download dos Custom Formats
 
+O script baixa automaticamente **todos os Custom Formats** disponíveis no release, sem precisar listar cada arquivo manualmente. Ao adicionar ou remover Custom Formats no repositório, o script do release é atualizado automaticamente pelo GitHub Actions.
+
 ```bash
-cat > download-custom-formats.sh << 'EOF'
-#!/bin/bash
-
-BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
-
-echo "📥 Baixando custom formats..."
-# Função para baixar com tratamento de erro
-download_format() {
-    local file=$1
-    echo "  → $file"
-    curl -fsSL "$BASE_URL/$file" -o "custom_formats/$file" || {
-        echo "❌ Erro ao baixar $file"
-        return 1
-    }
-}
-
-# Idioma PT-BR
-download_format 'custom-brazilian-group-tier-dual-audio.json'
-download_format 'custom-brazilian-dual-language.json'
-download_format 'custom-brazilian-group-tier-subtitles.json'
-download_format 'custom-brazilian-subtitles.json'
-download_format 'custom-brazilian-group-tier-dubbed.json'
-download_format 'custom-brazilian-dubbed.json'
-download_format 'custom-original-language.json'
-download_format 'custom-brazilian-group-tier-bad.json'
-download_format 'custom-us-group-tier-premium.json'
-# Plataformas
-download_format 'sonarr-custom-pt-br-globoplay.json'
-download_format 'radarr-custom-pt-br-globoplay.json'
-# Codec
-download_format 'radarr-custom-pt-br-x264.json'
-download_format 'radarr-custom-pt-br-x265.json'
-download_format 'radarr-custom-pt-br-h264.json'
-download_format 'radarr-custom-pt-br-h265.json'
-download_format 'sonarr-custom-pt-br-x264.json'
-download_format 'sonarr-custom-pt-br-x265.json'
-download_format 'sonarr-custom-pt-br-h264.json'
-download_format 'sonarr-custom-pt-br-h265.json'
-# Season Pack
-download_format 'sonarr-custom-season-pack.json'
-# Release Quality - Radarr
-download_format 'radarr-uhd-remux-release.json'
-download_format 'radarr-fhd-remux-release.json'
-download_format 'radarr-hd-remux-release.json'
-download_format 'radarr-uhd-bluray-release.json'
-download_format 'radarr-fhd-bluray-release.json'
-download_format 'radarr-hd-bluray-release.json'
-download_format 'radarr-uhd-web-release.json'
-download_format 'radarr-fhd-web-release.json'
-download_format 'radarr-hd-web-release.json'
-# Release Quality - Sonarr
-download_format 'sonarr-uhd-remux-release.json'
-download_format 'sonarr-fhd-remux-release.json'
-download_format 'sonarr-hd-remux-release.json'
-download_format 'sonarr-uhd-bluray-release.json'
-download_format 'sonarr-fhd-bluray-release.json'
-download_format 'sonarr-hd-bluray-release.json'
-download_format 'sonarr-uhd-web-release.json'
-download_format 'sonarr-fhd-web-release.json'
-download_format 'sonarr-hd-web-release.json'
-
-echo "✅ Custom formats baixados com sucesso!"
-EOF
+# Baixar o script do release
+curl -fsSL https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download/download-custom-formats.sh \
+  -o download-custom-formats.sh
 
 chmod +x download-custom-formats.sh
 ./download-custom-formats.sh
 ```
+
+> **Dica:** Para usar um canal específico (alpha, beta, stable), passe a variável `CHANNEL`:
+> ```bash
+> CHANNEL=beta ./download-custom-formats.sh
+> ```
 
 ### 5. Docker Compose
 
@@ -973,71 +920,21 @@ version: '3.8'
 
 services:
   # Download automático dos Custom Formats
+  # Baixa o script gerado dinamicamente pelo release e executa
   download-formats:
     image: curlimages/curl:latest
     container_name: configarr-download
     command: >
       sh -c "
-      BASE_URL='https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download'
+      CHANNEL='$${CHANNEL:-stable}'
+      BASE_URL='https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/$${CHANNEL}'
 
-      mkdir -p /config/custom_formats
+      echo '📥 Baixando script de custom formats...'
+      curl -fsSL -L \"$$BASE_URL/download-custom-formats.sh\" -o /tmp/download-custom-formats.sh
+      chmod +x /tmp/download-custom-formats.sh
 
-      echo '📥 Baixando custom formats...'
+      cd /config && CHANNEL=$$CHANNEL sh /tmp/download-custom-formats.sh
 
-      download_format() {
-          local file=$$1
-          echo '  → '$$file
-          curl -fsSL \"$$BASE_URL/$$file\" -o \"/config/custom_formats/$$file\" || {
-              echo '❌ Erro ao baixar '$$file
-              return 1
-          }
-      }
-
-      # Idioma PT-BR
-      download_format 'custom-brazilian-group-tier-dual-audio.json'
-      download_format 'custom-brazilian-dual-language.json'
-      download_format 'custom-brazilian-group-tier-subtitles.json'
-      download_format 'custom-brazilian-subtitles.json'
-      download_format 'custom-brazilian-group-tier-dubbed.json'
-      download_format 'custom-brazilian-dubbed.json'
-      download_format 'custom-original-language.json'
-      download_format 'custom-brazilian-group-tier-bad.json'
-      download_format 'custom-us-group-tier-premium.json'
-      # Plataformas
-      download_format 'sonarr-custom-pt-br-globoplay.json'
-      download_format 'radarr-custom-pt-br-globoplay.json'
-      # Codec
-      download_format 'radarr-custom-pt-br-x264.json'
-      download_format 'radarr-custom-pt-br-x265.json'
-      download_format 'radarr-custom-pt-br-h264.json'
-      download_format 'radarr-custom-pt-br-h265.json'
-      download_format 'sonarr-custom-pt-br-x264.json'
-      download_format 'sonarr-custom-pt-br-x265.json'
-      download_format 'sonarr-custom-pt-br-h264.json'
-      download_format 'sonarr-custom-pt-br-h265.json'
-      # Season Pack
-      download_format 'sonarr-custom-season-pack.json'
-      # Release Quality - Radarr
-      download_format 'radarr-uhd-remux-release.json'
-      download_format 'radarr-fhd-remux-release.json'
-      download_format 'radarr-hd-remux-release.json'
-      download_format 'radarr-uhd-bluray-release.json'
-      download_format 'radarr-fhd-bluray-release.json'
-      download_format 'radarr-hd-bluray-release.json'
-      download_format 'radarr-uhd-web-release.json'
-      download_format 'radarr-fhd-web-release.json'
-      download_format 'radarr-hd-web-release.json'
-      # Release Quality - Sonarr
-      download_format 'sonarr-uhd-remux-release.json'
-      download_format 'sonarr-fhd-remux-release.json'
-      download_format 'sonarr-hd-remux-release.json'
-      download_format 'sonarr-uhd-bluray-release.json'
-      download_format 'sonarr-fhd-bluray-release.json'
-      download_format 'sonarr-hd-bluray-release.json'
-      download_format 'sonarr-uhd-web-release.json'
-      download_format 'sonarr-fhd-web-release.json'
-      download_format 'sonarr-hd-web-release.json'
-      
       echo '✅ Custom formats baixados com sucesso!'
       "
     volumes:
@@ -1181,63 +1078,16 @@ spec:
                   echo "📥 Baixando custom formats do GitHub..."
                   mkdir -p /config/custom_formats
                   
-                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/latest/download"
+                  CHANNEL="${CHANNEL:-stable}"
+                  BASE_URL="https://github.com/marcosviniciusi/trash-guides-ptbr/releases/download/${CHANNEL}"
 
-                  download_format() {
-                    local file=$1
-                    echo "  → Baixando: $file"
-                    curl -fsSL --retry 3 --retry-delay 2 "$BASE_URL/$file" \
-                      -o "/config/custom_formats/$file" || {
-                      echo "❌ Erro ao baixar $file"
-                      return 1
-                    }
-                  }
+                  echo "📥 Baixando script de custom formats (canal: ${CHANNEL})..."
+                  curl -fsSL -L --retry 3 --retry-delay 2 \
+                    "$BASE_URL/download-custom-formats.sh" -o /tmp/download-custom-formats.sh
+                  chmod +x /tmp/download-custom-formats.sh
 
-                  # Idioma PT-BR
-                  download_format 'custom-brazilian-group-tier-dual-audio.json'
-                  download_format 'custom-brazilian-dual-language.json'
-                  download_format 'custom-brazilian-group-tier-subtitles.json'
-                  download_format 'custom-brazilian-subtitles.json'
-                  download_format 'custom-brazilian-group-tier-dubbed.json'
-                  download_format 'custom-brazilian-dubbed.json'
-                  download_format 'custom-original-language.json'
-                  download_format 'custom-brazilian-group-tier-bad.json'
-                  download_format 'custom-us-group-tier-premium.json'
-                  # Plataformas
-                  download_format 'sonarr-custom-pt-br-globoplay.json'
-                  download_format 'radarr-custom-pt-br-globoplay.json'
-                  # Codec
-                  download_format 'radarr-custom-pt-br-x264.json'
-                  download_format 'radarr-custom-pt-br-x265.json'
-                  download_format 'radarr-custom-pt-br-h264.json'
-                  download_format 'radarr-custom-pt-br-h265.json'
-                  download_format 'sonarr-custom-pt-br-x264.json'
-                  download_format 'sonarr-custom-pt-br-x265.json'
-                  download_format 'sonarr-custom-pt-br-h264.json'
-                  download_format 'sonarr-custom-pt-br-h265.json'
-                  # Season Pack
-                  download_format 'sonarr-custom-season-pack.json'
-                  # Release Quality - Radarr
-                  download_format 'radarr-uhd-remux-release.json'
-                  download_format 'radarr-fhd-remux-release.json'
-                  download_format 'radarr-hd-remux-release.json'
-                  download_format 'radarr-uhd-bluray-release.json'
-                  download_format 'radarr-fhd-bluray-release.json'
-                  download_format 'radarr-hd-bluray-release.json'
-                  download_format 'radarr-uhd-web-release.json'
-                  download_format 'radarr-fhd-web-release.json'
-                  download_format 'radarr-hd-web-release.json'
-                  # Release Quality - Sonarr
-                  download_format 'sonarr-uhd-remux-release.json'
-                  download_format 'sonarr-fhd-remux-release.json'
-                  download_format 'sonarr-hd-remux-release.json'
-                  download_format 'sonarr-uhd-bluray-release.json'
-                  download_format 'sonarr-fhd-bluray-release.json'
-                  download_format 'sonarr-hd-bluray-release.json'
-                  download_format 'sonarr-uhd-web-release.json'
-                  download_format 'sonarr-fhd-web-release.json'
-                  download_format 'sonarr-hd-web-release.json'
-                  
+                  cd /config && CHANNEL=$CHANNEL sh /tmp/download-custom-formats.sh
+
                   echo "✅ Todos os custom formats foram baixados!"
                   ls -lah /config/custom_formats/
               
