@@ -135,7 +135,7 @@ radarr:
           - radarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 7000
       - trash_ids:
           - radarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -145,7 +145,7 @@ radarr:
           - radarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - radarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -155,7 +155,7 @@ radarr:
           - radarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - radarr-fhd-web-release # FHD Web
         assign_scores_to:
@@ -181,22 +181,22 @@ radarr:
           - 493b6d1dbec3c3364c59d7607f7e3405 # HDR
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 1500
       - trash_ids:
           - b337d6812e06c200ec9a2d3cfa9d20a7 # DV Boost
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 2500
       - trash_ids:
           - caa37d0df9c348912df1fb1d88f9273a # HDR10 Plus Boost
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 2000
       - trash_ids:
           - f700d29429c023a5734505e77daeaea7 # DV (Disk)
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 2500
       - trash_ids:
           - 923b6abef9b17f937fab56cfcf89e1f1 # DV (w/o HDR fallback)
         assign_scores_to:
@@ -211,12 +211,12 @@ radarr:
           - 9c38ebb7384dada637be8899efa68e6f # SDR
         assign_scores_to:
           - name: HD
-            score: 10
+            score: 0
       - trash_ids:
           - 25c12f78430a3a23413652cbd1d48d77 # SDR (no WEBDL)
         assign_scores_to:
           - name: HD
-            score: 10
+            score: 0
       ############################ Movies Version ############################
       - trash_ids:
           - 0f12c086e289cf966fa5948eac571f44 # Hybrid
@@ -397,22 +397,22 @@ radarr:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
-            score: 30000
+            score: 20000
       - trash_ids:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
-            score: 20000
+            score: 30000
       - trash_ids:
           - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
-            score: 19500
+            score: 29500
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:
@@ -695,7 +695,7 @@ sonarr:
           - sonarr-uhd-remux-release # UHD Remux
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -100000
       - trash_ids:
           - sonarr-fhd-remux-release # FHD Remux
         assign_scores_to:
@@ -705,7 +705,7 @@ sonarr:
           - sonarr-uhd-bluray-release # UHD Bluray
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 4000
       - trash_ids:
           - sonarr-fhd-bluray-release # FHD Bluray
         assign_scores_to:
@@ -715,7 +715,7 @@ sonarr:
           - sonarr-uhd-web-release # UHD Web
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: 3000
       - trash_ids:
           - sonarr-fhd-web-release # FHD Web
         assign_scores_to:
@@ -741,22 +741,22 @@ sonarr:
           - 505d871304820ba7106b693be6fe4a9e # HDR
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -1000000
       - trash_ids:
           - 7c3a61a9c6cb04f52f1544be6d44a026 # DV Boost
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -1000000
       - trash_ids:
           - 0c4b99df9206d2cfac3c05ab897dd62a # HDR10 Plus Boost
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -1000000
       - trash_ids:
           - ef4963043b0987f8485bc9106f16db38 # DV (Disk)
         assign_scores_to:
           - name: HD
-            score: -10000
+            score: -1000000
       - trash_ids:
           - 9b27ab6498ec0f31a3353992e19434ca # DV (w/o HDR fallback)
         assign_scores_to:
@@ -910,22 +910,22 @@ sonarr:
           - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
-            score: 30000
+            score: 20000
       - trash_ids:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 19500
       - trash_ids:
           - custom-brazilian-group-tier-subtitles # Pt-BR Group Original Language
         assign_scores_to:
           - name: HD
-            score: 20000
+            score: 30000
       - trash_ids:
           - custom-brazilian-subtitles # Pt-BR Subtitles
         assign_scores_to:
           - name: HD
-            score: 19500
+            score: 29500
       - trash_ids:
           - custom-original-language # Original Language
         assign_scores_to:

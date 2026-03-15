@@ -21,22 +21,26 @@ Se este projeto foi útil para você, considere:
 
 - [Sobre](#-sobre)
 - [Estrutura do Repositório](#-estrutura-do-repositório)
+- [Perfis Disponíveis](#-perfis-disponíveis)
+  - [Tipos de Perfil (4K/HDR)](#tipos-de-perfil-4khdr)
+  - [Línguas (Dublado/Legendado)](#línguas-dubladolegendado)
 - [Custom Formats Disponíveis](#-custom-formats-disponíveis)
-  - [Legendados](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#legendados)
-  - [Dublados](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#dublados)
-- [Configurando os Quality Profiles](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#-configurando-os-quality-profiles)
+- [Estrutura de Scores](#-estrutura-de-scores)
+  - [Video Quality (4K)](#video-quality-4k)
+  - [HDR](#hdr)
+  - [PT-BR Tiers](#pt-br-tiers)
+- [Configurando os Quality Profiles](#-configurando-os-quality-profiles)
   - [Criando o Profile "HD"](#criando-o-profile-com-nome-hd)
-- [Configurando Manualmente os custom Formats](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#configurando-manualmente-os-custom-formats)
+- [Configurando Manualmente os custom Formats](#configurando-manualmente-os-custom-formats)
 - [O que é o Configarr?](#-o-que-é-o-configarr)
   - [Vantagens](#vantagens)
   - [Como Funciona?](#como-funciona)
   - [Principais Benefícios](#-principais-benefícios)
   - [Como Configurar?](#como-configura-lo)
     - [Pré-Requisitos](#pré-requisitos)
-    - [Docker Compose - Execução Manual](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#docker-compose---execu%C3%A7%C3%A3o-manual)
-    - [Docker Compose - Execução Automatica](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#docker-compose---execu%C3%A7%C3%A3o-agendada-com-ofelia)
-    - [Kubernetes](https://github.com/marcosviniciusi/trash-guides-ptbr?tab=readme-ov-file#%EF%B8%8F-kubernetes)
-- [Estrutura de Scores](#-estrutura-de-scores)
+    - [Docker Compose - Execução Manual](#docker-compose---execução-manual)
+    - [Docker Compose - Execução Agendada](#docker-compose---execução-agendada-com-ofelia)
+    - [Kubernetes](#️-kubernetes)
 - [Atualizações Automáticas](#-atualizações-automáticas)
 - [Contribuindo](#-contribuindo)
 - [FAQ](#-faq)
@@ -93,96 +97,196 @@ Quanto mais informações a comunidade compartilhar, melhor será a cobertura do
 ```
 trash-guides-ptbr/
 ├── README.md
-├── configarr/
-│   ├── config-LEGENDADO.yaml                          # Configuração completa LEGENDADO SEM HDR
-│   ├── config-LEGENDADO-HDR-ON.yaml                   # Configuração completa LEGENDADO COM HDR
-│   ├── config-DUBLADO.yaml                            # Configuração completa  DUBLADO SEM HDR
-│   └── config-DUBLADO-HDR-ON.yaml                     # Configuração completa  DUBLADO COM HDR
-│   ├── config-LEGENDADO-SEM-ANIMES.yaml               # Configuração SEM ANIMES LEGENDADO SEM HDR
-│   ├── config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml        # Configuração SEM ANIMES LEGENDADO COM HDR
-│   ├── config-DUBLADO-SEM-ANIMES.yaml                 # Configuração SEM ANIMES  DUBLADO SEM HDR
-│   └── config-DUBLADO-HDR-ON-SEM-ANIMES.yaml          # Configuração SEM ANIMES  DUBLADO COM HDR
-├── custom-formats/    					                       # Todos os custom formats
-│   │   #GLOBAIS                               
-│   ├── custom-pt-br-dual-audio.json                   # Brasilian DUAL-AUDIO (Verifica se corresponde na busca dos index)
-│   ├── custom-pt-br-dual-language.json                # Brasilian DUAL-AUDIO ( Tag para Importação Verifiando o Audio)
-│   ├── custom-pt-br-dublado-language.json             # Lingua Portuguesa ( Tag para Importação Verifiando o Audio)
-│   ├── custom-pt-br-dublado.json                      # Regex paa Releases Dublados
-│   ├── custom-pt-br-legendado.json                    # Regex para Releases Legendados
-│   ├── custom-pt-br-original-language.json            # Lingua Original ( Tag para Importação Verifiando o Audio)
-│   ├── custom-pt-br-web-tier-bad-group.json           # Grupos Não Confiaveis
-│   ├── sonarr-custom-pt-br-globoplay.json             # Tag GloboPlay Sonarr
-│   ├── radarr-custom-pt-br-globoplay.json             # Tag GloboPlay Sonarr
-│   ├── sonarr-custom-pt-br-x265.json.json             # Tag x265 Encoder Sonarr
-│   ├── sonarr-custom-pt-br-h265.json.json             # Tag h265 Encoder Sonarr
-│   ├── sonarr-custom-pt-br-x264.json.json             # Tag x264 Encoder Sonarr
-│   ├── sonarr-custom-pt-br-h264.json.json             # Tag h264 Encoder Sonarr
-│   ├── radarr-custom-pt-br-x265.json.json             # Tag x265 Encoder Radarr
-│   ├── radarr-custom-pt-br-h265.json.json             # Tag h265 Encoder Radarr
-│   ├── radarr-custom-pt-br-x264.json.json             # Tag x264 Encoder Radarr
-│   ├── radarr-custom-pt-br-h264.json.json             # Tag h264 Encoder Radarr
-│   └── custom-pt-br-web-tier.json                     # Releases Groups PT-BR
+├── CLAUDE.md                                          # Contexto e documentação técnica
+├── configarr/                                         # Configs Configarr (3 perfis x 2 línguas x 2 anime)
+│   ├── config-DUBLADO-4K-HDR.yaml                     # DUBLADO: 4K + HDR (scores máximos)
+│   ├── config-DUBLADO-4K-HDR-SEM-ANIMES.yaml          # DUBLADO: 4K + HDR sem animes
+│   ├── config-DUBLADO-4K.yaml                         # DUBLADO: 4K sem HDR (HDR = -10000)
+│   ├── config-DUBLADO-4K-SEM-ANIMES.yaml              # DUBLADO: 4K sem HDR sem animes
+│   ├── config-DUBLADO.yaml                            # DUBLADO: Sem 4K e sem HDR (ambos = -10000)
+│   ├── config-DUBLADO-SEM-ANIMES.yaml                 # DUBLADO: Sem 4K/HDR sem animes
+│   ├── config-LEGENDADO-4K-HDR.yaml                   # LEGENDADO: 4K + HDR (scores máximos)
+│   ├── config-LEGENDADO-4K-HDR-SEM-ANIMES.yaml        # LEGENDADO: 4K + HDR sem animes
+│   ├── config-LEGENDADO-4K.yaml                       # LEGENDADO: 4K sem HDR (HDR = -10000)
+│   ├── config-LEGENDADO-4K-SEM-ANIMES.yaml            # LEGENDADO: 4K sem HDR sem animes
+│   ├── config-LEGENDADO.yaml                          # LEGENDADO: Sem 4K e sem HDR (ambos = -10000)
+│   ├── config-LEGENDADO-SEM-ANIMES.yaml               # LEGENDADO: Sem 4K/HDR sem animes
+│   └── config-profile-EXAMPLE.yaml                    # Template de exemplo
+├── custom-formats/                                    # Todos os custom formats
+│   │   # PT-BR Específicos
+│   ├── custom-brazilian-group-tier-dual-audio.json     # Grupos PT-BR com Dual Audio
+│   ├── custom-brazilian-dual-language.json             # Detecção Dual Language
+│   ├── custom-brazilian-group-tier-subtitles.json      # Grupos PT-BR com Legendas
+│   ├── custom-brazilian-subtitles.json                 # Detecção Legendas PT-BR
+│   ├── custom-original-language.json                   # Língua Original
+│   ├── custom-brazilian-group-tier-bad.json            # Grupos Não Confiáveis
+│   ├── custom-us-group-tier-premium.json               # Grupos Premium US
+│   │   # Release Quality (Radarr)
+│   ├── radarr-uhd-remux-release.json                   # UHD Remux
+│   ├── radarr-fhd-remux-release.json                   # FHD Remux
+│   ├── radarr-uhd-bluray-release.json                  # UHD Bluray
+│   ├── radarr-fhd-bluray-release.json                  # FHD Bluray
+│   ├── radarr-uhd-web-release.json                     # UHD Web
+│   ├── radarr-fhd-web-release.json                     # FHD Web
+│   ├── radarr-hd-{remux,bluray,web}-release.json       # HD variants
+│   │   # Release Quality (Sonarr)
+│   ├── sonarr-{uhd,fhd,hd}-{remux,bluray,web}-release.json
+│   │   # Tags/Codecs (por app)
+│   ├── {radarr,sonarr}-custom-pt-br-globoplay.json     # Tag GloboPlay
+│   ├── {radarr,sonarr}-custom-pt-br-{x264,x265,h264,h265}.json  # Tags Encoder
+│   └── sonarr-custom-season-pack.json                  # Season Pack
 ├── iac/                                               # Infraestrutura como Código
-│   ├── docker-compose/ 
-│   │   ├── automatico/                                
-│   │   │   └── docker-compose.yaml                    # Docker Compose Automatico
+│   ├── docker-compose/
+│   │   ├── automatico/
+│   │   │   └── docker-compose.yaml                    # Docker Compose Automático
 │   │   └── manual/
 │   │       ├── docker-compose.yaml                    # Docker Compose Manual
-│   │       └── download-custom-formats.sh             # Bash Downloads Custom Profiles
-│   └── k8s/    
+│   │       └── download-custom-formats.sh             # Script Downloads Custom Formats
+│   └── k8s/
 │       └── configarr/                                 # Manifestos Kubernetes
-│           ├── configarr-config.yaml
+│           ├── configarr-config.yaml                   # ConfigMap (base de referência)
 │           ├── configarr-cronjob.yaml
 │           ├── configarr-pvc.yaml
 │           ├── configarr-secrets.yaml
 │           └── kustomization.yaml
-└── prowlarr-indexes/                                  # Indexes do Prowlarr Modificados 
-                                                       #( Adicionar dentro do container do Prowlarr no /config/Definition/Custom)
-
+└── prowlarr-indexes/                                  # Indexes do Prowlarr Modificados
 ```
+
+## 🎬 Perfis Disponíveis
+
+### Tipos de Perfil (4K/HDR)
+
+Existem **3 tipos de perfil** que controlam o comportamento de 4K e HDR:
+
+| Perfil | 4K/UHD | HDR | Descrição |
+|--------|--------|-----|-----------|
+| **4K-HDR** | Scores altos (UHD Remux=7000) | Scores positivos (HDR=1500, DV=2500) | Qualidade máxima com 4K e HDR |
+| **4K** | Scores altos (UHD Remux=7000) | Score -10000 (penalizado) | 4K sem HDR - evita conteúdo HDR |
+| **Base** (sem sufixo) | Score -10000 (penalizado) | Score -10000 (penalizado) | Sem 4K e sem HDR - apenas HD/FHD |
+
+### Línguas (Dublado/Legendado)
+
+| Língua | Prioridade | Descrição |
+|--------|-----------|-----------|
+| **DUBLADO** | Dual Audio (30000) > Legendas (20000) | Prioriza releases com áudio em português |
+| **LEGENDADO** | Legendas (30000) > Dual Audio (20000) | Prioriza releases com legendas em português |
+
+### Combinações Disponíveis
+
+Cada tipo + língua possui variante **COM** e **SEM ANIMES** (12 configs total):
+
+| Config | Tipo | Língua |
+|--------|------|--------|
+| `config-DUBLADO-4K-HDR.yaml` | 4K + HDR | Dublado |
+| `config-DUBLADO-4K.yaml` | 4K sem HDR | Dublado |
+| `config-DUBLADO.yaml` | Sem 4K/HDR | Dublado |
+| `config-LEGENDADO-4K-HDR.yaml` | 4K + HDR | Legendado |
+| `config-LEGENDADO-4K.yaml` | 4K sem HDR | Legendado |
+| `config-LEGENDADO.yaml` | Sem 4K/HDR | Legendado |
+
+> Todas as combinações acima possuem variante `-SEM-ANIMES` (ex: `config-DUBLADO-4K-HDR-SEM-ANIMES.yaml`)
+
+---
 
 # 📦 Custom Formats Disponíveis
 
-## 🎬 Perfis
-## LEGENDADOS
-------------------------------------------------------------------
-### 📺 Radarr/Sonarr (GLOBAL)
+### PT-BR Específicos
 
-#### Web Tier PT-BR
+| Custom Format | Descrição | Score DUBLADO | Score LEGENDADO |
+|---------------|-----------|---------------|-----------------|
+| **custom-brazilian-group-tier-dual-audio** | Grupos PT-BR com Dual Audio | +30000 | +20000 |
+| **custom-brazilian-dual-language** | Detecção Dual Language | +29500 | +19500 |
+| **custom-brazilian-group-tier-subtitles** | Grupos PT-BR com Legendas | +20000 | +30000 |
+| **custom-brazilian-subtitles** | Detecção Legendas PT-BR | +19500 | +29500 |
+| **custom-original-language** | Língua Original | +1000 | +1000 |
+| **custom-brazilian-group-tier-bad** | Grupos Não Confiáveis | +15000 | +15000 |
+| **custom-us-group-tier-premium** | Grupos Premium US | +5000 | +5000 |
 
-| Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
-|---------------|-----------|-------------------|----------------------------------------------|
-| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000 |
-| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000 |
-| **custom-pt-br-legendado** | Prioriza Releases COM REGEX LEGENDADOS e afins... | +7500 | +25000 |
-| **custom-pt-br-original-language** | Tag Para Language Original PÓS IMPORTAÇÃO | +300 | +1000 |
-| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
-| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +10000 | +30000 |
-| **custom-pt-br-globoplay** *| Apenas Tag GloboPlay | +0 | +0 |
-| **Tag Encoders** *| Apenas Tag Do tipo do Encoder | +0 | +0 |
+### Release Quality (por app)
 
-- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
-- **Custom Formats exclusivos do Radarr/Sonarr** Custom Formats de encoders e streaming são específicos para cada aplicação. Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
+| Custom Format | Descrição | Score 4K/4K-HDR | Score Base |
+|---------------|-----------|-----------------|-----------|
+| **{radarr,sonarr}-uhd-remux-release** | UHD Remux | +7000 | -10000 |
+| **{radarr,sonarr}-fhd-remux-release** | FHD Remux | +6750 | +6750 |
+| **{radarr,sonarr}-uhd-bluray-release** | UHD Bluray | +4000 | -10000 |
+| **{radarr,sonarr}-fhd-bluray-release** | FHD Bluray | +3500 | +3500 |
+| **{radarr,sonarr}-uhd-web-release** | UHD Web | +3000 | -10000 |
+| **{radarr,sonarr}-fhd-web-release** | FHD Web | +2500 | +2500 |
+| **{radarr,sonarr}-hd-remux-release** | HD Remux | +2250 | +2250 |
+| **{radarr,sonarr}-hd-bluray-release** | HD Bluray | +2000 | +2000 |
+| **{radarr,sonarr}-hd-web-release** | HD Web | +1750 | +1750 |
 
-## DUBLADOS
-------------------------------------------------------------------
-### 📺 Radarr/Sonarr (GLOBAL)
+### Tags/Codecs
 
-#### Web Tier PT-BR
+| Custom Format | Descrição | Score |
+|---------------|-----------|-------|
+| **{radarr,sonarr}-custom-pt-br-globoplay** | Tag GloboPlay | 0 |
+| **{radarr,sonarr}-custom-pt-br-{x264,x265,h264,h265}** | Tags Encoder | 0 |
+| **sonarr-custom-season-pack** | Season Pack | 0 |
 
-| Custom Format | Descrição | Score Recomendado Series/Movies| Score Recomendado Animes |
-|---------------|-----------|-------------------|----------------------------------------------|
-| **custom-pt-br-dual-audio** | Prioriza Releases com Titulos - BRAZILIAN-DUAL-AUDIO/NACIONAL | +10000 | +30000 |
-| **custom-pt-br-dual-language** | Tag Para BRAZILIAN-DUAL-AUDIO PÓS IMPORTAÇÃO | +10000 | +30000 |
-| **custom-pt-br-dublado** | Prioriza Releases COM REGEX Dublados e afins... | +7500 | +25000 |
-| **custom-pt-br-dublado-language** | Tag Para Language Portugues PÓS IMPORTAÇÃO | +7500 | +25000 |
-| **custom-pt-br-web-tier-bad-group** | Grupos pt-BR não Confiaveis | +7000 | +20000 |
-| **custom-pt-br-web-tier** | Grupos pt-BR Confiaveis | +10000 | +30000 |
-| **custom-pt-br-globoplay** *| Apenas Tag GloboPlay | +0 | +0 |
-| **Tag Encoders** *| Apenas Tag Do tipo do Encoder | +0 | +0 |
+- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265).
+- **Custom Formats exclusivos do Radarr/Sonarr**: Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
 
-- **Tag Encoders** somente se precisar de scores específicos ou distinguir entre software (x264/x265) e hardware (H.264/H.265). Encodes de software geralmente oferecem melhor compressão. Para encoders específicos, customize as pontuações em `config.yaml` (Configarr).
-- **Custom Formats exclusivos do Radarr/Sonarr** Custom Formats de encoders e streaming são específicos para cada aplicação. Aqueles prefixados com "radarr" ou "sonarr" devem ser utilizados apenas em seu respectivo programa.
+## 📊 Estrutura de Scores
+
+### Video Quality (4K)
+
+Os scores de Video Quality controlam a preferência por conteúdo UHD/4K vs HD/FHD:
+
+| Release Type | Perfil 4K-HDR / 4K | Perfil Base (sem 4K) |
+|---|---|---|
+| UHD Remux | +7000 | **-10000** |
+| FHD Remux | +6750 | +6750 |
+| UHD Bluray | +4000 | **-10000** |
+| FHD Bluray | +3500 | +3500 |
+| UHD Web | +3000 | **-10000** |
+| FHD Web | +2500 | +2500 |
+| HD Remux | +2250 | +2250 |
+| HD Bluray | +2000 | +2000 |
+| HD Web | +1750 | +1750 |
+
+### HDR
+
+| Custom Format | Perfil 4K-HDR | Perfil 4K / Base |
+|---|---|---|
+| HDR | +1500 | **-10000** |
+| DV Boost | +2500 | **-10000** |
+| HDR10 Plus Boost | +2000 | **-10000** |
+| DV (Disk) | +2500 | **-10000** |
+| DV (w/o HDR fallback) | -100000 | -100000 |
+| Generated Dynamic HDR | -100000 | -100000 |
+| SDR | 0 | +10 |
+| SDR (no WEBDL) | 0 | +10 |
+
+### PT-BR Tiers
+
+| Custom Format | DUBLADO | LEGENDADO |
+|---|---|---|
+| Grupos Dual Audio | +30000 | +20000 |
+| Dual Language | +29500 | +19500 |
+| Grupos Legendas | +20000 | +30000 |
+| Legendas PT-BR | +19500 | +29500 |
+| Língua Original | +1000 | +1000 |
+| Grupos Ruins | +15000 | +15000 |
+| Grupos Premium US | +5000 | +5000 |
+
+### Audio Quality (igual para todos os perfis)
+
+| Codec | Score |
+|---|---|
+| TrueHD Atmos | +5000 |
+| DTS X | +4500 |
+| ATMOS (undefined) / DD+ ATMOS | +3000 |
+| TrueHD | +2750 |
+| DTS-HD MA | +2500 |
+| FLAC / PCM | +2250 |
+| DTS-HD HRA | +2000 |
+| DD+ | +1750 |
+| DTS-ES | +1500 |
+| DTS | +1250 |
+| AAC | +1000 |
+
+---
 
 ## 🔧 Configurando os Quality Profiles
 
@@ -194,22 +298,22 @@ Antes de configurar os custom formats, você precisa ter um Quality Profile cham
 
 #### No Radarr/Sonarr:
 
-1. Acesse **Settings → Profiles**
+1. Acesse **Settings -> Profiles**
 2. Clique em **+** para adicionar novo perfil
 3. Configure:
    - **Name**: `HD`
-   - **Upgrades Allowed**: ✅ (habilitado)
-   - **Upgrade Until**: Selecione a qualidade máxima desejada (Ex: Bluray-1080p)
-   - **Qualities**: Selecione as qualidades desejadas (Ex: WEBDL-1080p, WEBRip-1080p, Bluray-1080p, Remux-1080p)
+   - **Upgrades Allowed**: Habilitado
+   - **Upgrade Until**: FULLHD
+   - **Qualities**: Bluray-2160p, WEBDL-2160p, WEBRip-2160p, Bluray-1080p, WEBDL-1080p, WEBRip-1080p (ajuste conforme o perfil)
    - **Minimum Custom Format Score** Recomendado:
-      - **Filmes/Series Mix de Conteudos Gringos mas que prefira PT-BR: 250 ( caso tenha um Bazarr configurado)
-      - **Filmes/Series Apenas Dual Audio/Legendados: 7500 
-      - **Filmes/Series Apenas Dual Audio/Dublado: 7500
-      - **Animes GLOBAL Apenas Dual Audio/Legendado/Dublados: 19000
+      - Filmes/Series Mix de Conteudos Gringos mas que prefira PT-BR: 250 (caso tenha um Bazarr configurado)
+      - Filmes/Series Apenas Dual Audio/Legendados: 7500
+      - Filmes/Series Apenas Dual Audio/Dublado: 7500
+      - Animes GLOBAL Apenas Dual Audio/Legendado/Dublados: 19000
    - **Upgrade Until Custom Format Score** Recomendado:
-      - **Filmes/Series Sem HDR: 23100
-      - **Filmes/Series Com HDR: 24500
-      - **Animes : 60000
+      - Filmes/Series Sem HDR: 23100
+      - Filmes/Series Com HDR: 24500
+      - Animes: 60000
 4. Clique em **Save**
 
 ## **Pré-Requisitos OBRIGATÓRIO:** Estrutura de Nomeação dos Arquivos
@@ -676,40 +780,44 @@ EOF
 > **Dica:** Substitua `sonarr`, `radarr`, etc. pelos nomes reais dos seus containers/serviços.
 
 ### 3. Baixar config.yml com todos Custom Formats do trashguide e Scores
-> **Dica:** Baixe apenas UM config.yaml, de acordo com o perfil. ( Também há perfis sem Animes. 
+> **Dica:** Baixe apenas UM config.yaml, de acordo com o perfil desejado. Cada perfil combina tipo (4K/HDR) + lingua (Dublado/Legendado).
 
 ```bash
-# Opção 1: Legendados Sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
+# ==================== DUBLADO ====================
+
+# Opção 1: DUBLADO - 4K + HDR (qualidade máxima)
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K-HDR.yaml \
   -o config/config.yml
 
-# Opção 2: Legendados COM HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON.yaml \
+# Opção 2: DUBLADO - 4K sem HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K.yaml \
   -o config/config.yml
 
-# Opção 3: Dublados sem HDR
+# Opção 3: DUBLADO - Sem 4K e sem HDR (apenas HD/FHD)
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
   -o config/config.yml
 
-# Opção 4: Dublados Com HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON.yaml \
+# ==================== LEGENDADO ====================
+
+# Opção 4: LEGENDADO - 4K + HDR (qualidade máxima)
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K-HDR.yaml \
   -o config/config.yml
 
-# Opção 5: Legendados Sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
-  -o config/config.yml 
-
-# Opção 6: Legendados COM HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
+# Opção 5: LEGENDADO - 4K sem HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K.yaml \
   -o config/config.yml
 
-# Opção 7: Dublados sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-SEM-ANIMES.yaml \
+# Opção 6: LEGENDADO - Sem 4K e sem HDR (apenas HD/FHD)
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
   -o config/config.yml
 
-# Opção 8: Dublados Com HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
-  -o config/config.yml
+# ==================== SEM ANIMES ====================
+# Adicione "-SEM-ANIMES" ao nome do arquivo para versões sem seções de anime.
+# Exemplo:
+# config-DUBLADO-4K-HDR-SEM-ANIMES.yaml
+# config-LEGENDADO-4K-SEM-ANIMES.yaml
+# config-DUBLADO-SEM-ANIMES.yaml
+# etc.
 ```
 
 **Ou crie manualmente (exemplo simplificado):**
@@ -775,15 +883,15 @@ download_format() {
     }
 }
 
-# Custom Formats Globais
-download_format 'custom-pt-br-dual-audio.json'
-download_format 'custom-pt-br-dual-language.json'
-download_format 'custom-pt-br-dublado-language.json'
-download_format 'custom-pt-br-dublado.json'
-download_format 'custom-pt-br-legendado.json'
-download_format 'custom-pt-br-original-language.json'
-download_format 'custom-pt-br-web-tier-bad-group.json'
-download_format 'custom-pt-br-web-tier.json'
+# Custom Formats PT-BR
+download_format 'custom-brazilian-group-tier-dual-audio.json'
+download_format 'custom-brazilian-dual-language.json'
+download_format 'custom-brazilian-group-tier-subtitles.json'
+download_format 'custom-brazilian-subtitles.json'
+download_format 'custom-original-language.json'
+download_format 'custom-brazilian-group-tier-bad.json'
+download_format 'custom-us-group-tier-premium.json'
+# Tags e Codecs
 download_format 'sonarr-custom-pt-br-globoplay.json'
 download_format 'radarr-custom-pt-br-globoplay.json'
 download_format 'radarr-custom-pt-br-x264.json'
@@ -794,7 +902,27 @@ download_format 'sonarr-custom-pt-br-x264.json'
 download_format 'sonarr-custom-pt-br-x265.json'
 download_format 'sonarr-custom-pt-br-h264.json'
 download_format 'sonarr-custom-pt-br-h265.json'
-download_format 'custom-season-pack.json'
+download_format 'sonarr-custom-season-pack.json'
+# Release Quality - Radarr
+download_format 'radarr-uhd-remux-release.json'
+download_format 'radarr-fhd-remux-release.json'
+download_format 'radarr-uhd-bluray-release.json'
+download_format 'radarr-fhd-bluray-release.json'
+download_format 'radarr-uhd-web-release.json'
+download_format 'radarr-fhd-web-release.json'
+download_format 'radarr-hd-remux-release.json'
+download_format 'radarr-hd-bluray-release.json'
+download_format 'radarr-hd-web-release.json'
+# Release Quality - Sonarr
+download_format 'sonarr-uhd-remux-release.json'
+download_format 'sonarr-fhd-remux-release.json'
+download_format 'sonarr-uhd-bluray-release.json'
+download_format 'sonarr-fhd-bluray-release.json'
+download_format 'sonarr-uhd-web-release.json'
+download_format 'sonarr-fhd-web-release.json'
+download_format 'sonarr-hd-remux-release.json'
+download_format 'sonarr-hd-bluray-release.json'
+download_format 'sonarr-hd-web-release.json'
 
 
 echo "✅ Custom formats baixados com sucesso!"
@@ -870,37 +998,37 @@ EOF
 ### 3. Baixar config.yml com todos Custom Formats do trashguide e Scores
 
 ```bash
-# Opção 1: Legendados Sem HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
+# ==================== DUBLADO ====================
+
+# DUBLADO - 4K + HDR (qualidade máxima)
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K-HDR.yaml \
   -o config/config.yml
 
-# Opção 2: Legendados COM HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON.yaml \
+# DUBLADO - 4K sem HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-4K.yaml \
   -o config/config.yml
 
-# Opção 3: Dublados sem HDR
+# DUBLADO - Sem 4K e sem HDR
 curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO.yaml \
   -o config/config.yml
 
-# Opção 4: Dublados Com HDR
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON.yaml \
+# ==================== LEGENDADO ====================
+
+# LEGENDADO - 4K + HDR (qualidade máxima)
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K-HDR.yaml \
   -o config/config.yml
 
-# Opção 5: Legendados Sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-SEM-ANIMES.yaml \
-  -o config/config.yml 
-
-# Opção 6: Legendados COM HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-HDR-ON-SEM-ANIMES.yaml \
+# LEGENDADO - 4K sem HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO-4K.yaml \
   -o config/config.yml
 
-# Opção 7: Dublados sem HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-SEM-ANIMES.yaml \
+# LEGENDADO - Sem 4K e sem HDR
+curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-LEGENDADO.yaml \
   -o config/config.yml
 
-# Opção 8: Dublados Com HDR - SEM ANIMES
-curl -fsSL https://raw.githubusercontent.com/marcosviniciusi/trash-guides-ptbr/refs/heads/develop/configarr/config-DUBLADO-HDR-ON-SEM-ANIMES.yaml \
-  -o config/config.yml
+# ==================== SEM ANIMES ====================
+# Adicione "-SEM-ANIMES" ao nome para versões sem anime.
+# Ex: config-DUBLADO-4K-HDR-SEM-ANIMES.yaml
 ```
 
 **Ou crie manualmente (exemplo simplificado):**
@@ -976,15 +1104,14 @@ services:
           }
       }
       
-		# Custom Formats Globais
-      download_format 'custom-pt-br-dual-audio.json'
-      download_format 'custom-pt-br-dual-language.json'
-      download_format 'custom-pt-br-dublado-language.json'
-      download_format 'custom-pt-br-dublado.json'
-      download_format 'custom-pt-br-legendado.json'
-      download_format 'custom-pt-br-original-language.json'
-      download_format 'custom-pt-br-web-tier-bad-group.json'
-      download_format 'custom-pt-br-web-tier.json'
+		# Custom Formats PT-BR
+      download_format 'custom-brazilian-group-tier-dual-audio.json'
+      download_format 'custom-brazilian-dual-language.json'
+      download_format 'custom-brazilian-group-tier-subtitles.json'
+      download_format 'custom-brazilian-subtitles.json'
+      download_format 'custom-original-language.json'
+      download_format 'custom-brazilian-group-tier-bad.json'
+      download_format 'custom-us-group-tier-premium.json'
       download_format 'sonarr-custom-pt-br-globoplay.json'
       download_format 'radarr-custom-pt-br-globoplay.json'
       download_format 'radarr-custom-pt-br-x264.json'
@@ -995,7 +1122,25 @@ services:
       download_format 'sonarr-custom-pt-br-x265.json'
       download_format 'sonarr-custom-pt-br-h264.json'
       download_format 'sonarr-custom-pt-br-h265.json'
-      download_format 'custom-season-pack.json'
+      download_format 'sonarr-custom-season-pack.json'
+      download_format 'radarr-uhd-remux-release.json'
+      download_format 'radarr-fhd-remux-release.json'
+      download_format 'radarr-uhd-bluray-release.json'
+      download_format 'radarr-fhd-bluray-release.json'
+      download_format 'radarr-uhd-web-release.json'
+      download_format 'radarr-fhd-web-release.json'
+      download_format 'radarr-hd-remux-release.json'
+      download_format 'radarr-hd-bluray-release.json'
+      download_format 'radarr-hd-web-release.json'
+      download_format 'sonarr-uhd-remux-release.json'
+      download_format 'sonarr-fhd-remux-release.json'
+      download_format 'sonarr-uhd-bluray-release.json'
+      download_format 'sonarr-fhd-bluray-release.json'
+      download_format 'sonarr-uhd-web-release.json'
+      download_format 'sonarr-fhd-web-release.json'
+      download_format 'sonarr-hd-remux-release.json'
+      download_format 'sonarr-hd-bluray-release.json'
+      download_format 'sonarr-hd-web-release.json'
       
       echo '✅ Custom formats baixados com sucesso!'
       "
