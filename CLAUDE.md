@@ -253,3 +253,22 @@ Cada config tem 4 secoes (ou 2 para SEM-ANIMES):
 - SEM-ANIMES remove secoes animes-movies e animes-series
 - Base do k8s (iac/k8s/configarr/configarr-config.yaml) tem a logica correta
 - Antigos custom-pt-br-*.json foram substituidos por custom-brazilian-*.json
+
+## Procedimento ao Criar Novo Custom Format
+
+Ao criar um novo arquivo JSON em `custom-formats/`:
+
+1. **O script de download (`download-custom-formats.sh`) se atualiza automaticamente** — o GitHub Actions gera o script dinamicamente a partir dos arquivos em `custom-formats/*.json`, entao nao precisa editar listas manualmente.
+
+2. **OBRIGATORIO: Adicionar nos configs do Configarr** — Verificar TODOS os arquivos em `configarr/` e adicionar o novo `trash_id` nas secoes apropriadas (radarr.movies, radarr.animes-movies, sonarr.series, sonarr.animes-series).
+
+3. **SEMPRE PERGUNTAR ao usuario qual score** para cada tipo de perfil antes de adicionar:
+   - Score para perfil **4K-HDR** (UHD + HDR habilitado)
+   - Score para perfil **4K** (UHD habilitado, HDR desabilitado)
+   - Score para perfil **Base** (sem UHD, sem HDR)
+   - Se o score difere entre **DUBLADO** e **LEGENDADO**
+   - Se o score difere entre **Movies/Series** e **Animes**
+
+4. **NAO assumir scores** — cada custom format tem scores especificos por perfil. Consultar as tabelas de scores neste documento como referencia, mas sempre confirmar com o usuario.
+
+5. **Atualizar este CLAUDE.md** — adicionar o novo custom format nas tabelas de scores e na lista de arquivos.
