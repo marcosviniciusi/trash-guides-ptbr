@@ -3811,6 +3811,15 @@
       "fields": {
         "value": "^(FF-GF)$"
       }
+    },
+    {
+      "name": "PaODEQUEiJO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(PaODEQUEiJO)$"
+      }
     }
   ]
 }
