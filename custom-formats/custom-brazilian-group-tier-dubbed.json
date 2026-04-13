@@ -3809,6 +3809,15 @@
       "fields": {
         "value": "^(PaODEQUEiJO)$"
       }
+    },
+    {
+      "name": "Franceira",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Franceira)$"
+      }
     }
   ]
 }
