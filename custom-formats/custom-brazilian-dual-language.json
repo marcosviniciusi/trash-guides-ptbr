@@ -3865,6 +3865,15 @@
       "fields": {
         "value": "^(siz3d)$"
       }
+    },
+    {
+      "name": "HCBG",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(HCBG)$"
+      }
     }
   ]
 }
