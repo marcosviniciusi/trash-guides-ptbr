@@ -3863,6 +3863,24 @@
       "fields": {
         "value": "^(HCBG)$"
       }
+    },
+    {
+      "name": "SBTMaskarado",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SBTMaskarado)$"
+      }
+    },
+    {
+      "name": "masterkivat",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(masterkivat)$"
+      }
     }
   ]
 }
