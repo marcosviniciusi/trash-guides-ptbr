@@ -9,7 +9,7 @@
       "negate": false,
       "required": true,
       "fields": {
-        "value": "(?i)\\b(dublado|NACIONAL|dub(bed)?|brasil[-\\s]dub|audio[-\\s]pt[-\\s]?br)\\b"
+        "value": "(?i)\\b(dublado|NACIONAL|dub(bed)?|brasil[-\\s]dub|audio[-\\s]pt[-\\s]?br)\\b|\\[audio-\\[[a-z+]*\\bpt\\b"
       }
     },
     {
