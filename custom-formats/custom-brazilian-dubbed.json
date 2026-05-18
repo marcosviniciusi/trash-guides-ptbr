@@ -3829,6 +3829,78 @@
       "fields": {
         "value": "^(Franceira)$"
       }
+    },
+    {
+      "name": "FLORiX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(FLORiX)$"
+      }
+    },
+    {
+      "name": "DARKDREAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(DARKDREAM)$"
+      }
+    },
+    {
+      "name": "Fergus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(Fergus)$"
+      }
+    },
+    {
+      "name": "Resu",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(Resu)$"
+      }
+    },
+    {
+      "name": "siz3d",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(siz3d)$"
+      }
+    },
+    {
+      "name": "HCBG",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(HCBG)$"
+      }
+    },
+    {
+      "name": "SBTMaskarado",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(SBTMaskarado)$"
+      }
+    },
+    {
+      "name": "masterkivat",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "^(masterkivat)$"
+      }
     }
   ]
 }

@@ -9,7 +9,7 @@
       "negate": false,
       "required": true,
       "fields": {
-        "value": "(?i)\\b(dublado|NACIONAL|dub(bed)?|brasil[-\\s]dub|audio[-\\s]pt[-\\s]?br)\\b"
+        "value": "(?i)\\b(dublado|NACIONAL|dub(bed)?|brasil[-\\s]dub|audio[-\\s]pt[-\\s]?br)\\b|\\[audio-\\[[a-z+]*\\bpt\\b"
       }
     },
     {
@@ -3817,6 +3817,78 @@
       "required": false,
       "fields": {
         "value": "^(Franceira)$"
+      }
+    },
+    {
+      "name": "FLORiX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(FLORiX)$"
+      }
+    },
+    {
+      "name": "DARKDREAM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(DARKDREAM)$"
+      }
+    },
+    {
+      "name": "Fergus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Fergus)$"
+      }
+    },
+    {
+      "name": "Resu",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Resu)$"
+      }
+    },
+    {
+      "name": "siz3d",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(siz3d)$"
+      }
+    },
+    {
+      "name": "HCBG",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HCBG)$"
+      }
+    },
+    {
+      "name": "SBTMaskarado",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SBTMaskarado)$"
+      }
+    },
+    {
+      "name": "masterkivat",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(masterkivat)$"
       }
     }
   ]
