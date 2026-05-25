@@ -14,13 +14,13 @@
       }
     },
     {
-      "name": "Portuguese",
+      "name": "Not Original",
       "implementation": "LanguageSpecification",
-      "negate": false,
-      "required": false,
+      "negate": true,
+      "required": true,
       "fields": {
-        "value": 18,
-        "exceptLanguage": false
+        "value": -2,
+        "exceptLanguage": true
       }
     }
   ]
