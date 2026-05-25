@@ -409,7 +409,7 @@ data:
               - custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
-                score: 3000
+                score: 1000
           - trash_ids:
               - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
             assign_scores_to:
@@ -848,7 +848,7 @@ data:
               - custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
-                score: 3000
+                score: 1000
           - trash_ids:
               - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
             assign_scores_to:
@@ -1481,7 +1481,7 @@ data:
               - custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
-                score: 3000
+                score: 1000
           - trash_ids:
               - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
             assign_scores_to:
@@ -1944,7 +1944,7 @@ data:
               - custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
-                score: 3000
+                score: 1000
           - trash_ids:
               - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
             assign_scores_to:
