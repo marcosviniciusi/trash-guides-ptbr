@@ -3900,6 +3900,24 @@
       "fields": {
         "value": "(?:^|-)masterkivat$"
       }
+    },
+    {
+      "name": "FRNcR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)FRNcR$"
+      }
+    },
+    {
+      "name": "ADN",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)ADN$"
+      }
     }
   ]
 }
