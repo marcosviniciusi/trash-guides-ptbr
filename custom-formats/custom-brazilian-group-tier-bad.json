@@ -36,7 +36,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-S74Ll10n$"
+        "value": "(?i)-S74Ll10n(?:\\.\\w+)?$"
       }
     }
   ]
