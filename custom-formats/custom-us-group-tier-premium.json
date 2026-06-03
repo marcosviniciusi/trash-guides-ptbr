@@ -9,7 +9,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BBQ)$"
+        "value": "(?:^|-)BBQ$"
       }
     },
     {
@@ -18,7 +18,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BMF)$"
+        "value": "(?:^|-)BMF$"
       }
     },
     {
@@ -27,16 +27,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FraMeSToR)$"
+        "value": "(?:^|-)FraMeSToR$"
       }
     },
     {
       "name": "c0kE",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-c0kE(?:\\.\\w+)?$"
+        "value": "(?:^|-)c0kE$"
       }
     },
     {
@@ -45,7 +45,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Chotab)$"
+        "value": "(?:^|-)Chotab$"
       }
     },
     {
@@ -54,7 +54,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CRiSC)$"
+        "value": "(?:^|-)CRiSC$"
       }
     },
     {
@@ -63,16 +63,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CtrlHD)$"
+        "value": "(?:^|-)CtrlHD$"
       }
     },
     {
       "name": "D-Z0N3",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-D\\-Z0N3(?:\\.\\w+)?$"
+        "value": "(?:^|-)D\\-Z0N3$"
       }
     },
     {
@@ -81,7 +81,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Dariush)$"
+        "value": "(?:^|-)Dariush$"
       }
     },
     {
@@ -90,7 +90,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(decibeL)$"
+        "value": "(?:^|-)decibeL$"
       }
     },
     {
@@ -99,7 +99,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DON)$"
+        "value": "(?:^|-)DON$"
       }
     },
     {
@@ -108,7 +108,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(EbP)$"
+        "value": "(?:^|-)EbP$"
       }
     },
     {
@@ -117,7 +117,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(EDPH)$"
+        "value": "(?:^|-)EDPH$"
       }
     },
     {
@@ -126,7 +126,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Geek)$"
+        "value": "(?:^|-)Geek$"
       }
     },
     {
@@ -135,7 +135,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LolHD)$"
+        "value": "(?:^|-)LolHD$"
       }
     },
     {
@@ -144,7 +144,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NCmt)$"
+        "value": "(?:^|-)NCmt$"
       }
     },
     {
@@ -153,7 +153,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PTer)$"
+        "value": "(?:^|-)PTer$"
       }
     },
     {
@@ -162,7 +162,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TayTO)$"
+        "value": "(?:^|-)TayTO$"
       }
     },
     {
@@ -171,7 +171,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TDD)$"
+        "value": "(?:^|-)TDD$"
       }
     },
     {
@@ -180,7 +180,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TnP)$"
+        "value": "(?:^|-)TnP$"
       }
     },
     {
@@ -189,16 +189,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(VietHD)$"
+        "value": "(?:^|-)VietHD$"
       }
     },
     {
       "name": "ZQ",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-ZQ(?:\\.\\w+)?$"
+        "value": "(?:^|-)ZQ$"
       }
     },
     {
@@ -207,7 +207,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ZoroSenpai)$"
+        "value": "(?:^|-)ZoroSenpai$"
       }
     },
     {
@@ -216,16 +216,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ATELiER)$"
+        "value": "(?:^|-)ATELiER$"
       }
     },
     {
       "name": "EA",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-EA(?:\\.\\w+)?$"
+        "value": "(?:^|-)EA$"
       }
     },
     {
@@ -234,7 +234,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HiDt)$"
+        "value": "(?:^|-)HiDt$"
       }
     },
     {
@@ -243,7 +243,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HiSD)$"
+        "value": "(?:^|-)HiSD$"
       }
     },
     {
@@ -252,7 +252,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iFT)$"
+        "value": "(?:^|-)iFT$"
       }
     },
     {
@@ -261,7 +261,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NTb)$"
+        "value": "(?:^|-)NTb$"
       }
     },
     {
@@ -270,16 +270,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(QOQ)$"
+        "value": "(?:^|-)QOQ$"
       }
     },
     {
       "name": "SA89",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-SA89(?:\\.\\w+)?$"
+        "value": "(?:^|-)SA89$"
       }
     },
     {
@@ -288,7 +288,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(sbR)$"
+        "value": "(?:^|-)sbR$"
       }
     },
     {
@@ -297,7 +297,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BHDStudio)$"
+        "value": "(?:^|-)BHDStudio$"
       }
     },
     {
@@ -306,7 +306,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(hallowed)$"
+        "value": "(?:^|-)hallowed$"
       }
     },
     {
@@ -315,7 +315,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HiFi)$"
+        "value": "(?:^|-)HiFi$"
       }
     },
     {
@@ -324,7 +324,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HONE)$"
+        "value": "(?:^|-)HONE$"
       }
     },
     {
@@ -333,7 +333,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LoRD)$"
+        "value": "(?:^|-)LoRD$"
       }
     },
     {
@@ -342,7 +342,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(playHD)$"
+        "value": "(?:^|-)playHD$"
       }
     },
     {
@@ -351,25 +351,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SPHD)$"
+        "value": "(?:^|-)SPHD$"
       }
     },
     {
       "name": "W4NK3R",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-W4NK3R(?:\\.\\w+)?$"
+        "value": "(?:^|-)W4NK3R$"
       }
     },
     {
       "name": "3L",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-3L(?:\\.\\w+)?$"
+        "value": "(?:^|-)3L$"
       }
     },
     {
@@ -378,7 +378,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BiZKiT)$"
+        "value": "(?:^|-)BiZKiT$"
       }
     },
     {
@@ -387,7 +387,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BLURANiUM)$"
+        "value": "(?:^|-)BLURANiUM$"
       }
     },
     {
@@ -396,7 +396,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CiNEPHiLES)$"
+        "value": "(?:^|-)CiNEPHiLES$"
       }
     },
     {
@@ -405,7 +405,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PiRAMiDHEAD)$"
+        "value": "(?:^|-)PiRAMiDHEAD$"
       }
     },
     {
@@ -414,7 +414,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PmP)$"
+        "value": "(?:^|-)PmP$"
       }
     },
     {
@@ -423,7 +423,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SPiRiT)$"
+        "value": "(?:^|-)SPiRiT$"
       }
     },
     {
@@ -432,7 +432,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(WiLDCAT)$"
+        "value": "(?:^|-)WiLDCAT$"
       }
     },
     {
@@ -441,7 +441,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(playBD)$"
+        "value": "(?:^|-)playBD$"
       }
     },
     {
@@ -450,7 +450,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SiCFoI)$"
+        "value": "(?:^|-)SiCFoI$"
       }
     },
     {
@@ -459,7 +459,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SURFINBIRD)$"
+        "value": "(?:^|-)SURFINBIRD$"
       }
     },
     {
@@ -468,16 +468,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TEPES)$"
+        "value": "(?:^|-)TEPES$"
       }
     },
     {
       "name": "12GaugeShotgun",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-12GaugeShotgun(?:\\.\\w+)?$"
+        "value": "(?:^|-)12GaugeShotgun$"
       }
     },
     {
@@ -486,7 +486,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(EPSiLON)$"
+        "value": "(?:^|-)EPSiLON$"
       }
     },
     {
@@ -495,7 +495,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KRaLiMaRKo)$"
+        "value": "(?:^|-)KRaLiMaRKo$"
       }
     },
     {
@@ -504,7 +504,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PTP)$"
+        "value": "(?:^|-)PTP$"
       }
     },
     {
@@ -513,7 +513,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SumVision)$"
+        "value": "(?:^|-)SumVision$"
       }
     },
     {
@@ -522,7 +522,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TOA)$"
+        "value": "(?:^|-)TOA$"
       }
     },
     {
@@ -531,7 +531,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TRiToN)$"
+        "value": "(?:^|-)TRiToN$"
       }
     },
     {
@@ -540,16 +540,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ABBIE)$"
+        "value": "(?:^|-)ABBIE$"
       }
     },
     {
       "name": "AJP69",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-AJP69(?:\\.\\w+)?$"
+        "value": "(?:^|-)AJP69$"
       }
     },
     {
@@ -558,7 +558,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(APEX|PAXA|PEXA|XEPA)$"
+        "value": "(?:^|-)APEX|PAXA|PEXA|XEPA$"
       }
     },
     {
@@ -567,7 +567,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BLUTONiUM)$"
+        "value": "(?:^|-)BLUTONiUM$"
       }
     },
     {
@@ -576,7 +576,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BYNDR)$"
+        "value": "(?:^|-)BYNDR$"
       }
     },
     {
@@ -585,7 +585,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CMRG)$"
+        "value": "(?:^|-)CMRG$"
       }
     },
     {
@@ -594,7 +594,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CRFW)$"
+        "value": "(?:^|-)CRFW$"
       }
     },
     {
@@ -603,7 +603,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CRUD)$"
+        "value": "(?:^|-)CRUD$"
       }
     },
     {
@@ -612,7 +612,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FLUX)$"
+        "value": "(?:^|-)FLUX$"
       }
     },
     {
@@ -621,7 +621,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GNOME)$"
+        "value": "(?:^|-)GNOME$"
       }
     },
     {
@@ -630,7 +630,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KiNGS)$"
+        "value": "(?:^|-)KiNGS$"
       }
     },
     {
@@ -639,7 +639,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kitsune)$"
+        "value": "(?:^|-)Kitsune$"
       }
     },
     {
@@ -648,7 +648,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NOSiViD)$"
+        "value": "(?:^|-)NOSiViD$"
       }
     },
     {
@@ -657,7 +657,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NTG)$"
+        "value": "(?:^|-)NTG$"
       }
     },
     {
@@ -666,7 +666,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RAWR)$"
+        "value": "(?:^|-)RAWR$"
       }
     },
     {
@@ -675,7 +675,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SiC)$"
+        "value": "(?:^|-)SiC$"
       }
     },
     {
@@ -684,16 +684,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TheFarm)$"
+        "value": "(?:^|-)TheFarm$"
       }
     },
     {
       "name": "dB",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-dB(?:\\.\\w+)?$"
+        "value": "(?:^|-)dB$"
       }
     },
     {
@@ -702,7 +702,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Flights)$"
+        "value": "(?:^|-)Flights$"
       }
     },
     {
@@ -711,7 +711,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MiU)$"
+        "value": "(?:^|-)MiU$"
       }
     },
     {
@@ -720,7 +720,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(monkee)$"
+        "value": "(?:^|-)monkee$"
       }
     },
     {
@@ -729,7 +729,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MZABI)$"
+        "value": "(?:^|-)MZABI$"
       }
     },
     {
@@ -738,7 +738,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PHOENiX)$"
+        "value": "(?:^|-)PHOENiX$"
       }
     },
     {
@@ -747,7 +747,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(playWEB)$"
+        "value": "(?:^|-)playWEB$"
       }
     },
     {
@@ -756,7 +756,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SbR)$"
+        "value": "(?:^|-)SbR$"
       }
     },
     {
@@ -765,16 +765,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TOMMY)$"
+        "value": "(?:^|-)TOMMY$"
       }
     },
     {
       "name": "XEBEC",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-(XEBEC|4KBEC|CEBEX)(?:\\.\\w+)?$"
+        "value": "(?:^|-)(XEBEC|4KBEC|CEBEX)$"
       }
     },
     {
@@ -783,7 +783,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BLOOM)$"
+        "value": "(?:^|-)BLOOM$"
       }
     },
     {
@@ -792,7 +792,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Dooky)$"
+        "value": "(?:^|-)Dooky$"
       }
     },
     {
@@ -801,7 +801,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GNOMiSSiON)$"
+        "value": "(?:^|-)GNOMiSSiON$"
       }
     },
     {
@@ -810,7 +810,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HHWEB)$"
+        "value": "(?:^|-)HHWEB$"
       }
     },
     {
@@ -819,7 +819,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NINJACENTRAL)$"
+        "value": "(?:^|-)NINJACENTRAL$"
       }
     },
     {
@@ -828,7 +828,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NPMS)$"
+        "value": "(?:^|-)NPMS$"
       }
     },
     {
@@ -837,7 +837,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ROCCaT)$"
+        "value": "(?:^|-)ROCCaT$"
       }
     },
     {
@@ -846,7 +846,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SiGMA)$"
+        "value": "(?:^|-)SiGMA$"
       }
     },
     {
@@ -855,7 +855,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SLiGNOME)$"
+        "value": "(?:^|-)SLiGNOME$"
       }
     },
     {
@@ -864,7 +864,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SwAgLaNdEr)$"
+        "value": "(?:^|-)SwAgLaNdEr$"
       }
     },
     {
@@ -873,7 +873,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ABBiE)$"
+        "value": "(?:^|-)ABBiE$"
       }
     },
     {
@@ -882,7 +882,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CasStudio)$"
+        "value": "(?:^|-)CasStudio$"
       }
     },
     {
@@ -891,16 +891,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RTN)$"
+        "value": "(?:^|-)RTN$"
       }
     },
     {
       "name": "T6D",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-T6D(?:\\.\\w+)?$"
+        "value": "(?:^|-)T6D$"
       }
     },
     {
@@ -909,16 +909,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ViSUM)$"
+        "value": "(?:^|-)ViSUM$"
       }
     },
     {
       "name": "3cTWeB",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-3cTWeB(?:\\.\\w+)?$"
+        "value": "(?:^|-)3cTWeB$"
       }
     },
     {
@@ -927,7 +927,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BTW)$"
+        "value": "(?:^|-)BTW$"
       }
     },
     {
@@ -936,7 +936,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Cinefeel)$"
+        "value": "(?:^|-)Cinefeel$"
       }
     },
     {
@@ -945,16 +945,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CiT)$"
+        "value": "(?:^|-)CiT$"
       }
     },
     {
       "name": "Coo7",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Coo7(?:\\.\\w+)?$"
+        "value": "(?:^|-)Coo7$"
       }
     },
     {
@@ -963,7 +963,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DEEP)$"
+        "value": "(?:^|-)DEEP$"
       }
     },
     {
@@ -972,7 +972,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(END)$"
+        "value": "(?:^|-)END$"
       }
     },
     {
@@ -981,16 +981,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ETHiCS)$"
+        "value": "(?:^|-)ETHiCS$"
       }
     },
     {
       "name": "FC",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-FC(?:\\.\\w+)?$"
+        "value": "(?:^|-)FC$"
       }
     },
     {
@@ -999,7 +999,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iJP)$"
+        "value": "(?:^|-)iJP$"
       }
     },
     {
@@ -1008,16 +1008,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iKA)$"
+        "value": "(?:^|-)iKA$"
       }
     },
     {
       "name": "iT00NZ",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-iT00NZ(?:\\.\\w+)?$"
+        "value": "(?:^|-)iT00NZ$"
       }
     },
     {
@@ -1026,7 +1026,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(JETIX)$"
+        "value": "(?:^|-)JETIX$"
       }
     },
     {
@@ -1035,7 +1035,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KHN)$"
+        "value": "(?:^|-)KHN$"
       }
     },
     {
@@ -1044,7 +1044,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KiMCHI)$"
+        "value": "(?:^|-)KiMCHI$"
       }
     },
     {
@@ -1053,7 +1053,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LAZY)$"
+        "value": "(?:^|-)LAZY$"
       }
     },
     {
@@ -1062,7 +1062,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NYH)$"
+        "value": "(?:^|-)NYH$"
       }
     },
     {
@@ -1071,7 +1071,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(orbitron)$"
+        "value": "(?:^|-)orbitron$"
       }
     },
     {
@@ -1080,7 +1080,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PSiG)$"
+        "value": "(?:^|-)PSiG$"
       }
     },
     {
@@ -1089,7 +1089,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RTFM)$"
+        "value": "(?:^|-)RTFM$"
       }
     },
     {
@@ -1098,7 +1098,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SDCC)$"
+        "value": "(?:^|-)SDCC$"
       }
     },
     {
@@ -1107,7 +1107,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SIGMA)$"
+        "value": "(?:^|-)SIGMA$"
       }
     },
     {
@@ -1116,7 +1116,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TVSmash)$"
+        "value": "(?:^|-)TVSmash$"
       }
     },
     {
@@ -1125,7 +1125,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(WELP)$"
+        "value": "(?:^|-)WELP$"
       }
     },
     {
@@ -1134,16 +1134,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DRACULA)$"
+        "value": "(?:^|-)DRACULA$"
       }
     },
     {
       "name": "T4H",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-T4H(?:\\.\\w+)?$"
+        "value": "(?:^|-)T4H$"
       }
     },
     {
@@ -1152,7 +1152,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ViSiON)$"
+        "value": "(?:^|-)ViSiON$"
       }
     },
     {
@@ -1161,7 +1161,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(YUTeamHD)$"
+        "value": "(?:^|-)YUTeamHD$"
       }
     },
     {
@@ -1170,25 +1170,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KAFKA)$"
+        "value": "(?:^|-)KAFKA$"
       }
     },
     {
       "name": "j3rico",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-j3rico(?:\\.\\w+)?$"
+        "value": "(?:^|-)j3rico$"
       }
     },
     {
       "name": "N1H4L",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-N1H4L(?:\\.\\w+)?$"
+        "value": "(?:^|-)N1H4L$"
       }
     },
     {
@@ -1197,7 +1197,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CONSORTiUM)$"
+        "value": "(?:^|-)CONSORTiUM$"
       }
     },
     {
@@ -1206,7 +1206,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PTerWEB)$"
+        "value": "(?:^|-)PTerWEB$"
       }
     },
     {
@@ -1215,7 +1215,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MainFrame)$"
+        "value": "(?:^|-)MainFrame$"
       }
     }
   ]
