@@ -32,11 +32,11 @@
     },
     {
       "name": "c0kE",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(c0kE)$"
+        "value": "(?i)-c0kE$"
       }
     },
     {
@@ -68,11 +68,11 @@
     },
     {
       "name": "D-Z0N3",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(D-Z0N3)$"
+        "value": "(?i)-D\\-Z0N3$"
       }
     },
     {
@@ -194,11 +194,11 @@
     },
     {
       "name": "ZQ",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ZQ)$"
+        "value": "(?i)-ZQ$"
       }
     },
     {
@@ -221,11 +221,11 @@
     },
     {
       "name": "EA",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(EA)$"
+        "value": "(?i)-EA$"
       }
     },
     {
@@ -275,11 +275,11 @@
     },
     {
       "name": "SA89",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SA89)$"
+        "value": "(?i)-SA89$"
       }
     },
     {
@@ -356,20 +356,20 @@
     },
     {
       "name": "W4NK3R",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(W4NK3R)$"
+        "value": "(?i)-W4NK3R$"
       }
     },
     {
       "name": "3L",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(3L)$"
+        "value": "(?i)-3L$"
       }
     },
     {
@@ -473,11 +473,11 @@
     },
     {
       "name": "12GaugeShotgun",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(12GaugeShotgun)$"
+        "value": "(?i)-12GaugeShotgun$"
       }
     },
     {
@@ -545,11 +545,11 @@
     },
     {
       "name": "AJP69",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AJP69)$"
+        "value": "(?i)-AJP69$"
       }
     },
     {
@@ -689,11 +689,11 @@
     },
     {
       "name": "dB",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(dB)$"
+        "value": "(?i)-dB$"
       }
     },
     {
@@ -770,11 +770,11 @@
     },
     {
       "name": "XEBEC",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(XEBEC|4KBEC|CEBEX)$"
+        "value": "(?i)-(XEBEC|4KBEC|CEBEX)$"
       }
     },
     {
@@ -896,11 +896,11 @@
     },
     {
       "name": "T6D",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(T6D)$"
+        "value": "(?i)-T6D$"
       }
     },
     {
@@ -914,11 +914,11 @@
     },
     {
       "name": "3cTWeB",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(3cTWeB)$"
+        "value": "(?i)-3cTWeB$"
       }
     },
     {
@@ -950,11 +950,11 @@
     },
     {
       "name": "Coo7",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Coo7)$"
+        "value": "(?i)-Coo7$"
       }
     },
     {
@@ -986,11 +986,11 @@
     },
     {
       "name": "FC",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FC)$"
+        "value": "(?i)-FC$"
       }
     },
     {
@@ -1013,11 +1013,11 @@
     },
     {
       "name": "iT00NZ",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iT00NZ)$"
+        "value": "(?i)-iT00NZ$"
       }
     },
     {
@@ -1139,11 +1139,11 @@
     },
     {
       "name": "T4H",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(T4H)$"
+        "value": "(?i)-T4H$"
       }
     },
     {
@@ -1175,20 +1175,20 @@
     },
     {
       "name": "j3rico",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(j3rico)$"
+        "value": "(?i)-j3rico$"
       }
     },
     {
       "name": "N1H4L",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(N1H4L)$"
+        "value": "(?i)-N1H4L$"
       }
     },
     {
