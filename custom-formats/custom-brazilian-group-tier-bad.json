@@ -32,11 +32,11 @@
     },
     {
       "name": "S74Ll10n",
-      "implementation": "ReleaseGroupSpecification",
+      "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(S74Ll10n)$"
+        "value": "(?i)-S74Ll10n$"
       }
     }
   ]
