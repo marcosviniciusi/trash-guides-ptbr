@@ -36,7 +36,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-c0kE$"
+        "value": "(?i)-c0kE(?:\\.\\w+)?$"
       }
     },
     {
@@ -72,7 +72,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-D\\-Z0N3$"
+        "value": "(?i)-D\\-Z0N3(?:\\.\\w+)?$"
       }
     },
     {
@@ -198,7 +198,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-ZQ$"
+        "value": "(?i)-ZQ(?:\\.\\w+)?$"
       }
     },
     {
@@ -225,7 +225,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-EA$"
+        "value": "(?i)-EA(?:\\.\\w+)?$"
       }
     },
     {
@@ -279,7 +279,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-SA89$"
+        "value": "(?i)-SA89(?:\\.\\w+)?$"
       }
     },
     {
@@ -360,7 +360,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-W4NK3R$"
+        "value": "(?i)-W4NK3R(?:\\.\\w+)?$"
       }
     },
     {
@@ -369,7 +369,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-3L$"
+        "value": "(?i)-3L(?:\\.\\w+)?$"
       }
     },
     {
@@ -477,7 +477,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-12GaugeShotgun$"
+        "value": "(?i)-12GaugeShotgun(?:\\.\\w+)?$"
       }
     },
     {
@@ -549,7 +549,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-AJP69$"
+        "value": "(?i)-AJP69(?:\\.\\w+)?$"
       }
     },
     {
@@ -693,7 +693,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-dB$"
+        "value": "(?i)-dB(?:\\.\\w+)?$"
       }
     },
     {
@@ -774,7 +774,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-(XEBEC|4KBEC|CEBEX)$"
+        "value": "(?i)-(XEBEC|4KBEC|CEBEX)(?:\\.\\w+)?$"
       }
     },
     {
@@ -900,7 +900,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-T6D$"
+        "value": "(?i)-T6D(?:\\.\\w+)?$"
       }
     },
     {
@@ -918,7 +918,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-3cTWeB$"
+        "value": "(?i)-3cTWeB(?:\\.\\w+)?$"
       }
     },
     {
@@ -954,7 +954,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Coo7$"
+        "value": "(?i)-Coo7(?:\\.\\w+)?$"
       }
     },
     {
@@ -990,7 +990,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-FC$"
+        "value": "(?i)-FC(?:\\.\\w+)?$"
       }
     },
     {
@@ -1017,7 +1017,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-iT00NZ$"
+        "value": "(?i)-iT00NZ(?:\\.\\w+)?$"
       }
     },
     {
@@ -1143,7 +1143,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-T4H$"
+        "value": "(?i)-T4H(?:\\.\\w+)?$"
       }
     },
     {
@@ -1179,7 +1179,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-j3rico$"
+        "value": "(?i)-j3rico(?:\\.\\w+)?$"
       }
     },
     {
@@ -1188,7 +1188,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-N1H4L$"
+        "value": "(?i)-N1H4L(?:\\.\\w+)?$"
       }
     },
     {
