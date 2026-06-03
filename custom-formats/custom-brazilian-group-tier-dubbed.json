@@ -27,7 +27,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(encorebr)$"
+        "value": "(?:^|-)encorebr$"
       }
     },
     {
@@ -36,7 +36,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FênixFansub)$"
+        "value": "(?:^|-)FênixFansub$"
       }
     },
     {
@@ -45,7 +45,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(EraiRaws)$"
+        "value": "(?:^|-)EraiRaws$"
       }
     },
     {
@@ -54,7 +54,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DragsterPS)$"
+        "value": "(?:^|-)DragsterPS$"
       }
     },
     {
@@ -63,16 +63,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iNSS)$"
+        "value": "(?:^|-)iNSS$"
       }
     },
     {
       "name": "Yatogam1",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Yatogam1(?:\\.\\w+)?$"
+        "value": "(?:^|-)Yatogam1$"
       }
     },
     {
@@ -81,7 +81,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(By Tontom)$"
+        "value": "(?:^|-)By Tontom$"
       }
     },
     {
@@ -90,7 +90,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HanaEncode)$"
+        "value": "(?:^|-)HanaEncode$"
       }
     },
     {
@@ -99,7 +99,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SubVision)$"
+        "value": "(?:^|-)SubVision$"
       }
     },
     {
@@ -108,7 +108,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MAD Fansub)$"
+        "value": "(?:^|-)MAD Fansub$"
       }
     },
     {
@@ -117,7 +117,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anipakku)$"
+        "value": "(?:^|-)Anipakku$"
       }
     },
     {
@@ -126,7 +126,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Infinite-Owari)$"
+        "value": "(?:^|-)Infinite-Owari$"
       }
     },
     {
@@ -135,7 +135,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Webrogue)$"
+        "value": "(?:^|-)Webrogue$"
       }
     },
     {
@@ -144,7 +144,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GHB)$"
+        "value": "(?:^|-)GHB$"
       }
     },
     {
@@ -153,16 +153,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MLH)$"
+        "value": "(?:^|-)MLH$"
       }
     },
     {
       "name": "G4RiS",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-G4RiS(?:\\.\\w+)?$"
+        "value": "(?:^|-)G4RiS$"
       }
     },
     {
@@ -171,7 +171,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FLY)$"
+        "value": "(?:^|-)FLY$"
       }
     },
     {
@@ -180,16 +180,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(jus)$"
+        "value": "(?:^|-)jus$"
       }
     },
     {
       "name": "ElM4g0",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-ElM4g0(?:\\.\\w+)?$"
+        "value": "(?:^|-)ElM4g0$"
       }
     },
     {
@@ -198,7 +198,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BAD)$"
+        "value": "(?:^|-)BAD$"
       }
     },
     {
@@ -207,7 +207,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(UPD)$"
+        "value": "(?:^|-)UPD$"
       }
     },
     {
@@ -216,7 +216,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Weguer)$"
+        "value": "(?:^|-)Weguer$"
       }
     },
     {
@@ -225,7 +225,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(THR)$"
+        "value": "(?:^|-)THR$"
       }
     },
     {
@@ -234,7 +234,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Rick SD)$"
+        "value": "(?:^|-)Rick SD$"
       }
     },
     {
@@ -243,7 +243,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LissBean)$"
+        "value": "(?:^|-)LissBean$"
       }
     },
     {
@@ -252,7 +252,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Moikano)$"
+        "value": "(?:^|-)Moikano$"
       }
     },
     {
@@ -261,7 +261,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MDG)$"
+        "value": "(?:^|-)MDG$"
       }
     },
     {
@@ -270,7 +270,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Treecher)$"
+        "value": "(?:^|-)Treecher$"
       }
     },
     {
@@ -279,7 +279,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BEN THE MEN)$"
+        "value": "(?:^|-)BEN THE MEN$"
       }
     },
     {
@@ -288,7 +288,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Asy)$"
+        "value": "(?:^|-)Asy$"
       }
     },
     {
@@ -297,16 +297,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MADRUGA)$"
+        "value": "(?:^|-)MADRUGA$"
       }
     },
     {
       "name": "DM",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-DM(?:\\.\\w+)?$"
+        "value": "(?:^|-)DM$"
       }
     },
     {
@@ -315,7 +315,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CBR)$"
+        "value": "(?:^|-)CBR$"
       }
     },
     {
@@ -324,7 +324,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(palato)$"
+        "value": "(?:^|-)palato$"
       }
     },
     {
@@ -333,7 +333,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DKS)$"
+        "value": "(?:^|-)DKS$"
       }
     },
     {
@@ -342,7 +342,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BJSHARE)$"
+        "value": "(?:^|-)BJSHARE$"
       }
     },
     {
@@ -351,16 +351,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GMN)$"
+        "value": "(?:^|-)GMN$"
       }
     },
     {
       "name": "H0LL0W",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-H0LL0W(?:\\.\\w+)?$"
+        "value": "(?:^|-)H0LL0W$"
       }
     },
     {
@@ -369,7 +369,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TexWiller)$"
+        "value": "(?:^|-)TexWiller$"
       }
     },
     {
@@ -378,7 +378,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FOXX)$"
+        "value": "(?:^|-)FOXX$"
       }
     },
     {
@@ -387,7 +387,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(OhKara)$"
+        "value": "(?:^|-)OhKara$"
       }
     },
     {
@@ -396,7 +396,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Neophitus)$"
+        "value": "(?:^|-)Neophitus$"
       }
     },
     {
@@ -405,7 +405,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(dinrolin)$"
+        "value": "(?:^|-)dinrolin$"
       }
     },
     {
@@ -414,7 +414,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(OWL)$"
+        "value": "(?:^|-)OWL$"
       }
     },
     {
@@ -423,7 +423,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(XerifeWoody)$"
+        "value": "(?:^|-)XerifeWoody$"
       }
     },
     {
@@ -432,16 +432,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RARBR)$"
+        "value": "(?:^|-)RARBR$"
       }
     },
     {
       "name": "100REAL",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-100REAL(?:\\.\\w+)?$"
+        "value": "(?:^|-)100REAL$"
       }
     },
     {
@@ -450,7 +450,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(JOKeR)$"
+        "value": "(?:^|-)JOKeR$"
       }
     },
     {
@@ -459,7 +459,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ZimaBlue)$"
+        "value": "(?:^|-)ZimaBlue$"
       }
     },
     {
@@ -468,16 +468,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GoodMonster)$"
+        "value": "(?:^|-)GoodMonster$"
       }
     },
     {
       "name": "FF",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-FF(?:\\.\\w+)?$"
+        "value": "(?:^|-)FF$"
       }
     },
     {
@@ -486,7 +486,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GUEIRA)$"
+        "value": "(?:^|-)GUEIRA$"
       }
     },
     {
@@ -495,16 +495,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KALAX)$"
+        "value": "(?:^|-)KALAX$"
       }
     },
     {
       "name": "NoUs3r",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-NoUs3r(?:\\.\\w+)?$"
+        "value": "(?:^|-)NoUs3r$"
       }
     },
     {
@@ -513,7 +513,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DODEN)$"
+        "value": "(?:^|-)DODEN$"
       }
     },
     {
@@ -522,7 +522,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SHAKAW)$"
+        "value": "(?:^|-)SHAKAW$"
       }
     },
     {
@@ -531,7 +531,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(santhiago)$"
+        "value": "(?:^|-)santhiago$"
       }
     },
     {
@@ -540,7 +540,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Minato)$"
+        "value": "(?:^|-)Minato$"
       }
     },
     {
@@ -549,7 +549,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TOMATE)$"
+        "value": "(?:^|-)TOMATE$"
       }
     },
     {
@@ -558,16 +558,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(OLYMPUS)$"
+        "value": "(?:^|-)OLYMPUS$"
       }
     },
     {
       "name": "sh4down",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-sh4down(?:\\.\\w+)?$"
+        "value": "(?:^|-)sh4down$"
       }
     },
     {
@@ -576,7 +576,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kallango)$"
+        "value": "(?:^|-)Kallango$"
       }
     },
     {
@@ -585,7 +585,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LMB)$"
+        "value": "(?:^|-)LMB$"
       }
     },
     {
@@ -594,7 +594,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BRASILTRACKER)$"
+        "value": "(?:^|-)BRASILTRACKER$"
       }
     },
     {
@@ -603,16 +603,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(alfaHD)$"
+        "value": "(?:^|-)alfaHD$"
       }
     },
     {
       "name": "C0RAL",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-C0RAL(?:\\.\\w+)?$"
+        "value": "(?:^|-)C0RAL$"
       }
     },
     {
@@ -621,7 +621,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(nosferato)$"
+        "value": "(?:^|-)nosferato$"
       }
     },
     {
@@ -630,7 +630,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BlueAM)$"
+        "value": "(?:^|-)BlueAM$"
       }
     },
     {
@@ -639,7 +639,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NODLABS)$"
+        "value": "(?:^|-)NODLABS$"
       }
     },
     {
@@ -648,7 +648,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NoGroup)$"
+        "value": "(?:^|-)NoGroup$"
       }
     },
     {
@@ -657,7 +657,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SAMARITANO)$"
+        "value": "(?:^|-)SAMARITANO$"
       }
     },
     {
@@ -666,7 +666,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SiGLA)$"
+        "value": "(?:^|-)SiGLA$"
       }
     },
     {
@@ -675,7 +675,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RiPER)$"
+        "value": "(?:^|-)RiPER$"
       }
     },
     {
@@ -684,7 +684,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BiOMA)$"
+        "value": "(?:^|-)BiOMA$"
       }
     },
     {
@@ -693,7 +693,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PiA)$"
+        "value": "(?:^|-)PiA$"
       }
     },
     {
@@ -702,7 +702,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Potatin)$"
+        "value": "(?:^|-)Potatin$"
       }
     },
     {
@@ -711,7 +711,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(cza)$"
+        "value": "(?:^|-)cza$"
       }
     },
     {
@@ -720,16 +720,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LACTATO)$"
+        "value": "(?:^|-)LACTATO$"
       }
     },
     {
       "name": "PD",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-PD(?:\\.\\w+)?$"
+        "value": "(?:^|-)PD$"
       }
     },
     {
@@ -738,7 +738,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Eri)$"
+        "value": "(?:^|-)Eri$"
       }
     },
     {
@@ -747,25 +747,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NeX)$"
+        "value": "(?:^|-)NeX$"
       }
     },
     {
       "name": "C76",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-C76(?:\\.\\w+)?$"
+        "value": "(?:^|-)C76$"
       }
     },
     {
       "name": "NiNGU3M",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-NiNGU3M(?:\\.\\w+)?$"
+        "value": "(?:^|-)NiNGU3M$"
       }
     },
     {
@@ -774,7 +774,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(gong)$"
+        "value": "(?:^|-)gong$"
       }
     },
     {
@@ -783,7 +783,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sammahel)$"
+        "value": "(?:^|-)Sammahel$"
       }
     },
     {
@@ -792,7 +792,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AnjinhoDJ)$"
+        "value": "(?:^|-)AnjinhoDJ$"
       }
     },
     {
@@ -801,7 +801,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Lannister)$"
+        "value": "(?:^|-)Lannister$"
       }
     },
     {
@@ -810,7 +810,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ByJames)$"
+        "value": "(?:^|-)ByJames$"
       }
     },
     {
@@ -819,7 +819,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iZARDs)$"
+        "value": "(?:^|-)iZARDs$"
       }
     },
     {
@@ -828,7 +828,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(wastaken)$"
+        "value": "(?:^|-)wastaken$"
       }
     },
     {
@@ -837,7 +837,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Berto)$"
+        "value": "(?:^|-)Berto$"
       }
     },
     {
@@ -846,7 +846,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FreedomHD)$"
+        "value": "(?:^|-)FreedomHD$"
       }
     },
     {
@@ -855,7 +855,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Tars)$"
+        "value": "(?:^|-)Tars$"
       }
     },
     {
@@ -864,7 +864,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(xbmingame)$"
+        "value": "(?:^|-)xbmingame$"
       }
     },
     {
@@ -873,7 +873,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TupaC)$"
+        "value": "(?:^|-)TupaC$"
       }
     },
     {
@@ -882,7 +882,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anitsu)$"
+        "value": "(?:^|-)Anitsu$"
       }
     },
     {
@@ -891,7 +891,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Coringa)$"
+        "value": "(?:^|-)Coringa$"
       }
     },
     {
@@ -900,7 +900,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Cory)$"
+        "value": "(?:^|-)Cory$"
       }
     },
     {
@@ -909,7 +909,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KUCHU)$"
+        "value": "(?:^|-)KUCHU$"
       }
     },
     {
@@ -918,7 +918,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(WyrM)$"
+        "value": "(?:^|-)WyrM$"
       }
     },
     {
@@ -927,7 +927,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LCD)$"
+        "value": "(?:^|-)LCD$"
       }
     },
     {
@@ -936,7 +936,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AndersonDJ)$"
+        "value": "(?:^|-)AndersonDJ$"
       }
     },
     {
@@ -945,25 +945,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Emmid)$"
+        "value": "(?:^|-)Emmid$"
       }
     },
     {
       "name": "RK",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-RK(?:\\.\\w+)?$"
+        "value": "(?:^|-)RK$"
       }
     },
     {
       "name": "princeputt20",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-princeputt20(?:\\.\\w+)?$"
+        "value": "(?:^|-)princeputt20$"
       }
     },
     {
@@ -972,16 +972,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BlurayHT)$"
+        "value": "(?:^|-)BlurayHT$"
       }
     },
     {
       "name": "Extr3muss",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Extr3muss(?:\\.\\w+)?$"
+        "value": "(?:^|-)Extr3muss$"
       }
     },
     {
@@ -990,7 +990,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(gris)$"
+        "value": "(?:^|-)gris$"
       }
     },
     {
@@ -999,7 +999,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(XiQUEXiQUE)$"
+        "value": "(?:^|-)XiQUEXiQUE$"
       }
     },
     {
@@ -1008,7 +1008,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(OscarNiemeyer)$"
+        "value": "(?:^|-)OscarNiemeyer$"
       }
     },
     {
@@ -1017,7 +1017,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SUPERSIZE)$"
+        "value": "(?:^|-)SUPERSIZE$"
       }
     },
     {
@@ -1026,34 +1026,34 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(JoeKerr)$"
+        "value": "(?:^|-)JoeKerr$"
       }
     },
     {
       "name": "NIMA4K",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-NIMA4K(?:\\.\\w+)?$"
+        "value": "(?:^|-)NIMA4K$"
       }
     },
     {
       "name": "anonymous07",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-anonymous07(?:\\.\\w+)?$"
+        "value": "(?:^|-)anonymous07$"
       }
     },
     {
       "name": "Vict0r",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Vict0r(?:\\.\\w+)?$"
+        "value": "(?:^|-)Vict0r$"
       }
     },
     {
@@ -1062,7 +1062,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(jefspfc)$"
+        "value": "(?:^|-)jefspfc$"
       }
     },
     {
@@ -1071,7 +1071,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(curvamorbach)$"
+        "value": "(?:^|-)curvamorbach$"
       }
     },
     {
@@ -1080,7 +1080,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HomeTheater)$"
+        "value": "(?:^|-)HomeTheater$"
       }
     },
     {
@@ -1089,7 +1089,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KHEZU)$"
+        "value": "(?:^|-)KHEZU$"
       }
     },
     {
@@ -1098,16 +1098,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GHSTBNY)$"
+        "value": "(?:^|-)GHSTBNY$"
       }
     },
     {
       "name": "C.A.A",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-C\\.A\\.A(?:\\.\\w+)?$"
+        "value": "(?:^|-)C\\.A\\.A$"
       }
     },
     {
@@ -1116,7 +1116,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TombDoc)$"
+        "value": "(?:^|-)TombDoc$"
       }
     },
     {
@@ -1125,7 +1125,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BRF)$"
+        "value": "(?:^|-)BRF$"
       }
     },
     {
@@ -1134,7 +1134,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CartoonNOW)$"
+        "value": "(?:^|-)CartoonNOW$"
       }
     },
     {
@@ -1143,7 +1143,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DMTIVD)$"
+        "value": "(?:^|-)DMTIVD$"
       }
     },
     {
@@ -1152,25 +1152,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LTDA)$"
+        "value": "(?:^|-)LTDA$"
       }
     },
     {
       "name": "jhonatan28",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-jhonatan28(?:\\.\\w+)?$"
+        "value": "(?:^|-)jhonatan28$"
       }
     },
     {
       "name": "machado98",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-machado98(?:\\.\\w+)?$"
+        "value": "(?:^|-)machado98$"
       }
     },
     {
@@ -1179,7 +1179,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Artgenone)$"
+        "value": "(?:^|-)Artgenone$"
       }
     },
     {
@@ -1188,25 +1188,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Vietnam)$"
+        "value": "(?:^|-)Vietnam$"
       }
     },
     {
       "name": "barbosa96",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-barbosa96(?:\\.\\w+)?$"
+        "value": "(?:^|-)barbosa96$"
       }
     },
     {
       "name": "JK",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-JK(?:\\.\\w+)?$"
+        "value": "(?:^|-)JK$"
       }
     },
     {
@@ -1215,7 +1215,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Mersenne)$"
+        "value": "(?:^|-)Mersenne$"
       }
     },
     {
@@ -1224,7 +1224,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PlusHD)$"
+        "value": "(?:^|-)PlusHD$"
       }
     },
     {
@@ -1233,16 +1233,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LoboGhost)$"
+        "value": "(?:^|-)LoboGhost$"
       }
     },
     {
       "name": "N3G4N",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-N3G4N(?:\\.\\w+)?$"
+        "value": "(?:^|-)N3G4N$"
       }
     },
     {
@@ -1251,16 +1251,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Jeffe)$"
+        "value": "(?:^|-)Jeffe$"
       }
     },
     {
       "name": "tokar86a",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-tokar86a(?:\\.\\w+)?$"
+        "value": "(?:^|-)tokar86a$"
       }
     },
     {
@@ -1269,16 +1269,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Tex-Willer)$"
+        "value": "(?:^|-)Tex-Willer$"
       }
     },
     {
       "name": "Unknown96",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Unknown96(?:\\.\\w+)?$"
+        "value": "(?:^|-)Unknown96$"
       }
     },
     {
@@ -1287,7 +1287,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RICKSZ)$"
+        "value": "(?:^|-)RICKSZ$"
       }
     },
     {
@@ -1296,16 +1296,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SpartacusBR)$"
+        "value": "(?:^|-)SpartacusBR$"
       }
     },
     {
       "name": "Max78",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Max78(?:\\.\\w+)?$"
+        "value": "(?:^|-)Max78$"
       }
     },
     {
@@ -1314,16 +1314,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BAKED)$"
+        "value": "(?:^|-)BAKED$"
       }
     },
     {
       "name": "Lucano22",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Lucano22(?:\\.\\w+)?$"
+        "value": "(?:^|-)Lucano22$"
       }
     },
     {
@@ -1332,7 +1332,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(nukmasta)$"
+        "value": "(?:^|-)nukmasta$"
       }
     },
     {
@@ -1341,7 +1341,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HDCLUB)$"
+        "value": "(?:^|-)HDCLUB$"
       }
     },
     {
@@ -1350,7 +1350,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LAZERS)$"
+        "value": "(?:^|-)LAZERS$"
       }
     },
     {
@@ -1359,7 +1359,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ESiR)$"
+        "value": "(?:^|-)ESiR$"
       }
     },
     {
@@ -1368,7 +1368,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Levaculik)$"
+        "value": "(?:^|-)Levaculik$"
       }
     },
     {
@@ -1377,7 +1377,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(WARHD)$"
+        "value": "(?:^|-)WARHD$"
       }
     },
     {
@@ -1386,16 +1386,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(yeezus)$"
+        "value": "(?:^|-)yeezus$"
       }
     },
     {
       "name": "b1guuuu",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-b1guuuu(?:\\.\\w+)?$"
+        "value": "(?:^|-)b1guuuu$"
       }
     },
     {
@@ -1404,7 +1404,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Mont)$"
+        "value": "(?:^|-)Mont$"
       }
     },
     {
@@ -1413,7 +1413,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TunAnuT)$"
+        "value": "(?:^|-)TunAnuT$"
       }
     },
     {
@@ -1422,7 +1422,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TELAQUENTE)$"
+        "value": "(?:^|-)TELAQUENTE$"
       }
     },
     {
@@ -1431,7 +1431,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SyncTeam)$"
+        "value": "(?:^|-)SyncTeam$"
       }
     },
     {
@@ -1440,7 +1440,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(EcK)$"
+        "value": "(?:^|-)EcK$"
       }
     },
     {
@@ -1449,7 +1449,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Highvoltage)$"
+        "value": "(?:^|-)Highvoltage$"
       }
     },
     {
@@ -1458,7 +1458,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Tontom)$"
+        "value": "(?:^|-)Tontom$"
       }
     },
     {
@@ -1467,7 +1467,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(insinuendo)$"
+        "value": "(?:^|-)insinuendo$"
       }
     },
     {
@@ -1476,25 +1476,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PCH)$"
+        "value": "(?:^|-)PCH$"
       }
     },
     {
       "name": "G.O.A.T",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-G\\.O\\.A\\.T(?:\\.\\w+)?$"
+        "value": "(?:^|-)G\\.O\\.A\\.T$"
       }
     },
     {
       "name": "JR",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-JR(?:\\.\\w+)?$"
+        "value": "(?:^|-)JR$"
       }
     },
     {
@@ -1503,7 +1503,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(nLiBRA)$"
+        "value": "(?:^|-)nLiBRA$"
       }
     },
     {
@@ -1512,25 +1512,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Coys)$"
+        "value": "(?:^|-)Coys$"
       }
     },
     {
       "name": "BLACK007",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-BLACK007(?:\\.\\w+)?$"
+        "value": "(?:^|-)BLACK007$"
       }
     },
     {
       "name": "v99",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-v99(?:\\.\\w+)?$"
+        "value": "(?:^|-)v99$"
       }
     },
     {
@@ -1539,7 +1539,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SHAKA)$"
+        "value": "(?:^|-)SHAKA$"
       }
     },
     {
@@ -1548,7 +1548,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(QuickIO)$"
+        "value": "(?:^|-)QuickIO$"
       }
     },
     {
@@ -1557,7 +1557,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AmantedoHarpia)$"
+        "value": "(?:^|-)AmantedoHarpia$"
       }
     },
     {
@@ -1566,7 +1566,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(WTV)$"
+        "value": "(?:^|-)WTV$"
       }
     },
     {
@@ -1575,7 +1575,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TAiCHi)$"
+        "value": "(?:^|-)TAiCHi$"
       }
     },
     {
@@ -1584,16 +1584,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ENiO)$"
+        "value": "(?:^|-)ENiO$"
       }
     },
     {
       "name": "Rick.SD",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-Rick\\.SD(?:\\.\\w+)?$"
+        "value": "(?:^|-)Rick\\.SD$"
       }
     },
     {
@@ -1602,7 +1602,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(andrehsa)$"
+        "value": "(?:^|-)andrehsa$"
       }
     },
     {
@@ -1611,7 +1611,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GUR)$"
+        "value": "(?:^|-)GUR$"
       }
     },
     {
@@ -1620,7 +1620,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sheriff)$"
+        "value": "(?:^|-)Sheriff$"
       }
     },
     {
@@ -1629,7 +1629,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Deffcon)$"
+        "value": "(?:^|-)Deffcon$"
       }
     },
     {
@@ -1638,7 +1638,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BiPOLAR)$"
+        "value": "(?:^|-)BiPOLAR$"
       }
     },
     {
@@ -1647,7 +1647,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SAMBiQUiRA)$"
+        "value": "(?:^|-)SAMBiQUiRA$"
       }
     },
     {
@@ -1656,7 +1656,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sphynx)$"
+        "value": "(?:^|-)Sphynx$"
       }
     },
     {
@@ -1665,7 +1665,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(VOiD)$"
+        "value": "(?:^|-)VOiD$"
       }
     },
     {
@@ -1674,7 +1674,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BNd)$"
+        "value": "(?:^|-)BNd$"
       }
     },
     {
@@ -1683,7 +1683,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AzX)$"
+        "value": "(?:^|-)AzX$"
       }
     },
     {
@@ -1692,7 +1692,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FALCAO_NEGRO)$"
+        "value": "(?:^|-)FALCAO_NEGRO$"
       }
     },
     {
@@ -1701,7 +1701,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SMURF)$"
+        "value": "(?:^|-)SMURF$"
       }
     },
     {
@@ -1710,7 +1710,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Parade)$"
+        "value": "(?:^|-)Parade$"
       }
     },
     {
@@ -1719,7 +1719,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(IceBlue)$"
+        "value": "(?:^|-)IceBlue$"
       }
     },
     {
@@ -1728,7 +1728,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(marinaldomax)$"
+        "value": "(?:^|-)marinaldomax$"
       }
     },
     {
@@ -1737,7 +1737,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ZBR)$"
+        "value": "(?:^|-)ZBR$"
       }
     },
     {
@@ -1746,7 +1746,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LEOVOORHEES)$"
+        "value": "(?:^|-)LEOVOORHEES$"
       }
     },
     {
@@ -1755,7 +1755,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BARRiCHELLO)$"
+        "value": "(?:^|-)BARRiCHELLO$"
       }
     },
     {
@@ -1764,7 +1764,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Franzopl)$"
+        "value": "(?:^|-)Franzopl$"
       }
     },
     {
@@ -1773,16 +1773,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MattMurdock)$"
+        "value": "(?:^|-)MattMurdock$"
       }
     },
     {
       "name": "ROBSON2015",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-ROBSON2015(?:\\.\\w+)?$"
+        "value": "(?:^|-)ROBSON2015$"
       }
     },
     {
@@ -1791,7 +1791,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DrABR)$"
+        "value": "(?:^|-)DrABR$"
       }
     },
     {
@@ -1800,7 +1800,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Troidex)$"
+        "value": "(?:^|-)Troidex$"
       }
     },
     {
@@ -1809,16 +1809,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SBLePT)$"
+        "value": "(?:^|-)SBLePT$"
       }
     },
     {
       "name": "3LT0N",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-3LT0N(?:\\.\\w+)?$"
+        "value": "(?:^|-)3LT0N$"
       }
     },
     {
@@ -1827,7 +1827,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sherlock)$"
+        "value": "(?:^|-)Sherlock$"
       }
     },
     {
@@ -1836,7 +1836,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Adamantium)$"
+        "value": "(?:^|-)Adamantium$"
       }
     },
     {
@@ -1845,7 +1845,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ESTAGIARIO)$"
+        "value": "(?:^|-)ESTAGIARIO$"
       }
     },
     {
@@ -1854,7 +1854,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BdC)$"
+        "value": "(?:^|-)BdC$"
       }
     },
     {
@@ -1863,7 +1863,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GoT)$"
+        "value": "(?:^|-)GoT$"
       }
     },
     {
@@ -1872,7 +1872,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(vnlls)$"
+        "value": "(?:^|-)vnlls$"
       }
     },
     {
@@ -1881,7 +1881,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ZMG)$"
+        "value": "(?:^|-)ZMG$"
       }
     },
     {
@@ -1890,7 +1890,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FileHD)$"
+        "value": "(?:^|-)FileHD$"
       }
     },
     {
@@ -1899,7 +1899,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ZNM)$"
+        "value": "(?:^|-)ZNM$"
       }
     },
     {
@@ -1908,7 +1908,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MemoriadaTV)$"
+        "value": "(?:^|-)MemoriadaTV$"
       }
     },
     {
@@ -1917,7 +1917,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AConduta)$"
+        "value": "(?:^|-)AConduta$"
       }
     },
     {
@@ -1926,7 +1926,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Professor_X)$"
+        "value": "(?:^|-)Professor_X$"
       }
     },
     {
@@ -1935,7 +1935,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FiDO)$"
+        "value": "(?:^|-)FiDO$"
       }
     },
     {
@@ -1944,7 +1944,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(tijuco)$"
+        "value": "(?:^|-)tijuco$"
       }
     },
     {
@@ -1953,7 +1953,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anonimo)$"
+        "value": "(?:^|-)Anonimo$"
       }
     },
     {
@@ -1962,16 +1962,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(lendker)$"
+        "value": "(?:^|-)lendker$"
       }
     },
     {
       "name": "xprince00",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-xprince00(?:\\.\\w+)?$"
+        "value": "(?:^|-)xprince00$"
       }
     },
     {
@@ -1980,7 +1980,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NTZ)$"
+        "value": "(?:^|-)NTZ$"
       }
     },
     {
@@ -1989,7 +1989,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BRHD)$"
+        "value": "(?:^|-)BRHD$"
       }
     },
     {
@@ -1998,16 +1998,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SACERDOTi)$"
+        "value": "(?:^|-)SACERDOTi$"
       }
     },
     {
       "name": "SH3LBY",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-SH3LBY(?:\\.\\w+)?$"
+        "value": "(?:^|-)SH3LBY$"
       }
     },
     {
@@ -2016,7 +2016,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Tossato)$"
+        "value": "(?:^|-)Tossato$"
       }
     },
     {
@@ -2025,7 +2025,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(iFPD)$"
+        "value": "(?:^|-)iFPD$"
       }
     },
     {
@@ -2034,7 +2034,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FreddieGellar)$"
+        "value": "(?:^|-)FreddieGellar$"
       }
     },
     {
@@ -2043,7 +2043,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AZVD)$"
+        "value": "(?:^|-)AZVD$"
       }
     },
     {
@@ -2052,7 +2052,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(faBR)$"
+        "value": "(?:^|-)faBR$"
       }
     },
     {
@@ -2061,7 +2061,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MrHulk)$"
+        "value": "(?:^|-)MrHulk$"
       }
     },
     {
@@ -2070,7 +2070,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(RMB)$"
+        "value": "(?:^|-)RMB$"
       }
     },
     {
@@ -2079,34 +2079,34 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GandaX)$"
+        "value": "(?:^|-)GandaX$"
       }
     },
     {
       "name": "JB88",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-JB88(?:\\.\\w+)?$"
+        "value": "(?:^|-)JB88$"
       }
     },
     {
       "name": "FG4LL4RD0",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-FG4LL4RD0(?:\\.\\w+)?$"
+        "value": "(?:^|-)FG4LL4RD0$"
       }
     },
     {
       "name": "BT123",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-BT123(?:\\.\\w+)?$"
+        "value": "(?:^|-)BT123$"
       }
     },
     {
@@ -2115,7 +2115,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NoUsEr)$"
+        "value": "(?:^|-)NoUsEr$"
       }
     },
     {
@@ -2124,7 +2124,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(WitchHunter)$"
+        "value": "(?:^|-)WitchHunter$"
       }
     },
     {
@@ -2133,7 +2133,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(galego)$"
+        "value": "(?:^|-)galego$"
       }
     },
     {
@@ -2142,7 +2142,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DoVi)$"
+        "value": "(?:^|-)DoVi$"
       }
     },
     {
@@ -2151,16 +2151,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Spaghettimancer)$"
+        "value": "(?:^|-)Spaghettimancer$"
       }
     },
     {
       "name": "3N10",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-3N10(?:\\.\\w+)?$"
+        "value": "(?:^|-)3N10$"
       }
     },
     {
@@ -2169,7 +2169,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Aldrin)$"
+        "value": "(?:^|-)Aldrin$"
       }
     },
     {
@@ -2178,7 +2178,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Mpira)$"
+        "value": "(?:^|-)Mpira$"
       }
     },
     {
@@ -2187,7 +2187,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LON)$"
+        "value": "(?:^|-)LON$"
       }
     },
     {
@@ -2196,7 +2196,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(gooz)$"
+        "value": "(?:^|-)gooz$"
       }
     },
     {
@@ -2205,16 +2205,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GHK)$"
+        "value": "(?:^|-)GHK$"
       }
     },
     {
       "name": "C3PO",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-C3PO(?:\\.\\w+)?$"
+        "value": "(?:^|-)C3PO$"
       }
     },
     {
@@ -2223,7 +2223,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(XerifeWoodyPride)$"
+        "value": "(?:^|-)XerifeWoodyPride$"
       }
     },
     {
@@ -2232,7 +2232,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Biomallard)$"
+        "value": "(?:^|-)Biomallard$"
       }
     },
     {
@@ -2241,16 +2241,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Infinite)$"
+        "value": "(?:^|-)Infinite$"
       }
     },
     {
       "name": "RO455",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-RO455(?:\\.\\w+)?$"
+        "value": "(?:^|-)RO455$"
       }
     },
     {
@@ -2259,7 +2259,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CYPHER)$"
+        "value": "(?:^|-)CYPHER$"
       }
     },
     {
@@ -2268,7 +2268,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Thecs)$"
+        "value": "(?:^|-)Thecs$"
       }
     },
     {
@@ -2277,7 +2277,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Leonhart)$"
+        "value": "(?:^|-)Leonhart$"
       }
     },
     {
@@ -2286,7 +2286,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ADWeb)$"
+        "value": "(?:^|-)ADWeb$"
       }
     },
     {
@@ -2295,16 +2295,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BENTHEMEN)$"
+        "value": "(?:^|-)BENTHEMEN$"
       }
     },
     {
       "name": "oarton27",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-oarton27(?:\\.\\w+)?$"
+        "value": "(?:^|-)oarton27$"
       }
     },
     {
@@ -2313,7 +2313,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(XaR)$"
+        "value": "(?:^|-)XaR$"
       }
     },
     {
@@ -2322,7 +2322,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AFLA)$"
+        "value": "(?:^|-)AFLA$"
       }
     },
     {
@@ -2331,16 +2331,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ACRE)$"
+        "value": "(?:^|-)ACRE$"
       }
     },
     {
       "name": "AE",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-AE(?:\\.\\w+)?$"
+        "value": "(?:^|-)AE$"
       }
     },
     {
@@ -2349,7 +2349,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AMAX)$"
+        "value": "(?:^|-)AMAX$"
       }
     },
     {
@@ -2358,7 +2358,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AMF)$"
+        "value": "(?:^|-)AMF$"
       }
     },
     {
@@ -2367,7 +2367,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ANPLT)$"
+        "value": "(?:^|-)ANPLT$"
       }
     },
     {
@@ -2376,7 +2376,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ANTR)$"
+        "value": "(?:^|-)ANTR$"
       }
     },
     {
@@ -2385,7 +2385,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AWH)$"
+        "value": "(?:^|-)AWH$"
       }
     },
     {
@@ -2394,7 +2394,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(About Fansub)$"
+        "value": "(?:^|-)About Fansub$"
       }
     },
     {
@@ -2403,7 +2403,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Absolute Fansub)$"
+        "value": "(?:^|-)Absolute Fansub$"
       }
     },
     {
@@ -2412,7 +2412,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Agaman)$"
+        "value": "(?:^|-)Agaman$"
       }
     },
     {
@@ -2421,7 +2421,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Akogare Fansub)$"
+        "value": "(?:^|-)Akogare Fansub$"
       }
     },
     {
@@ -2430,7 +2430,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AniMercosul)$"
+        "value": "(?:^|-)AniMercosul$"
       }
     },
     {
@@ -2439,7 +2439,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anime Future)$"
+        "value": "(?:^|-)Anime Future$"
       }
     },
     {
@@ -2448,7 +2448,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anime Gods)$"
+        "value": "(?:^|-)Anime Gods$"
       }
     },
     {
@@ -2457,7 +2457,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anime Planet)$"
+        "value": "(?:^|-)Anime Planet$"
       }
     },
     {
@@ -2466,16 +2466,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Anime no Reppuu)$"
+        "value": "(?:^|-)Anime no Reppuu$"
       }
     },
     {
       "name": "AnimeP2P",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-AnimeP2P(?:\\.\\w+)?$"
+        "value": "(?:^|-)AnimeP2P$"
       }
     },
     {
@@ -2484,7 +2484,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AnimeTHT)$"
+        "value": "(?:^|-)AnimeTHT$"
       }
     },
     {
@@ -2493,7 +2493,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AnimeTracker)$"
+        "value": "(?:^|-)AnimeTracker$"
       }
     },
     {
@@ -2502,7 +2502,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(AnimesPLUS)$"
+        "value": "(?:^|-)AnimesPLUS$"
       }
     },
     {
@@ -2511,7 +2511,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Avalon Fansub)$"
+        "value": "(?:^|-)Avalon Fansub$"
       }
     },
     {
@@ -2520,7 +2520,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Avidown)$"
+        "value": "(?:^|-)Avidown$"
       }
     },
     {
@@ -2529,7 +2529,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Avidown Fansub)$"
+        "value": "(?:^|-)Avidown Fansub$"
       }
     },
     {
@@ -2538,7 +2538,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Aya Fansub)$"
+        "value": "(?:^|-)Aya Fansub$"
       }
     },
     {
@@ -2547,7 +2547,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BD_SUBS)$"
+        "value": "(?:^|-)BD_SUBS$"
       }
     },
     {
@@ -2556,7 +2556,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BTR Subs)$"
+        "value": "(?:^|-)BTR Subs$"
       }
     },
     {
@@ -2565,7 +2565,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Bakarayo-Fansub)$"
+        "value": "(?:^|-)Bakarayo-Fansub$"
       }
     },
     {
@@ -2574,7 +2574,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Bakarayo)$"
+        "value": "(?:^|-)Bakarayo$"
       }
     },
     {
@@ -2583,7 +2583,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Bakuhatsu)$"
+        "value": "(?:^|-)Bakuhatsu$"
       }
     },
     {
@@ -2592,7 +2592,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Barazoku)$"
+        "value": "(?:^|-)Barazoku$"
       }
     },
     {
@@ -2601,7 +2601,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Bloody FanSub)$"
+        "value": "(?:^|-)Bloody FanSub$"
       }
     },
     {
@@ -2610,7 +2610,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Boteco Fansub)$"
+        "value": "(?:^|-)Boteco Fansub$"
       }
     },
     {
@@ -2619,7 +2619,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Bruthais Fansub)$"
+        "value": "(?:^|-)Bruthais Fansub$"
       }
     },
     {
@@ -2628,7 +2628,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CAN! !SUB)$"
+        "value": "(?:^|-)CAN! !SUB$"
       }
     },
     {
@@ -2637,7 +2637,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Cachorro Loko)$"
+        "value": "(?:^|-)Cachorro Loko$"
       }
     },
     {
@@ -2646,7 +2646,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CdaSubs)$"
+        "value": "(?:^|-)CdaSubs$"
       }
     },
     {
@@ -2655,7 +2655,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Câncer Fansub)$"
+        "value": "(?:^|-)Câncer Fansub$"
       }
     },
     {
@@ -2664,7 +2664,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DBBR)$"
+        "value": "(?:^|-)DBBR$"
       }
     },
     {
@@ -2673,7 +2673,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DataBaseSub)$"
+        "value": "(?:^|-)DataBaseSub$"
       }
     },
     {
@@ -2682,7 +2682,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Dragon Seven)$"
+        "value": "(?:^|-)Dragon Seven$"
       }
     },
     {
@@ -2691,7 +2691,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ECN Fansub)$"
+        "value": "(?:^|-)ECN Fansub$"
       }
     },
     {
@@ -2700,7 +2700,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Eternal Animes)$"
+        "value": "(?:^|-)Eternal Animes$"
       }
     },
     {
@@ -2709,7 +2709,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Eupho)$"
+        "value": "(?:^|-)Eupho$"
       }
     },
     {
@@ -2718,7 +2718,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FAL)$"
+        "value": "(?:^|-)FAL$"
       }
     },
     {
@@ -2727,7 +2727,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FUCKILL FANSUB)$"
+        "value": "(?:^|-)FUCKILL FANSUB$"
       }
     },
     {
@@ -2736,7 +2736,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GAIA Fansub)$"
+        "value": "(?:^|-)GAIA Fansub$"
       }
     },
     {
@@ -2745,7 +2745,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GHS Fansub)$"
+        "value": "(?:^|-)GHS Fansub$"
       }
     },
     {
@@ -2754,7 +2754,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Grupo Kirinashi)$"
+        "value": "(?:^|-)Grupo Kirinashi$"
       }
     },
     {
@@ -2763,7 +2763,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Judas)$"
+        "value": "(?:^|-)Judas$"
       }
     },
     {
@@ -2772,16 +2772,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kirinashi)$"
+        "value": "(?:^|-)Kirinashi$"
       }
     },
     {
       "name": "HF",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-HF(?:\\.\\w+)?$"
+        "value": "(?:^|-)HF$"
       }
     },
     {
@@ -2790,7 +2790,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HNK Fansubs)$"
+        "value": "(?:^|-)HNK Fansubs$"
       }
     },
     {
@@ -2799,7 +2799,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Hacchi Fansub)$"
+        "value": "(?:^|-)Hacchi Fansub$"
       }
     },
     {
@@ -2808,7 +2808,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HarderFansub)$"
+        "value": "(?:^|-)HarderFansub$"
       }
     },
     {
@@ -2817,7 +2817,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Hayai Subs)$"
+        "value": "(?:^|-)Hayai Subs$"
       }
     },
     {
@@ -2826,7 +2826,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Heaven Fansub)$"
+        "value": "(?:^|-)Heaven Fansub$"
       }
     },
     {
@@ -2835,7 +2835,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Heijin-BR)$"
+        "value": "(?:^|-)Heijin-BR$"
       }
     },
     {
@@ -2844,16 +2844,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Hihan Fansub)$"
+        "value": "(?:^|-)Hihan Fansub$"
       }
     },
     {
       "name": "BS",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-BS(?:\\.\\w+)?$"
+        "value": "(?:^|-)BS$"
       }
     },
     {
@@ -2862,7 +2862,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Hirameki Fansub)$"
+        "value": "(?:^|-)Hirameki Fansub$"
       }
     },
     {
@@ -2871,7 +2871,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Hokkaido)$"
+        "value": "(?:^|-)Hokkaido$"
       }
     },
     {
@@ -2880,7 +2880,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Hontou Fansub)$"
+        "value": "(?:^|-)Hontou Fansub$"
       }
     },
     {
@@ -2889,7 +2889,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Ichiban Fansub)$"
+        "value": "(?:^|-)Ichiban Fansub$"
       }
     },
     {
@@ -2898,7 +2898,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Infinite Fansub)$"
+        "value": "(?:^|-)Infinite Fansub$"
       }
     },
     {
@@ -2907,7 +2907,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(InuYasha Downs)$"
+        "value": "(?:^|-)InuYasha Downs$"
       }
     },
     {
@@ -2916,7 +2916,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Isekai Subs)$"
+        "value": "(?:^|-)Isekai Subs$"
       }
     },
     {
@@ -2925,7 +2925,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Ivereste)$"
+        "value": "(?:^|-)Ivereste$"
       }
     },
     {
@@ -2934,7 +2934,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Jai N Kai)$"
+        "value": "(?:^|-)Jai N Kai$"
       }
     },
     {
@@ -2943,7 +2943,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KIIS Scansubs)$"
+        "value": "(?:^|-)KIIS Scansubs$"
       }
     },
     {
@@ -2952,7 +2952,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KNK)$"
+        "value": "(?:^|-)KNK$"
       }
     },
     {
@@ -2961,7 +2961,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KNK Fansub)$"
+        "value": "(?:^|-)KNK Fansub$"
       }
     },
     {
@@ -2970,7 +2970,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KURE)$"
+        "value": "(?:^|-)KURE$"
       }
     },
     {
@@ -2979,7 +2979,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kaminari)$"
+        "value": "(?:^|-)Kaminari$"
       }
     },
     {
@@ -2988,7 +2988,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kanshin Fansub)$"
+        "value": "(?:^|-)Kanshin Fansub$"
       }
     },
     {
@@ -2997,7 +2997,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(KatawareDoki)$"
+        "value": "(?:^|-)KatawareDoki$"
       }
     },
     {
@@ -3006,7 +3006,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kawaii Otome)$"
+        "value": "(?:^|-)Kawaii Otome$"
       }
     },
     {
@@ -3015,7 +3015,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kazoku)$"
+        "value": "(?:^|-)Kazoku$"
       }
     },
     {
@@ -3024,7 +3024,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kintoun)$"
+        "value": "(?:^|-)Kintoun$"
       }
     },
     {
@@ -3033,7 +3033,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kiyoteru Fansub)$"
+        "value": "(?:^|-)Kiyoteru Fansub$"
       }
     },
     {
@@ -3042,7 +3042,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Koisuru Fansub)$"
+        "value": "(?:^|-)Koisuru Fansub$"
       }
     },
     {
@@ -3051,7 +3051,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Konoha-Sannins)$"
+        "value": "(?:^|-)Konoha-Sannins$"
       }
     },
     {
@@ -3060,7 +3060,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kouyou Fansub)$"
+        "value": "(?:^|-)Kouyou Fansub$"
       }
     },
     {
@@ -3069,7 +3069,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kurai-Ken)$"
+        "value": "(?:^|-)Kurai-Ken$"
       }
     },
     {
@@ -3078,7 +3078,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Kyun Fansub)$"
+        "value": "(?:^|-)Kyun Fansub$"
       }
     },
     {
@@ -3087,7 +3087,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(L-A)$"
+        "value": "(?:^|-)L-A$"
       }
     },
     {
@@ -3096,7 +3096,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LEVA)$"
+        "value": "(?:^|-)LEVA$"
       }
     },
     {
@@ -3105,7 +3105,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LWS)$"
+        "value": "(?:^|-)LWS$"
       }
     },
     {
@@ -3114,7 +3114,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Lake Fansub)$"
+        "value": "(?:^|-)Lake Fansub$"
       }
     },
     {
@@ -3123,7 +3123,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Liga do Sul)$"
+        "value": "(?:^|-)Liga do Sul$"
       }
     },
     {
@@ -3132,7 +3132,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Lost Woods Sub)$"
+        "value": "(?:^|-)Lost Woods Sub$"
       }
     },
     {
@@ -3141,7 +3141,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Lotk-fansuber)$"
+        "value": "(?:^|-)Lotk-fansuber$"
       }
     },
     {
@@ -3150,7 +3150,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MAF)$"
+        "value": "(?:^|-)MAF$"
       }
     },
     {
@@ -3159,7 +3159,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(MMS)$"
+        "value": "(?:^|-)MMS$"
       }
     },
     {
@@ -3168,7 +3168,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Moshi Moshi)$"
+        "value": "(?:^|-)Moshi Moshi$"
       }
     },
     {
@@ -3177,7 +3177,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Mundo do Shoujo)$"
+        "value": "(?:^|-)Mundo do Shoujo$"
       }
     },
     {
@@ -3186,7 +3186,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NAF)$"
+        "value": "(?:^|-)NAF$"
       }
     },
     {
@@ -3195,7 +3195,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NewZect)$"
+        "value": "(?:^|-)NewZect$"
       }
     },
     {
@@ -3204,16 +3204,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(NexelSUBS)$"
+        "value": "(?:^|-)NexelSUBS$"
       }
     },
     {
       "name": "OF",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-OF(?:\\.\\w+)?$"
+        "value": "(?:^|-)OF$"
       }
     },
     {
@@ -3222,7 +3222,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(OMDA)$"
+        "value": "(?:^|-)OMDA$"
       }
     },
     {
@@ -3231,7 +3231,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(OWF)$"
+        "value": "(?:^|-)OWF$"
       }
     },
     {
@@ -3240,7 +3240,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(One Piece EX)$"
+        "value": "(?:^|-)One Piece EX$"
       }
     },
     {
@@ -3249,7 +3249,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Onmitsu Fansubs)$"
+        "value": "(?:^|-)Onmitsu Fansubs$"
       }
     },
     {
@@ -3258,7 +3258,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Otakus Fans)$"
+        "value": "(?:^|-)Otakus Fans$"
       }
     },
     {
@@ -3267,7 +3267,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Owari Fansub)$"
+        "value": "(?:^|-)Owari Fansub$"
       }
     },
     {
@@ -3276,7 +3276,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PA Fansub)$"
+        "value": "(?:^|-)PA Fansub$"
       }
     },
     {
@@ -3285,7 +3285,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PSF)$"
+        "value": "(?:^|-)PSF$"
       }
     },
     {
@@ -3294,7 +3294,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Proxy Fansub)$"
+        "value": "(?:^|-)Proxy Fansub$"
       }
     },
     {
@@ -3303,7 +3303,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Qubeley Fansubs)$"
+        "value": "(?:^|-)Qubeley Fansubs$"
       }
     },
     {
@@ -3312,7 +3312,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Riichi Fansub)$"
+        "value": "(?:^|-)Riichi Fansub$"
       }
     },
     {
@@ -3321,7 +3321,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Ryoran Fansub)$"
+        "value": "(?:^|-)Ryoran Fansub$"
       }
     },
     {
@@ -3330,7 +3330,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Ryuji Subs)$"
+        "value": "(?:^|-)Ryuji Subs$"
       }
     },
     {
@@ -3339,7 +3339,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Ryuusei Fansubs)$"
+        "value": "(?:^|-)Ryuusei Fansubs$"
       }
     },
     {
@@ -3348,7 +3348,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SCA Fansub)$"
+        "value": "(?:^|-)SCA Fansub$"
       }
     },
     {
@@ -3357,7 +3357,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SEELE)$"
+        "value": "(?:^|-)SEELE$"
       }
     },
     {
@@ -3366,7 +3366,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(START Fansub)$"
+        "value": "(?:^|-)START Fansub$"
       }
     },
     {
@@ -3375,7 +3375,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(STF)$"
+        "value": "(?:^|-)STF$"
       }
     },
     {
@@ -3384,7 +3384,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(STNL)$"
+        "value": "(?:^|-)STNL$"
       }
     },
     {
@@ -3393,7 +3393,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ASC)$"
+        "value": "(?:^|-)ASC$"
       }
     },
     {
@@ -3402,7 +3402,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Saikou-BR)$"
+        "value": "(?:^|-)Saikou-BR$"
       }
     },
     {
@@ -3411,7 +3411,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sakurai Fansub)$"
+        "value": "(?:^|-)Sakurai Fansub$"
       }
     },
     {
@@ -3420,7 +3420,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Seicher)$"
+        "value": "(?:^|-)Seicher$"
       }
     },
     {
@@ -3429,7 +3429,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Seisenshi Fansubs)$"
+        "value": "(?:^|-)Seisenshi Fansubs$"
       }
     },
     {
@@ -3438,7 +3438,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Shakai Fansub)$"
+        "value": "(?:^|-)Shakai Fansub$"
       }
     },
     {
@@ -3447,7 +3447,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Shinka Fansub)$"
+        "value": "(?:^|-)Shinka Fansub$"
       }
     },
     {
@@ -3456,7 +3456,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Shinkai Fansub)$"
+        "value": "(?:^|-)Shinkai Fansub$"
       }
     },
     {
@@ -3465,7 +3465,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Shinonome)$"
+        "value": "(?:^|-)Shinonome$"
       }
     },
     {
@@ -3474,7 +3474,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Silex Fansubs)$"
+        "value": "(?:^|-)Silex Fansubs$"
       }
     },
     {
@@ -3483,7 +3483,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sobre Animes)$"
+        "value": "(?:^|-)Sobre Animes$"
       }
     },
     {
@@ -3492,7 +3492,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SocietyGuild)$"
+        "value": "(?:^|-)SocietyGuild$"
       }
     },
     {
@@ -3501,7 +3501,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Spiido)$"
+        "value": "(?:^|-)Spiido$"
       }
     },
     {
@@ -3510,7 +3510,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SubTNT)$"
+        "value": "(?:^|-)SubTNT$"
       }
     },
     {
@@ -3519,7 +3519,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Sukinime)$"
+        "value": "(?:^|-)Sukinime$"
       }
     },
     {
@@ -3528,7 +3528,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TBF)$"
+        "value": "(?:^|-)TBF$"
       }
     },
     {
@@ -3537,7 +3537,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TEST-KUN)$"
+        "value": "(?:^|-)TEST-KUN$"
       }
     },
     {
@@ -3546,7 +3546,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TMP)$"
+        "value": "(?:^|-)TMP$"
       }
     },
     {
@@ -3555,7 +3555,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TNNAC)$"
+        "value": "(?:^|-)TNNAC$"
       }
     },
     {
@@ -3564,7 +3564,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TNT)$"
+        "value": "(?:^|-)TNT$"
       }
     },
     {
@@ -3573,7 +3573,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Tadaima Fansub)$"
+        "value": "(?:^|-)Tadaima Fansub$"
       }
     },
     {
@@ -3582,7 +3582,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Taikutsu-kun)$"
+        "value": "(?:^|-)Taikutsu-kun$"
       }
     },
     {
@@ -3591,7 +3591,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Tenrou Fansub)$"
+        "value": "(?:^|-)Tenrou Fansub$"
       }
     },
     {
@@ -3600,16 +3600,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Trinisete)$"
+        "value": "(?:^|-)Trinisete$"
       }
     },
     {
       "name": "7sprite7",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-7sprite7(?:\\.\\w+)?$"
+        "value": "(?:^|-)7sprite7$"
       }
     },
     {
@@ -3618,7 +3618,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(TsunTsun)$"
+        "value": "(?:^|-)TsunTsun$"
       }
     },
     {
@@ -3627,7 +3627,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(UniOtaku)$"
+        "value": "(?:^|-)UniOtaku$"
       }
     },
     {
@@ -3636,7 +3636,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Valar Fansub)$"
+        "value": "(?:^|-)Valar Fansub$"
       }
     },
     {
@@ -3645,7 +3645,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Wakan Fansub)$"
+        "value": "(?:^|-)Wakan Fansub$"
       }
     },
     {
@@ -3654,7 +3654,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Wasureta)$"
+        "value": "(?:^|-)Wasureta$"
       }
     },
     {
@@ -3663,7 +3663,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(World Fansub)$"
+        "value": "(?:^|-)World Fansub$"
       }
     },
     {
@@ -3672,7 +3672,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(X-Sports Fansub)$"
+        "value": "(?:^|-)X-Sports Fansub$"
       }
     },
     {
@@ -3681,7 +3681,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(YFLA)$"
+        "value": "(?:^|-)YFLA$"
       }
     },
     {
@@ -3690,7 +3690,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Yami Studio)$"
+        "value": "(?:^|-)Yami Studio$"
       }
     },
     {
@@ -3699,7 +3699,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(YusukeFLA)$"
+        "value": "(?:^|-)YusukeFLA$"
       }
     },
     {
@@ -3708,7 +3708,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Zamba)$"
+        "value": "(?:^|-)Zamba$"
       }
     },
     {
@@ -3717,7 +3717,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Zettai-BR)$"
+        "value": "(?:^|-)Zettai-BR$"
       }
     },
     {
@@ -3726,25 +3726,25 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Armandex)$"
+        "value": "(?:^|-)Armandex$"
       }
     },
     {
       "name": "e2",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-e2(?:\\.\\w+)?$"
+        "value": "(?:^|-)e2$"
       }
     },
     {
       "name": "e2 Fansub",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-e2[. -]Fansub(?:\\.\\w+)?$"
+        "value": "(?:^|-)e2[. -]Fansub$"
       }
     },
     {
@@ -3753,16 +3753,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(morningspeed)$"
+        "value": "(?:^|-)morningspeed$"
       }
     },
     {
       "name": "piracicaba97",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-piracicaba97(?:\\.\\w+)?$"
+        "value": "(?:^|-)piracicaba97$"
       }
     },
     {
@@ -3771,7 +3771,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ANDY)$"
+        "value": "(?:^|-)ANDY$"
       }
     },
     {
@@ -3780,7 +3780,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ÓINC Fansub)$"
+        "value": "(?:^|-)ÓINC Fansub$"
       }
     },
     {
@@ -3789,7 +3789,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SubVision_&_Kalling)$"
+        "value": "(?:^|-)SubVision_&_Kalling$"
       }
     },
     {
@@ -3798,7 +3798,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FF-GF)$"
+        "value": "(?:^|-)FF-GF$"
       }
     },
     {
@@ -3807,7 +3807,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(PaODEQUEiJO)$"
+        "value": "(?:^|-)PaODEQUEiJO$"
       }
     },
     {
@@ -3816,7 +3816,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Franceira)$"
+        "value": "(?:^|-)Franceira$"
       }
     },
     {
@@ -3825,7 +3825,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(FLORiX)$"
+        "value": "(?:^|-)FLORiX$"
       }
     },
     {
@@ -3834,7 +3834,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DARKDREAM)$"
+        "value": "(?:^|-)DARKDREAM$"
       }
     },
     {
@@ -3843,7 +3843,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Fergus)$"
+        "value": "(?:^|-)Fergus$"
       }
     },
     {
@@ -3852,16 +3852,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Resu)$"
+        "value": "(?:^|-)Resu$"
       }
     },
     {
       "name": "siz3d",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-siz3d(?:\\.\\w+)?$"
+        "value": "(?:^|-)siz3d$"
       }
     },
     {
@@ -3870,7 +3870,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HCBG)$"
+        "value": "(?:^|-)HCBG$"
       }
     },
     {
@@ -3879,7 +3879,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SBTMaskarado)$"
+        "value": "(?:^|-)SBTMaskarado$"
       }
     },
     {
@@ -3888,7 +3888,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(masterkivat)$"
+        "value": "(?:^|-)masterkivat$"
       }
     }
   ]

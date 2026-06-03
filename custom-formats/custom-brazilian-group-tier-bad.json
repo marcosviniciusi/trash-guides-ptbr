@@ -9,7 +9,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(ASM)$"
+        "value": "(?:^|-)ASM$"
       }
     },
     {
@@ -18,7 +18,7 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DRENAN)$"
+        "value": "(?:^|-)DRENAN$"
       }
     },
     {
@@ -27,16 +27,16 @@
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(CaNNIBal)$"
+        "value": "(?:^|-)CaNNIBal$"
       }
     },
     {
       "name": "S74Ll10n",
-      "implementation": "ReleaseTitleSpecification",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "(?i)-S74Ll10n(?:\\.\\w+)?$"
+        "value": "(?:^|-)S74Ll10n$"
       }
     }
   ]
