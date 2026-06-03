@@ -402,7 +402,7 @@ radarr:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 1000
       - trash_ids:
           - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
         assign_scores_to:
@@ -915,7 +915,7 @@ sonarr:
           - custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
-            score: 29500
+            score: 1000
       - trash_ids:
           - custom-brazilian-group-tier-dubbed # Pt-BR Group Dubbed
         assign_scores_to:
