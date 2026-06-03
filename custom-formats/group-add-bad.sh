@@ -51,7 +51,7 @@ for group in groups:
         "negate": False,
         "required": False,
         "fields": {
-            "value": f"^({group})$"
+            "value": f"(?:^|-){group}$"
         }
     }
     data['specifications'].append(entry)
