@@ -11,7 +11,6 @@ BR_FILES=(
   "custom-brazilian-group-tier-dual-audio.json"
   "custom-brazilian-group-tier-subtitles.json"
   "custom-brazilian-group-tier-dubbed.json"
-  "custom-brazilian-dual-language.json"
   "custom-brazilian-subtitles.json"
   "custom-brazilian-dubbed.json"
 )

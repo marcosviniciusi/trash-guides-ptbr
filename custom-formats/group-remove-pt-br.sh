@@ -23,7 +23,6 @@ FILES=$(find . -maxdepth 1 -type f \( \
   -name "custom-brazilian-group-tier-dual-audio.json" -o \
   -name "custom-brazilian-group-tier-subtitles.json" -o \
   -name "custom-brazilian-group-tier-dubbed.json" -o \
-  -name "custom-brazilian-dual-language.json" -o \
   -name "custom-brazilian-subtitles.json" -o \
   -name "custom-brazilian-dubbed.json" \
 \))
