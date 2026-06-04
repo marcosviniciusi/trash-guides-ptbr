@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Usage: ./group-add-pt-br.sh GroupName1 GroupName2 GroupName3
-# Adds release groups to the 6 Brazilian CF json files in current directory
+# Adds release groups to the 5 Brazilian CF json files in current directory
 #
 # negate=false, required=false (group-tier - match positivo):
 #   custom-brazilian-group-tier-dual-audio.json
@@ -8,9 +8,11 @@
 #   custom-brazilian-group-tier-dubbed.json
 #
 # negate=true, required=true (deteccao - exclui grupo da regex geral):
-#   custom-brazilian-dual-language.json
 #   custom-brazilian-subtitles.json
 #   custom-brazilian-dubbed.json
+#
+# NOTE: custom-brazilian-dual-language.json uses only LanguageSpecification
+# (PT + Original Language) and does NOT take ReleaseGroupSpecification entries.
 
 set -euo pipefail
 
@@ -23,7 +25,6 @@ FILES=$(find . -maxdepth 1 -type f \( \
   -name "custom-brazilian-group-tier-dual-audio.json" -o \
   -name "custom-brazilian-group-tier-subtitles.json" -o \
   -name "custom-brazilian-group-tier-dubbed.json" -o \
-  -name "custom-brazilian-dual-language.json" -o \
   -name "custom-brazilian-subtitles.json" -o \
   -name "custom-brazilian-dubbed.json" \
 \))
@@ -43,7 +44,7 @@ for file in $FILES; do
       NEGATE="false"
       REQUIRED="false"
       ;;
-    "custom-brazilian-dual-language.json"|"custom-brazilian-subtitles.json"|"custom-brazilian-dubbed.json")
+    "custom-brazilian-subtitles.json"|"custom-brazilian-dubbed.json")
       NEGATE="true"
       REQUIRED="true"
       ;;
