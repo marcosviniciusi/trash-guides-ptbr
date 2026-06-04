@@ -13,6 +13,15 @@
       }
     },
     {
+      "name": "NOT non-PT audio brackets",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "\\[audio-\\[(?![^\\]]*PT)[A-Z+]+\\]"
+      }
+    },
+    {
       "name": "encorebr",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
