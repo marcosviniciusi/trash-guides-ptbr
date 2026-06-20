@@ -3919,6 +3919,15 @@
       "fields": {
         "value": "(?:^|-)ADN$"
       }
+    },
+    {
+      "name": "STARCKFILMES",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)STARCKFILMES$"
+      }
     }
   ]
 }
