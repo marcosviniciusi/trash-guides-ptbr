@@ -1,5 +1,5 @@
 {
-  "trash_id": "custom-original-language",
+  "trash_id": "radarr-custom-original-language",
   "name": "Original Language",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
@@ -21,6 +21,26 @@
       "fields": {
         "value": -2,
         "exceptLanguage": true
+      }
+    },
+    {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": false
+      }
+    },
+    {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 30,
+        "exceptLanguage": false
       }
     }
   ]

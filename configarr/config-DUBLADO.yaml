@@ -414,7 +414,7 @@ radarr:
           - name: HD
             score: 24000
       - trash_ids:
-          - custom-original-language # Original Language
+          - radarr-custom-original-language # Original Language
         assign_scores_to:
           - name: HD
             score: 1000
@@ -853,7 +853,7 @@ radarr:
           - name: HD
             score: 24000
       - trash_ids:
-          - custom-original-language # Original Language
+          - radarr-custom-original-language # Original Language
         assign_scores_to:
           - name: HD
             score: 1000
@@ -1486,7 +1486,7 @@ sonarr:
           - name: HD
             score: 24000
       - trash_ids:
-          - custom-original-language # Original Language
+          - sonarr-custom-original-language # Original Language
         assign_scores_to:
           - name: HD
             score: 1000
@@ -1949,7 +1949,7 @@ sonarr:
           - name: HD
             score: 24000
       - trash_ids:
-          - custom-original-language # Original Language
+          - sonarr-custom-original-language # Original Language
         assign_scores_to:
           - name: HD
             score: 1000

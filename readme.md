@@ -146,12 +146,14 @@ trash-guides-ptbr/
 ├── custom-formats/                                    # Todos os custom formats
 │   │   # PT-BR Específicos
 │   ├── custom-brazilian-group-tier-dual-audio.json     # Grupos PT-BR com Dual Audio
-│   ├── custom-brazilian-dual-language.json             # Detecção Dual Language
+│   ├── radarr-custom-brazilian-dual-language.json      # Detecção Dual Language (Radarr)
+│   ├── sonarr-custom-brazilian-dual-language.json      # Detecção Dual Language (Sonarr)
 │   ├── custom-brazilian-group-tier-subtitles.json      # Grupos PT-BR com Legendas
 │   ├── custom-brazilian-subtitles.json                 # Detecção Legendas PT-BR
 │   ├── custom-brazilian-group-tier-dubbed.json         # Grupos PT-BR com Dublagem
 │   ├── custom-brazilian-dubbed.json                    # Detecção Dublado PT-BR
-│   ├── custom-original-language.json                   # Língua Original
+│   ├── radarr-custom-original-language.json            # Língua Original (Radarr)
+│   ├── sonarr-custom-original-language.json            # Língua Original (Sonarr)
 │   ├── custom-brazilian-group-tier-bad.json            # Grupos Não Confiáveis
 │   ├── custom-us-group-tier-premium.json               # Grupos Premium US
 │   │   # Release Quality (Radarr)
