@@ -406,7 +406,7 @@ data:
               - name: HD
                 score: 35000
           - trash_ids:
-              - custom-brazilian-dual-language # Pt-BR Dual Language
+              - radarr-custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -421,7 +421,7 @@ data:
               - name: HD
                 score: 19500
           - trash_ids:
-              - custom-original-language # Original Language
+              - radarr-custom-original-language # Original Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -845,7 +845,7 @@ data:
               - name: HD
                 score: 60000
           - trash_ids:
-              - custom-brazilian-dual-language # Pt-BR Dual Language
+              - radarr-custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -860,7 +860,7 @@ data:
               - name: HD
                 score: 35000
           - trash_ids:
-              - custom-original-language # Original Language
+              - radarr-custom-original-language # Original Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -1478,7 +1478,7 @@ data:
               - name: HD
                 score: 35000
           - trash_ids:
-              - custom-brazilian-dual-language # Pt-BR Dual Language
+              - sonarr-custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -1493,7 +1493,7 @@ data:
               - name: HD
                 score: 19500
           - trash_ids:
-              - custom-original-language # Original Language
+              - sonarr-custom-original-language # Original Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -1941,7 +1941,7 @@ data:
               - name: HD
                 score: 60000
           - trash_ids:
-              - custom-brazilian-dual-language # Pt-BR Dual Language
+              - sonarr-custom-brazilian-dual-language # Pt-BR Dual Language
             assign_scores_to:
               - name: HD
                 score: 1000
@@ -1956,7 +1956,7 @@ data:
               - name: HD
                 score: 40000
           - trash_ids:
-              - custom-original-language # Original Language
+              - sonarr-custom-original-language # Original Language
             assign_scores_to:
               - name: HD
                 score: 1000
