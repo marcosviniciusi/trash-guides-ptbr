@@ -399,7 +399,7 @@ radarr:
           - name: HD
             score: 35000
       - trash_ids:
-          - custom-brazilian-dual-language # Pt-BR Dual Language
+          - radarr-custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
             score: 1000
@@ -838,7 +838,7 @@ radarr:
           - name: HD
             score: 60000
       - trash_ids:
-          - custom-brazilian-dual-language # Pt-BR Dual Language
+          - radarr-custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
             score: 1000
@@ -1471,7 +1471,7 @@ sonarr:
           - name: HD
             score: 35000
       - trash_ids:
-          - custom-brazilian-dual-language # Pt-BR Dual Language
+          - sonarr-custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
             score: 1000
@@ -1934,7 +1934,7 @@ sonarr:
           - name: HD
             score: 60000
       - trash_ids:
-          - custom-brazilian-dual-language # Pt-BR Dual Language
+          - sonarr-custom-brazilian-dual-language # Pt-BR Dual Language
         assign_scores_to:
           - name: HD
             score: 1000
