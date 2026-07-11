@@ -394,7 +394,7 @@ radarr:
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
       - trash_ids:
-          - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
+          - radarr-custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
             score: 35000
@@ -833,7 +833,7 @@ radarr:
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
       - trash_ids:
-          - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
+          - sonarr-custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
             score: 60000
@@ -1466,7 +1466,7 @@ sonarr:
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
       - trash_ids:
-          - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
+          - radarr-custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
             score: 35000
@@ -1929,7 +1929,7 @@ sonarr:
       ############################ Tier Premiere Portuguese-Brazilian ############################  
       ############################ Tier DUAL Portuguese-Brazilian ############################      
       - trash_ids:
-          - custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
+          - sonarr-custom-brazilian-group-tier-dual-audio # Pt-BR Group Dual Language
         assign_scores_to:
           - name: HD
             score: 60000
