@@ -58,6 +58,7 @@ download_format 'radarr-hd-bluray-release.json'
 download_format 'radarr-uhd-web-release.json'
 download_format 'radarr-fhd-web-release.json'
 download_format 'radarr-hd-web-release.json'
+download_format 'radarr-custom-brazilian-dual-language.json'
 
 # Custom Formats - Release Quality (Sonarr)
 download_format 'sonarr-uhd-remux-release.json'
@@ -69,5 +70,6 @@ download_format 'sonarr-hd-bluray-release.json'
 download_format 'sonarr-uhd-web-release.json'
 download_format 'sonarr-fhd-web-release.json'
 download_format 'sonarr-hd-web-release.json'
+download_format 'sonarr-custom-brazilian-dual-language.json'
 
 echo "✅ Custom formats baixados com sucesso!"

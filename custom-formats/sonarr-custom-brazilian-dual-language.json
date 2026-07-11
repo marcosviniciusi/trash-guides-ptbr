@@ -1,0 +1,37 @@
+{
+  "trash_id": "sonarr-custom-brazilian-dual-language",
+  "name": "Brazilian Dual Language",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Original Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": -2,
+        "exceptLanguage": false
+      }
+    },
+    {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 18,
+        "exceptLanguage": false
+      }
+    },
+    {
+      "name": "Brazilian Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 33,
+        "exceptLanguage": false
+      }
+    }
+  ]
+}
