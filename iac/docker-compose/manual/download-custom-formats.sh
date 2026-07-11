@@ -27,7 +27,6 @@ download_format 'custom-brazilian-group-tier-subtitles.json'
 download_format 'custom-brazilian-subtitles.json'
 download_format 'custom-brazilian-group-tier-dubbed.json'
 download_format 'custom-brazilian-dubbed.json'
-download_format 'custom-original-language.json'
 download_format 'custom-brazilian-group-tier-bad.json'
 download_format 'custom-us-group-tier-premium.json'
 
@@ -59,6 +58,7 @@ download_format 'radarr-uhd-web-release.json'
 download_format 'radarr-fhd-web-release.json'
 download_format 'radarr-hd-web-release.json'
 download_format 'radarr-custom-brazilian-dual-language.json'
+download_format 'radarr-custom-original-language.json'
 
 # Custom Formats - Release Quality (Sonarr)
 download_format 'sonarr-uhd-remux-release.json'
@@ -71,5 +71,6 @@ download_format 'sonarr-uhd-web-release.json'
 download_format 'sonarr-fhd-web-release.json'
 download_format 'sonarr-hd-web-release.json'
 download_format 'sonarr-custom-brazilian-dual-language.json'
+download_format 'sonarr-custom-original-language.json'
 
 echo "✅ Custom formats baixados com sucesso!"

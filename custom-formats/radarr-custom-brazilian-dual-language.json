@@ -4,16 +4,6 @@
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "Original Language",
-      "implementation": "LanguageSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": -2,
-        "exceptLanguage": false
-      }
-    },
-    {
       "name": "Brazilian Language",
       "implementation": "LanguageSpecification",
       "negate": false,

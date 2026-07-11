@@ -10,12 +10,12 @@ Arquivos JSON locais referenciados nos configs via `trash_ids`:
 
 **PT-BR Especificos:**
 - `custom-brazilian-group-tier-dual-audio.json` - Grupos PT-BR com dual audio
-- `custom-brazilian-dual-language.json` - Deteccao de dual language
+- `{radarr,sonarr}-custom-brazilian-dual-language.json` - Deteccao de dual language (por app)
 - `custom-brazilian-group-tier-subtitles.json` - Grupos PT-BR com legendas
 - `custom-brazilian-subtitles.json` - Deteccao de legendas PT-BR
 - `custom-brazilian-group-tier-dubbed.json` - Grupos PT-BR com dublagem
 - `custom-brazilian-dubbed.json` - Deteccao de dublado PT-BR
-- `custom-original-language.json` - Lingua original
+- `{radarr,sonarr}-custom-original-language.json` - Lingua original (por app)
 - `custom-brazilian-group-tier-bad.json` - Grupos ruins PT-BR
 - `custom-us-group-tier-premium.json` - Grupos premium US
 
