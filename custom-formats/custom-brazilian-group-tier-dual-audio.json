@@ -4052,6 +4052,15 @@
       "fields": {
         "value": "(?:^|-)TTZ$"
       }
+    },
+    {
+      "name": "Jairo",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "(?:^|-)Jairo$"
+      }
     }
   ]
 }
