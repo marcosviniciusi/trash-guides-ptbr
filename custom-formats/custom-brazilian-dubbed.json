@@ -3928,6 +3928,150 @@
       "fields": {
         "value": "(?:^|-)STARCKFILMES$"
       }
+    },
+    {
+      "name": "nitra",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)nitra$"
+      }
+    },
+    {
+      "name": "SpeedBR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)SpeedBR$"
+      }
+    },
+    {
+      "name": "fdx",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)fdx$"
+      }
+    },
+    {
+      "name": "Petter",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)Petter$"
+      }
+    },
+    {
+      "name": "MED",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)MED$"
+      }
+    },
+    {
+      "name": "DEDE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)DEDE$"
+      }
+    },
+    {
+      "name": "THYRSO10",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)THYRSO10$"
+      }
+    },
+    {
+      "name": "TITANS",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)TITANS$"
+      }
+    },
+    {
+      "name": "DomLara",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)DomLara$"
+      }
+    },
+    {
+      "name": "SiNiZTRUTH",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)SiNiZTRUTH$"
+      }
+    },
+    {
+      "name": "ZDC",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)ZDC$"
+      }
+    },
+    {
+      "name": "DalmacioJR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)DalmacioJR$"
+      }
+    },
+    {
+      "name": "Artin",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)Artin$"
+      }
+    },
+    {
+      "name": "Substiputo",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)Substiputo$"
+      }
+    },
+    {
+      "name": "MiCO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)MiCO$"
+      }
+    },
+    {
+      "name": "TTZ",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?:^|-)TTZ$"
+      }
     }
   ]
 }
