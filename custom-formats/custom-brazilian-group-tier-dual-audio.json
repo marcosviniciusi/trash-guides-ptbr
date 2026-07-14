@@ -4061,6 +4061,15 @@
       "fields": {
         "value": "(?:^|-)Jairo$"
       }
+    },
+    {
+      "name": "cyb3rRunn3r",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "(?:^|-)cyb3rRunn3r$"
+      }
     }
   ]
 }
