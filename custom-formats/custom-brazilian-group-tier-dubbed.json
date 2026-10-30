@@ -643,15 +643,6 @@
       }
     },
     {
-      "name": "NoGroup",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "(?:^|-)NoGroup$"
-      }
-    },
-    {
       "name": "SAMARITANO",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -937,15 +928,6 @@
       "required": false,
       "fields": {
         "value": "(?:^|-)AndersonDJ$"
-      }
-    },
-    {
-      "name": "Emmid",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "(?:^|-)Emmid$"
       }
     },
     {
@@ -2758,15 +2740,6 @@
       }
     },
     {
-      "name": "Judas",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "(?:^|-)Judas$"
-      }
-    },
-    {
       "name": "Kirinashi",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
@@ -3916,15 +3889,6 @@
       "required": false,
       "fields": {
         "value": "(?:^|-)STARCKFILMES$"
-      }
-    },
-    {
-      "name": "nitra",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "(?:^|-)nitra$"
       }
     },
     {

@@ -445,15 +445,6 @@
       }
     },
     {
-      "name": "SiCFoI",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "(?:^|-)SiCFoI$"
-      }
-    },
-    {
       "name": "SURFINBIRD",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
